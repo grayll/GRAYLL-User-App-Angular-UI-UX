@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   title = 'code';
-  userIcon = faUser;
-  keyIcon  = faKey;
 }
