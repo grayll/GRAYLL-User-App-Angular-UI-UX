@@ -6,32 +6,41 @@
         <h4 class="text-light">Sign in to GRAYLL</h4>
       </div>
       <div class="card-body">
-        <form>
+        <form [formGroup]="loginForm">
+          <app-error></app-error>
+          <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+            Please enter your email address.
+          </small>
+          <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+            Please enter a valid email address.
+          </small>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
                   <fa-icon [icon]="userIcon"></fa-icon>
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Email">
-
+            <input formControlName="email" type="email" class="form-control" placeholder="Email">
           </div>
+          <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
+            Please enter your password.
+          </small>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
                 <fa-icon [icon]="keyIcon"></fa-icon>
               </span>
             </div>
-            <input type="password" class="form-control" placeholder="Password">
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
           </div>
           <div class="form-group mb-0">
-            <input value="Login" class="btn btn-block login_btn">
+            <button (click)="loginClicked()" class="btn btn-block login_btn">Login</button>
           </div>
         </form>
       </div>
       <div class="card-footer">
         <div class="d-flex justify-content-center">
-          <a class="text-light" href="javascript:void(0)">Forgot your password?</a>
+          <a class="text-light" href="javascript:void(0)" routerLink="/new-password">Forgot your password?</a>
         </div>
         <div class="d-flex justify-content-center">
           <a class="text-light" href="javascript:void(0)">Don't have an account?</a>
