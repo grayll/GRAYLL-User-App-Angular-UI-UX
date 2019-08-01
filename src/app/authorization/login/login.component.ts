@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ErrorService} from '../../shared/error/error.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private router: Router
   ) {
     this.initForm();
   }
@@ -40,7 +42,7 @@ export class LoginComponent {
       this.errorService.handleError(null, 'Please enter your password.');
       return false;
     }
-    if (!this.email.value.includes('@') || !this.email.value.includes('.')) {
+    if (!this.errorService.isEmailAddressValid(this.email.value)) {
       this.errorService.handleError(null, 'Please enter a valid email address.');
       return false;
     }
@@ -50,8 +52,7 @@ export class LoginComponent {
   loginClicked() {
     if (!this.clientValidation()) { return; }
     this.errorService.clearError();
-    console.log(this.loginForm.value);
-    alert('Frontend validation passed.');
+    this.router.navigate(['/login/two-factor']);
   }
 
 }

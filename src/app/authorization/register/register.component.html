@@ -1,3 +1,59 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header text-center">
+        <img class="img img-fluid logo" src="assets/images/logo.png" alt="Logo">
+        <h4 class="text-light">Create a new account</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="registerForm">
+          <app-error></app-error>
+          <small class="text-light" *ngIf="(name.dirty || name.touched) && name.invalid && name.errors.required">
+            Please enter your name.
+          </small>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <fa-icon [icon]="userIcon"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="name" type="text" class="form-control" placeholder="Name">
+          </div>
+          <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+            Please enter your email address.
+          </small>
+          <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+            Please enter a valid email address.
+          </small>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <fa-icon [icon]="emailIcon"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="email" type="email" class="form-control" placeholder="Email">
+          </div>
+          <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
+            Please enter your password.
+          </small>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <fa-icon [icon]="keyIcon"></fa-icon>
+              </span>
+            </div>
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+          </div>
+          <div class="form-group mb-0">
+            <button (click)="registerClicked()" class="btn btn-block login_btn">Register</button>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center">
+          <a class="text-light" href="javascript:void(0)" routerLink="/login">Already have an account?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

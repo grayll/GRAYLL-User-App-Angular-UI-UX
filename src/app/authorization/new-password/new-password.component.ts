@@ -49,7 +49,6 @@ export class NewPasswordComponent {
   submitClicked() {
     if (!this.clientValidation()) { return; }
     this.errorService.clearError();
-    console.log(this.newPasswordForm.value);
     alert('Frontend validation passed.');
   }
 
