@@ -1,0 +1,9 @@
+.main-chart {
+  background-image: linear-gradient(to right, #636fa4, #e8cbc0);
+  color: #fff;
+}
+
+#main-chart-graph {
+  max-height: 350px;
+  position: relative;
+}

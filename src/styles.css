@@ -8,3 +8,7 @@ body {
   background: linear-gradient(to right,#636fa4,#e8cbc0);
   font-family: 'Nunito', sans-serif !important;
 }
+
+h6 {
+  font-size: 0.9rem!important;
+}

@@ -11,6 +11,9 @@ import { RegisterComponent } from './authorization/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ErrorComponent } from './shared/error/error.component';
 import {ErrorService} from './shared/error/error.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderBoxesComponent } from './dashboard/header-boxes/header-boxes.component';
+import { MainChartComponent } from './dashboard/main-chart/main-chart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {ErrorService} from './shared/error/error.service';
     NewPasswordComponent,
     TwoFactorComponent,
     RegisterComponent,
-    ErrorComponent
+    ErrorComponent,
+    DashboardComponent,
+    HeaderBoxesComponent,
+    MainChartComponent
   ],
   imports: [
     BrowserModule,

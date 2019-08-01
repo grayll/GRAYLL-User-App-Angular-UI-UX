@@ -1,0 +1,15 @@
+.page-wrapper {
+  background-color: #414755;
+}
+
+@media (min-width: 760px) {
+  .page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .main-wrapper {
+    background-color: #414755;
+  }
+}

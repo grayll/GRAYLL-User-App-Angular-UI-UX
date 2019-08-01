@@ -4,6 +4,7 @@ import {LoginComponent} from './authorization/login/login.component';
 import {NewPasswordComponent} from './authorization/new-password/new-password.component';
 import {RegisterComponent} from './authorization/register/register.component';
 import {TwoFactorComponent} from './authorization/two-factor/two-factor.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -23,8 +24,12 @@ const routes: Routes = [
     component: NewPasswordComponent
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   }
 ];
