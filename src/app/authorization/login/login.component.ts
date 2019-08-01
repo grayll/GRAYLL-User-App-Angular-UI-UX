@@ -31,7 +31,6 @@ export class LoginComponent {
       email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
     });
-    alert('You can send me an email on: kurbegovicnedim@gmail.com');
   }
 
   private clientValidation() {
