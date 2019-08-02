@@ -1,10 +1,22 @@
 <div class="main-wrapper">
   <div class="page-wrapper">
     <div class="container-fluid">
-      <h2 class="text-light pt-4 pb-1">Dashboard</h2>
+
+      <h2 class="text-light pt-4 pb-1">
+        <fa-icon [icon]="faChartLine" fixedWidth></fa-icon>
+        Dashboard
+      </h2>
+
+      <!-- Top 3 boxes -->
       <app-header-boxes></app-header-boxes>
       <br>
+
+      <!-- Large chart -->
       <app-main-chart></app-main-chart>
+      <br>
+
+      <!-- Amount boxes -->
+      <app-info-boxes></app-info-boxes>
     </div>
   </div>
 </div>

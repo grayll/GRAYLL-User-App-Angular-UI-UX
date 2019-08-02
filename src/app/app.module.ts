@@ -14,6 +14,8 @@ import {ErrorService} from './shared/error/error.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderBoxesComponent } from './dashboard/header-boxes/header-boxes.component';
 import { MainChartComponent } from './dashboard/main-chart/main-chart.component';
+import { InfoBoxesComponent } from './dashboard/info-boxes/info-boxes.component';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,16 @@ import { MainChartComponent } from './dashboard/main-chart/main-chart.component'
     ErrorComponent,
     DashboardComponent,
     HeaderBoxesComponent,
-    MainChartComponent
+    MainChartComponent,
+    InfoBoxesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [
     ErrorService

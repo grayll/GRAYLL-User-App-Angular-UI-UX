@@ -1,0 +1,9 @@
+.line-chart {
+  max-width: 130px;
+  height: 15px;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  color: white;
+}
