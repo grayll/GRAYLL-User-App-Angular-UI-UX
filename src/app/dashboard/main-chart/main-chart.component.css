@@ -1,9 +1,17 @@
 .main-chart {
   background-image: linear-gradient(to right, #636fa4, #e8cbc0);
   color: #fff;
+  border-radius: 4px!important;
 }
 
 #main-chart-graph {
   max-height: 350px;
   position: relative;
+}
+
+.styled-select {
+  background-color: #40278C;
+  color: white;
+  height: 36px!important;
+  width: 100px!important;
 }
