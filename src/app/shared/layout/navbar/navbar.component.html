@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-gradient">
+  <a class="navbar-brand ml-2" routerLink="/">
+    <img src="assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+    <span class="ml-2">GRAYLL</span>
+  </a>
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+          data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse navigacija" id="navbarsDefault">
+    <ul class="navbar-nav ml-auto pb-0">
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faSearch"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Search</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faChartLine"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faWallet"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Wallet</span>
+          <span class="badge bg-yellow text-light badge-number">5</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faChartBar"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Analytics</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faComment"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Messages</span>
+          <span class="badge bg-yellow text-light badge-number">5</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faBell"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Notifications</span>
+          <span class="badge bg-yellow text-light badge-number">5</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faUser"></fa-icon>
+          <span class="d-inline d-md-none ml-2">Profile</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="javascript:void(0)" class="nav-link">
+          <fa-icon [icon]="faPowerOff" fixedWidth></fa-icon>
+          <span class="d-inline d-md-none ml-2">Log out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

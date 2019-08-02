@@ -1,0 +1,24 @@
+.navigacija {
+  padding: 0.25em;
+}
+
+li.nav-item {
+  padding: 0 8px!important;
+}
+
+li.nav-item a {
+  color: #40278C!important;
+}
+
+.badge-number {
+  position: absolute;
+  top: 10px;
+}
+
+@media (max-width: 768px) {
+  .badge-number {
+    position: relative!important;
+    top: 0;
+    left: 5px;
+  }
+}

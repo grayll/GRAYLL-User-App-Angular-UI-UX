@@ -19,6 +19,7 @@ import {ChartsModule} from 'ng2-charts';
 import { WalletComponent } from './dashboard/wallet/wallet.component';
 import { TradeComponent } from './dashboard/trade/trade.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MainChartComponent,
     InfoBoxesComponent,
     WalletComponent,
-    TradeComponent
+    TradeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

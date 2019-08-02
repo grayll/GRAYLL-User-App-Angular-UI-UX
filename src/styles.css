@@ -13,12 +13,20 @@ h6 {
   font-size: 0.9rem!important;
 }
 
-.text-yellow {
-  color: #CFA256;
-}
-
 .bg-purple {
   background-color: #40278C!important;
+}
+
+.bg-yellow {
+  background-color: #CFA256!important;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+}
+
+.text-yellow {
+  color: #CFA256;
 }
 
 .text-purple {
