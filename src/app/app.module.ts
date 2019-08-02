@@ -16,6 +16,8 @@ import { HeaderBoxesComponent } from './dashboard/header-boxes/header-boxes.comp
 import { MainChartComponent } from './dashboard/main-chart/main-chart.component';
 import { InfoBoxesComponent } from './dashboard/info-boxes/info-boxes.component';
 import {ChartsModule} from 'ng2-charts';
+import { WalletComponent } from './dashboard/wallet/wallet.component';
+import { TradeComponent } from './dashboard/trade/trade.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {ChartsModule} from 'ng2-charts';
     DashboardComponent,
     HeaderBoxesComponent,
     MainChartComponent,
-    InfoBoxesComponent
+    InfoBoxesComponent,
+    WalletComponent,
+    TradeComponent
   ],
   imports: [
     BrowserModule,

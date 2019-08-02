@@ -12,3 +12,15 @@ body {
 h6 {
   font-size: 0.9rem!important;
 }
+
+.text-yellow {
+  color: #CFA256;
+}
+
+.text-purple {
+  color: #40278C;
+}
+
+.text-sky {
+  color: #CEDEFE;
+}
