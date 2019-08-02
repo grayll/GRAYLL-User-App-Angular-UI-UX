@@ -1,3 +1,66 @@
-<p>
-  trade works!
-</p>
+<div class="card border-0 bg-pink">
+  <div class="card-body pb-3">
+    <div class="d-md-flex align-items-center m-b-20">
+      <div class="text-light">
+        <h5 class="card-title">Trade GRX</h5>
+        <h6 class="white font-weight-light">Buy &amp; Sell GRAYLL GRX</h6>
+      </div>
+    </div>
+    <ngb-tabset type="pills" class="custom-pills">
+      <ngb-tab title="Buy">
+        <ng-template ngbTabContent>
+          <form class="mt-2">
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img style="width: 13px; height: 13px" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                </div>
+                <input type="text" class="text-light form-control bg-purple" placeholder="GRX Amount">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="text-white input-group-text bg-purple">$</span>
+                </div>
+                <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="text-light btn bg-purple rounded-0">Buy GRX</button>
+            </div>
+          </form>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Sell">
+        <ng-template ngbTabContent>
+          <form class="mt-2">
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img style="width: 13px; height: 13px" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                </div>
+                <input type="text" class="text-light form-control bg-purple" placeholder="GRX Amount">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="text-white input-group-text bg-purple">$</span>
+                </div>
+                <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="text-light btn bg-purple rounded-0">Sell GRX</button>
+            </div>
+          </form>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>
