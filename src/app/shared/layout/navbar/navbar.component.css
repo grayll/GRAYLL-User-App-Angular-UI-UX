@@ -15,6 +15,14 @@ li.nav-item a {
   top: 10px;
 }
 
+@media (min-width: 768px) {
+  .navbar {
+    max-width: 1200px!important;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
 @media (max-width: 768px) {
   .badge-number {
     position: relative!important;

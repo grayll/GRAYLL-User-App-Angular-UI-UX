@@ -24,7 +24,7 @@
     }
   }
   .c-cost {
-    padding: 20px 40px;
+    padding: 20px 20px;
     border: 1px solid #4f5467 !important;
     border-radius: 5px;
     i {
@@ -202,4 +202,9 @@
 
 ul {
   list-style-type: none;
+  margin-top: 30px;
+}
+
+.wallet-box {
+  margin-left: 10px;
 }

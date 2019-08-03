@@ -14,28 +14,36 @@
       </div>
       <div class="col-sm-12 col-md-6">
         <div class="w-auto c-cost">
-          <div class="d-inline-block text-yellow">
+          <div class="d-inline-block align-middle text-yellow">
             <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
           </div>
-          <div class="d-inline-block text-white ml-4">
-            <h6>Wallet balance</h6>
-            <h5 class="m-b-0">$435,320.68</h5>
+          <div class="d-inline-block text-white align-middle wallet-box">
+            <span class="text-light font-16">Wallet balance</span>
+            <h5 class="m-b-0 text-light">$435,320.68</h5>
           </div>
         </div>
-        <div class="row mt-3">
-          <div class="col">
-            <ul class="list-style-none stats m-t-30">
-              <li class="m-t-10">
-                <i class="m-r-5 text-purple font-12"><fa-icon [icon]="faCircle"></fa-icon></i> 25% GRX <br>
-                $335.68
-              </li>
-              <li class="m-t-10">
-                <i class="m-r-5 text-sky font-12"><fa-icon [icon]="faCircle"></fa-icon></i> 75% XLM <br>
-                $100.00
-              </li>
-            </ul>
-          </div>
-        </div>
+        <ul class="list-style-none stats p-0">
+          <li class="m-t-10">
+            <i class="m-r-5 text-purple font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 25% GRX</span>
+            <br>
+            <h5 class="m-b-0">
+              $335.68
+            </h5>
+          </li>
+          <li class="m-t-10">
+            <i class="m-r-5 text-sky font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 75% XLM</span>
+            <br>
+            <h5 class="m-b-0">
+              $335.68
+            </h5>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

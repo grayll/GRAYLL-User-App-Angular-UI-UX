@@ -31,7 +31,7 @@ export class MainChartComponent implements AfterViewInit {
           }
         },
         x: {
-          show: true
+          show: false
         }
       },
       padding: {
