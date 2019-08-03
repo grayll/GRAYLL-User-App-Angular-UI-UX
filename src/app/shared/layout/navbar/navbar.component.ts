@@ -8,7 +8,7 @@ import {faBell, faChartBar, faChartLine, faCommentAlt, faPowerOff, faSearch, faU
 })
 export class NavbarComponent {
 
-  isNavbarCollapsed = true;
+  isNavbarCollapsed = false;
   faPowerOff = faPowerOff;
   faUser = faUser;
   faBell = faBell;
