@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authorization/login/login.component';
@@ -20,6 +19,7 @@ import { WalletComponent } from './dashboard/wallet/wallet.component';
 import { TradeComponent } from './dashboard/trade/trade.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { NavbarComponent } from './shared/layout/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    NgbModule
+    NgbModule,
+    NgSelectModule
   ],
   providers: [
     ErrorService

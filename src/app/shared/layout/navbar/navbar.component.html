@@ -8,55 +8,55 @@
   </button>
   <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse navigacija" id="navbarsDefault">
     <ul class="navbar-nav ml-auto pb-0">
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="SEARCH">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faSearch" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Search</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="SYSTEM">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faChartLine" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Dashboard</span>
+          <span class="d-inline d-md-none ml-2">System</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="WALLET">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faWallet" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Wallet</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="DATA">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Analytics</span>
+          <span class="d-inline d-md-none ml-2">Data</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="MESSAGES">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faComment" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Messages</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="NOTIFICATIONS">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faBell" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Notifications</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" data-toggle="tooltip" title="SETTINGS">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faUser" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Profile</span>
+          <span class="d-inline d-md-none ml-2">Settings</span>
         </a>
       </li>
-      <li class="nav-item" ngbDropdown placement="bottom-left">
+      <li class="nav-item" data-toggle="tooltip" title="SIGN OUT">
         <a href="javascript:void(0)" class="nav-link">
           <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2 waves-effect waves-dark">Log out</span>
+          <span class="d-inline d-md-none ml-2 waves-effect waves-dark">Sign out</span>
         </a>
       </li>
     </ul>

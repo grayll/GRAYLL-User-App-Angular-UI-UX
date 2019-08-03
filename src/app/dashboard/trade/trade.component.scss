@@ -28,7 +28,7 @@
 }
 
 input {
-  border-left: 1px solid #4f5467;
+  border-left: 1px solid #CFA256;
 }
 
 input[type=text]:focus {
@@ -53,4 +53,13 @@ input::-webkit-input-placeholder {
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
+}
+
+.dollar-padding {
+  padding-left: 19px!important;
+  padding-right: 19px!important;
+}
+
+.card {
+  background-color: #636fa4 !important;;
 }

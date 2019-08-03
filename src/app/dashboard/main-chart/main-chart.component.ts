@@ -7,6 +7,26 @@ import * as c3 from 'c3';
   styleUrls: ['./main-chart.component.css']
 })
 export class MainChartComponent implements AfterViewInit {
+  timespanFilter = [
+    {
+      id: 1,
+      name: 'Monthly'
+    },
+    {
+      id: 2,
+      name: 'Daily'
+    },
+    {
+      id: 3,
+      name: 'Weekly'
+    },
+    {
+      id: 4,
+      name: 'Yearly'
+    }
+  ];
+
+  selectedTimespan: {id: number, name: string} = this.timespanFilter[0];
 
   constructor() { }
 

@@ -10,13 +10,13 @@
           <div class="col-md-4 text-center">
             <h6 class="text-center">00:00 | 12 JUL 2019</h6>
           </div>
-          <div class="col text-right">
-            <select class="styled-select">
-              <option>Monthly</option>
-              <option>Daily</option>
-              <option>Weekly</option>
-              <option>Yearly</option>
-            </select>
+          <div class="col-md-4">
+            <ng-select [items]="timespanFilter"
+                       [searchable]="false"
+                       [clearable]="false"
+                       bindLabel="name"
+                       [(ngModel)]="selectedTimespan">
+            </ng-select>
           </div>
         </div>
 
