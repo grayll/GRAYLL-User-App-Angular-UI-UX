@@ -55,3 +55,15 @@
   border-radius: 4px!important;
   border: 0!important;
 }
+
+@media (min-width: 768px) {
+  .col-md-12 {
+    flex: 0 0 33.3333% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .ng-select {
+    float: unset!important;
+  }
+}

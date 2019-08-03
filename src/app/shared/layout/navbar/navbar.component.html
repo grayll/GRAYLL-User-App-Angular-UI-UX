@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md pt-0 pb-0 navbar-light">
+<nav class="navbar navbar-expand-md pt-0 pb-0">
   <a class="navbar-brand ml-2" routerLink="/">
     <img src="assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="Logo">
   </a>
@@ -6,57 +6,57 @@
           data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse navigacija" id="navbarsDefault">
+  <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse navigacija text-right" id="navbarsDefault">
     <ul class="navbar-nav ml-auto pb-0">
       <li class="nav-item" data-toggle="tooltip" title="SEARCH">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none mr-2">Search</span>
           <fa-icon [icon]="faSearch" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Search</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="SYSTEM">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none mr-2">System</span>
           <fa-icon [icon]="faChartLine" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">System</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="WALLET">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none">Wallet</span>
+          <span class="badge bg-yellow text-light badge-number mr-2">5</span>
           <fa-icon [icon]="faWallet" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Wallet</span>
-          <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="DATA">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none mr-2">Data</span>
           <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Data</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="MESSAGES">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none">Messages</span>
+          <span class="badge bg-yellow text-light badge-number mr-2">5</span>
           <fa-icon [icon]="faComment" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Messages</span>
-          <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="NOTIFICATIONS">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none">Notifications</span>
+          <span class="badge bg-yellow text-light badge-number mr-2">5</span>
           <fa-icon [icon]="faBell" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Notifications</span>
-          <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="SETTINGS">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none mr-2">Settings</span>
           <fa-icon [icon]="faUser" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2">Settings</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" title="SIGN OUT">
         <a href="javascript:void(0)" class="nav-link">
+          <span class="d-inline d-md-none mr-2">Sign out</span>
           <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>
-          <span class="d-inline d-md-none ml-2 waves-effect waves-dark">Sign out</span>
         </a>
       </li>
     </ul>
