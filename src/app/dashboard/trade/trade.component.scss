@@ -7,6 +7,11 @@
   margin-bottom: 15px!important;
 }
 
+.small-grayll-icon {
+  width: 18px;
+  height: 18px;
+}
+
 ::ng-deep .nav-pills {
   .nav-link {
     border-radius: 0;
@@ -20,6 +25,10 @@
       border-bottom: 2px solid #40278C!important;
     }
   }
+}
+
+input {
+  border-left: 1px solid #4f5467;
 }
 
 input[type=text]:focus {

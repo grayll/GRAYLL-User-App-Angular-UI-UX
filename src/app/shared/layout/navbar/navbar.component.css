@@ -1,12 +1,25 @@
 .navigacija {
-  padding: 0.25em;
+  padding: 0em;
+}
+
+.nav-item {
+  transition: 0.2s ease-in;
 }
 
 li.nav-item {
-  padding: 0 8px!important;
+  padding: 0 3px!important;
+  height: 100%!important;
+}
+
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 li.nav-item a {
+  height: 64px;
+  padding: 0 14px;
+  font-size: 0.875rem;
+  line-height: 64px;
   color: #40278C!important;
 }
 

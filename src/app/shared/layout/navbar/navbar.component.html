@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-md pt-0 pb-0 navbar-light">
   <a class="navbar-brand ml-2" routerLink="/">
     <img src="assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="Logo">
   </a>
@@ -10,53 +10,53 @@
     <ul class="navbar-nav ml-auto pb-0">
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faSearch"></fa-icon>
+          <fa-icon [icon]="faSearch" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Search</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faChartLine"></fa-icon>
+          <fa-icon [icon]="faChartLine" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faWallet"></fa-icon>
+          <fa-icon [icon]="faWallet" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Wallet</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faChartBar"></fa-icon>
+          <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Analytics</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faComment"></fa-icon>
+          <fa-icon [icon]="faComment" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Messages</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faBell"></fa-icon>
+          <fa-icon [icon]="faBell" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Notifications</span>
           <span class="badge bg-yellow text-light badge-number">5</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faUser"></fa-icon>
+          <fa-icon [icon]="faUser" size="lg"></fa-icon>
           <span class="d-inline d-md-none ml-2">Profile</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" ngbDropdown placement="bottom-left">
         <a href="javascript:void(0)" class="nav-link">
-          <fa-icon [icon]="faPowerOff" fixedWidth></fa-icon>
-          <span class="d-inline d-md-none ml-2">Log out</span>
+          <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>
+          <span class="d-inline d-md-none ml-2 waves-effect waves-dark">Log out</span>
         </a>
       </li>
     </ul>
