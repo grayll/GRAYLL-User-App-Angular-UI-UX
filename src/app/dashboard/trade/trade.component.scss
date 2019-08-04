@@ -25,6 +25,8 @@
 
 input {
   border-left: 1px solid #CFA256;
+  height: calc(1.5em + 1rem + 2px)!important;
+  line-height: calc(1.5em + 1rem + 2px)!important;
 }
 
 input[type=text]:focus {
@@ -35,7 +37,6 @@ input[type=text]:focus {
 input,
 input::-webkit-input-placeholder {
   font-size: 0.9rem;
-  line-height: 3;
 }
 
 ::placeholder {

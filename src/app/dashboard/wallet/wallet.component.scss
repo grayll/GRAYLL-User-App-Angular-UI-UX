@@ -173,18 +173,6 @@
   background-clip: content-box;
 }
 
-@media (max-width: 767px) {
-  .e-campaign {
-    .c-cost {
-      margin: 0 auto;
-      width: 100%;
-    }
-    .stats {
-      text-align: center;
-    }
-  }
-}
-
 .css-bar-xlg {
   width: 223px;
   height: 223px;
@@ -211,4 +199,19 @@ ul {
 
 .card {
   background-color: #636fa4 !important;
+}
+
+@media (max-width: 991px) {
+  .e-campaign {
+    .c-cost {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .stats {
+      text-align: center;
+    }
+  }
+  .card {
+    height: auto!important;
+  }
 }
