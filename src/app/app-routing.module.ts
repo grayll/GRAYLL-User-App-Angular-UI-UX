@@ -5,6 +5,7 @@ import {NewPasswordComponent} from './authorization/new-password/new-password.co
 import {RegisterComponent} from './authorization/register/register.component';
 import {TwoFactorComponent} from './authorization/two-factor/two-factor.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {NotFoundComponent} from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -29,8 +30,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

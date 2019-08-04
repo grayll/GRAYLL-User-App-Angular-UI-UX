@@ -20,6 +20,7 @@ import { TradeComponent } from './dashboard/trade/trade.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import {NgSelectModule} from '@ng-select/ng-select';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
     InfoBoxesComponent,
     WalletComponent,
     TradeComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
