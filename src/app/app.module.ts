@@ -21,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     WalletComponent,
     TradeComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

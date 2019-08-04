@@ -6,6 +6,7 @@ import {RegisterComponent} from './authorization/register/register.component';
 import {TwoFactorComponent} from './authorization/two-factor/two-factor.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
+import {ErrorPageComponent} from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: '404',
     component: NotFoundComponent
+  },
+  {
+    path: 'error',
+    component: ErrorPageComponent
   },
   {
     path: '**',
