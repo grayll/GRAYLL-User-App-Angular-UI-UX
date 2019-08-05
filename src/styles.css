@@ -30,12 +30,20 @@ h6 {
   background-color: #40278C!important;
 }
 
+.bg-pink {
+  background-color: #e8cbc0 !important;
+}
+
 .bg-yellow {
   background-color: #CFA256!important;
 }
 
 .bg-gradient {
   background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+}
+
+.text-pink {
+  color: #e8cbc0 !important;
 }
 
 .text-yellow {
@@ -48,6 +56,24 @@ h6 {
 
 .text-sky {
   color: #CEDEFE;
+}
+
+.btn-purple {
+  color: white!important;
+  background-color: #40278C!important;
+}
+
+.btn-purple:hover {
+  background-color: #2E1870!important;
+}
+
+.btn-yellow {
+  background-color: #CFA256!important;
+  color: #212529!important;
+}
+
+.btn-yellow:hover {
+  background-color: #AC7F31!important;
 }
 
 /* Overriding default settings to match a given template */

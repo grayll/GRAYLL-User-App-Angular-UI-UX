@@ -7,6 +7,7 @@ import {TwoFactorComponent} from './authorization/two-factor/two-factor.componen
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
+import {SettingsComponent} from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -30,8 +31,12 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'settings',
+    component: SettingsComponent
+  },
+  {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/settings',
     pathMatch: 'full'
   },
   {

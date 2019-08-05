@@ -22,6 +22,7 @@ import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
     TradeComponent,
     NavbarComponent,
     NotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
