@@ -27,6 +27,22 @@
   padding-right: 0!important;
 }
 
+.settings-menu ul li {
+  color: white!important;
+}
+
+.settings-menu ul li:hover {
+  cursor: pointer;
+  color: white!important;
+  background-color: #40278C!important;
+}
+
+.settings-menu ul li.active {
+  border: 0!important;
+  color: white!important;
+  background-color: #40278C!important;
+}
+
 .card-body {
   border-radius: 4px!important;
 }
