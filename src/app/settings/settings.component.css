@@ -23,6 +23,7 @@
 }
 
 .settings-menu {
+  border-radius: 4px!important;
   padding-left: 0!important;
   padding-right: 0!important;
 }
@@ -45,6 +46,26 @@
 
 .card-body {
   border-radius: 4px!important;
+}
+
+fa-icon {
+  color: #fff!important;
+}
+
+::ng-deep .nav-tabs {
+  border-bottom: 0;
+  justify-content: center!important;
+}
+
+::ng-deep .nav-tabs a.nav-link,
+::ng-deep .nav-tabs .show > a.nav-link {
+  color: #fff!important;
+  background-color: transparent!important;
+  border: 1px solid #40278C!important;
+}
+
+::ng-deep .nav-tabs a.nav-link.active {
+  border: 1px solid white!important;
 }
 
 @media (min-width: 760px) {

@@ -8,15 +8,70 @@
         Security
       </h4>
 
+      <div class="row d-flex justify-content-center align-items-center d-md-none">
+        <div class="col mx-auto">
+          <ngb-tabset activeId="security">
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faUser"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faBell"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faComment"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faChartBar"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+
+            <ngb-tab>
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faWallet"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+
+            <ngb-tab id="security">
+              <ng-template ngbTabTitle>
+                <fa-icon [icon]="faLock"></fa-icon>
+              </ng-template>
+              <ng-template ngbTabContent></ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-10 mt-3">
           <div class="card border-0">
             <div class="card-body bg-gradient text-light">
               <div class="row">
                 <div class="col-md-9">
                   <p class="lead">Two-Factoruthentication - 2FA</p>
                   <p>Enable to protect your account with 2FA. Stringly recommended</p>
-                  <a href="javascript:void(0)" class="text-pink">Read more about 2FA</a>
+                  <a href="javascript:void(0)" class="d-none d-md-block text-pink">
+                    Read more about 2FA
+                  </a>
+                </div>
+                <div class="col-12 d-flex justify-content-center align-items-center d-md-none mb-2">
+                  <a href="javascript:void(0)" class="text-pink text-center">
+                    Read more about 2FA
+                  </a>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
                   <button class="btn btn-purple btn-lg text-center btn-block">Enable</button>
@@ -58,7 +113,7 @@
 
         </div>
 
-        <div class="col-md-3 bg-pink settings-menu text-right">
+        <div class="col-md-2 mt-3 bg-gradient settings-menu text-center d-none d-md-block">
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-transparent font-16 list-group-item-action">Profile</li>
             <li class="list-group-item bg-transparent font-16 list-group-item-action">Notifications</li>
