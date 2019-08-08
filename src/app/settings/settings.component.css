@@ -61,11 +61,15 @@ fa-icon {
 ::ng-deep .nav-tabs .show > a.nav-link {
   color: #fff!important;
   background-color: transparent!important;
-  border: 1px solid #40278C!important;
+  border: 0!important;
 }
 
 ::ng-deep .nav-tabs a.nav-link.active {
   border: 1px solid white!important;
+}
+
+.card {
+  background-color: #636fa4 !important;
 }
 
 @media (min-width: 760px) {
