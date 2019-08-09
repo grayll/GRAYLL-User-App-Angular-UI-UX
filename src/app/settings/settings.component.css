@@ -20,6 +20,7 @@
 
 .col-md-9 {
   padding-left: 10px!important;
+  padding-right: 10px!important;
 }
 
 .settings-menu {
@@ -75,6 +76,7 @@ fa-icon {
 
 .col-md-10 {
   padding-left: 10px!important;
+  padding-right: 10px!important;
 }
 
 @media (min-width: 760px) {

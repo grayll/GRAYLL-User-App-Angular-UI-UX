@@ -47,6 +47,6 @@ export class SettingsComponent {
 
   private displaySettingsSavedToast() {
     console.log('Saved');
-    this.snotifyService.success('Your settings are saved.');
+    this.snotifyService.simple('Your settings are saved.');
   }
 }

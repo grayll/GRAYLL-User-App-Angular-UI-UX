@@ -47,10 +47,12 @@ export const NotifierConfig = {
       type: 'confirm',
     },
     ['simple']: {
-      type: 'simple'
+      type: 'simple',
+      icon: null
     },
     ['success']: {
-      type: 'success'
+      type: 'success',
+      icon: null
     },
     ['error']: {
       type: 'error'
