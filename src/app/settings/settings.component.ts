@@ -1,14 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
 import {SnotifyService} from 'ng-snotify';
 import {PopupService} from '../shared/popup/popup.service';
+import {SubSink} from 'subsink';
+import {SettingsService} from './settings.service';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnDestroy {
+
+  // RxJS graceful unsubscribe
+  private subscriptions = new SubSink();
 
   // Font Awesome Icons
   faUser = faUser;
@@ -19,18 +24,23 @@ export class SettingsComponent {
   faLock = faLock;
 
   // Settings Attributes
-  is2FAEnabled = false;
+  is2FAEnabled = true;
   isIPConfirmEnabled = true;
   isMultisignatureEnabled = false;
 
   constructor(
     private snotifyService: SnotifyService,
-    private popupService: PopupService
-  ) { }
+    private popupService: PopupService,
+    private settingsService: SettingsService
+  ) {
+    this.observe2FAEnable();
+  }
 
-  disable2FA() {
-    this.is2FAEnabled = false;
-    this.saveSettings();
+  private observe2FAEnable() {
+    this.subscriptions.sink = this.settingsService.observeTwoFAEnabled()
+    .subscribe((enable) => {
+      this.is2FAEnabled = enable;
+    });
   }
 
   toggleIPConfirm() {
@@ -49,5 +59,9 @@ export class SettingsComponent {
 
   private displaySettingsSavedToast() {
     this.snotifyService.simple('Your settings are saved.');
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 }

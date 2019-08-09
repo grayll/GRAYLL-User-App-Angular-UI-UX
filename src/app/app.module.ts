@@ -28,6 +28,10 @@ import {NotifierConfig} from './shared/configurations/snotify.conf';
 import { GoogleAuthenticatorComponent } from './settings/two-FA-enable/google-authenticator/google-authenticator.component';
 import {PopupModule} from './shared/popup/popup.module';
 import { ScanQrCodeTwoFaComponent } from './settings/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
+import { SaveBackupKeyTwoFaComponent } from './settings/two-FA-enable/save-backup-key-two-fa/save-backup-key-two-fa.component';
+import {ClipboardModule} from 'ngx-clipboard';
+import { EnableTwoFaLastStepComponent } from './settings/two-FA-enable/enable-two-fa-last-step/enable-two-fa-last-step.component';
+import { DisableTwoFaComponent } from './settings/two-FA-enable/disable-two-fa/disable-two-fa.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,10 @@ import { ScanQrCodeTwoFaComponent } from './settings/two-FA-enable/scan-qr-code-
     ErrorPageComponent,
     SettingsComponent,
     GoogleAuthenticatorComponent,
-    ScanQrCodeTwoFaComponent
+    ScanQrCodeTwoFaComponent,
+    SaveBackupKeyTwoFaComponent,
+    EnableTwoFaLastStepComponent,
+    DisableTwoFaComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +67,8 @@ import { ScanQrCodeTwoFaComponent } from './settings/two-FA-enable/scan-qr-code-
     NgbModule,
     NgSelectModule,
     SnotifyModule,
-    PopupModule
+    PopupModule,
+    ClipboardModule
   ],
   providers: [
     ErrorService,

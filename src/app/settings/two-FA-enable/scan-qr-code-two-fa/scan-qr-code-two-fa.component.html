@@ -11,12 +11,12 @@
   <div class="modal-footer">
     <div class="row">
       <div class="col-md-6">
-        <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="popupService.close()">
-          Cancel
+        <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="back()">
+          Back
         </a>
       </div>
       <div class="col-md-6">
-        <a href="javascript:void(0)" class="btn btn-purple">
+        <a (click)="next()" href="javascript:void(0)" class="btn btn-purple">
           Next
         </a>
       </div>

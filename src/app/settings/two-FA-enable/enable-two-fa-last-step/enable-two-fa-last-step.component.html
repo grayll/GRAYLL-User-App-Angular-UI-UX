@@ -1,0 +1,38 @@
+<ng-template #content let-modal>
+  <app-popup-header popupHeaderTitle="Enable two-factor authentication"></app-popup-header>
+  <div class="modal-body">
+    <p>Fill in all fields to verify you have all the information to enable 2FA.</p>
+    <div class="row my-4 d-flex align-items-center justify-content-center">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="account_password"><strong>Account password</strong></label>
+            <input type="password" class="form-control" id="account_password" placeholder="Your GRAYLL account password">
+          </div>
+          <div class="form-group">
+            <label for="two-fa-backup-key"><strong>2FA backup key</strong></label>
+            <input type="text" class="form-control" id="two-fa-backup-key" placeholder="Your 2FA backup key">
+          </div>
+          <div class="form-group">
+            <label for="one-time-password"><strong>One-time password</strong></label>
+            <input type="password" class="form-control" id="one-time-password" placeholder="Password from the Google Authenticator">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="back()">
+          Back
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a (click)="enable2FA()" href="javascript:void(0)" class="btn btn-purple">
+          Enable 2FA
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>

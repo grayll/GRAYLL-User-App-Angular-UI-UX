@@ -10,6 +10,9 @@ import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SettingsComponent} from './settings/settings.component';
 import {GoogleAuthenticatorComponent} from './settings/two-FA-enable/google-authenticator/google-authenticator.component';
 import {ScanQrCodeTwoFaComponent} from './settings/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
+import {SaveBackupKeyTwoFaComponent} from './settings/two-FA-enable/save-backup-key-two-fa/save-backup-key-two-fa.component';
+import {EnableTwoFaLastStepComponent} from './settings/two-FA-enable/enable-two-fa-last-step/enable-two-fa-last-step.component';
+import {DisableTwoFaComponent} from './settings/two-FA-enable/disable-two-fa/disable-two-fa.component';
 
 const popupRoutes: Routes = [
   {
@@ -20,6 +23,21 @@ const popupRoutes: Routes = [
   {
     path: 'scan-qr-code',
     component: ScanQrCodeTwoFaComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'save-backup-key',
+    component: SaveBackupKeyTwoFaComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'enable-two-fa',
+    component: EnableTwoFaLastStepComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'disable-two-fa',
+    component: DisableTwoFaComponent,
     outlet: 'popup'
   }
 ];
