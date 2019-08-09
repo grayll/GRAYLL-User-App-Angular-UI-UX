@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,8 +6,9 @@ import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@forta
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnInit {
-  
+export class SettingsComponent {
+
+  // Font Awesome Icons
   faUser = faUser;
   faBell = faBell;
   faComment = faCommentAlt;
@@ -15,9 +16,22 @@ export class SettingsComponent implements OnInit {
   faWallet = faWallet;
   faLock = faLock;
 
+  // Settings Attributes
+  is2FAEnabled = false;
+  isIPConfirmEnabled = true;
+  isMultisignatureEnabled = false;
+
   constructor() { }
 
-  ngOnInit() {
+  toggle2FA() {
+    this.is2FAEnabled = !this.is2FAEnabled;
   }
 
+  toggleIPConfirm() {
+    this.isIPConfirmEnabled = !this.isIPConfirmEnabled;
+  }
+
+  toggleMultisignature() {
+    this.isMultisignatureEnabled = !this.isMultisignatureEnabled;
+  }
 }

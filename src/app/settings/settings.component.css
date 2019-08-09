@@ -65,11 +65,16 @@ fa-icon {
 }
 
 ::ng-deep .nav-tabs a.nav-link.active {
-  border: 1px solid white!important;
+  border: 0!important;
+  outline: 1px solid white!important;
 }
 
 .card {
   background-color: #636fa4 !important;
+}
+
+.col-md-10 {
+  padding-left: 10px!important;
 }
 
 @media (min-width: 760px) {
