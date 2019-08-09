@@ -23,6 +23,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { SettingsComponent } from './settings/settings.component';
+import {SnotifyModule, SnotifyService, ToastDefaults} from 'ng-snotify';
+import {NotifierConfig} from './shared/configurations/snotify.conf';
 
 @NgModule({
   declarations: [
@@ -51,10 +53,13 @@ import { SettingsComponent } from './settings/settings.component';
     ReactiveFormsModule,
     ChartsModule,
     NgbModule,
-    NgSelectModule
+    NgSelectModule,
+    SnotifyModule
   ],
   providers: [
-    ErrorService
+    ErrorService,
+    { provide: 'SnotifyToastConfig', useValue: NotifierConfig},
+    SnotifyService
   ],
   bootstrap: [AppComponent]
 })

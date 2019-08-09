@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
+import {SnotifyService, SnotifyToastConfig} from 'ng-snotify';
 
 @Component({
   selector: 'app-settings',
@@ -21,17 +22,31 @@ export class SettingsComponent {
   isIPConfirmEnabled = true;
   isMultisignatureEnabled = false;
 
-  constructor() { }
+  constructor(
+    private snotifyService: SnotifyService
+  ) { }
 
   toggle2FA() {
     this.is2FAEnabled = !this.is2FAEnabled;
+    this.saveSettings();
   }
 
   toggleIPConfirm() {
     this.isIPConfirmEnabled = !this.isIPConfirmEnabled;
+    this.saveSettings();
   }
 
   toggleMultisignature() {
     this.isMultisignatureEnabled = !this.isMultisignatureEnabled;
+    this.saveSettings();
+  }
+
+  private saveSettings() {
+    this.displaySettingsSavedToast();
+  }
+
+  private displaySettingsSavedToast() {
+    console.log('Saved');
+    this.snotifyService.success('Your settings are saved.');
   }
 }
