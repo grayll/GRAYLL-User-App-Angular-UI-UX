@@ -76,7 +76,6 @@ fa-icon {
 
 .col-md-10 {
   padding-left: 10px!important;
-  padding-right: 10px!important;
 }
 
 @media (min-width: 760px) {
@@ -88,6 +87,12 @@ fa-icon {
 
   .main-wrapper {
     background-color: #414755;
+  }
+}
+
+@media (max-width: 760px) {
+  .col-md-10 {
+    padding-right: 10px!important;
   }
 }
 
