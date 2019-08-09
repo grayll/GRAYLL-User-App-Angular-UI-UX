@@ -8,12 +8,18 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SettingsComponent} from './settings/settings.component';
-import {TwoFactorEnableComponent} from './settings/two-factor-enable/two-factor-enable.component';
+import {GoogleAuthenticatorComponent} from './settings/two-FA-enable/google-authenticator/google-authenticator.component';
+import {ScanQrCodeTwoFaComponent} from './settings/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
 
 const popupRoutes: Routes = [
   {
-    path: 'two-factor-step-one',
-    component: TwoFactorEnableComponent,
+    path: 'google-authenticator',
+    component: GoogleAuthenticatorComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'scan-qr-code',
+    component: ScanQrCodeTwoFaComponent,
     outlet: 'popup'
   }
 ];

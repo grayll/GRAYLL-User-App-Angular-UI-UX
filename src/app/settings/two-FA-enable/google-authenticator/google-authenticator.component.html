@@ -1,7 +1,7 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Install Google Authenticator"></app-popup-header>
   <div class="modal-body">
-    <p>Google Authenticator should be installed on your device to use 2FA</p>
+    <p>Google Authenticator should be installed on your device to use 2FA.</p>
   </div>
   <div class="row mb-4 d-flex align-items-center justify-content-center">
     <div class="col-6 text-center">
@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="col-md-6">
-        <a href="javascript:void(0)" class="btn btn-purple">
+        <a (click)="next()" href="javascript:void(0)" class="btn btn-purple">
           Next
         </a>
       </div>

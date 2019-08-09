@@ -1,0 +1,25 @@
+<ng-template #content let-modal>
+  <app-popup-header popupHeaderTitle="Scan QR Code"></app-popup-header>
+  <div class="modal-body">
+    <p><strong>Scan QR code</strong> with Google Authenticator application.</p>
+  </div>
+  <div class="row mb-4 d-flex align-items-center justify-content-center">
+    <div class="col text-center">
+      <img class="qr-code-img" src="assets/images/qrcode_demo.png" alt="Demo QR Code">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="popupService.close()">
+          Cancel
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="javascript:void(0)" class="btn btn-purple">
+          Next
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>

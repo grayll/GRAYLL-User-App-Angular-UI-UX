@@ -25,8 +25,9 @@ import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SettingsComponent} from './settings/settings.component';
 import {SnotifyModule, SnotifyService} from 'ng-snotify';
 import {NotifierConfig} from './shared/configurations/snotify.conf';
-import { TwoFactorEnableComponent } from './settings/two-factor-enable/two-factor-enable.component';
+import { GoogleAuthenticatorComponent } from './settings/two-FA-enable/google-authenticator/google-authenticator.component';
 import {PopupModule} from './shared/popup/popup.module';
+import { ScanQrCodeTwoFaComponent } from './settings/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {PopupModule} from './shared/popup/popup.module';
     NotFoundComponent,
     ErrorPageComponent,
     SettingsComponent,
-    TwoFactorEnableComponent
+    GoogleAuthenticatorComponent,
+    ScanQrCodeTwoFaComponent
   ],
   imports: [
     BrowserModule,

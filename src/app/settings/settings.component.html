@@ -75,7 +75,7 @@
                   </a>
                 </div>
                 <div *ngIf="!is2FAEnabled" class="col d-flex justify-content-center align-items-center">
-                  <button [routerLink]="[{outlets: {popup: 'two-factor-step-one'}}]" class="btn btn-purple text-center">Enable</button>
+                  <button [routerLink]="[{outlets: {popup: 'google-authenticator'}}]" class="btn btn-purple text-center">Enable</button>
                 </div>
                 <div *ngIf="is2FAEnabled" class="col d-flex justify-content-center align-items-center">
                   <button (click)="disable2FA()" class="btn btn-yellow text-center">Disable</button>

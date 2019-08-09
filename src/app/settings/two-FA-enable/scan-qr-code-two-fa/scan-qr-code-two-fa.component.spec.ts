@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TwoFactorEnableComponent } from './two-factor-enable.component';
+import { ScanQrCodeTwoFaComponent } from './scan-qr-code-two-fa.component';
 
-describe('TwoFactorEnableComponent', () => {
-  let component: TwoFactorEnableComponent;
-  let fixture: ComponentFixture<TwoFactorEnableComponent>;
+describe('ScanQrCodeTwoFaComponent', () => {
+  let component: ScanQrCodeTwoFaComponent;
+  let fixture: ComponentFixture<ScanQrCodeTwoFaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TwoFactorEnableComponent ]
+      declarations: [ ScanQrCodeTwoFaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TwoFactorEnableComponent);
+    fixture = TestBed.createComponent(ScanQrCodeTwoFaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
