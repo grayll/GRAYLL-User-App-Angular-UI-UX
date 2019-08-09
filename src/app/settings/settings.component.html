@@ -1,3 +1,4 @@
+<router-outlet name="popup"></router-outlet>
 <app-navbar></app-navbar>
 
 <div class="main-wrapper">
@@ -74,10 +75,10 @@
                   </a>
                 </div>
                 <div *ngIf="!is2FAEnabled" class="col d-flex justify-content-center align-items-center">
-                  <button (click)="toggle2FA()" class="btn btn-purple text-center">Enable</button>
+                  <button [routerLink]="[{outlets: {popup: 'two-factor-step-one'}}]" class="btn btn-purple text-center">Enable</button>
                 </div>
                 <div *ngIf="is2FAEnabled" class="col d-flex justify-content-center align-items-center">
-                  <button (click)="toggle2FA()" class="btn btn-yellow text-center">Disable</button>
+                  <button (click)="disable2FA()" class="btn btn-yellow text-center">Disable</button>
                 </div>
               </div>
             </div>

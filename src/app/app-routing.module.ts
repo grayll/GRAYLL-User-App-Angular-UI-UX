@@ -8,6 +8,15 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SettingsComponent} from './settings/settings.component';
+import {TwoFactorEnableComponent} from './settings/two-factor-enable/two-factor-enable.component';
+
+const popupRoutes: Routes = [
+  {
+    path: 'two-factor-step-one',
+    component: TwoFactorEnableComponent,
+    outlet: 'popup'
+  }
+];
 
 const routes: Routes = [
   {
@@ -32,7 +41,10 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    children: [
+      ...popupRoutes
+    ]
   },
   {
     path: '',

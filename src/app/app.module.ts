@@ -25,6 +25,8 @@ import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SettingsComponent} from './settings/settings.component';
 import {SnotifyModule, SnotifyService} from 'ng-snotify';
 import {NotifierConfig} from './shared/configurations/snotify.conf';
+import { TwoFactorEnableComponent } from './settings/two-factor-enable/two-factor-enable.component';
+import {PopupModule} from './shared/popup/popup.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import {NotifierConfig} from './shared/configurations/snotify.conf';
     NavbarComponent,
     NotFoundComponent,
     ErrorPageComponent,
-    SettingsComponent
+    SettingsComponent,
+    TwoFactorEnableComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import {NotifierConfig} from './shared/configurations/snotify.conf';
     ChartsModule,
     NgbModule,
     NgSelectModule,
-    SnotifyModule
+    SnotifyModule,
+    PopupModule
   ],
   providers: [
     ErrorService,

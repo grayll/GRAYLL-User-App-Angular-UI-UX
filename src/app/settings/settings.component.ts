@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
-import {SnotifyService, SnotifyToastConfig} from 'ng-snotify';
+import {SnotifyService} from 'ng-snotify';
+import {PopupService} from '../shared/popup/popup.service';
 
 @Component({
   selector: 'app-settings',
@@ -23,11 +24,12 @@ export class SettingsComponent {
   isMultisignatureEnabled = false;
 
   constructor(
-    private snotifyService: SnotifyService
+    private snotifyService: SnotifyService,
+    private popupService: PopupService
   ) { }
 
-  toggle2FA() {
-    this.is2FAEnabled = !this.is2FAEnabled;
+  disable2FA() {
+    this.is2FAEnabled = false;
     this.saveSettings();
   }
 
@@ -46,7 +48,6 @@ export class SettingsComponent {
   }
 
   private displaySettingsSavedToast() {
-    console.log('Saved');
     this.snotifyService.simple('Your settings are saved.');
   }
 }
