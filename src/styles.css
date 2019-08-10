@@ -96,6 +96,10 @@ h6 {
   min-width: 140px!important;
 }
 
+.modal-backdrop.show {
+  opacity: 0.8!important;
+}
+
 .snotify-simple {
   background-color: #e8cbc0!important;
 }

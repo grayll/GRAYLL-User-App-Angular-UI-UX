@@ -1,7 +1,7 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Save your 2FA Backup Key"></app-popup-header>
   <div class="modal-body">
-    <p>Before enabling 2FA, please write down and save your 2FA backup key.</p>
+    <p class="text-purple">Before enabling 2FA, please write down and save your 2FA backup key.</p>
     <div class="row my-4 d-flex align-items-center justify-content-center">
       <div class="col-8 text-center">
         <input [value]="backupCode" type="text" class="form-control">
@@ -10,18 +10,18 @@
         <button (click)="copyCode()" class="btn btn-yellow">Copy Code</button>
       </div>
     </div>
-    <p>If you phone gets lost, stolen or erased, you will need this 16 symbol backup key to restore
+    <p class="text-purple">If your phone gets lost, stolen or erased, you will need this 16 symbol backup key to restore
       access to your GRAYLL account when 2FA is enabled. Otherwise, resetting your 2FA requires opening
       a support ticket and takes at least 7 days to process.</p>
   </div>
   <div class="modal-footer">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col">
         <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="back()">
           Back
         </a>
       </div>
-      <div class="col-md-6">
+      <div class="col">
         <a (click)="next()" href="javascript:void(0)" class="btn btn-purple">
           Next
         </a>

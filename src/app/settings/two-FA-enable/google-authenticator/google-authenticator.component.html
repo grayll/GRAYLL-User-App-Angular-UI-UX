@@ -1,11 +1,11 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Install Google Authenticator"></app-popup-header>
   <div class="modal-body">
-    <p>Google Authenticator should be installed on your device to use 2FA.</p>
+    <p class="text-purple">Google Authenticator should be installed on your device to use 2FA.</p>
   </div>
   <div class="row mb-4 d-flex align-items-center justify-content-center">
     <div class="col-6 text-center">
-      <img class="g-auth-logo" src="assets/images/google-authenticator-logo.png" alt="Google Authenticator Logo">
+      <img class="g-auth-logo" src="assets/images/google-auth-logo.png" alt="Google Authenticator Logo">
     </div>
     <div class="col-6 text-left">
       <div class="row">
@@ -23,12 +23,12 @@
   </div>
   <div class="modal-footer">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col">
         <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="popupService.close()">
           Cancel
         </a>
       </div>
-      <div class="col-md-6">
+      <div class="col">
         <a (click)="next()" href="javascript:void(0)" class="btn btn-purple">
           Next
         </a>

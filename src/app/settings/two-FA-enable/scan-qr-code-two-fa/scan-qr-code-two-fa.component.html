@@ -1,7 +1,7 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Scan QR Code"></app-popup-header>
   <div class="modal-body">
-    <p><strong>Scan QR code</strong> with Google Authenticator application.</p>
+    <p class="text-purple"><strong>Scan QR Code</strong> with Google Authenticator application.</p>
   </div>
   <div class="row mb-4 d-flex align-items-center justify-content-center">
     <div class="col text-center">
@@ -10,12 +10,12 @@
   </div>
   <div class="modal-footer">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col">
         <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="back()">
           Back
         </a>
       </div>
-      <div class="col-md-6">
+      <div class="col">
         <a (click)="next()" href="javascript:void(0)" class="btn btn-purple">
           Next
         </a>
