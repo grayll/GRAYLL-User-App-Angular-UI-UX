@@ -35,7 +35,7 @@ export class SaveBackupKeyTwoFaComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'scan-qr-code'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'scan-qr-code'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));
@@ -45,7 +45,7 @@ export class SaveBackupKeyTwoFaComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'enable-two-fa'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'enable-two-fa'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));

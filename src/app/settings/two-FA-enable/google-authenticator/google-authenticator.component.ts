@@ -24,7 +24,7 @@ export class GoogleAuthenticatorComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'scan-qr-code'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'scan-qr-code'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));

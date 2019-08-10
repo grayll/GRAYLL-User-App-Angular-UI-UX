@@ -28,7 +28,7 @@ export class EnableTwoFaLastStepComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'save-backup-key'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'save-backup-key'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));

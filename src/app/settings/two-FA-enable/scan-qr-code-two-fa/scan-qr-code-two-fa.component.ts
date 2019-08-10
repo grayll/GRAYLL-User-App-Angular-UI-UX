@@ -24,7 +24,7 @@ export class ScanQrCodeTwoFaComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'google-authenticator'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'google-authenticator'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));
@@ -34,7 +34,7 @@ export class ScanQrCodeTwoFaComponent implements OnInit {
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
-        this.router.navigate(['/settings', {outlets: {popup: 'save-backup-key'}}]);
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'save-backup-key'}}]);
       }, 50);
     })
     .catch((error) => console.log(error));
