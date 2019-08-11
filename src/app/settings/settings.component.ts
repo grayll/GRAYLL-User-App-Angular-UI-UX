@@ -25,7 +25,7 @@ export class SettingsComponent implements OnDestroy {
 
   // Settings Attributes
   is2FAEnabled = true;
-  isIPConfirmEnabled = true;
+  isIPConfirmEnabled = false;
   isMultisignatureEnabled = true;
 
   constructor(

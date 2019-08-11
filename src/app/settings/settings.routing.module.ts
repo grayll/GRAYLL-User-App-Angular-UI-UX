@@ -7,6 +7,7 @@ import {SaveBackupKeyTwoFaComponent} from './security/two-FA-enable/save-backup-
 import {EnableTwoFaLastStepComponent} from './security/two-FA-enable/enable-two-fa-last-step/enable-two-fa-last-step.component';
 import {DisableTwoFaComponent} from './security/two-FA-enable/disable-two-fa/disable-two-fa.component';
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
+import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
 
 const popupRoutes: Routes = [
   {
@@ -32,6 +33,11 @@ const popupRoutes: Routes = [
   {
     path: 'disable-two-fa',
     component: DisableTwoFaComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'enable-multisignature',
+    component: EnableMultisignatureComponent,
     outlet: 'popup'
   },
   {
