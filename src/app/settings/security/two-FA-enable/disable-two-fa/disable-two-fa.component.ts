@@ -1,8 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../../shared/popup/popup.service';
-import {Router} from '@angular/router';
+import {PopupService} from '../../../../shared/popup/popup.service';
 import {SnotifyService} from 'ng-snotify';
-import {SettingsService} from '../../settings.service';
+import {SettingsService} from '../../../settings.service';
 
 @Component({
   selector: 'app-disable-two-fa',
@@ -15,7 +14,6 @@ export class DisableTwoFaComponent implements OnInit {
 
   constructor(
     public popupService: PopupService,
-    private router: Router,
     private snotifyService: SnotifyService,
     private settingsService: SettingsService
   ) { }

@@ -26,7 +26,7 @@ export class SettingsComponent implements OnDestroy {
   // Settings Attributes
   is2FAEnabled = true;
   isIPConfirmEnabled = true;
-  isMultisignatureEnabled = false;
+  isMultisignatureEnabled = true;
 
   constructor(
     private snotifyService: SnotifyService,
@@ -34,22 +34,21 @@ export class SettingsComponent implements OnDestroy {
     private settingsService: SettingsService
   ) {
     this.observe2FAEnable();
+    this.observeMultisignatureEnable();
   }
 
   private observe2FAEnable() {
     this.subscriptions.sink = this.settingsService.observeTwoFAEnabled()
-    .subscribe((enable) => {
-      this.is2FAEnabled = enable;
-    });
+    .subscribe((enable) => this.is2FAEnabled = enable);
+  }
+
+  private observeMultisignatureEnable() {
+    this.subscriptions.sink = this.settingsService.observeMultisignatureEnabled()
+      .subscribe((enable) => this.isMultisignatureEnabled = enable);
   }
 
   toggleIPConfirm() {
     this.isIPConfirmEnabled = !this.isIPConfirmEnabled;
-    this.saveSettings();
-  }
-
-  toggleMultisignature() {
-    this.isMultisignatureEnabled = !this.isMultisignatureEnabled;
     this.saveSettings();
   }
 

@@ -1,0 +1,33 @@
+<ng-template #content let-modal>
+  <app-popup-header popupHeaderTitle="Disable Multisignature Transactions"></app-popup-header>
+  <div class="modal-body">
+    <div class="row my-2 d-flex align-items-center justify-content-center">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label class="text-purple" for="account_password"><strong>Account Password</strong></label>
+            <input type="password" class="form-control" id="account_password" placeholder="Your GRAYLL account password">
+          </div>
+          <div class="form-group">
+            <label class="text-purple" for="one-time-password"><strong>One-Time Password (OTP)</strong></label>
+            <input type="password" class="form-control" id="one-time-password" placeholder="OTP from the Google Authenticator">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col">
+        <a href="javascript:void(0)" class="btn btn-outline-secondary" (click)="popupService.close()">
+          Cancel
+        </a>
+      </div>
+      <div class="col">
+        <a (click)="disable()" href="javascript:void(0)" class="btn btn-purple">
+          Disable
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>

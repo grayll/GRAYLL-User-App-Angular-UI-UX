@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../../shared/popup/popup.service';
+import {PopupService} from '../../../../shared/popup/popup.service';
 import {Router} from '@angular/router';
-import {SharedService} from '../../../shared/shared.service';
+import {SharedService} from '../../../../shared/shared.service';
 
 @Component({
   selector: 'app-two-factor-enable',

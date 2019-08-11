@@ -7,6 +7,7 @@ import {Observable, Subject} from 'rxjs';
 export class SettingsService {
 
   private twoFAEnabled: Subject<boolean>;
+  private multisignatureEnabled: Subject<boolean>;
 
   constructor() { }
 
@@ -23,4 +24,19 @@ export class SettingsService {
     }
     this.twoFAEnabled.next(enable);
   }
+
+  public observeMultisignatureEnabled(): Observable<boolean> {
+    if (!this.multisignatureEnabled) {
+      this.multisignatureEnabled = new Subject<boolean>();
+    }
+    return this.multisignatureEnabled.asObservable();
+  }
+
+  public sendMultisignatureEnabledToObserver(enable: boolean): void {
+    if (!this.multisignatureEnabled) {
+      this.multisignatureEnabled = new Subject<boolean>();
+    }
+    this.multisignatureEnabled.next(enable);
+  }
+
 }
