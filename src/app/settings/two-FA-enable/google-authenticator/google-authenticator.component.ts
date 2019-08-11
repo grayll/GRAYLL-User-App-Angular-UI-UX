@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../shared/popup/popup.service';
 import {Router} from '@angular/router';
+import {SharedService} from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-two-factor-enable',
@@ -13,7 +14,8 @@ export class GoogleAuthenticatorComponent implements OnInit {
 
   constructor(
     public popupService: PopupService,
-    private router: Router
+    private router: Router,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
@@ -21,6 +23,7 @@ export class GoogleAuthenticatorComponent implements OnInit {
   }
 
   next() {
+    this.sharedService.showModalOverview();
     this.popupService.close()
     .then(() => {
       setTimeout(() => {

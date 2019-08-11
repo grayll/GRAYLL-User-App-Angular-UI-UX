@@ -3,6 +3,7 @@ import {PopupService} from '../../../shared/popup/popup.service';
 import {Router} from '@angular/router';
 import {SnotifyService} from 'ng-snotify';
 import {ClipboardService} from 'ngx-clipboard';
+import {SharedService} from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-save-backup-key-two-fa',
@@ -18,7 +19,8 @@ export class SaveBackupKeyTwoFaComponent implements OnInit {
     public popupService: PopupService,
     private router: Router,
     private clipboardService: ClipboardService,
-    private snotifyService: SnotifyService
+    private snotifyService: SnotifyService,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class SaveBackupKeyTwoFaComponent implements OnInit {
   }
 
   back() {
+    this.sharedService.showModalOverview();
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
@@ -42,6 +45,7 @@ export class SaveBackupKeyTwoFaComponent implements OnInit {
   }
 
   next() {
+    this.sharedService.showModalOverview();
     this.popupService.close()
     .then(() => {
       setTimeout(() => {

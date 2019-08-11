@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbModal, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+import {SharedService} from '../shared.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,17 @@ export class PopupService {
     ariaLabelledBy: 'modal-basic-title'
   };
 
-  constructor(private modalService: NgbModal,
-              private router: Router) { }
+  constructor(
+    private modalService: NgbModal,
+    private router: Router,
+    private sharedService: SharedService
+  ) { }
 
   public open(modal) {
+    this.sharedService.hideModalOverview();
     setTimeout(() => {
-      this.modalService.open(modal, this.ngbModalOptions).result.then((result) => {
-      }, (reason) => {
-      });
+      this.modalService.open(modal, this.ngbModalOptions).result
+      .then(() => {}, () => {});
     }, 0);
   }
 

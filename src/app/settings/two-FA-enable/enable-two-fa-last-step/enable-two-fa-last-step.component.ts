@@ -3,6 +3,7 @@ import {PopupService} from '../../../shared/popup/popup.service';
 import {Router} from '@angular/router';
 import {SnotifyService} from 'ng-snotify';
 import {SettingsService} from '../../settings.service';
+import {SharedService} from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-enable-two-fa-last-step',
@@ -17,7 +18,8 @@ export class EnableTwoFaLastStepComponent implements OnInit {
     public popupService: PopupService,
     private router: Router,
     private snotifyService: SnotifyService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class EnableTwoFaLastStepComponent implements OnInit {
   }
 
   back() {
+    this.sharedService.showModalOverview();
     this.popupService.close()
     .then(() => {
       setTimeout(() => {
