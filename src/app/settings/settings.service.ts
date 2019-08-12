@@ -8,6 +8,8 @@ export class SettingsService {
 
   private twoFAEnabled: Subject<boolean>;
   private multisignatureEnabled: Subject<boolean>;
+  private walletNotificationsDisabled: Subject<void>;
+  private algoNotificationsDisabled: Subject<void>;
 
   constructor() { }
 
@@ -37,6 +39,34 @@ export class SettingsService {
       this.multisignatureEnabled = new Subject<boolean>();
     }
     this.multisignatureEnabled.next(enable);
+  }
+
+  public observeWalletNotificationsDisabled(): Observable<void> {
+    if (!this.walletNotificationsDisabled) {
+      this.walletNotificationsDisabled = new Subject<void>();
+    }
+    return this.walletNotificationsDisabled.asObservable();
+  }
+
+  public sendWalletNotificationsDisabled(): void {
+    if (!this.walletNotificationsDisabled) {
+      this.walletNotificationsDisabled = new Subject<void>();
+    }
+    this.walletNotificationsDisabled.next();
+  }
+
+  public observeAlgoNotificationsDisabled(): Observable<void> {
+    if (!this.algoNotificationsDisabled) {
+      this.algoNotificationsDisabled = new Subject<void>();
+    }
+    return this.algoNotificationsDisabled.asObservable();
+  }
+
+  public sendAlgoNotificationsDisabled(): void {
+    if (!this.algoNotificationsDisabled) {
+      this.algoNotificationsDisabled = new Subject<void>();
+    }
+    this.algoNotificationsDisabled.next();
   }
 
 }

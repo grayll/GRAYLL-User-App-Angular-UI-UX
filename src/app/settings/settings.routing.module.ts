@@ -8,6 +8,8 @@ import {EnableTwoFaLastStepComponent} from './security/two-FA-enable/enable-two-
 import {DisableTwoFaComponent} from './security/two-FA-enable/disable-two-fa/disable-two-fa.component';
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
 import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
+import {DisableWalletNotificationsSettingsComponent} from './notifications-settings/disable-wallet-notifications-settings/disable-wallet-notifications-settings.component';
+import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-notifications-settings/disable-algo-notifications-settings.component';
 
 const popupRoutes: Routes = [
   {
@@ -43,6 +45,16 @@ const popupRoutes: Routes = [
   {
     path: 'disable-multisignature',
     component: DisableMultisignatureComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'disable-wallet-notifications-settings',
+    component: DisableWalletNotificationsSettingsComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'disable-algo-notifications-settings',
+    component: DisableAlgoNotificationsSettingsComponent,
     outlet: 'popup'
   }
 ];

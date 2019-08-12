@@ -40,7 +40,7 @@
 }
 
 .settings-menu ul li.active {
-  border: 0!important;
+  border: 1px solid #40278C!important;
   color: white!important;
   background-color: #40278C!important;
 }

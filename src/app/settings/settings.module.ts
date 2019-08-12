@@ -16,6 +16,10 @@ import {EnableMultisignatureComponent} from './security/multisignature-transacti
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
 import {SecurityComponent} from './security/security.component';
 import {WalletSettingsComponent} from './wallet-settings/wallet-settings.component';
+import {NotificationsSettingsComponent} from './notifications-settings/notifications-settings.component';
+import {MessagesSettingsComponent} from './messages-settings/messages-settings.component';
+import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-notifications-settings/disable-algo-notifications-settings.component';
+import {DisableWalletNotificationsSettingsComponent} from './notifications-settings/disable-wallet-notifications-settings/disable-wallet-notifications-settings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {WalletSettingsComponent} from './wallet-settings/wallet-settings.compone
     EnableMultisignatureComponent,
     DisableMultisignatureComponent,
     SecurityComponent,
-    WalletSettingsComponent
+    WalletSettingsComponent,
+    NotificationsSettingsComponent,
+    MessagesSettingsComponent,
+    DisableWalletNotificationsSettingsComponent,
+    DisableAlgoNotificationsSettingsComponent
   ],
   imports: [
     CommonModule,
