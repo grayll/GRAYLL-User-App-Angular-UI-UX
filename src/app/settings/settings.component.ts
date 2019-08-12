@@ -52,4 +52,8 @@ export class SettingsComponent {
   ];
 
   constructor() {}
+
+  tabChanged(newTabId: string) {
+    this.activeTabId = newTabId;
+  }
 }
