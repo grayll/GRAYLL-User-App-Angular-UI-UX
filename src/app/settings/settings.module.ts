@@ -20,6 +20,8 @@ import {NotificationsSettingsComponent} from './notifications-settings/notificat
 import {MessagesSettingsComponent} from './messages-settings/messages-settings.component';
 import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-notifications-settings/disable-algo-notifications-settings.component';
 import {DisableWalletNotificationsSettingsComponent} from './notifications-settings/disable-wallet-notifications-settings/disable-wallet-notifications-settings.component';
+import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet-messages/disable-wallet-messages.component';
+import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {DisableWalletNotificationsSettingsComponent} from './notifications-setti
     NotificationsSettingsComponent,
     MessagesSettingsComponent,
     DisableWalletNotificationsSettingsComponent,
-    DisableAlgoNotificationsSettingsComponent
+    DisableAlgoNotificationsSettingsComponent,
+    DisableWalletMessagesComponent,
+    DisableAlgoMessagesComponent
   ],
   imports: [
     CommonModule,

@@ -6,10 +6,17 @@ import {Observable, Subject} from 'rxjs';
 })
 export class SettingsService {
 
+  // Security
   private twoFAEnabled: Subject<boolean>;
   private multisignatureEnabled: Subject<boolean>;
+
+  // Notifications
   private walletNotificationsDisabled: Subject<void>;
   private algoNotificationsDisabled: Subject<void>;
+
+  // Messages
+  private walletMessagesDisabled: Subject<void>;
+  private algoMessagesDisabled: Subject<void>;
 
   constructor() { }
 
@@ -67,6 +74,34 @@ export class SettingsService {
       this.algoNotificationsDisabled = new Subject<void>();
     }
     this.algoNotificationsDisabled.next();
+  }
+
+  public observeWalletMessagesDisabled(): Observable<void> {
+    if (!this.walletMessagesDisabled) {
+      this.walletMessagesDisabled = new Subject<void>();
+    }
+    return this.walletMessagesDisabled.asObservable();
+  }
+
+  public sendWalletMessagesDisabled(): void {
+    if (!this.walletMessagesDisabled) {
+      this.walletMessagesDisabled = new Subject<void>();
+    }
+    this.walletMessagesDisabled.next();
+  }
+
+  public observeAlgoMessagesDisabled(): Observable<void> {
+    if (!this.algoMessagesDisabled) {
+      this.algoMessagesDisabled = new Subject<void>();
+    }
+    return this.algoMessagesDisabled.asObservable();
+  }
+
+  public sendAlgoMessagesDisabled(): void {
+    if (!this.algoMessagesDisabled) {
+      this.algoMessagesDisabled = new Subject<void>();
+    }
+    this.algoMessagesDisabled.next();
   }
 
 }

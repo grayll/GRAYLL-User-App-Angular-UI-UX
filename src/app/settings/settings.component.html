@@ -27,8 +27,9 @@
 
         <div class="col-md-10 mt-3">
           <ng-container [ngSwitch]="activeTabId">
-            <app-wallet-settings *ngSwitchCase="'Wallet'"></app-wallet-settings>
             <app-notifications-settings *ngSwitchCase="'Notifications'"></app-notifications-settings>
+            <app-messages-settings *ngSwitchCase="'Messages'"></app-messages-settings>
+            <app-wallet-settings *ngSwitchCase="'Wallet'"></app-wallet-settings>
             <app-security *ngSwitchDefault></app-security>
           </ng-container>
         </div>

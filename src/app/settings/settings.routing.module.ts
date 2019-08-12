@@ -10,6 +10,8 @@ import {DisableMultisignatureComponent} from './security/multisignature-transact
 import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
 import {DisableWalletNotificationsSettingsComponent} from './notifications-settings/disable-wallet-notifications-settings/disable-wallet-notifications-settings.component';
 import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-notifications-settings/disable-algo-notifications-settings.component';
+import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet-messages/disable-wallet-messages.component';
+import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
 
 const popupRoutes: Routes = [
   {
@@ -55,6 +57,16 @@ const popupRoutes: Routes = [
   {
     path: 'disable-algo-notifications-settings',
     component: DisableAlgoNotificationsSettingsComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'disable-wallet-messages',
+    component: DisableWalletMessagesComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'disable-algo-messages',
+    component: DisableAlgoMessagesComponent,
     outlet: 'popup'
   }
 ];
