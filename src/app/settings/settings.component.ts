@@ -1,19 +1,12 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
 import {faBell, faChartBar, faCommentAlt, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
-import {SnotifyService} from 'ng-snotify';
-import {PopupService} from '../shared/popup/popup.service';
-import {SubSink} from 'subsink';
-import {SettingsService} from './settings.service';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent implements OnDestroy {
-
-  // RxJS graceful unsubscribe
-  private subscriptions = new SubSink();
+export class SettingsComponent {
 
   // Font Awesome Icons
   faUser = faUser;
@@ -23,44 +16,40 @@ export class SettingsComponent implements OnDestroy {
   faWallet = faWallet;
   faLock = faLock;
 
-  // Settings Attributes
-  is2FAEnabled = true;
-  isIPConfirmEnabled = false;
-  isMultisignatureEnabled = true;
+  activeTabId = 'Security';
 
-  constructor(
-    private snotifyService: SnotifyService,
-    private popupService: PopupService,
-    private settingsService: SettingsService
-  ) {
-    this.observe2FAEnable();
-    this.observeMultisignatureEnable();
-  }
+  navigationSettingPages = [
+    {
+      name: 'Profile',
+      icon: this.faUser,
+      routerLink: '/settings/profile/'
+    },
+    {
+      name: 'Notifications',
+      icon: this.faBell,
+      routerLink: '/settings/profile/notifications'
+    },
+    {
+      name: 'Messages',
+      icon: this.faComment,
+      routerLink: '/settings/profile/messages'
+    },
+    {
+      name: 'Data',
+      icon: this.faChartBar,
+      routerLink: '/settings/profile/data'
+    },
+    {
+      name: 'Wallet',
+      icon: this.faWallet,
+      routerLink: '/settings/profile/wallet'
+    },
+    {
+      name: 'Security',
+      icon: this.faLock,
+      routerLink: '/settings/profile/security'
+    }
+  ];
 
-  private observe2FAEnable() {
-    this.subscriptions.sink = this.settingsService.observeTwoFAEnabled()
-    .subscribe((enable) => this.is2FAEnabled = enable);
-  }
-
-  private observeMultisignatureEnable() {
-    this.subscriptions.sink = this.settingsService.observeMultisignatureEnabled()
-      .subscribe((enable) => this.isMultisignatureEnabled = enable);
-  }
-
-  toggleIPConfirm() {
-    this.isIPConfirmEnabled = !this.isIPConfirmEnabled;
-    this.saveSettings();
-  }
-
-  private saveSettings() {
-    this.displaySettingsSavedToast();
-  }
-
-  private displaySettingsSavedToast() {
-    this.snotifyService.simple('Your settings are saved.');
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
-  }
+  constructor() {}
 }

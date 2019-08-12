@@ -14,6 +14,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PopupModule} from '../shared/popup/popup.module';
 import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
+import {SecurityComponent} from './security/security.component';
+import {WalletSettingsComponent} from './wallet-settings/wallet-settings.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {DisableMultisignatureComponent} from './security/multisignature-transact
     EnableTwoFaLastStepComponent,
     DisableTwoFaComponent,
     EnableMultisignatureComponent,
-    DisableMultisignatureComponent
+    DisableMultisignatureComponent,
+    SecurityComponent,
+    WalletSettingsComponent
   ],
   imports: [
     CommonModule,
