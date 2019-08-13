@@ -1,15 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {ClipboardService} from 'ngx-clipboard';
+import {SnotifyService} from 'ng-snotify';
 
 @Component({
   selector: 'app-wallet-settings',
   templateUrl: './wallet-settings.component.html',
   styleUrls: ['./wallet-settings.component.css']
 })
-export class WalletSettingsComponent implements OnInit {
+export class WalletSettingsComponent {
 
-  constructor() { }
+  federationAddress: string;
+  stellarAddress: string;
+  secretKey: string;
+  isSecretKeyRevealed: boolean;
 
-  ngOnInit() {
+  constructor(
+    private clipboardService: ClipboardService,
+    private snotifyService: SnotifyService
+  ) {
+    this.federationAddress = 'grayll3*grayll.io';
+    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.secretKey = '**secret**';
+  }
+
+  copyFederationAddress() {
+    if (this.clipboardService.copyFromContent(this.federationAddress)) {
+      this.snotifyService.simple('Federation address copied.');
+    }
+  }
+
+  copyStellarAddress() {
+    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
+      this.snotifyService.simple('Stellar address copied.');
+    }
+  }
+
+  toggleRevealSecretKey() {
+    this.isSecretKeyRevealed = !this.isSecretKeyRevealed;
   }
 
 }
