@@ -9,7 +9,7 @@
         {{activeTabId}}
       </h4>
 
-      <div class="row d-flex justify-content-center align-items-center d-md-none">
+      <div class="row d-flex justify-content-center align-items-center d-md-none mb-3">
         <div class="col mx-auto">
           <ngb-tabset [activeId]="activeTabId" (tabChange)="tabChanged($event['nextId'])">
 
@@ -25,7 +25,7 @@
 
       <div class="row">
 
-        <div class="col-md-10 mt-3">
+        <div class="col-md-10">
           <ng-container [ngSwitch]="activeTabId">
             <app-notifications-settings *ngSwitchCase="'Notifications'"></app-notifications-settings>
             <app-messages-settings *ngSwitchCase="'Messages'"></app-messages-settings>
@@ -34,7 +34,7 @@
           </ng-container>
         </div>
 
-        <div class="col-md-2 mt-3 bg-pink settings-menu text-center d-none d-md-block">
+        <div class="col-md-2 bg-pink settings-menu text-center d-none d-md-block">
           <ul class="list-group list-group-flush">
             <li class="list-group-item bg-transparent font-16 list-group-item-action"
                 (click)="tabChanged(page.name)"
