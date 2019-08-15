@@ -16,7 +16,7 @@ export class SettingsComponent {
   faWallet = faWallet;
   faLock = faLock;
 
-  activeTabId = 'Security';
+  activeTabId = 'Profile';
 
   navigationSettingPages = [
     {

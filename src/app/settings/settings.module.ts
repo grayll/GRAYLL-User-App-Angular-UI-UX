@@ -24,6 +24,10 @@ import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet
 import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
 import {ProfileSettingsComponent} from './profile-settings/profile-settings.component';
 import {EditFederationAddressComponent} from './edit-federation-address/edit-federation-address.component';
+import {ChangeEmailAddressComponent} from './profile-settings/change-email-address/change-email-address.component';
+import {ChangePasswordComponent} from './profile-settings/change-password/change-password.component';
+import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,10 @@ import {EditFederationAddressComponent} from './edit-federation-address/edit-fed
     DisableWalletMessagesComponent,
     DisableAlgoMessagesComponent,
     ProfileSettingsComponent,
-    EditFederationAddressComponent
+    EditFederationAddressComponent,
+    ChangeEmailAddressComponent,
+    ChangePasswordComponent,
+    ChangePhoneNumberComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +60,9 @@ import {EditFederationAddressComponent} from './edit-federation-address/edit-fed
     ClipboardModule,
     SharedModule,
     NgbModule,
-    PopupModule
+    PopupModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SettingsModule { }

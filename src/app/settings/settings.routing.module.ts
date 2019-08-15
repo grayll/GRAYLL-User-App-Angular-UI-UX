@@ -13,6 +13,9 @@ import {DisableAlgoNotificationsSettingsComponent} from './notifications-setting
 import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet-messages/disable-wallet-messages.component';
 import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
 import {EditFederationAddressComponent} from './edit-federation-address/edit-federation-address.component';
+import {ChangePasswordComponent} from './profile-settings/change-password/change-password.component';
+import {ChangeEmailAddressComponent} from './profile-settings/change-email-address/change-email-address.component';
+import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
 
 const popupRoutes: Routes = [
   {
@@ -74,7 +77,22 @@ const popupRoutes: Routes = [
     path: 'edit-federation-address',
     component: EditFederationAddressComponent,
     outlet: 'popup'
-  }
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'change-email-address',
+    component: ChangeEmailAddressComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'change-phone-number',
+    component: ChangePhoneNumberComponent,
+    outlet: 'popup'
+  },
 ];
 
 const routes: Routes = [

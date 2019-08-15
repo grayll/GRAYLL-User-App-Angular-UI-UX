@@ -61,7 +61,8 @@
               </div>
               <div class="form-group">
                 <label for="email">Account Email</label>
-                <a href="javascript:void(0)" class="float-right text-purple">Change Email</a>
+                <a [routerLink]="[{outlets: {popup: 'change-email-address'}}]"
+                  href="javascript:void(0)" class="float-right text-purple">Change Email</a>
                 <span class="badge float-right text-light bg-yellow mr-1" style="line-height: normal">
                   <fa-icon [icon]="faCheck"></fa-icon>
                   Verified
