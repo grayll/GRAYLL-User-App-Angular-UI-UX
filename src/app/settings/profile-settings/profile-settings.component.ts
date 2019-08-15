@@ -36,4 +36,8 @@ export class ProfileSettingsComponent {
     }
   }
 
+  save() {
+    this.snotifyService.simple('Your changes are saved.');
+  }
+
 }
