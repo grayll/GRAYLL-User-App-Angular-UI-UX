@@ -31,7 +31,7 @@ export class ChangeEmailAddressComponent implements OnInit {
     this.form = this.formBuilder.group({
       currentEmail: [null, [Validators.required, Validators.email]],
       newEmail: [null, [Validators.required, Validators.email]],
-      confirmNewEmail: [null, [Validators.required, Validators.email]],
+      confirmNewEmail: [null, [Validators.required, Validators.email]]
     });
   }
 
@@ -40,8 +40,8 @@ export class ChangeEmailAddressComponent implements OnInit {
   }
 
   private clientValidation(): boolean {
-    if (!this.currentEmail || !this.newEmail || !this.confirmNewEmail) {
-      this.errorService.handleError(null, 'All fields are required');
+    if (!this.currentEmail.value || !this.newEmail.value || !this.confirmNewEmail.value) {
+      this.errorService.handleError(null, 'All fields are required.');
       return false;
     }
     if (!this.errorService.isEmailAddressValid(this.currentEmail.value)) {
@@ -53,7 +53,7 @@ export class ChangeEmailAddressComponent implements OnInit {
       return false;
     }
     if (this.confirmNewEmail.value !== this.newEmail.value) {
-      this.errorService.handleError(null, 'Please correctly confirm your new email address..');
+      this.errorService.handleError(null, 'Please correctly confirm your new email address.');
       return false;
     }
     return true;
