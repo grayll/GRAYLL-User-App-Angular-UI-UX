@@ -83,7 +83,20 @@
                 <label for="phone">Phone Number</label>
                 <a [routerLink]="[{outlets: {popup: 'change-phone-number'}}]"
                   href="javascript:void(0)" class="float-right text-purple">Phone Number</a>
+
+                <!-- Phone number not set -->
                 <input type="text" class="form-control" id="phone" placeholder="Not set">
+
+                <!-- Phone number set -->
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <flag-icon country="ba"></flag-icon>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" id="inlineFormInputGroup" value="+387 63 763 354">
+                </div>
+                <!-- End Phone number set -->
               </div>
               <button type="submit" class="btn btn-purple">Save Changes</button>
             </form>

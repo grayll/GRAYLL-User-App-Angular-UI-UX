@@ -28,6 +28,7 @@ import {ChangeEmailAddressComponent} from './profile-settings/change-email-addre
 import {ChangePasswordComponent} from './profile-settings/change-password/change-password.component';
 import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NgbModule,
     PopupModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxFlagIconCssModule
   ]
 })
 export class SettingsModule { }
