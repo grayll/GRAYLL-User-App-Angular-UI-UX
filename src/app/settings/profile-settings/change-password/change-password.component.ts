@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {PopupService} from '../../../shared/popup/popup.service';
 import {SnotifyService} from 'ng-snotify';
 import {ErrorService} from '../../../shared/error/error.service';

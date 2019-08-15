@@ -29,6 +29,8 @@ import {ChangePasswordComponent} from './profile-settings/change-password/change
 import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
+import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
     EditFederationAddressComponent,
     ChangeEmailAddressComponent,
     ChangePasswordComponent,
-    ChangePhoneNumberComponent
+    ChangePhoneNumberComponent,
+    VerifyPhoneNumberComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +67,8 @@ import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
     PopupModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxFlagIconCssModule
+    NgxFlagIconCssModule,
+    NgSelectModule
   ]
 })
 export class SettingsModule { }
