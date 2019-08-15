@@ -23,6 +23,7 @@ import {DisableWalletNotificationsSettingsComponent} from './notifications-setti
 import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet-messages/disable-wallet-messages.component';
 import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
 import {ProfileSettingsComponent} from './profile-settings/profile-settings.component';
+import {EditFederationAddressComponent} from './edit-federation-address/edit-federation-address.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {ProfileSettingsComponent} from './profile-settings/profile-settings.comp
     DisableAlgoNotificationsSettingsComponent,
     DisableWalletMessagesComponent,
     DisableAlgoMessagesComponent,
-    ProfileSettingsComponent
+    ProfileSettingsComponent,
+    EditFederationAddressComponent
   ],
   imports: [
     CommonModule,

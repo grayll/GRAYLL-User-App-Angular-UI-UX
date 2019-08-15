@@ -12,6 +12,7 @@ import {DisableWalletNotificationsSettingsComponent} from './notifications-setti
 import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-notifications-settings/disable-algo-notifications-settings.component';
 import {DisableWalletMessagesComponent} from './messages-settings/disable-wallet-messages/disable-wallet-messages.component';
 import {DisableAlgoMessagesComponent} from './messages-settings/disable-algo-messages/disable-algo-messages.component';
+import {EditFederationAddressComponent} from './edit-federation-address/edit-federation-address.component';
 
 const popupRoutes: Routes = [
   {
@@ -67,6 +68,11 @@ const popupRoutes: Routes = [
   {
     path: 'disable-algo-messages',
     component: DisableAlgoMessagesComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'edit-federation-address',
+    component: EditFederationAddressComponent,
     outlet: 'popup'
   }
 ];

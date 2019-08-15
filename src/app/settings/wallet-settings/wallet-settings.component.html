@@ -2,8 +2,8 @@
   <div class="card-body bg-gradient text-light">
     <div class="row">
       <div class="col">
-        <p class="lead mb-0">GRAYLL | STELLAR Account</p>
-        <p>Your GRAYLL account holds all your GRX and XLM on the Stellar Network.</p>
+        <p class="lead mb-0">GRAYLL | Stellar Network Account</p>
+        <p>Your GRAYLL account holds all your GRX and XLM (Lumens) on the Stellar Network.</p>
 
         <p class="lead mb-0"><strong>Federation</strong> Address (Payment Alias)</p>
         <p>Your federation address is your payment alias so people can send you assets more easily.</p>
@@ -17,7 +17,8 @@
           </div>
         </div>
 
-        <p class="lead mb-0 text-purple mt-3">Edit Federation Address</p>
+        <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]"
+                class="btn btn-purple mt-3 mb-2">Edit Federation Address</button>
         <p>Changing your GRAYLL alias also changes your network <strong>payment alias</strong>
           (aka your federation address).
           <br>
@@ -59,12 +60,12 @@
         <div class="row">
           <div class="col">
             <p class="lead mb-0">Secret Key</p>
-            <p class="">Your secret key is hidden and must not be shared.
+            <p><span class="font-weight-bolder">Your secret key is hidden and must not be shared. </span>
               Anyone that has your secret key has access to your wallet and the assets.
             </p>
 
             <div class="row" *ngIf="!isSecretKeyRevealed">
-              <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow w-50 mx-auto">Reveal Key</button>
+              <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow w-50 mx-auto">Reveal Secret Key</button>
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
@@ -72,7 +73,7 @@
                 <input disabled [value]="secretKey" type="text" class="form-control">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
-                <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow">Hide Key</button>
+                <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
               </div>
             </div>
           </div>
