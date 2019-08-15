@@ -9,7 +9,7 @@
         <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
         <div class="row">
-          <div class="col-md-7 col-sm-12 text-center pr-0">
+          <div class="col-md-7 col-sm-12 text-center">
             <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
           </div>
           <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
@@ -32,8 +32,8 @@
 </div>
 
 <div class="row">
-  <div class="col-6">
-    <div class="card border-0 mb-0">
+  <div class="col-md-6 col-xs-12">
+    <div class="card border-0">
       <div class="card-body bg-gradient text-light">
         <div class="row">
           <div class="col">
@@ -41,7 +41,7 @@
             <p>The Stellar wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center pr-0">
+              <div class="col-md-7 col-sm-12 text-center">
                 <input disabled [value]="stellarAddress" type="text" class="form-control">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div class="col-6">
+  <div class="col-md-6 col-xs-12">
     <div class="card border-0 mb-0">
       <div class="card-body bg-gradient text-light">
         <div class="row">
@@ -65,11 +65,11 @@
             </p>
 
             <div class="row" *ngIf="!isSecretKeyRevealed">
-              <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow w-50 mx-auto">Reveal Secret Key</button>
+              <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow w-auto mx-auto">Reveal Secret Key</button>
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
-              <div class="col-md-7 col-sm-12 text-center pr-0">
+              <div class="col-md-7 col-sm-12 text-center">
                 <input disabled [value]="secretKey" type="text" class="form-control">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">

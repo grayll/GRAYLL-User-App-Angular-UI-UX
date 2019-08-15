@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
-import {faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faCheck, faExclamation} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile-settings',
@@ -14,6 +14,7 @@ export class ProfileSettingsComponent {
   stellarAddress: string;
 
   faCheck = faCheck;
+  faExclamation = faExclamation;
 
   constructor(
     private clipboardService: ClipboardService,
