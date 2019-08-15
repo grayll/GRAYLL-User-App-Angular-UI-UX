@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../shared/popup/popup.service';
 import {ErrorService} from '../../../shared/error/error.service';
 import {Router} from '@angular/router';
+import {SharedService} from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-change-phone-number',
@@ -31,7 +32,8 @@ export class ChangePhoneNumberComponent implements OnInit {
   constructor(
     private popupService: PopupService,
     private errorService: ErrorService,
-    private router: Router
+    private router: Router,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
@@ -49,7 +51,12 @@ export class ChangePhoneNumberComponent implements OnInit {
 
   verify() {
     if (this.clientValidation()) {
-      this.router.navigate(['/settings/profile', {outlets: {popup: 'verify-phone-number'}}]);
+      this.sharedService.showModalOverview();
+      this.popupService.close().then(() => {
+        setTimeout(() => {
+          this.router.navigate(['/settings/profile', {outlets: {popup: ['verify-phone-number', this.phoneNumber]}}]);
+        }, 50);
+      });
     }
   }
 

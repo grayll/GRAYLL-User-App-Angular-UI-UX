@@ -16,6 +16,7 @@ import {EditFederationAddressComponent} from './edit-federation-address/edit-fed
 import {ChangePasswordComponent} from './profile-settings/change-password/change-password.component';
 import {ChangeEmailAddressComponent} from './profile-settings/change-email-address/change-email-address.component';
 import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
+import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
 
 const popupRoutes: Routes = [
   {
@@ -91,6 +92,11 @@ const popupRoutes: Routes = [
   {
     path: 'change-phone-number',
     component: ChangePhoneNumberComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'verify-phone-number/:phoneNumber',
+    component: VerifyPhoneNumberComponent,
     outlet: 'popup'
   },
 ];
