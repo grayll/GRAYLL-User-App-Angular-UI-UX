@@ -31,6 +31,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
 import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
 import {NgSelectModule} from '@ng-select/ng-select';
+import {DataSettingsComponent} from './data-settings/data-settings.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
     ChangeEmailAddressComponent,
     ChangePasswordComponent,
     ChangePhoneNumberComponent,
-    VerifyPhoneNumberComponent
+    VerifyPhoneNumberComponent,
+    DataSettingsComponent
   ],
   imports: [
     CommonModule,
