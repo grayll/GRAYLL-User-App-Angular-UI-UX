@@ -10,3 +10,13 @@
 .card {
   background-color: #636fa4 !important;
 }
+
+.public-key-card {
+  height: 33.5%!important;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.2rem!important;
+  }
+}
