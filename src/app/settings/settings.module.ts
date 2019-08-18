@@ -10,7 +10,7 @@ import {DisableTwoFaComponent} from './security/two-FA-enable/disable-two-fa/dis
 import {ClipboardModule} from 'ngx-clipboard';
 import {SharedModule} from '../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {PopupModule} from '../shared/popup/popup.module';
 import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';

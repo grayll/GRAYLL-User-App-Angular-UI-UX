@@ -20,7 +20,7 @@ export class WalletSettingsComponent {
   ) {
     this.federationAddress = 'grayll3*grayll.io';
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
-    this.secretKey = '**secret**';
+    this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
   }
 
   copyFederationAddress() {

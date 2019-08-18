@@ -1,8 +1,8 @@
-<div class="card border-0 mb-0">
+<div class="card border-0">
   <div class="card-body bg-gradient text-light">
     <div class="row">
       <div class="col-md-12">
-        <p class="lead mb-0">Report frequency</p>
+        <p class="lead mb-0">Report Frequency</p>
         <p class="mb-0">Send selected report(s):</p>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="reportFrequency" id="daily" value="daily">
@@ -14,35 +14,63 @@
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="reportFrequency" id="monthly" value="monthly">
-          <label class="form-check-label" for="monthly">Monthly)</label>
+          <label class="form-check-label" for="monthly">Monthly</label>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <p class="lead mb-0 mt-3">Report Type</p>
+<div class="card border-0">
+  <div class="card-body bg-gradient text-light">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead mb-0">Report Type</p>
         <p class="mb-1">Select the reports you would like to receive to stay up to date on the performance of your GRAYLL account: </p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" name="walletBalance" id="walletBalance" value="walletBalance">
-          <label class="form-check-label" for="walletBalance">Wallet Balance</label>
+          <label class="checkbox">
+            <input type="checkbox" id="walletBalance"/>
+            <span class="default"></span>
+          </label>
+          <label for="walletBalance" class="form-check-label">Wallet Balance</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" name="accountValue" id="accountValue" value="accountValue">
-          <label class="form-check-label" for="accountValue">Account Value</label>
+          <label class="checkbox">
+            <input type="checkbox" id="accountValue"/>
+            <span class="default"></span>
+          </label>
+          <label for="accountValue" class="form-check-label">Account Value</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" name="accountProfit" id="accountProfit" value="accountProfit">
-          <label class="form-check-label" for="accountProfit">Account Profit</label>
+          <label class="checkbox">
+            <input type="checkbox" id="accountProfit" />
+            <span class="default"></span>
+          </label>
+          <label for="accountProfit" class="form-check-label">Account Profit</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" name="openPosition" id="openPosition" value="openPosition">
-          <label class="form-check-label" for="openPosition">Open Position</label>
+          <label class="checkbox">
+            <input type="checkbox" id="openPosition" />
+            <span class="default"></span>
+          </label>
+          <label for="openPosition" class="form-check-label">Open Position</label>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <p class="lead mb-0 mt-3">Report Time</p>
+<div class="card border-0 mb-0">
+  <div class="card-body bg-gradient text-light">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead mb-0">Report Time</p>
         <div class="row">
           <div class="col-md-5">
             <div class="form-group row">
-              <label for="reportTime" class="col-sm-5 col-form-label">Select Region Time</label>
-              <div class="col-sm-7">
-                <select id="country" name="country" class="form-control">
+              <label class="col-sm-12 col-form-label">Select Region Time</label>
+              <div class="col-sm-12">
+                <select id="country" name="country" class="form-control bg-transparent text-light">
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
@@ -290,13 +318,13 @@
                 </select>
               </div>
             </div>
-            <p>UTC 00:00</p>
+            <p class="text-center">UTC 00:00</p>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-7 text-center">
             <div class="form-group row">
-              <label for="reportTime" class="col-sm-5 col-form-label">Select Report Time</label>
-              <div class="col-sm-7">
-                <input type="text" class="form-control" id="reportTime" placeholder="">
+              <label class="col-sm-12 col-form-label">Select Report Time</label>
+              <div class="row mx-auto">
+                <ngb-timepicker [(ngModel)]="reportTime"></ngb-timepicker>
               </div>
             </div>
             <p>UTC Report Time 00:00</p>
