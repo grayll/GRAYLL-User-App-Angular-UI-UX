@@ -9,7 +9,7 @@
             <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
                 <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
@@ -33,7 +33,7 @@
             <p>The Stellar wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
                 <input disabled [value]="stellarAddress" type="text" class="form-control bg-transparent text-light">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">

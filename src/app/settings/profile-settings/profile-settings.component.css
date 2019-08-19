@@ -19,6 +19,11 @@
   background-color: #40278C!important;
 }
 
+::ng-deep .bs-tooltip-auto[x-placement^=bottom] ::ng-deep .arrow::before,
+::ng-deep .bs-tooltip-bottom ::ng-deep .arrow::before {
+  border-bottom-color: #40278C!important;
+}
+
 @media (max-width: 768px) {
   .card {
     margin-bottom: 1.2rem!important;
