@@ -2,19 +2,25 @@
   <div class="card-body bg-gradient text-light">
     <div class="row">
       <div class="col-md-12">
-        <p class="lead mb-0">Report Frequency</p>
+        <p class="lead">Report Frequency</p>
         <p class="mb-0">Send selected report(s):</p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="reportFrequency" id="daily" value="daily">
-          <label class="form-check-label" for="daily">Daily</label>
+          <label class="cont">Daily
+            <input type="radio" name="frequency">
+            <span class="radio"></span>
+          </label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="reportFrequency" id="weekly" value="weekly">
-          <label class="form-check-label" for="weekly">Weekly</label>
+          <label class="cont">Weekly
+            <input type="radio" name="frequency">
+            <span class="radio"></span>
+          </label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="reportFrequency" id="monthly" value="monthly">
-          <label class="form-check-label" for="monthly">Monthly</label>
+          <label class="cont">Monthly
+            <input type="radio" name="frequency">
+            <span class="radio"></span>
+          </label>
         </div>
       </div>
     </div>
@@ -25,7 +31,7 @@
   <div class="card-body bg-gradient text-light">
     <div class="row">
       <div class="col-md-12">
-        <p class="lead mb-0">Report Type</p>
+        <p class="lead">Report Type</p>
         <p class="mb-1">Select the reports you would like to receive to stay up to date on the performance of your GRAYLL account: </p>
         <div class="form-check form-check-inline">
           <label class="checkbox">
@@ -48,7 +54,7 @@
           </label>
           <label for="accountProfit" class="form-check-label">Account Profit</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline ml-1">
           <label class="checkbox">
             <input type="checkbox" id="openPosition" />
             <span class="default"></span>
@@ -64,13 +70,13 @@
   <div class="card-body bg-gradient text-light">
     <div class="row">
       <div class="col-md-12">
-        <p class="lead mb-0">Report Time</p>
         <div class="row">
           <div class="col-md-5">
+            <p class="lead report-time">Report Time</p>
             <div class="form-group row">
               <label class="col-sm-12 col-form-label">Select Region Time</label>
               <div class="col-sm-12">
-                <select id="country" name="country" class="form-control bg-transparent text-light">
+                <select id="country" name="country" class="form-control bg-gradient text-light">
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
@@ -318,10 +324,10 @@
                 </select>
               </div>
             </div>
-            <p class="text-center">UTC 00:00</p>
+            <p class="text-center region-time">UTC 00:00</p>
           </div>
           <div class="col-md-7 text-center">
-            <div class="form-group row">
+            <div class="form-group mb-0 row">
               <label class="col-sm-12 col-form-label">Select Report Time</label>
               <div class="row mx-auto">
                 <ngb-timepicker [(ngModel)]="reportTime"></ngb-timepicker>
