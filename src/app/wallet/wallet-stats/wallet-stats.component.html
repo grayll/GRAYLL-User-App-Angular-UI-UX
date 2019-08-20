@@ -1,0 +1,206 @@
+<div class="row">
+
+  <!-- First box -->
+  <div class="col-sm-12 col-lg-4">
+    <div class="card border-0 h-100 mb-0">
+      <div class="card-body first-box pb-0">
+
+        <div class="w-auto c-cost">
+          <div class="d-inline-block align-middle text-yellow">
+            <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
+          </div>
+          <div class="d-inline-block text-white align-middle wallet-box">
+            <span class="text-light font-16">GRAYLL Wallet Balance</span>
+            <h5 class="text-light font-weight-bolder">$100,000,000,000.00</h5>
+          </div>
+        </div>
+
+        <div class="row text-light p-2">
+          <div class="col">
+            <i class="text-purple font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 25% GRX</span>
+            <br>
+            <h5 class="font-weight-bolder">
+              $335.68
+            </h5>
+          </div>
+          <div class="col">
+            <i class="text-sky font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 75% XLM</span>
+            <br>
+            <h5 class="m-b-0 font-weight-bolder">
+              $100.00
+            </h5>
+          </div>
+        </div>
+
+        <div class="w-auto c-cost">
+          <div class="d-inline-block align-middle text-purple">
+            <fa-icon [icon]="faChartLine" size="3x" fixedWidth></fa-icon>
+          </div>
+          <div class="d-inline-block text-white align-middle wallet-box">
+            <span class="text-light font-16">GRAYLL System Balance</span>
+            <h5 class="text-light font-weight-bolder">$100,000,000,000.00</h5>
+          </div>
+        </div>
+
+        <div class="row text-light p-2">
+          <div class="col">
+            <i class="text-purple font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 25% GRY</span>
+            <br>
+            <h5 class="font-weight-bolder">
+              $335.68 GRZ
+            </h5>
+          </div>
+          <div class="col">
+            <i class="text-sky font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 75% GRZ</span>
+            <br>
+            <h5 class="m-b-0 font-weight-bolder">
+              $100.00
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second box -->
+  <div class="col-sm-12 col-lg-4">
+    <div class="card border-0 h-100 mb-0">
+      <div class="card-body second-box pb-0">
+
+        <div class="row">
+
+          <div class="col-md-6 mt-1 text-center text-light">
+            GRAYLL GRX
+            <hr>
+            STELLAR XLM
+          </div>
+
+          <div class="col-md-6">
+            <button class="btn btn-block btn-purple">Deposit</button>
+            <button class="btn btn-block btn-purple">Withdraw</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-light">
+          <div class="col-md-12">
+            <p class="lead mb-0">Federation Address (Payment Alias)</p>
+            <p>Your federation address is your payment alias so people can send you assets more easily.</p>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
+                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+              </div>
+            </div>
+
+            <p class="lead mb-0 mt-2">Stellar Address (Public Key)</p>
+            <p>The Stellar wallet address is the public key associated with this account.</p>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
+                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Third box -->
+  <div class="col-sm-12 col-lg-4">
+    <div class="card border-0 h-100 mb-0">
+      <div class="card-body pb-0 third-box">
+        <div class="d-md-flex align-items-center m-b-20">
+          <div class="text-light">
+            <h5 class="card-title">Trade GRX</h5>
+          </div>
+        </div>
+        <ngb-tabset type="pills" class="custom-pills">
+          <ngb-tab title="Buy">
+            <ng-template ngbTabContent>
+              <form class="mt-2">
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="GRX Amount">
+                  </div>
+                </div>
+                <div class="form-group float-right mb-0">
+                  <a class="mr-1" href="javascript:void(0)">Ask</a>
+                  <a class="mr-1" href="javascript:void(0)">Bid</a>
+                  <a class="mr-1" href="javascript:void(0)">Last</a>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="GRX/USD Price">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="text-light input-group-text bg-purple xlm-padding"></span>
+                    </div>
+                    <input [value]="XLMValue" type="text" class="text-light form-control bg-purple" placeholder="XLM Value">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col">
+                    <button type="button" class="text-light btn bg-purple">Buy GRX</button>
+                  </div>
+                  <div class="col">
+                    <a class="text-purple" href="javascript:void(0)" (click)="populateMaxXLM()">
+                      Max available XLM: {{totalXLM}}
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Sell">
+            <ng-template ngbTabContent>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</div>

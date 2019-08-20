@@ -13,12 +13,16 @@ const routes: Routes = [
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
   {
+    path: 'wallet',
+    loadChildren: './wallet/wallet.module#WalletModule'
+  },
+  {
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsModule'
   },
   {
     path: '',
-    redirectTo: '/settings/profile',
+    redirectTo: '/wallet',
     pathMatch: 'full'
   },
   {
