@@ -102,7 +102,7 @@
 
             <div class="row">
               <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
+                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light" style="border-left: 1px solid white">
               </div>
               <div class="col-md-6 col-sm-12">
                 <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -114,7 +114,7 @@
 
             <div class="row">
               <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light">
+                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light" style="border-left: 1px solid white">
               </div>
               <div class="col-md-6 col-sm-12">
                 <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -197,6 +197,59 @@
           </ngb-tab>
           <ngb-tab title="Sell">
             <ng-template ngbTabContent>
+              <form class="mt-2">
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="GRX Amount">
+                  </div>
+                </div>
+                <div class="form-group float-right mb-0">
+                  <a class="mr-1" href="javascript:void(0)">Ask</a>
+                  <a class="mr-1" href="javascript:void(0)">Bid</a>
+                  <a class="mr-1" href="javascript:void(0)">Last</a>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                  <span class="input-group-text bg-purple">
+                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                  </span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="GRX/USD Price">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="text-light input-group-text bg-purple xlm-padding"></span>
+                    </div>
+                    <input [value]="XLMValue" type="text" class="text-light form-control bg-purple" placeholder="XLM Value">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                    </div>
+                    <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col">
+                    <button type="button" class="text-light btn bg-purple">Buy GRX</button>
+                  </div>
+                  <div class="col">
+                    <a class="text-purple" href="javascript:void(0)" (click)="populateMaxXLM()">
+                      Max available XLM: {{totalXLM}}
+                    </a>
+                  </div>
+                </div>
+              </form>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
