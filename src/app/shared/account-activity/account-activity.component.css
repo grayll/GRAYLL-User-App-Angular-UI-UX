@@ -1,0 +1,11 @@
+.purple-link {
+  color: #40278C!important;
+}
+
+.purple-link:hover {
+  color: #CFA256!important;
+}
+
+.cancel:hover {
+  cursor: pointer;
+}

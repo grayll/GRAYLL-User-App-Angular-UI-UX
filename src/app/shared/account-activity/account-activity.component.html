@@ -1,0 +1,251 @@
+<div class="table-responsive bg-light">
+  <div class="row align-items-center justify-content-center p-2">
+    <div class="col">
+      <span class="lead align-middle">Activity</span>
+    </div>
+    <div class="col-xs-12 col-md-5 justify-content-center align-items-center">
+      <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)">
+        <ng-container *ngFor="let tab of activityTabs">
+          <ngb-tab [id]="tab.id" [title]="tab.name"></ngb-tab>
+        </ng-container>
+      </ngb-tabset>
+    </div>
+    <div class="col text-center">
+      <hr class="mt-0 d-sm-none">
+      <a class="purple-link" href="javascript:void(0)">
+        <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
+        Download Activity History
+      </a>
+    </div>
+  </div>
+
+  <hr class="mt-0 mb-0">
+
+  <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'allOrders'">
+    <div class="col-md-2 col-xs">
+      <span class="align-middle font-16 font-weight-bolder">Open Orders (1)</span>
+    </div>
+    <div class="col">
+      <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+      <span class="ml-1 cancel text-danger">Cancel all active orders</span>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive bg-light" *ngIf="selectedTab.id === 'allOrders'">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Asset</th>
+      <th>Issuer</th>
+      <th>Amount</th>
+      <th>Filled</th>
+      <th>Price (XLM)</th>
+      <th>Price (USD)</th>
+      <th>Total Price (XLM)</th>
+      <th>Total Price (USD)</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>
+        <a href="javascript:void(0)" class="purple-link">
+          <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+          <span class="ml-1 cancel text-danger">Cancel</span>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <hr class="mt-0 mb-0">
+</div>
+
+<div class="table-responsive">
+  <div class="row justify-content-center align-items-center p-2 bg-light" *ngIf="selectedTab.id === 'allOrders'">
+    <div class="col-md-2 col-xs">
+      <span class="align-middle font-16 font-weight-bolder">Completed Orders (10)</span><br>
+      <small class="text-danger">Most Recent Completed Orders</small>
+    </div>
+    <div class="col">
+      <a href="javascript:void(0)" class="purple-link text-uppercase">
+        All Completed Orders
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive bg-light" *ngIf="selectedTab.id === 'allOrders'">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Asset</th>
+      <th>Issuer</th>
+      <th>Amount</th>
+      <th>Filled</th>
+      <th>Price (XLM)</th>
+      <th>Price (USD)</th>
+      <th>Total Price (XLM)</th>
+      <th>Total Price (USD)</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>29,999,999,999,999.22222</td>
+      <td>100%</td>
+      <td>9999.44444</td>
+      <td>9999.44444</td>
+      <td>29,999,999,999,999.22222</td>
+      <td>29,999,999,999,999.22222</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+
+    <tr>
+      <td>08/18/2019 04:14</td>
+      <td>BUY</td>
+      <td>GRAYLL</td>
+      <td>grayll.io</td>
+      <td>1.00000</td>
+      <td>0%</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td>0.14500</td>
+      <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
