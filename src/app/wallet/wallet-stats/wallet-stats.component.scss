@@ -115,3 +115,14 @@ input::-webkit-input-placeholder {
 .purple-link:hover {
   color: #CFA256!important;
 }
+
+@media (min-width: 992px) {
+  .card {
+    margin-bottom: 0!important;
+    height: 100%!important;
+  }
+
+  .card-body {
+    padding-bottom: 0!important;
+  }
+}
