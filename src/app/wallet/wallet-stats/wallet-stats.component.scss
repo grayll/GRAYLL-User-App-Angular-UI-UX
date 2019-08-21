@@ -12,7 +12,7 @@
 
 .c-cost {
   padding: 20px 20px;
-  border: 1px solid #40278C !important;
+  border: 1px solid #CFA256 !important;
   border-radius: 5px;
 }
 
@@ -106,4 +106,12 @@ input::-webkit-input-placeholder {
 
 .card {
   background-color: #636fa4 !important;
+}
+
+.purple-link {
+  color: #40278C!important;
+}
+
+.purple-link:hover {
+  color: #CFA256!important;
 }

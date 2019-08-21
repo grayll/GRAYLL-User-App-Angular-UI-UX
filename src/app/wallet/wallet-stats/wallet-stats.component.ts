@@ -14,15 +14,20 @@ export class WalletStatsComponent implements OnInit {
   faCircle = faCircle;
   faChartLine = faChartLine;
   federationAddress: string;
+  stellarAddress: string;
   totalXLM: number;
   XLMValue: string;
+  secretKey: string;
+  isSecretKeyRevealed: boolean;
 
   constructor(
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService
   ) {
     this.federationAddress = 'grayll3*grayll.io';
-    this.totalXLM = 111111111111;
+    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
+    this.totalXLM = 99999999999.99999;
     this.XLMValue = null;
   }
 
@@ -33,6 +38,16 @@ export class WalletStatsComponent implements OnInit {
     if (this.clipboardService.copyFromContent(this.federationAddress)) {
       this.snotifyService.simple('Federation address copied.');
     }
+  }
+
+  copyStellarAddress() {
+    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
+      this.snotifyService.simple('Stellar address copied.');
+    }
+  }
+
+  toggleRevealSecretKey() {
+    this.isSecretKeyRevealed = !this.isSecretKeyRevealed;
   }
 
   populateMaxXLM() {

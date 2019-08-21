@@ -22,8 +22,8 @@
             </i>
             <span class="font-16"> 25% GRX</span>
             <br>
-            <h5 class="font-weight-bolder">
-              $335.68
+            <h5>
+              $1,000,000,000.00
             </h5>
           </div>
           <div class="col">
@@ -32,9 +32,18 @@
             </i>
             <span class="font-16"> 75% XLM</span>
             <br>
-            <h5 class="m-b-0 font-weight-bolder">
-              $100.00
+            <h5>
+              $1,000,000,000.00
             </h5>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <button class="btn btn-purple">Deposit</button>
+          </div>
+          <div class="col-md-6 text-right">
+            <button class="btn btn-purple">Withdraw</button>
           </div>
         </div>
 
@@ -50,23 +59,23 @@
 
         <div class="row text-light p-2">
           <div class="col">
-            <i class="text-purple font-16">
+            <i class="text-yellow font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
             </i>
             <span class="font-16"> 25% GRY</span>
             <br>
-            <h5 class="font-weight-bolder">
-              $335.68 GRZ
+            <h5>
+              $1,000,000,000.00
             </h5>
           </div>
           <div class="col">
-            <i class="text-sky font-16">
+            <i class="text-pink font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
             </i>
             <span class="font-16"> 75% GRZ</span>
             <br>
-            <h5 class="m-b-0 font-weight-bolder">
-              $100.00
+            <h5>
+              $1,000,000,000.00
             </h5>
           </div>
         </div>
@@ -78,22 +87,6 @@
   <div class="col-sm-12 col-lg-4">
     <div class="card border-0 h-100 mb-0">
       <div class="card-body second-box pb-0">
-
-        <div class="row">
-
-          <div class="col-md-6 mt-1 text-center text-light">
-            GRAYLL GRX
-            <hr>
-            STELLAR XLM
-          </div>
-
-          <div class="col-md-6">
-            <button class="btn btn-block btn-purple">Deposit</button>
-            <button class="btn btn-block btn-purple">Withdraw</button>
-          </div>
-        </div>
-
-        <hr>
 
         <div class="row text-light">
           <div class="col-md-12">
@@ -113,11 +106,27 @@
             <p>The Stellar wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-light" style="border-left: 1px solid white">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
+                <input disabled [value]="stellarAddress" type="text" class="form-control bg-transparent text-light" style="border-left: 1px solid white">
               </div>
               <div class="col-md-6 col-sm-12">
-                <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+                <button (click)="copyStellarAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+              </div>
+            </div>
+
+            <p class="lead mb-0 mt-2">Secret Key</p>
+            <p>Your secret key is hidden and must not be shared.</p>
+
+            <div class="row" *ngIf="!isSecretKeyRevealed">
+              <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow w-auto mx-auto">Reveal Secret Key</button>
+            </div>
+
+            <div class="row" *ngIf="isSecretKeyRevealed">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
+                <input disabled [value]="secretKey" type="text" class="form-control">
+              </div>
+              <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
+                <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
               </div>
             </div>
 
@@ -134,7 +143,7 @@
       <div class="card-body pb-0 third-box">
         <div class="d-md-flex align-items-center m-b-20">
           <div class="text-light">
-            <h5 class="card-title">Trade GRX</h5>
+            <p class="lead">Trade GRX</p>
           </div>
         </div>
         <ngb-tabset type="pills" class="custom-pills">
@@ -152,9 +161,9 @@
                   </div>
                 </div>
                 <div class="form-group float-right mb-0">
-                  <a class="mr-1" href="javascript:void(0)">Ask</a>
-                  <a class="mr-1" href="javascript:void(0)">Bid</a>
-                  <a class="mr-1" href="javascript:void(0)">Last</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-lg">
@@ -187,7 +196,7 @@
                     <button type="button" class="text-light btn bg-purple">Buy GRX</button>
                   </div>
                   <div class="col">
-                    <a class="text-purple" href="javascript:void(0)" (click)="populateMaxXLM()">
+                    <a class="purple-link" href="javascript:void(0)" (click)="populateMaxXLM()">
                       Max available XLM: {{totalXLM}}
                     </a>
                   </div>
@@ -209,9 +218,9 @@
                   </div>
                 </div>
                 <div class="form-group float-right mb-0">
-                  <a class="mr-1" href="javascript:void(0)">Ask</a>
-                  <a class="mr-1" href="javascript:void(0)">Bid</a>
-                  <a class="mr-1" href="javascript:void(0)">Last</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                  <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-lg">
@@ -244,7 +253,7 @@
                     <button type="button" class="text-light btn bg-purple">Buy GRX</button>
                   </div>
                   <div class="col">
-                    <a class="text-purple" href="javascript:void(0)" (click)="populateMaxXLM()">
+                    <a class="purple-link" href="javascript:void(0)" (click)="populateMaxXLM()">
                       Max available XLM: {{totalXLM}}
                     </a>
                   </div>
