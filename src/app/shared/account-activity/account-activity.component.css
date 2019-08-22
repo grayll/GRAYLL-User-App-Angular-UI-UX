@@ -9,3 +9,7 @@
 .cancel:hover {
   cursor: pointer;
 }
+
+.pull-top {
+  margin-top: -4px!important;
+}
