@@ -16,7 +16,9 @@ export class WalletStatsComponent implements OnInit {
   federationAddress: string;
   stellarAddress: string;
   totalXLM: number;
+  totalGRX: number;
   XLMValue: string;
+  GRXValue: string;
   secretKey: string;
   isSecretKeyRevealed: boolean;
 
@@ -28,7 +30,9 @@ export class WalletStatsComponent implements OnInit {
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
     this.totalXLM = 99999999999.99999;
+    this.totalGRX = 99999999999.99999;
     this.XLMValue = null;
+    this.GRXValue = null;
   }
 
   ngOnInit() {
@@ -52,6 +56,10 @@ export class WalletStatsComponent implements OnInit {
 
   populateMaxXLM() {
     this.XLMValue = this.totalXLM.toString();
+  }
+
+  populateMaxGRX() {
+    this.GRXValue = this.totalGRX.toString();
   }
 
 }
