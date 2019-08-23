@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {faArrowAltCircleDown, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import {faArrowAltCircleDown, faCopy, faInfoCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import {ClipboardService} from 'ngx-clipboard';
+import {SnotifyService} from 'ng-snotify';
 
 @Component({
   selector: 'app-account-activity',
@@ -9,8 +11,6 @@ import {faArrowAltCircleDown, faTimesCircle} from '@fortawesome/free-solid-svg-i
 export class AccountActivityComponent implements OnInit {
 
   selectedTab: {id: string, name: string};
-  faClose = faTimesCircle;
-  faDownload = faArrowAltCircleDown;
   activityTabs = [
     {
       id: 'allOrders',
@@ -26,7 +26,16 @@ export class AccountActivityComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  // Font Awesome Icons
+  faDownload = faArrowAltCircleDown;
+  faClose = faTimesCircle;
+  faInfo = faInfoCircle;
+  faCopy = faCopy;
+
+  constructor(
+    private clipboardService: ClipboardService,
+    private snotifyService: SnotifyService
+  ) {
     this.selectedTab = this.activityTabs[0];
   }
 
@@ -35,6 +44,12 @@ export class AccountActivityComponent implements OnInit {
 
   onTabChange(id: string) {
     this.selectedTab = this.activityTabs.find((t) => t.id === id);
+  }
+
+  copySuccess(account: string) {
+    if (this.clipboardService.copyFromContent(account)) {
+      this.snotifyService.simple('Copied to clipboard.');
+    }
   }
 
 }

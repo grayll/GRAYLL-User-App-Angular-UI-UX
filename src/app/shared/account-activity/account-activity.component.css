@@ -13,3 +13,7 @@
 .pull-top {
   margin-top: -4px!important;
 }
+
+fa-icon:hover {
+  cursor: pointer!important;
+}
