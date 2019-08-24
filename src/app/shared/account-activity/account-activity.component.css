@@ -4,6 +4,7 @@
 
 .purple-link:hover {
   color: #CFA256!important;
+  cursor: pointer!important;
 }
 
 .cancel:hover {
