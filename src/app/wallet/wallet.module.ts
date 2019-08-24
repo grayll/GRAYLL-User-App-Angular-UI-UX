@@ -6,11 +6,14 @@ import {SharedModule} from '../shared/shared.module';
 import {WalletStatsComponent} from './wallet-stats/wallet-stats.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import {DepositPopupComponent} from './wallet-stats/deposit-popup/deposit-popup.component';
+import {PopupModule} from '../shared/popup/popup.module';
 
 @NgModule({
   declarations: [
     WalletComponent,
     WalletStatsComponent,
+    DepositPopupComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     FontAwesomeModule,
     NgbTooltipModule,
-    NgbTabsetModule
+    NgbTabsetModule,
+    PopupModule
   ]
 })
 export class WalletModule { }

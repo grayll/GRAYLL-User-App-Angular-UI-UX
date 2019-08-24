@@ -1,0 +1,9 @@
+.qr-code-img {
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+.btn.footer-buttons {
+  min-width: 186px!important;
+}

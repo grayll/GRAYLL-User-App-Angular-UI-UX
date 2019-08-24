@@ -40,7 +40,8 @@
 
         <div class="row mb-5 mt-3">
           <div class="col-6">
-            <button class="btn btn-purple">Deposit</button>
+            <button [routerLink]="[{outlets: {popup: 'deposit'}}]"
+              class="btn btn-purple">Deposit</button>
           </div>
           <div class="col-6 text-right">
             <button class="btn btn-purple">Withdraw</button>
