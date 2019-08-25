@@ -44,7 +44,8 @@
               class="btn btn-purple">Deposit</button>
           </div>
           <div class="col-6 text-right">
-            <button class="btn btn-purple">Withdraw</button>
+            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]"
+              class="btn btn-purple">Withdraw</button>
           </div>
         </div>
 
@@ -127,10 +128,10 @@
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
                 <input disabled [value]="secretKey" type="text" class="form-control bg-transparent text-light" style="border-left: 1px solid white">
               </div>
-              <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
+              <div class="col-md-6 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="toggleRevealSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
               </div>
             </div>
