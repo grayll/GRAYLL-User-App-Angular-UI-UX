@@ -37,6 +37,10 @@ input::-webkit-input-placeholder {
   color: #CFA256!important;
 }
 
+.fixed-input-height {
+  height: 50px!important;
+}
+
 @keyframes check {0% {height: 0;width: 0;}
   25% {height: 0;width: 5px;}
   50% {height: 15px;width: 5px;}

@@ -62,4 +62,8 @@ export class WalletStatsComponent implements OnInit {
     this.GRXValue = this.totalGRX.toString();
   }
 
+  goToTop() {
+    window.scroll(0, 0);
+  }
+
 }

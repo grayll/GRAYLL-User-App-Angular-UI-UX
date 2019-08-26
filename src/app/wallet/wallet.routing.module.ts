@@ -5,6 +5,7 @@ import {DepositPopupComponent} from './wallet-stats/deposit-popup/deposit-popup.
 import {WithdrawPopupComponent} from './wallet-stats/withdraw/withdraw-popup/withdraw-popup.component';
 import {ReviewWithdrawPopupComponent} from './wallet-stats/withdraw/review-withdraw-popup/review-withdraw-popup.component';
 import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-success-popup/withdraw-success-popup.component';
+import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -25,6 +26,11 @@ const popupRoutes: Routes = [
   {
     path: 'withdraw-success',
     component: WithdrawSuccessPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'withdraw-error',
+    component: WithdrawErrorPopupComponent,
     outlet: 'popup'
   }
 ];

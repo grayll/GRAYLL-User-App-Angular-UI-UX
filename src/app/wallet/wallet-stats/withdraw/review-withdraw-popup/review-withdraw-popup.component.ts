@@ -43,4 +43,15 @@ export class ReviewWithdrawPopupComponent implements OnInit {
     })
     .catch((error) => console.log(error));
   }
+
+  error() {
+    this.sharedService.showModalOverview();
+    this.popupService.close()
+    .then(() => {
+      setTimeout(() => {
+        this.router.navigate(['/wallet/overview', {outlets: {popup: 'withdraw-error'}}]);
+      }, 50);
+    })
+    .catch((error) => console.log(error));
+  }
 }

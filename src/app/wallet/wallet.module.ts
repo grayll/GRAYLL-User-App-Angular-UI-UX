@@ -12,6 +12,9 @@ import {WithdrawPopupComponent} from './wallet-stats/withdraw/withdraw-popup/wit
 import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-success-popup/withdraw-success-popup.component';
 import {ReviewWithdrawPopupComponent} from './wallet-stats/withdraw/review-withdraw-popup/review-withdraw-popup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     DepositPopupComponent,
     WithdrawPopupComponent,
     WithdrawSuccessPopupComponent,
-    ReviewWithdrawPopupComponent
+    ReviewWithdrawPopupComponent,
+    WithdrawErrorPopupComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NgbTabsetModule,
     PopupModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule,
+    NgxFlagIconCssModule
   ]
 })
 export class WalletModule { }
