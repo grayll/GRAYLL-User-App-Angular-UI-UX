@@ -4,6 +4,7 @@ import {faEnvelope, faMobile, faWallet} from '@fortawesome/free-solid-svg-icons'
 import {SharedService} from '../../../../shared/shared.service';
 import {Router} from '@angular/router';
 import {ErrorService} from '../../../../shared/error/error.service';
+import {WithdrawModel} from '../withdraw.model';
 
 @Component({
   selector: 'app-withdraw-popup',
@@ -13,6 +14,7 @@ import {ErrorService} from '../../../../shared/error/error.service';
 export class WithdrawPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
+  withdrawModel: WithdrawModel;
   totalXLM: number;
   totalGRX: number;
   XLMValue: string;
@@ -24,6 +26,7 @@ export class WithdrawPopupComponent implements OnInit {
   selectedTabId: string;
   selectedCountryCode: string;
   phoneNumber: string;
+  emailAddress: string;
 
   // Font Awesome Icons
   faWallet = faWallet;
@@ -56,6 +59,7 @@ export class WithdrawPopupComponent implements OnInit {
     this.memoMessage = null;
     this.GRXValue = null;
     this.recipient = null;
+    this.withdrawModel = new WithdrawModel();
   }
 
   ngOnInit() {
@@ -81,9 +85,16 @@ export class WithdrawPopupComponent implements OnInit {
     if (!this.clientValidation()) {return; }
     if ((this.noMemoMessageSelected && this.selectedTabId === 'wallet') || (this.selectedTabId !== 'wallet')) {
       this.sharedService.showModalOverview();
+      // Populate Withdraw Model
+      this.withdrawModel.address = this.recipient;
+      this.withdrawModel.emailAddress = this.emailAddress;
+      this.withdrawModel.grxAmount = +this.GRXValue;
+      this.withdrawModel.memoMessage = this.memoMessage;
+      this.withdrawModel.xlmAmount = +this.XLMValue;
       this.popupService.close()
       .then(() => {
         setTimeout(() => {
+          this.sharedService.setWithdrawModel(this.withdrawModel);
           this.router.navigate(['/wallet/overview', {outlets: {popup: 'review-withdraw'}}]);
         }, 50);
       })
@@ -106,8 +117,16 @@ export class WithdrawPopupComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter a valid amount.');
       return false;
     }
+    if (this.XLMValue && this.GRXValue) {
+      this.errorService.handleError(null, 'Please enter only GRX or only XLM value.');
+      return false;
+    }
     if (this.selectedTabId === 'phone' && !this.phoneNumber || (this.phoneNumber && !this.isValidPhoneNumber(this.phoneNumber))) {
       this.errorService.handleError(null, 'Please a valid phone number.');
+      return false;
+    }
+    if (this.selectedTabId === 'email' && !this.emailAddress) {
+      this.errorService.handleError(null, 'Please enter an email address.');
       return false;
     }
     return true;

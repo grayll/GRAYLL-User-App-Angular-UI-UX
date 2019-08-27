@@ -1,16 +1,20 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../../shared/popup/popup.service';
 import {SharedService} from '../../../../shared/shared.service';
 import {Router} from '@angular/router';
+import {SubSink} from 'subsink';
+import {WithdrawModel} from '../withdraw.model';
 
 @Component({
   selector: 'app-review-withdraw-popup',
   templateUrl: './review-withdraw-popup.component.html',
   styleUrls: ['./review-withdraw-popup.component.css']
 })
-export class ReviewWithdrawPopupComponent implements OnInit {
+export class ReviewWithdrawPopupComponent implements OnInit, OnDestroy {
 
   @ViewChild('content') modal;
+  private subscriptions = new SubSink();
+  private withdrawModel: WithdrawModel;
 
   constructor(
     private popupService: PopupService,
@@ -20,6 +24,7 @@ export class ReviewWithdrawPopupComponent implements OnInit {
 
   ngOnInit() {
     this.popupService.open(this.modal);
+    this.withdrawModel = this.sharedService.getWithdrawModel();
   }
 
   back() {
@@ -53,5 +58,9 @@ export class ReviewWithdrawPopupComponent implements OnInit {
       }, 50);
     })
     .catch((error) => console.log(error));
+  }
+  
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 }

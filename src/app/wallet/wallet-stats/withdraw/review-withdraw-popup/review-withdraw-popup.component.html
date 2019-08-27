@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Review Withdrawal"></app-popup-header>
-  <div class="modal-body">
+  <div class="modal-body" *ngIf="withdrawModel">
     <div class="row">
       <div class="col-md-12">
         <p class="text-purple">
@@ -15,7 +15,9 @@
             Send to Address
           </span>
           <br>
-          DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD
+          <span *ngIf="withdrawModel.address">{{withdrawModel.address}}</span>
+          <span *ngIf="withdrawModel.emailAddress">{{withdrawModel.emailAddress}}</span>
+          <span *ngIf="withdrawModel.phoneNumber">{{withdrawModel.phoneNumber}}</span>
         </p>
       </div>
     </div>
@@ -27,7 +29,24 @@
             Amount
           </span>
           <br>
-          50,000 GRX
+          <span *ngIf="withdrawModel.xlmAmount">
+            {{withdrawModel.xlmAmount}} XLM
+          </span>
+          <span *ngIf="withdrawModel.grxAmount">
+            {{withdrawModel.grxAmount}} GRX
+          </span>
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="row" *ngIf="withdrawModel.memoMessage">
+      <div class="col-md-12">
+        <p class="mb-0 text-purple">
+          <span class="font-weight-bolder">
+            Memo Message
+          </span>
+          <br>
+          {{withdrawModel.memoMessage}}
         </p>
       </div>
     </div>
@@ -42,11 +61,6 @@
       <div class="col">
         <a href="javascript:void(0)" class="btn btn-purple" (click)="next()">
           Send
-        </a>
-      </div>
-      <div class="col">
-        <a href="javascript:void(0)" class="btn btn-purple" (click)="error()">
-          Error
         </a>
       </div>
     </div>
