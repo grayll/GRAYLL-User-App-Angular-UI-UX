@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../../shared/popup/popup.service';
 import {SharedService} from '../../../../shared/shared.service';
 import {Router} from '@angular/router';
+import {WithdrawModel} from '../withdraw.model';
 
 @Component({
   selector: 'app-withdraw-error-popup',
@@ -11,6 +12,7 @@ import {Router} from '@angular/router';
 export class WithdrawErrorPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
+  withdrawModel: WithdrawModel;
 
   constructor(
     private popupService: PopupService,
@@ -20,6 +22,7 @@ export class WithdrawErrorPopupComponent implements OnInit {
 
   ngOnInit() {
     this.popupService.open(this.modal);
+    this.withdrawModel = this.sharedService.getWithdrawModel();
   }
 
   review() {

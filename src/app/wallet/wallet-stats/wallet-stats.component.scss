@@ -51,11 +51,6 @@ input {
   line-height: calc(1.5em + 1rem + 2px)!important;
 }
 
-input[type=text]:focus {
-  color: black!important;
-  background-color: #fff!important;
-}
-
 input,
 input::-webkit-input-placeholder {
   font-size: 0.9rem;

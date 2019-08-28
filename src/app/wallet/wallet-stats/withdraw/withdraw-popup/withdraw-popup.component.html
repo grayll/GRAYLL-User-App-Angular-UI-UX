@@ -122,14 +122,17 @@
             <ng-template ngbTabContent>
               <div class="alert alert-warning text-purple" style="margin-top: 1rem">
                 The Receiver will get a text message explaining how to claim the payment.
-                <a href="javascript:void(0)" class="purple-link">Read more</a>
+                <a href="javascript:void(0)" class="purple-link">Read More</a>
               </div>
               <div class="form-group">
                 <label class="text-purple" for="phoneNumber">Phone number</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text fixed-input-height">
-                      <ng-select [items]="countryCodes" [(ngModel)]="selectedCountryCode" [clearable]="false">
+                      <ng-select [searchable]="true"
+                                 [items]="countryCodes"
+                                 [(ngModel)]="selectedCountryCode"
+                                 [clearable]="false">
                         <ng-template ng-label-tmp let-item="item">
                     <span>
                       <flag-icon [country]="item"></flag-icon>
@@ -146,7 +149,7 @@
                   <input [(ngModel)]="phoneNumber" type="text" class="form-control fixed-input-height" id="phoneNumber">
                 </div>
               </div>
-              <p class="mt-1 text-purple">Sending to the following address: {{phoneNumber}}*lobstr.co.</p>
+              <p class="mt-1 text-purple">Sending to the following address: {{phoneNumber}}*grayll.io</p>
               <ngb-tabset type="pills">
                 <ngb-tab>
                   <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
@@ -221,12 +224,12 @@
             <ng-template ngbTabContent>
               <div class="alert alert-warning text-purple" style="margin-top: 1rem">
                 The Receiver will get am email explaining how to claim the payment.
-                <a href="javascript:void(0)" class="purple-link">Read more</a>
+                <a href="javascript:void(0)" class="purple-link">Read More</a>
               </div>
               <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Email Address</p>
               <input type="text" class="form-control bg-gradient text-light" style="height: 46px"
                      placeholder="Email Address" [(ngModel)]="emailAddress">
-              <p class="mt-1 text-purple">Sending to the following address: {{emailAddress}}*lobstr.co.</p>
+              <p class="mt-1 text-purple">Sending to the following address: {{emailAddress}}*grayll.io</p>
               <ngb-tabset type="pills">
                 <ngb-tab>
                   <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>

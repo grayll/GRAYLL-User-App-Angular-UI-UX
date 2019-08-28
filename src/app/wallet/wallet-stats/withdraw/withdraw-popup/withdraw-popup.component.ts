@@ -44,7 +44,7 @@ export class WithdrawPopupComponent implements OnInit {
     'nz', 'ni', 'ne', 'ng', 'nu', 'nf', 'mp', 'no', 'om', 'pk', 'pw', 'pa', 'pg', 'py', 'pe', 'ph', 'pn', 'pl', 'pt', 'pr', 'qa', 're',
     'ro', 'ru', 'ru', 'rw', 'kn', 'lc', 'pm', 'vc', 'vc', 'vc', 'ws', 'sm', 'st', 'sa', 'sn', 'rs', 'sc', 'sl', 'sg', 'sk', 'si', 'sb',
     'so', 'za', 'gs', 'es', 'lk', 'sd', 'sr', 'sj', 'sz', 'se', 'ch', 'sy', 'tw', 'tj', 'th', 'tl', 'tg', 'tk', 'to', 'tt', 'tt', 'tn',
-    'tr', 'tm', 'tc', 'tv', 'ug', 'ua', 'ae', 'gb', 'us', 'um', 'uy', 'uz', 'vu', 've', 'vn', 'vn', 'us', 'wf', 'eh', 'ye', 'zm', 'zw'
+    'tr', 'tm', 'tc', 'tv', 'ug', 'ua', 'ae', 'gb', 'us', 'um', 'uy', 'uz', 'vu', 've', 'vn', 'vn', 'wf', 'eh', 'ye', 'zm', 'zw'
   ];
 
   constructor(
@@ -90,6 +90,7 @@ export class WithdrawPopupComponent implements OnInit {
       this.withdrawModel.emailAddress = this.emailAddress;
       this.withdrawModel.grxAmount = +this.GRXValue;
       this.withdrawModel.memoMessage = this.memoMessage;
+      this.withdrawModel.phoneNumber = this.phoneNumber;
       this.withdrawModel.xlmAmount = +this.XLMValue;
       this.popupService.close()
       .then(() => {
