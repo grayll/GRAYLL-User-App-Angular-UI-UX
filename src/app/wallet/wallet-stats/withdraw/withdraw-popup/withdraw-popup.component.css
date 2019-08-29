@@ -2,11 +2,6 @@
   justify-content: center!important;
 }
 
-input,
-input::-webkit-input-placeholder {
-  font-size: 0.9rem;
-}
-
 ::placeholder {
   color: white;
   opacity: 1; /* Firefox */
@@ -35,10 +30,6 @@ input::-webkit-input-placeholder {
 
 .purple-link:hover {
   color: #CFA256!important;
-}
-
-.fixed-input-height {
-  height: 50px!important;
 }
 
 @keyframes check {0% {height: 0;width: 0;}

@@ -20,13 +20,13 @@ export class WithdrawPopupComponent implements OnInit {
   XLMValue: string;
   GRXValue: string;
   memoMessage: string;
-  noMemoMessageSelected: boolean;
-  showMemoWarning: boolean;
   recipient: string;
   selectedTabId: string;
   selectedCountryCode: string;
   phoneNumber: string;
   emailAddress: string;
+  noMemoMessageSelected: boolean;
+  isMemoMessageSelected: boolean;
 
   // Font Awesome Icons
   faWallet = faWallet;
@@ -60,6 +60,7 @@ export class WithdrawPopupComponent implements OnInit {
     this.GRXValue = null;
     this.recipient = null;
     this.withdrawModel = new WithdrawModel();
+    this.isMemoMessageSelected = true;
   }
 
   ngOnInit() {
@@ -82,26 +83,34 @@ export class WithdrawPopupComponent implements OnInit {
 
   next() {
     this.errorService.clearError();
+    this.showOrHideUIElements();
     if (!this.clientValidation()) {return; }
-    if ((this.noMemoMessageSelected && this.selectedTabId === 'wallet') || (this.selectedTabId !== 'wallet')) {
-      this.sharedService.showModalOverview();
-      // Populate Withdraw Model
-      this.withdrawModel.address = this.recipient;
-      this.withdrawModel.emailAddress = this.emailAddress;
-      this.withdrawModel.grxAmount = +this.GRXValue;
-      this.withdrawModel.memoMessage = this.memoMessage;
-      this.withdrawModel.phoneNumber = this.phoneNumber;
-      this.withdrawModel.xlmAmount = +this.XLMValue;
-      this.popupService.close()
-      .then(() => {
-        setTimeout(() => {
-          this.sharedService.setWithdrawModel(this.withdrawModel);
-          this.router.navigate(['/wallet/overview', {outlets: {popup: 'review-withdraw'}}]);
-        }, 50);
-      })
-      .catch((error) => console.log(error));
-    } else {
-      this.showMemoWarning = true;
+    if ((this.memoMessage && this.selectedTabId === 'wallet') ||
+      (this.noMemoMessageSelected) ||
+      (this.selectedTabId !== 'wallet')) {
+        this.sharedService.showModalOverview();
+        // Populate Withdraw Model
+        this.withdrawModel.address = this.recipient;
+        this.withdrawModel.emailAddress = this.emailAddress;
+        this.withdrawModel.grxAmount = +this.GRXValue;
+        this.withdrawModel.memoMessage = this.memoMessage;
+        this.withdrawModel.phoneNumber = this.phoneNumber;
+        this.withdrawModel.xlmAmount = +this.XLMValue;
+        this.popupService.close()
+        .then(() => {
+          setTimeout(() => {
+            this.sharedService.setWithdrawModel(this.withdrawModel);
+            this.router.navigate(['/wallet/overview', {outlets: {popup: 'review-withdraw'}}]);
+          }, 50);
+        })
+        .catch((error) => console.log(error));
+    }
+  }
+
+  private showOrHideUIElements() {
+    this.isMemoMessageSelected = (this.memoMessage !== null) && (this.memoMessage !== '');
+    if (this.noMemoMessageSelected) {
+      this.memoMessage = null;
     }
   }
 
@@ -110,8 +119,20 @@ export class WithdrawPopupComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter a valid Stellar Wallet or Federation Address.');
       return false;
     }
+    if (this.selectedTabId === 'phone' && !this.phoneNumber || (this.phoneNumber && !this.isValidPhoneNumber(this.phoneNumber))) {
+      this.errorService.handleError(null, 'Please a valid phone number.');
+      return false;
+    }
+    if (this.selectedTabId === 'email' && !this.emailAddress) {
+      this.errorService.handleError(null, 'Please enter an email address.');
+      return false;
+    }
     if ((!this.GRXValue && !this.XLMValue) || (this.GRXValue && !this.isValidNumber(this.GRXValue))) {
       this.errorService.handleError(null, 'Please enter a valid amount.');
+      return false;
+    }
+    if (this.selectedTabId !== 'wallet' && !this.memoMessage) {
+      this.errorService.handleError(null, 'Please enter a memo message.');
       return false;
     }
     if ((!this.XLMValue && !this.GRXValue) || (this.XLMValue && !this.isValidNumber(this.XLMValue))) {
@@ -120,14 +141,6 @@ export class WithdrawPopupComponent implements OnInit {
     }
     if (this.XLMValue && this.GRXValue) {
       this.errorService.handleError(null, 'Please enter only GRX or only XLM value.');
-      return false;
-    }
-    if (this.selectedTabId === 'phone' && !this.phoneNumber || (this.phoneNumber && !this.isValidPhoneNumber(this.phoneNumber))) {
-      this.errorService.handleError(null, 'Please a valid phone number.');
-      return false;
-    }
-    if (this.selectedTabId === 'email' && !this.emailAddress) {
-      this.errorService.handleError(null, 'Please enter an email address.');
       return false;
     }
     return true;

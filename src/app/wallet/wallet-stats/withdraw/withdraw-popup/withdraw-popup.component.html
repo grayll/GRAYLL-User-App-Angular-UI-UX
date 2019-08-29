@@ -30,26 +30,26 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="text-light form-control bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control bg-purple" placeholder="GRX Amount">
                       </div>
-                      <span class="text-purple">*1.5 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
                         Max Available GRX: {{totalGRX}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -58,26 +58,26 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" class="text-light form-control bg-purple" placeholder="XLM Amount">
+                        <input type="text" [(ngModel)]="XLMValue" class="fixed-input-height text-light form-control bg-purple" placeholder="XLM Amount">
                       </div>
-                      <span class="text-purple">*0 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
                         Max Available XLM: {{totalXLM}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -86,7 +86,7 @@
               <div class="form-group" *ngIf="!noMemoMessageSelected">
                 <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Memo Message</p>
                 <input type="text" class="form-control bg-gradient text-light" style="height: 46px"
-                       placeholder="Memo Message" [value]="memoMessage">
+                       placeholder="Memo Message" [(ngModel)]="memoMessage">
                 <span class="text-purple">28 bytes left</span>
               </div>
               <div class="form-group mb-0">
@@ -107,7 +107,7 @@
                   In cases when a memo message is required by the receiving party, failure to include the memo with your transaction may result in your funds being lost forever and GRAYLL won't be able to help.
                 </p>
               </div>
-              <div class="alert alert-warning" *ngIf="showMemoWarning && !noMemoMessageSelected">
+              <div class="alert alert-warning" *ngIf="!isMemoMessageSelected && !noMemoMessageSelected">
                 <p class="mb-0 text-purple">
                   Please check the box above if you want to proceed.
                 </p>
@@ -155,26 +155,26 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="text-light form-control bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control bg-purple" placeholder="GRX Amount">
                       </div>
-                      <span class="text-purple">*1.5 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
                         Max Available GRX: {{totalGRX}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -183,7 +183,7 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
@@ -191,18 +191,18 @@
                         </div>
                         <input type="text" [(ngModel)]="XLMValue" class="text-light form-control bg-purple" placeholder="XLM Amount">
                       </div>
-                      <span class="text-purple">*0 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
                         Max Available XLM: {{totalXLM}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -235,26 +235,26 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="text-light form-control bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control bg-purple" placeholder="GRX Amount">
                       </div>
-                      <span class="text-purple">*1.5 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
                         Max Available GRX: {{totalGRX}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -263,7 +263,7 @@
                   <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
@@ -271,18 +271,18 @@
                         </div>
                         <input type="text" [(ngModel)]="XLMValue" class="text-light form-control bg-purple" placeholder="XLM Amount">
                       </div>
-                      <span class="text-purple">*0 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
                         Max Available XLM: {{totalXLM}}
                       </a>
                     </div>
                     <div class="form-group">
-                      <div class="input-group input-group-lg">
+                      <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="text-light form-control bg-purple" placeholder="USD Value">
+                        <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>

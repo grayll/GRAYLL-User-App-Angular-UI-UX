@@ -17,7 +17,7 @@ export class DepositPopupComponent implements OnInit {
   constructor(
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService,
-    private popupService: PopupService
+    public popupService: PopupService
   ) {
     this.federationAddress = 'grayll3*grayll.io';
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
