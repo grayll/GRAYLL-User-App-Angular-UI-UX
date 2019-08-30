@@ -8,13 +8,18 @@ import {AccountActivityComponent} from './account-activity/account-activity.comp
 import {RouterModule} from '@angular/router';
 import {CancelActiveOrdersPopupComponent} from './account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
 import {PopupModule} from './popup/popup.module';
+import {MainChartComponent} from '../dashboard/main-chart/main-chart.component';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {ChartsModule} from 'ng2-charts';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     ErrorComponent,
     NavbarComponent,
     AccountActivityComponent,
-    CancelActiveOrdersPopupComponent
+    CancelActiveOrdersPopupComponent,
+    MainChartComponent
   ],
   imports: [
     CommonModule,
@@ -22,12 +27,16 @@ import {PopupModule} from './popup/popup.module';
     FontAwesomeModule,
     NgbTabsetModule,
     RouterModule,
-    PopupModule
+    PopupModule,
+    NgSelectModule,
+    ChartsModule,
+    FormsModule
   ],
   exports: [
     ErrorComponent,
     NavbarComponent,
-    AccountActivityComponent
+    AccountActivityComponent,
+    MainChartComponent
   ]
 })
 export class SharedModule { }

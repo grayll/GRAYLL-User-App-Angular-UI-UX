@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
   {
+    path: 'system',
+    loadChildren: './system/system.module#SystemModule'
+  },
+  {
     path: 'wallet',
     loadChildren: './wallet/wallet.module#WalletModule'
   },
