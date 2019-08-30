@@ -25,7 +25,7 @@
     <div class="col-md-2 col-xs">
       <span class="align-middle font-weight-bolder font-14">Open Orders (1)</span>
     </div>
-    <div class="col">
+    <div class="col" [routerLink]="[{outlets: {popup: 'cancel-active-orders'}}]">
       <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
       <span class="ml-1 cancel text-danger">Cancel All Active Orders</span>
     </div>
