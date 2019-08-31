@@ -7,19 +7,23 @@ import {ActivityComponent} from './activity/activity.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
 import {SystemHeaderBoxesComponent} from './system-header-boxes/system-header-boxes.component';
+import {CancelAlgoPositionsComponent} from './activity/cancel-algo-positions/cancel-algo-positions.component';
+import {PopupModule} from '../shared/popup/popup.module';
 
 @NgModule({
   declarations: [
     SystemComponent,
     ActivityComponent,
-    SystemHeaderBoxesComponent
+    SystemHeaderBoxesComponent,
+    CancelAlgoPositionsComponent
   ],
   imports: [
     CommonModule,
     SystemRoutingModule,
     SharedModule,
     FontAwesomeModule,
-    NgbTabsetModule
+    NgbTabsetModule,
+    PopupModule
   ]
 })
 export class SystemModule { }

@@ -13,16 +13,16 @@ export class ActivityComponent implements OnInit {
   selectedTab: {id: string, name: string};
   activityTabs = [
     {
-      id: 'allOrders',
-      name: 'All Orders'
+      id: 'openAlgoPositions',
+      name: 'Open Algo Positions'
     },
     {
-      id: 'transfers',
-      name: 'Transfers'
+      id: 'closedAlgoPositions',
+      name: 'Closed Algo Positions'
     },
     {
-      id: 'networkHistory',
-      name: 'Network History'
+      id: 'allAlgoPositions',
+      name: 'All Algo Positions'
     }
   ];
 
