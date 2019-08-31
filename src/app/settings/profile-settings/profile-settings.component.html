@@ -54,11 +54,11 @@
             <form>
               <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" placeholder="">
+                <input type="text" class="form-control bg-transparent text-light" id="first_name" placeholder="">
               </div>
               <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" placeholder="">
+                <input type="text" class="form-control bg-transparent text-light" id="last_name" placeholder="">
               </div>
               <div class="form-group">
                 <label for="email">Account Email</label>
@@ -72,13 +72,13 @@
                   <fa-icon [icon]="faExclamation"></fa-icon>
                   Unverified
                 </span>
-                <input type="email" class="form-control" id="email" placeholder="hello@grayll.io">
+                <input type="email" class="form-control bg-transparent text-light" id="email" placeholder="hello@grayll.io">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
                 <a [routerLink]="[{outlets: {popup: 'change-password'}}]"
                   href="javascript:void(0)" class="float-right text-purple">Change Password</a>
-                <input type="password" class="form-control" id="password" placeholder="********">
+                <input type="password" class="form-control bg-transparent text-light" id="password" placeholder="********">
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
@@ -86,7 +86,7 @@
                   href="javascript:void(0)" class="float-right text-purple">Phone Number</a>
 
                 <!-- Phone number not set -->
-                <input type="text" class="form-control" id="phone" placeholder="Not set">
+                <input type="text" class="form-control bg-transparent text-light" id="phone" placeholder="Not set">
 
                 <!-- Phone number set -->
                 <div class="input-group">
@@ -95,7 +95,7 @@
                       <flag-icon [country]="'ba'"></flag-icon>
                     </div>
                   </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" disabled value="+387 63 763 354">
+                  <input type="text" class="form-control bg-transparent text-light" id="inlineFormInputGroup" disabled value="+387 63 763 354">
                 </div>
                 <!-- End Phone number set -->
               </div>

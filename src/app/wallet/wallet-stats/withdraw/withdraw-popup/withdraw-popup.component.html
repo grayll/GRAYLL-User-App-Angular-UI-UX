@@ -126,7 +126,7 @@
               </div>
               <div class="form-group">
                 <label class="text-purple" for="phoneNumber">Phone number</label>
-                <div class="input-group bg-gradient">
+                <div class="input-group bg-gradient" style="border-radius: 0.3rem!important">
                   <div class="input-group-prepend">
                     <div class="input-group-text fixed-input-height bg-transparent border-0">
                       <ng-select [searchable]="true"
@@ -146,8 +146,8 @@
                       </ng-select>
                     </div>
                   </div>
-                  <input [(ngModel)]="phoneNumber" type="text"
-                         class="form-control fixed-input-height bg-transparent border-0 text-light" id="phoneNumber">
+                  <input [(ngModel)]="phoneNumber"
+                         class="form-control fixed-input-height bg-transparent text-light border-0" id="phoneNumber">
                 </div>
               </div>
               <p class="mt-1 text-purple">Sending to the following address: {{phoneNumber}}*grayll.io</p>

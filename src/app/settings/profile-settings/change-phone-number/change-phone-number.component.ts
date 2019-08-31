@@ -30,7 +30,7 @@ export class ChangePhoneNumberComponent implements OnInit {
   ];
 
   constructor(
-    private popupService: PopupService,
+    public popupService: PopupService,
     private errorService: ErrorService,
     private router: Router,
     private sharedService: SharedService
