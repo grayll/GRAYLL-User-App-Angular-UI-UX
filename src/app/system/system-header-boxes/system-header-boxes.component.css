@@ -20,3 +20,60 @@
 .card-body {
   border-radius: 4px !important;
 }
+
+.border-yellow {
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.25rem;
+  border: 2px solid #cfa256!important;
+}
+
+.border-white {
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.25rem;
+  border: 2px solid #fff!important;
+  color: #fff!important;
+}
+
+.purple-link {
+  color: #cfa256!important;
+}
+
+.purple-link:hover {
+  color: #40278C!important;
+  cursor: pointer!important;
+}
+
+.cancel:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+.small-grayll-icon {
+  width: 18px;
+}
+
+.dollar-padding {
+  padding-left: 19px!important;
+  padding-right: 19px!important;
+}
+
+.navy-link {
+  color: #40278C!important;
+}
+
+.navy-link:hover {
+  color: #cfa256!important;
+  cursor: pointer!important;
+}

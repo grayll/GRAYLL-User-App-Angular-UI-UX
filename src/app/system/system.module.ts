@@ -10,6 +10,7 @@ import {SystemHeaderBoxesComponent} from './system-header-boxes/system-header-bo
 import {CancelAlgoPositionsComponent} from './activity/cancel-algo-positions/cancel-algo-positions.component';
 import {PopupModule} from '../shared/popup/popup.module';
 import {CountdownModule} from 'ngx-countdown';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {CountdownModule} from 'ngx-countdown';
     FontAwesomeModule,
     NgbTabsetModule,
     PopupModule,
-    CountdownModule
+    CountdownModule,
+    FormsModule
   ]
 })
 export class SystemModule { }

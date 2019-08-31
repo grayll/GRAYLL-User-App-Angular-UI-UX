@@ -33,3 +33,7 @@ fa-icon:hover {
     }
   }
 }
+
+::ng-deep ul.nav-pills {
+  justify-content: center!important;
+}
