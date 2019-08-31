@@ -4,12 +4,12 @@
 }
 
 .second-box {
-  background-color: #e8cbc0;
-  color: #636fa4!important;
+  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  color: white!important;
 }
 
 .third-box {
-  background-color: #636fa4 !important;
+  background-color: #e8cbc0;
   color: white!important;
 }
 
@@ -24,13 +24,13 @@
 .border-yellow {
   border-radius: 0.3rem;
   padding: 0.5rem 0.25rem;
-  border: 2px solid #cfa256!important;
+  border: 1px solid #cfa256!important;
 }
 
 .border-white {
   border-radius: 0.3rem;
   padding: 0.5rem 0.25rem;
-  border: 2px solid #fff!important;
+  border: 1px solid #fff!important;
   color: #fff!important;
 }
 
@@ -76,4 +76,20 @@
 .navy-link:hover {
   color: #cfa256!important;
   cursor: pointer!important;
+}
+
+@media (max-width: 991px) {
+  .first-box {
+    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  }
+
+  .third-box {
+    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    height: 100%!important;
+  }
 }

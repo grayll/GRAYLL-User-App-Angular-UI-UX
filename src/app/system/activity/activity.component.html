@@ -21,27 +21,17 @@
   </div>
 
   <hr class="mt-0 mb-0">
+</div>
 
-  <div class="row justify-content-center align-items-center my-1 p-2"
-       *ngIf="selectedTab.id === 'openAlgoPositions' || selectedTab.id === 'allAlgoPositions'">
+<div class="bg-gradient text-light"
+     *ngIf="selectedTab.id === 'openAlgoPositions' || selectedTab.id === 'allAlgoPositions'">
+  <div class="row justify-content-center align-items-center mb-1 p-2">
     <div class="col-md-2 col-xs">
       <span class="align-middle font-weight-bolder font-14">Open Algo Positions (1)</span>
     </div>
-    <div class="col" [routerLink]="[{outlets: {popup: 'cancel-algo-positions'}}]">
+    <div class="col" [routerLink]="[{outlets: {popup: 'cancel-algo-positions'}}]" style="outline: none;">
       <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
       <span class="ml-1 cancel text-danger">Cancel All Algo Positions</span>
-    </div>
-  </div>
-
-  <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'closedAlgoPositions'">
-    <div class="col-md-2 col-xs">
-      <span class="align-middle font-14 font-weight-bolder">Closed Algo Positions (10)</span><br>
-      <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
-    </div>
-    <div class="col">
-      <a href="javascript:void(0)" class="purple-link font-14">
-        All Closed Algo Positions
-      </a>
     </div>
   </div>
 </div>
@@ -98,7 +88,23 @@
   </table>
 </div>
 
-<div class="table-responsive bg-gradient text-light pull-top" *ngIf="selectedTab.id === 'closedAlgoPositions'">
+<div class="bg-gradient text-light">
+  <div class="row justify-content-center align-items-center mb-1 p-2"
+       *ngIf="selectedTab.id === 'closedAlgoPositions' || selectedTab.id === 'allAlgoPositions'">
+    <div class="col-md-2 col-xs">
+      <span class="align-middle font-14 font-weight-bolder">Closed Algo Positions (10)</span><br>
+      <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
+    </div>
+    <div class="col">
+      <a href="javascript:void(0)" class="purple-link font-14">
+        All Closed Algo Positions
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive bg-gradient text-light pull-top"
+     *ngIf="selectedTab.id === 'closedAlgoPositions' || selectedTab.id === 'allAlgoPositions'">
   <table class="table mb-0">
     <thead>
     <tr class="font-weight-bolder font-10 text-light">
@@ -133,116 +139,6 @@
       <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
     </tr>
 
-    <tr>
-      <td>18/08/2019 04:14</td>
-      <td>CLOSED</td>
-      <td>23:59 | 12</td>
-      <td>GRY 1</td>
-      <td>0.14500</td>
-      <td>0.14500</td>
-      <td>2,110,000,000.55555</td>
-      <td>1,000,000,000.55555</td>
-      <td>110.22%</td>
-      <td>0108181408618385411</td>
-      <td>0108181408618385411</td>
-      <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
-    </tr>
-
-    <tr>
-      <td>18/08/2019 04:14</td>
-      <td>CLOSED</td>
-      <td>23:59 | 12</td>
-      <td>GRY 1</td>
-      <td>0.14500</td>
-      <td>0.14500</td>
-      <td>2,110,000,000.55555</td>
-      <td>1,000,000,000.55555</td>
-      <td>110.22%</td>
-      <td>0108181408618385411</td>
-      <td>0108181408618385411</td>
-      <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
-    </tr>
-
-    <tr>
-      <td>18/08/2019 04:14</td>
-      <td>CLOSED</td>
-      <td>23:59 | 12</td>
-      <td>GRY 1</td>
-      <td>0.14500</td>
-      <td>0.14500</td>
-      <td>2,110,000,000.55555</td>
-      <td>1,000,000,000.55555</td>
-      <td>110.22%</td>
-      <td>0108181408618385411</td>
-      <td>0108181408618385411</td>
-      <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
-    </tr>
-
-    <tr>
-      <td>18/08/2019 04:14</td>
-      <td>CLOSED</td>
-      <td>23:59 | 12</td>
-      <td>GRY 1</td>
-      <td>0.14500</td>
-      <td>0.14500</td>
-      <td>2,110,000,000.55555</td>
-      <td>1,000,000,000.55555</td>
-      <td>110.22%</td>
-      <td>0108181408618385411</td>
-      <td>0108181408618385411</td>
-      <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
-    </tr>
-
-    <tr>
-      <td>18/08/2019 04:14</td>
-      <td>CLOSED</td>
-      <td>23:59 | 12</td>
-      <td>GRY 1</td>
-      <td>0.14500</td>
-      <td>0.14500</td>
-      <td>2,110,000,000.55555</td>
-      <td>1,000,000,000.55555</td>
-      <td>110.22%</td>
-      <td>0108181408618385411</td>
-      <td>0108181408618385411</td>
-      <td><a href="https://stellar.expert/explorer/public" target="_blank" class="purple-link">Details</a></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="row m-0 justify-content-center align-items-center p-2 bg-gradient text-light" *ngIf="selectedTab.id === 'allAlgoPositions'">
-  <div class="col-md-2 col-xs pl-0">
-    <span class="align-middle font-14 font-weight-bolder">Closed Algo Positions (10)</span><br>
-    <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
-  </div>
-  <div class="col">
-    <a href="javascript:void(0)" class="purple-link font-14">
-      All Closed Algo Positions
-    </a>
-  </div>
-</div>
-
-<div class="table-responsive bg-gradient text-light pull-top" *ngIf="selectedTab.id === 'allAlgoPositions'">
-  <table class="table mb-0">
-    <thead>
-    <tr class="font-weight-bolder font-10 text-light">
-      <th>Open Date</th>
-      <th>Status</th>
-      <th>Duration</th>
-      <th>Algorithm</th>
-      <th>Price (GRX)</th>
-      <th>Price (USD)</th>
-      <th>Position Value (USD)</th>
-      <th>Position Profit (USD)</th>
-      <th>ROI</th>
-      <th>GRAYLL Transaction ID</th>
-      <th>Stellar Transaction ID</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-
-    <tbody class="font-8 text-light">
     <tr>
       <td>18/08/2019 04:14</td>
       <td>CLOSED</td>
