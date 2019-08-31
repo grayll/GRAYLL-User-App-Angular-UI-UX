@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {faArrowAltCircleDown, faCopy, faInfoCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
+import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 
 @Component({
   selector: 'app-activity',
@@ -25,6 +26,12 @@ export class ActivityComponent implements OnInit {
       name: 'All Algo Positions'
     }
   ];
+  countdownConfig: CountdownConfig = {
+    leftTime: 86400 * 13,
+    demand: false,
+    template: '$!h!:$!m! | $!d!',
+    effect: null
+  };
 
   // Font Awesome Icons
   faDownload = faArrowAltCircleDown;

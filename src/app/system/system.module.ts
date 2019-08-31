@@ -9,6 +9,7 @@ import {NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
 import {SystemHeaderBoxesComponent} from './system-header-boxes/system-header-boxes.component';
 import {CancelAlgoPositionsComponent} from './activity/cancel-algo-positions/cancel-algo-positions.component';
 import {PopupModule} from '../shared/popup/popup.module';
+import {CountdownModule} from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {PopupModule} from '../shared/popup/popup.module';
     SharedModule,
     FontAwesomeModule,
     NgbTabsetModule,
-    PopupModule
+    PopupModule,
+    CountdownModule
   ]
 })
 export class SystemModule { }
