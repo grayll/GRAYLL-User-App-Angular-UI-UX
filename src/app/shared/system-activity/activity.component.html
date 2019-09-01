@@ -29,10 +29,26 @@
     <div class="col-md-2 col-xs">
       <span class="align-middle font-weight-bolder font-14">Open Algo Positions (1)</span>
     </div>
-    <div class="col" [routerLink]="[{outlets: {popup: 'cancel-algo-positions'}}]" style="outline: none;">
+    <div class="col" [routerLink]="['/system/overview', {outlets: {popup: 'cancel-algo-positions'}}]" style="outline: none;">
       <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
       <span class="ml-1 cancel text-danger">Cancel All Algo Positions</span>
     </div>
+    <div class="col">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
   </div>
 </div>
 
@@ -47,9 +63,18 @@
       <th>Algorithm</th>
       <th>Price (GRX)</th>
       <th>Price (USD)</th>
-      <th>Position Value (USD)</th>
-      <th>Position Profit (USD)</th>
-      <th>ROI</th>
+      <th (click)="sortByPositionValue()" class="cancel">
+        Position Value (USD)
+        <fa-icon [icon]="faSortByPositionValue" style="color: #40278C;"></fa-icon>
+      </th>
+      <th (click)="sortByPositionProfit()" class="cancel">
+        Position Profit (USD)
+        <fa-icon [icon]="faSortByPositionProfit" style="color: #40278C;"></fa-icon>
+      </th>
+      <th (click)="sortByROI()" class="cancel">
+        ROI
+        <fa-icon [icon]="faSortByROI" style="color: #40278C;"></fa-icon>
+      </th>
       <th>GRAYLL Transaction ID</th>
       <th>Stellar Transaction ID</th>
       <th>Info</th>
@@ -96,7 +121,7 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
     </div>
     <div class="col">
-      <a href="javascript:void(0)" class="purple-link font-14">
+      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
         All Closed Algo Positions
       </a>
     </div>
@@ -114,8 +139,14 @@
       <th>Algorithm</th>
       <th>Price (GRX)</th>
       <th>Price (USD)</th>
-      <th>Position Value (USD)</th>
-      <th>Position Profit (USD)</th>
+      <th (click)="sortByPositionValue()" class="cancel">
+        Position Value (USD)
+        <fa-icon [icon]="faSortByPositionValue" style="color: #40278C;"></fa-icon>
+      </th>
+      <th (click)="sortByPositionProfit()" class="cancel">
+        Position Profit (USD)
+        <fa-icon [icon]="faSortByPositionProfit" style="color: #40278C;"></fa-icon>
+      </th>
       <th>ROI</th>
       <th>GRAYLL Transaction ID</th>
       <th>Stellar Transaction ID</th>

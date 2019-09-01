@@ -15,8 +15,18 @@
   margin-top: -4px!important;
 }
 
+input{
+  border:none;
+  background-color: transparent;
+}
+
 fa-icon:hover {
   cursor: pointer!important;
+}
+
+.search .input-group-text {
+  border-color: #40278C;
+  border-left: 0;
 }
 
 ::ng-deep .nav-pills {

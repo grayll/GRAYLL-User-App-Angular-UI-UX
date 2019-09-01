@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {faArrowAltCircleDown, faCopy, faInfoCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {
+  faArrowAltCircleDown,
+  faCaretDown, faCaretUp,
+  faCopy,
+  faInfoCircle,
+  faSearch,
+  faTimesCircle
+} from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
@@ -12,6 +19,9 @@ import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 export class ActivityComponent implements OnInit {
 
   selectedTab: {id: string, name: string};
+  isSortedUpByPositionValue: boolean;
+  isSortedUpByPositionProfit: boolean;
+  isSortedUpByROI: boolean;
   activityTabs = [
     {
       id: 'openAlgoPositions',
@@ -38,6 +48,10 @@ export class ActivityComponent implements OnInit {
   faClose = faTimesCircle;
   faInfo = faInfoCircle;
   faCopy = faCopy;
+  faSearch = faSearch;
+  faSortByPositionValue = faCaretDown;
+  faSortByPositionProfit = faCaretDown;
+  faSortByROI = faCaretDown;
 
   constructor(
     private clipboardService: ClipboardService,
@@ -47,6 +61,36 @@ export class ActivityComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  sortByPositionValue() {
+    if (this.isSortedUpByPositionValue) {
+      this.faSortByPositionValue = faCaretDown;
+      this.isSortedUpByPositionValue = false;
+    } else {
+      this.faSortByPositionValue = faCaretUp;
+      this.isSortedUpByPositionValue = true;
+    }
+  }
+
+  sortByPositionProfit() {
+    if (this.isSortedUpByPositionProfit) {
+      this.faSortByPositionProfit = faCaretDown;
+      this.isSortedUpByPositionProfit = false;
+    } else {
+      this.faSortByPositionProfit = faCaretUp;
+      this.isSortedUpByPositionProfit = true;
+    }
+  }
+
+  sortByROI() {
+    if (this.isSortedUpByROI) {
+      this.faSortByROI = faCaretDown;
+      this.isSortedUpByROI = false;
+    } else {
+      this.faSortByROI = faCaretUp;
+      this.isSortedUpByROI = true;
+    }
   }
 
   onTabChange(id: string) {
