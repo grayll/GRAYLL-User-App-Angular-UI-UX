@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: './wallet/wallet.module#WalletModule'
   },
   {
+    path: 'data',
+    loadChildren: './data/data.module#DataModule'
+  },
+  {
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsModule'
   },

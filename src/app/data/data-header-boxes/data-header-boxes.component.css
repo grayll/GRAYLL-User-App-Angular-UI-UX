@@ -1,0 +1,33 @@
+.first-box {
+  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  color: white!important;
+}
+
+.second-box {
+  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  color: white!important;
+}
+
+.third-box {
+  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  color: white!important;
+}
+
+.card {
+  background-color: #636fa4 !important;
+}
+
+.card-body {
+  border-radius: 4px !important;
+}
+
+.line-chart {
+  max-width: 130px;
+  height: 15px;
+}
+
+@media (min-width: 992px) {
+  .card {
+    height: 100%!important;
+  }
+}
