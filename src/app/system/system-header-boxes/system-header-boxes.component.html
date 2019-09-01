@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row header-boxes">
   <div class="col-sm-12 col-lg-4">
     <div class="card border-0">
-      <div class="card-body first-box h-100">
-        <div class="border-yellow mb-2">
+      <div class="card-body first-box h-100 pb-0">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow mb-2">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -60,7 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow mb-2">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow">
+        <div class="border-navy">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -131,7 +131,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ngb-tabset type="pills" (tabChange)="didChangeTab($event.nextId)">
+            <ngb-tabset type="pills" id="items" (tabChange)="didChangeTab($event.nextId)">
               <ng-container *ngFor="let item of algoItems">
                 <ngb-tab [id]="item.id">
                   <ng-template ngbTabTitle>
@@ -150,7 +150,7 @@
                 <div class="input-group-prepend">
                   <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                 </div>
-                <input type="text" class="fixed-input-height text-light form-control bg-purple" placeholder="USD Value">
+                <input type="text" class="fixed-input-height text-light form-control bg-purple border-0" placeholder="USD Value">
               </div>
             </div>
             <div class="form-group mt-3 mb-0">
@@ -160,15 +160,15 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYLL Logo">
                           </span>
                 </div>
-                <input type="text" class="fixed-input-height text-light form-control bg-purple"
+                <input type="text" class="fixed-input-height text-light form-control border-0 bg-purple"
                        [placeholder]="selectedTab.id + ' | ' + selectedTab.value + ' Amount'">
               </div>
             </div>
           </div>
           <div class="col-md-12 text-center mt-3">
-            <div class="border-white">
+            <div class="border-navy">
               <p class="font-weight-bolder">
-                Current value GRY/USD | $0.09042
+                Current Value GRY/USD | $0.09042
               </p>
               <div class="d-flex align-items-center px-3">
                 <div>
@@ -196,10 +196,10 @@
               <div class="input-group input-group-lg fixed-input-height">
                 <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
+                            <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYLL Logo">
                           </span>
                 </div>
-                <input type="text" class="fixed-input-height text-light form-control bg-purple"
+                <input type="text" class="fixed-input-height text-light form-control bg-purple border-0"
                        placeholder="GRX Amount" [(ngModel)]="GRXValue">
               </div>
             </div>
@@ -222,8 +222,8 @@
   </div>
   <div class="col-sm-12 col-lg-4">
     <div class="card border-0">
-      <div class="card-body third-box h-100">
-        <div class="border-yellow mb-2">
+      <div class="card-body third-box h-100 pb-0">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -250,7 +250,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow mb-2">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -277,7 +277,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow mb-2">
+        <div class="border-navy mb-2">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">
@@ -304,7 +304,7 @@
             </div>
           </div>
         </div>
-        <div class="border-yellow">
+        <div class="border-navy">
           <div class="d-flex align-items-center mb-3 px-3">
             <div>
               <h6 class="text-white font-weight-bolder">

@@ -5,7 +5,7 @@ import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 @Component({
   selector: 'app-system-header-boxes',
   templateUrl: './system-header-boxes.component.html',
-  styleUrls: ['./system-header-boxes.component.css']
+  styleUrls: ['./system-header-boxes.component.scss']
 })
 export class SystemHeaderBoxesComponent implements OnInit {
 
