@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../../shared/popup/popup.service';
+import {PopupService} from '../../popup/popup.service';
 
 @Component({
   selector: 'app-cancel-algo-positions',

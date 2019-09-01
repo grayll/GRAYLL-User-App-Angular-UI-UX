@@ -12,6 +12,8 @@ import {MainChartComponent} from '../dashboard/main-chart/main-chart.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {ChartsModule} from 'ng2-charts';
 import {FormsModule} from '@angular/forms';
+import {ActivityComponent} from './system-activity/activity.component';
+import {CountdownModule} from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {FormsModule} from '@angular/forms';
     NavbarComponent,
     AccountActivityComponent,
     CancelActiveOrdersPopupComponent,
-    MainChartComponent
+    MainChartComponent,
+    ActivityComponent
   ],
   imports: [
     CommonModule,
@@ -30,13 +33,15 @@ import {FormsModule} from '@angular/forms';
     PopupModule,
     NgSelectModule,
     ChartsModule,
-    FormsModule
+    FormsModule,
+    CountdownModule
   ],
   exports: [
     ErrorComponent,
     NavbarComponent,
     AccountActivityComponent,
-    MainChartComponent
+    MainChartComponent,
+    ActivityComponent
   ]
 })
 export class SharedModule { }
