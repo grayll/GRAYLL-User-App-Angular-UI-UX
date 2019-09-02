@@ -22,7 +22,7 @@
   }
 }
 
-::ng-deep .form-control {
+::ng-deep .form-control form-control-no-border {
   background: transparent!important;
   color: #fff!important;
 }

@@ -17,7 +17,7 @@
                   <fa-icon [icon]="userIcon"></fa-icon>
               </span>
             </div>
-            <input formControlName="name" type="text" class="form-control" placeholder="Name">
+            <input formControlName="name" type="text" class="form-control form-control-no-border" placeholder="Name">
           </div>
           <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
             Please enter your email address.
@@ -31,7 +31,7 @@
                   <fa-icon [icon]="emailIcon"></fa-icon>
               </span>
             </div>
-            <input formControlName="email" type="email" class="form-control" placeholder="Email">
+            <input formControlName="email" type="email" class="form-control form-control-no-border" placeholder="Email">
           </div>
           <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
             Please enter your password.
@@ -42,7 +42,7 @@
                 <fa-icon [icon]="keyIcon"></fa-icon>
               </span>
             </div>
-            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+            <input formControlName="password" type="password" class="form-control form-control-no-border" placeholder="Password">
           </div>
           <div class="form-group mb-0">
             <button (click)="registerClicked()" class="btn btn-block login_btn">Register</button>
