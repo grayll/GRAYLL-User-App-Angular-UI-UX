@@ -1,14 +1,4 @@
-.first-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
-  color: white!important;
-}
-
-.second-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
-  color: white!important;
-}
-
-.third-box {
+.gradient-box {
   background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
   color: white!important;
 }
@@ -96,8 +86,7 @@
   border-right: 2px solid #cfa256!important;
 }
 
-@media (min-width: 992px) {
-  .card {
-    height: 100%!important;
-  }
+.badge-number {
+  position: absolute;
+  top: -10px;
 }

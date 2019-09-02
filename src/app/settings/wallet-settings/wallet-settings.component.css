@@ -22,11 +22,6 @@
   }
 }
 
-::ng-deep .form-control {
-  background: transparent!important;
-  color: #fff!important;
-}
-
 ::ng-deep .bs-tooltip-auto[x-placement^=bottom] ::ng-deep .arrow::before,
 ::ng-deep .bs-tooltip-bottom ::ng-deep .arrow::before {
   border-bottom-color: #40278C!important;

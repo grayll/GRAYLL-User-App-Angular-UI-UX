@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 
 @Component({
@@ -45,6 +45,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
       tabName: 'Arkady'
     }
   ];
+  faBell = faBell;
 
   constructor() {
     this.GRXValue = null;
