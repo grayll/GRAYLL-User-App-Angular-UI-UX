@@ -17,6 +17,10 @@
   background-color: #636fa4 !important;
 }
 
+.pointer:hover {
+  cursor: pointer!important;
+}
+
 .card-body {
   border-radius: 4px !important;
 }
