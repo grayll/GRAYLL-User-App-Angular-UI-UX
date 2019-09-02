@@ -44,7 +44,7 @@
   color: #40278C!important;
 }
 
-.form-control form-control-no-border {
+.form-control {
   background: transparent!important;
   color: #fff!important;
 }
@@ -52,6 +52,18 @@
 select:focus::-ms-value {
   color: white!important;
   background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+}
+
+::ng-deep .form-control {
+  background: transparent!important;
+  color: #fff!important;
+}
+
+::ng-deep .form-control:focus {
+  border-color: #ced4da!important;
+  outline: 0!important;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
 }
 
 .report-time {
