@@ -147,7 +147,10 @@
         Position Profit (USD)
         <fa-icon [icon]="faSortByPositionProfit" style="color: #40278C;"></fa-icon>
       </th>
-      <th>ROI</th>
+      <th (click)="sortByROI()" class="cancel">
+        ROI
+        <fa-icon [icon]="faSortByROI" style="color: #40278C;"></fa-icon>
+      </th>
       <th>GRAYLL Transaction ID</th>
       <th>Stellar Transaction ID</th>
       <th>Actions</th>
