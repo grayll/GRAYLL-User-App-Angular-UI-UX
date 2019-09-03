@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faBell} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-notifications',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent implements OnInit {
+
+  faBell = faBell;
 
   constructor() { }
 

@@ -7,6 +7,11 @@
   height: 18px;
 }
 
+::ng-deep ul.nav-tabs {
+  justify-content: center!important;
+  border: 0;
+}
+
 ::ng-deep .nav-pills {
   .nav-link {
     border-radius: 0;

@@ -17,6 +17,11 @@ ul {
   margin-top: 30px;
 }
 
+::ng-deep ul.nav-tabs {
+  justify-content: center!important;
+  border: 0;
+}
+
 ::ng-deep .tooltip-inner {
   background-color: #40278C!important;
 }
