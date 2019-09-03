@@ -25,6 +25,19 @@
   border-radius: 4px !important;
 }
 
+.border-navy-hover {
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid transparent!important;
+}
+
+.border-navy-hover:hover {
+  cursor: pointer!important;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid #40278C!important;
+}
+
 .line-chart {
   max-width: 130px;
   height: 15px;
