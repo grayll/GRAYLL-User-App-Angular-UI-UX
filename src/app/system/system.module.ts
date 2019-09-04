@@ -10,12 +10,14 @@ import {CancelAlgoPositionsComponent} from '../shared/system-activity/cancel-alg
 import {PopupModule} from '../shared/popup/popup.module';
 import {FormsModule} from '@angular/forms';
 import {CountdownModule} from 'ngx-countdown';
+import {UnreadNotificationsPopupComponent} from './system-header-boxes/unread-notifications-popup/unread-notifications-popup.component';
 
 @NgModule({
   declarations: [
     SystemComponent,
     SystemHeaderBoxesComponent,
-    CancelAlgoPositionsComponent
+    CancelAlgoPositionsComponent,
+    UnreadNotificationsPopupComponent
   ],
   imports: [
     CommonModule,

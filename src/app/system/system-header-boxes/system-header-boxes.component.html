@@ -77,7 +77,8 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYLL Logo">
                           </span>
                 </div>
-                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple border-0"
+                <input type="text" class="fixed-input-height text-light
+                    form-control form-control-no-border bg-purple border-0"
                        placeholder="GRX Amount" [(ngModel)]="GRXValue">
               </div>
             </div>
@@ -112,7 +113,8 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover">
+                <div class="border-navy-hover" style="outline:0!important"
+                     [routerLink]="[{outlets: {popup: 'unread-notifications'}}]">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
@@ -175,7 +177,8 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover">
+                <div class="border-navy-hover" [routerLink]="[{outlets: {popup: 'unread-notifications'}}]"
+                     style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
@@ -240,7 +243,8 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover">
+                <div class="border-navy-hover" [routerLink]="[{outlets: {popup: 'unread-notifications'}}]"
+                     style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
@@ -303,7 +307,8 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRZ | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover">
+                <div class="border-navy-hover" [routerLink]="[{outlets: {popup: 'unread-notifications'}}]"
+                     style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
