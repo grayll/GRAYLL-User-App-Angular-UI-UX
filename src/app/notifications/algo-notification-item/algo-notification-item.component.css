@@ -10,3 +10,11 @@
   color: #cfa256!important;
   cursor: pointer!important;
 }
+
+.hover {
+  outline: none!important;
+}
+
+.hover:hover {
+  cursor: pointer!important;
+}

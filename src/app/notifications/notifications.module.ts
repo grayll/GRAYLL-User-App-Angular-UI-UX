@@ -4,18 +4,22 @@ import { NotificationsComponent } from './notifications.component';
 import {NotificationsRoutingModule} from './notifications.routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {NotificationItemComponent} from './notification-item/notification-item.component';
+import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notification-item.component';
+import {NotificationDetailPopupComponent} from './notification-detail-popup/notification-detail-popup.component';
+import {PopupModule} from '../shared/popup/popup.module';
 
 @NgModule({
   declarations: [
     NotificationsComponent,
-    NotificationItemComponent
+    AlgoNotificationItemComponent,
+    NotificationDetailPopupComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     FontAwesomeModule,
-    NotificationsRoutingModule
+    NotificationsRoutingModule,
+    PopupModule
   ]
 })
 export class NotificationsModule { }

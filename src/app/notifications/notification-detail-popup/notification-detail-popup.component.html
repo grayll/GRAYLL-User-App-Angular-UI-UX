@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+  <app-popup-header popupHeaderTitle="Notification Details"></app-popup-header>
+  <div class="modal-body">
+    <p class="text-purple lead">Subject</p>
+    <div class="row my-2 d-flex align-items-center justify-content-center">
+      <div class="col">
+        <p class="text-purple">
+          Content
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col">
+        <a (click)="popupService.close()" href="javascript:void(0)" class="btn btn-purple">
+          Close
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>

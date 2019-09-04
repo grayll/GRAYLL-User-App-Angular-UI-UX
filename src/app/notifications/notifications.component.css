@@ -40,16 +40,13 @@
 }
 
 .purple-line {
+  margin: 0!important;
   border-color: #40278c!important;
 }
 
-@media (min-width: 992px) {
-  .card {
-    height: 100%!important;
-  }
-  .card-body {
-    padding-bottom: 0!important;
-  }
+.search .input-group-text {
+  border-color: #40278C;
+  border-left: 0;
 }
 
 @media (min-width: 760px) {

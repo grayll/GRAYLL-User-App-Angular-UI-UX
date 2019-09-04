@@ -1,6 +1,7 @@
+<router-outlet name="popup"></router-outlet>
 <app-navbar></app-navbar>
 
-<div class="main-wrapper">
+<div class="main-wrapper h-100">
   <div class="page-wrapper">
     <div class="container-fluid pt-0">
 
@@ -10,92 +11,101 @@
 
       <div class="row">
         <div class="col-lg-4 col-sm-12">
-          <div class="card border-0">
-            <div class="card-body h-100 gradient-box">
+          <div class="card border-0" style="max-height:620px!important;">
+            <div class="card-body h-100 gradient-box overflow-auto">
               <div class="row">
                 <div class="col-10 font-weight-bolder">
                   Algo System Notifications
                 </div>
                 <div class="col-2 text-center align-self-center">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" (click)="filterReadAlgoNotifications()">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">5</span>
                   </a>
                 </div>
               </div>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line mb-0">
+              <div class="row my-3">
+                <div class="col search">
+                  <div class="input-group">
+                    <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                           type="search" style="border-color: #40278C!important">
+                    <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                        <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ng-container *ngFor="let notification of algoNotifications">
+                <app-algo-notification-item [notification]="notification"></app-algo-notification-item>
+              </ng-container>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-sm-12">
-          <div class="card border-0">
-            <div class="card-body h-100 gradient-box">
+          <div class="card border-0" style="max-height:620px!important;">
+            <div class="card-body h-100 gradient-box overflow-auto">
               <div class="row">
                 <div class="col-10 font-weight-bolder">
                   Wallet Notifications
                 </div>
                 <div class="col-2 text-center align-self-center">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" (click)="filterReadWalletNotifications()">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">5</span>
                   </a>
                 </div>
               </div>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line mb-0">
+              <div class="row my-3">
+                <div class="col search">
+                  <div class="input-group">
+                    <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                           type="search" style="border-color: #40278C!important">
+                    <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                        <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ng-container *ngFor="let notification of walletNotifications">
+                <app-algo-notification-item [notification]="notification"></app-algo-notification-item>
+              </ng-container>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-sm-12">
-          <div class="card border-0">
-            <div class="card-body h-100 gradient-box">
+          <div class="card border-0" style="max-height:620px!important;">
+            <div class="card-body h-100 gradient-box overflow-auto">
               <div class="row">
                 <div class="col-10 font-weight-bolder">
-                  General Notifications
+                  System Notifications
                 </div>
                 <div class="col-2 text-center align-self-center">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" (click)="filterReadSystemNotifications()">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">5</span>
                   </a>
                 </div>
               </div>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line">
-              <app-notification-item></app-notification-item>
-              <hr class="purple-line mb-0">
+              <div class="row my-3">
+                <div class="col search">
+                  <div class="input-group">
+                    <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                           type="search" style="border-color: #40278C!important">
+                    <span class="input-group-append">
+                      <div class="input-group-text bg-transparent">
+                        <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <ng-container *ngFor="let notification of systemNotifications">
+                <app-algo-notification-item [notification]="notification"></app-algo-notification-item>
+              </ng-container>
             </div>
           </div>
         </div>
