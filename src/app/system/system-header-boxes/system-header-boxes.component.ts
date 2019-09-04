@@ -64,4 +64,9 @@ export class SystemHeaderBoxesComponent implements OnInit {
     this.selectedTab = this.algoItems.find((i) => i.id === id);
   }
 
+  scrollToSystemActivity() {
+    const el = document.getElementById('systemActivityTable');
+    el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
 }

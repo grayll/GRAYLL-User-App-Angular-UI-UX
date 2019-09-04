@@ -13,7 +13,6 @@
 
 .border-navy {
   border-radius: 0.3rem;
-  padding: 0.5rem 0.25rem;
   border: 1px solid #40278C!important;
 }
 
@@ -81,14 +80,36 @@
   cursor: pointer!important;
 }
 
+.border-navy {
+  padding: 0.5rem;
+}
+
+.border-navy-hover:hover {
+  cursor: pointer;
+}
+
+/* Animate bottom border on hover */
+.border-navy-hover:after {
+  padding-bottom: 0.5rem;
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  width: 0%; /* Change this to whatever width you want to have before hover. */
+  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
+  transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+}
+
+.border-navy-hover:hover:after {
+  width: 100%; /* This will be the new width of your border when on hover */
+}
+
 .input-group-text {
   border: 0!important;
   border-right: 2px solid #cfa256!important;
 }
 
 .badge-number {
-  position: absolute;
-  top: -10px;
+  position: relative;
+  top: -6px;
 }
 
 @media (min-width: 992px) {
