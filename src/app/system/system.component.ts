@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-system',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SystemComponent implements OnInit {
 
-  constructor() { }
+  activeTabId: string;
 
-  ngOnInit() {
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.loadDataFromRoute();
+  }
+
+  ngOnInit() {}
+
+  private loadDataFromRoute() {
+    const data = this.activatedRoute.snapshot.data;
+    if (data.scroll) {
+      this.activeTabId = 'allAlgoPositions';
+      setTimeout(() => {
+        const el = document.getElementById('systemActivityTable');
+        el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+      }, 500);
+    }
   }
 
 }

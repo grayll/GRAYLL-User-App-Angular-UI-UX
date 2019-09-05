@@ -9,12 +9,6 @@
     </button>
     <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse text-right" id="navbarsDefault">
       <ul class="navbar-nav ml-auto pb-0">
-        <li class="nav-item" data-toggle="tooltip" title="SEARCH">
-          <a href="javascript:void(0)" class="nav-link">
-            <span class="d-inline d-md-none mr-2">Search</span>
-            <fa-icon [icon]="faSearch" size="lg"></fa-icon>
-          </a>
-        </li>
         <li class="nav-item" data-toggle="tooltip" title="SYSTEM">
           <a href="javascript:void(0)" class="nav-link" routerLink="/system/overview">
             <span class="d-inline d-md-none mr-2">System</span>
@@ -34,18 +28,13 @@
             <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="MESSAGES">
-          <a href="javascript:void(0)" class="nav-link">
-            <span class="d-inline d-md-none mr-2">Messages</span>
-            <fa-icon [icon]="faComment" size="lg"></fa-icon>
-            <span class="badge bg-yellow text-light badge-number">5</span>
-          </a>
-        </li>
         <li class="nav-item" data-toggle="tooltip" title="NOTIFICATIONS" routerLink="/notifications/overview">
           <a href="javascript:void(0)" class="nav-link">
             <span class="d-inline d-md-none mr-2">Notifications</span>
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
-            <span class="badge bg-yellow text-light badge-number">5</span>
+            <span class="badge bg-yellow text-light badge-number">
+              {{notificationsService.getNumberOfAllUnreadNotifications()}}
+            </span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" title="SETTINGS" routerLink="/settings/profile">

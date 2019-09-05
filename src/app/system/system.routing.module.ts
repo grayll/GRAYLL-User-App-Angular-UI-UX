@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'overview',
     component: SystemComponent,
     children: [...popupRoutes]
+  },
+  {
+    path: 'activity',
+    component: SystemComponent,
+    children: [...popupRoutes],
+    data: {
+      scroll: true
+    }
   }
 ];
 

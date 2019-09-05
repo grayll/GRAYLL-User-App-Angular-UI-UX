@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
+import {NotificationsService} from './notifications.service';
 
 @Component({
   selector: 'app-notifications',
@@ -9,70 +10,221 @@ import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel}
 })
 export class NotificationsComponent implements OnInit {
 
+  private isShowingAllAlgoNotifications = true;
+  private isShowingAllWalletNotifications = true;
+  private isShowingAllSystemNotifications = true;
+
+  algoNotifications: AlgoNotificationModel[] = [];
+  algoNotificationsToShow: AlgoNotificationModel[] = [];
+  walletNotifications: WalletNotificationModel[] = [];
+  walletNotificationsToShow: WalletNotificationModel[] = [];
+  systemNotifications: SystemNotificationModel[] = [];
+  systemNotificationsToShow: SystemNotificationModel[] = [];
+
   // Font Awesome Icons
   faBell = faBell;
   faSearch = faSearch;
 
-  algoNotifications: AlgoNotificationModel[] = [];
-  walletNotifications: WalletNotificationModel[] = [];
-  systemNotifications: SystemNotificationModel[] = [];
-
-  constructor() {
+  constructor(
+    public notificationsService: NotificationsService
+  ) {
     this.populateNotifications();
+    this.populateNumberOfUnreadNotifications();
   }
 
   ngOnInit() {}
 
   private populateNotifications() {
-    const notificationTemplate = new AlgoNotificationModel(
-      1,
-      'GRZ | Arkady',
-      '0.11% ROI Increase | 18.81% Total Position ROI',
-      10108181408618385411,
-      true,
-      Date.now()
-    );
-    const unreadNotificationTemplate = new AlgoNotificationModel(
-      1,
-      'GRZ | Arkady',
-      '0.11% ROI Increase | 18.81% Total Position ROI',
-      10108181408618385411,
-      false,
-      Date.now()
-    );
     this.algoNotifications = [
-      unreadNotificationTemplate,
-      unreadNotificationTemplate,
-      notificationTemplate,
-      unreadNotificationTemplate,
-      notificationTemplate,
-      unreadNotificationTemplate,
-      notificationTemplate,
-      notificationTemplate,
-      notificationTemplate,
-      notificationTemplate
-    ];
+      new AlgoNotificationModel(
+        1,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        2,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        10,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        11,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        12,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      )
+  ];
+    this.algoNotificationsToShow = this.algoNotifications;
     this.walletNotifications = [
-      unreadNotificationTemplate,
-      notificationTemplate,
-      notificationTemplate,
-      notificationTemplate,
-      notificationTemplate,
-      notificationTemplate
+      new AlgoNotificationModel(
+        3,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        4,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        13,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        14,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        9,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      )
     ];
-    this.systemNotifications = this.algoNotifications;
+    this.walletNotificationsToShow = this.walletNotifications;
+    this.systemNotifications = [
+      new AlgoNotificationModel(
+        5,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        15,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        6,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        7,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        true,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        8,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      )
+    ];
+    this.systemNotificationsToShow = this.systemNotifications;
+  }
+
+  populateNumberOfUnreadNotifications() {
+    const algoUnread = this.algoNotifications.filter((n) => !n.isRead).length;
+    const walletUnread = this.walletNotifications.filter((n) => !n.isRead).length;
+    const systemUnread = this.systemNotifications.filter((n) => !n.isRead).length;
+    this.notificationsService.increaseNumberOfAllUnreadNotificationsBy(algoUnread + walletUnread + systemUnread);
+    this.notificationsService.setNumberOfUnreadAlgoNotifications(algoUnread);
+    this.notificationsService.setNumberOfUnreadWalletNotifications(walletUnread);
+    this.notificationsService.setNumberOfUnreadSystemNotifications(systemUnread);
   }
 
   filterReadAlgoNotifications() {
-    this.algoNotifications = this.algoNotifications.filter((not) => !not.isRead);
+    if (this.isShowingAllAlgoNotifications) {
+      this.algoNotificationsToShow = this.algoNotifications.filter((n) => !n.isRead);
+    } else {
+      this.algoNotificationsToShow = this.algoNotifications;
+    }
+    this.isShowingAllAlgoNotifications = !this.isShowingAllAlgoNotifications;
   }
 
   filterReadWalletNotifications() {
-    this.walletNotifications = this.walletNotifications.filter((not) => !not.isRead);
+    if (this.isShowingAllWalletNotifications) {
+      this.walletNotificationsToShow = this.walletNotifications.filter((n) => !n.isRead);
+    } else {
+      this.walletNotificationsToShow = this.walletNotifications;
+    }
+    this.isShowingAllWalletNotifications = !this.isShowingAllWalletNotifications;
   }
 
   filterReadSystemNotifications() {
-    this.systemNotifications = this.systemNotifications.filter((not) => !not.isRead);
+    if (this.isShowingAllSystemNotifications) {
+      this.systemNotificationsToShow = this.systemNotifications.filter((n) => !n.isRead);
+    } else {
+      this.systemNotificationsToShow = this.systemNotifications;
+    }
+    this.isShowingAllSystemNotifications = !this.isShowingAllSystemNotifications;
+  }
+
+  markAlgoNotificationAsRead(notification: AlgoNotificationModel) {
+    if (!notification.isRead) {
+      notification.isRead = true;
+      this.notificationsService.decreaseNumberOfAllUnreadNotifications();
+      this.notificationsService.decreaseNumberOfUnreadAlgoNotifications();
+    }
+  }
+
+  markWalletNotificationAsRead(notification: WalletNotificationModel) {
+    if (!notification.isRead) {
+      notification.isRead = true;
+      this.notificationsService.decreaseNumberOfAllUnreadNotifications();
+      this.notificationsService.decreaseNumberOfUnreadWalletNotifications();
+    }
+  }
+
+  markSystemNotificationAsRead(notification: SystemNotificationModel) {
+    if (!notification.isRead) {
+      notification.isRead = true;
+      this.notificationsService.decreaseNumberOfAllUnreadNotifications();
+      this.notificationsService.decreaseNumberOfUnreadSystemNotifications();
+    }
   }
 
 }

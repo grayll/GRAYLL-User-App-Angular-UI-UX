@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AlgoNotificationModel} from '../notification.model';
+import {faChevronCircleUp, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-algo-notification-item',
@@ -9,10 +10,22 @@ import {AlgoNotificationModel} from '../notification.model';
 export class AlgoNotificationItemComponent implements OnInit {
 
   @Input() notification: AlgoNotificationModel;
+  isContentCollapsed = true;
 
-  constructor() { }
+  faPlus = faPlusCircle;
+  faMinus = faChevronCircleUp;
+  faExpand: any;
+
+  constructor() {
+    this.faExpand = this.faPlus;
+  }
 
   ngOnInit() {
+  }
+
+  expandNotification() {
+    this.isContentCollapsed = !this.isContentCollapsed;
+    this.faExpand = this.isContentCollapsed ? this.faPlus : this.faMinus;
   }
 
 }

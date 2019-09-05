@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {
   faArrowAltCircleDown,
   faCaretDown, faCaretUp,
@@ -16,7 +16,9 @@ import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss']
 })
-export class ActivityComponent implements OnInit {
+export class ActivityComponent implements OnInit, OnChanges {
+
+  @Input() activeTabId: string;
 
   selectedTab: {id: string, name: string};
   isSortedUpByPositionValue: boolean;
@@ -57,10 +59,19 @@ export class ActivityComponent implements OnInit {
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService
   ) {
-    this.selectedTab = this.activityTabs[0];
+    this.setActiveTab();
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.activeTabId && changes.activeTabId.currentValue) {
+      this.selectedTab = this.activityTabs.find((t) => t.id === changes.activeTabId.currentValue);
+    }
+  }
+
+  private setActiveTab() {
+    this.selectedTab = this.activityTabs[0];
   }
 
   sortByPositionValue() {
