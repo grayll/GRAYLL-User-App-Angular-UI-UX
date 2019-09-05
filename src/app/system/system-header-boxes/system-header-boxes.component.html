@@ -86,7 +86,10 @@
           <div class="col-md-12">
             <div class="form-group row mb-0">
               <div class="col">
-                <button type="button" class="text-light btn bg-purple">Open {{selectedTab.name}}</button>
+                <button type="button" class="text-light btn bg-purple"
+                        [routerLink]="{outlets: {popup: 'open-algo-position-success'}}">
+                  Open {{selectedTab.name}}
+                </button>
               </div>
               <div class="col">
                 <a class="navy-link" href="javascript:void(0)" (click)="populateMaxGRX()">

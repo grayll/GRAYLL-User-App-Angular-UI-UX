@@ -11,13 +11,17 @@ import {PopupModule} from '../shared/popup/popup.module';
 import {FormsModule} from '@angular/forms';
 import {CountdownModule} from 'ngx-countdown';
 import {UnreadNotificationsPopupComponent} from './system-header-boxes/unread-notifications-popup/unread-notifications-popup.component';
+import {OpenAlgoPositionSuccessComponent} from './system-header-boxes/open-algo-position-success/open-algo-position-success.component';
+import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-position-error/open-algo-position-error.component';
 
 @NgModule({
   declarations: [
     SystemComponent,
     SystemHeaderBoxesComponent,
     CancelAlgoPositionsComponent,
-    UnreadNotificationsPopupComponent
+    UnreadNotificationsPopupComponent,
+    OpenAlgoPositionSuccessComponent,
+    OpenAlgoPositionErrorComponent
   ],
   imports: [
     CommonModule,

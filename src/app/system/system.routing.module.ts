@@ -3,6 +3,8 @@ import {SystemComponent} from './system.component';
 import {NgModule} from '@angular/core';
 import {CancelAlgoPositionsComponent} from '../shared/system-activity/cancel-algo-positions/cancel-algo-positions.component';
 import {UnreadNotificationsPopupComponent} from './system-header-boxes/unread-notifications-popup/unread-notifications-popup.component';
+import {OpenAlgoPositionSuccessComponent} from './system-header-boxes/open-algo-position-success/open-algo-position-success.component';
+import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-position-error/open-algo-position-error.component';
 
 const popupRoutes: Routes = [
   {
@@ -13,6 +15,16 @@ const popupRoutes: Routes = [
   {
     path: 'unread-notifications',
     component: UnreadNotificationsPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'open-algo-position-success',
+    component: OpenAlgoPositionSuccessComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'open-algo-position-error',
+    component: OpenAlgoPositionErrorComponent,
     outlet: 'popup'
   }
 ];
