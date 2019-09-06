@@ -12,10 +12,8 @@ import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
-import {DepositPopupComponent} from "../wallet/wallet-stats/deposit-popup/deposit-popup.component";
-import {WithdrawPopupComponent} from "../wallet/wallet-stats/withdraw/withdraw-popup/withdraw-popup.component";
-import {PopupModule} from "../shared/popup/popup.module";
-import {NgxFlagIconCssModule} from "ngx-flag-icon-css";
+import {PopupModule} from '../shared/popup/popup.module';
+import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
 
 @NgModule({
   declarations: [
@@ -23,9 +21,7 @@ import {NgxFlagIconCssModule} from "ngx-flag-icon-css";
     InfoBoxesComponent,
     WalletComponent,
     TradeComponent,
-    HeaderBoxesComponent,
-    DepositPopupComponent,
-    WithdrawPopupComponent
+    HeaderBoxesComponent
   ],
   imports: [
     CommonModule,

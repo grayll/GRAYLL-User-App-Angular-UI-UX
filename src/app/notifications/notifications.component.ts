@@ -167,6 +167,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   populateNumberOfUnreadNotifications() {
+    this.notificationsService.resetNumberOfAllUnreadNotifications();
     const algoUnread = this.algoNotifications.filter((n) => !n.isRead).length;
     const walletUnread = this.walletNotifications.filter((n) => !n.isRead).length;
     const systemUnread = this.systemNotifications.filter((n) => !n.isRead).length;

@@ -78,7 +78,7 @@
             <h5 class="font-weight-bolder">
               $1,000,000,000,00
             </h5>
-            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" type="button"
+            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'deposit'}}]" type="button"
                     class="text-light btn bg-purple mt-4">Deposit</button>
           </div>
           <div class="col-sm-12 col-md-6 mt-3">
@@ -90,7 +90,7 @@
             <h5 class="m-b-0 font-weight-bolder">
               $1,000,000,000,00
             </h5>
-            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" type="button"
+            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'withdraw'}}]" type="button"
                     class="text-light btn bg-purple mt-4">Withdraw</button>
           </div>
         </div>

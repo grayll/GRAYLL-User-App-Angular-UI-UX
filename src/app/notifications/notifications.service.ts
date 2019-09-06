@@ -11,7 +11,7 @@ export class NotificationsService {
   private numberOfAllUnreadNotifications: number;
 
   constructor() {
-    this.numberOfAllUnreadNotifications = 0;
+    this.resetNumberOfAllUnreadNotifications();
   }
 
   getNumberOfAllUnreadNotifications() {
@@ -26,6 +26,10 @@ export class NotificationsService {
     if (this.numberOfAllUnreadNotifications > 0) {
       this.numberOfAllUnreadNotifications--;
     }
+  }
+
+  resetNumberOfAllUnreadNotifications() {
+    this.numberOfAllUnreadNotifications = 0;
   }
 
   // Algo Notifications
