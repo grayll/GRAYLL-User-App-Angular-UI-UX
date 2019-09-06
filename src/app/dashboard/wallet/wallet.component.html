@@ -14,7 +14,7 @@
       </div>
       <div class="col-sm-12 col-md-6">
         <!-- Shown only on mobile -->
-        <ul class="list-style-none stats p-0 d-md-none">
+        <!----<ul class="list-style-none stats p-0 d-md-none">
           <li>
             <i class="text-purple font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
@@ -35,18 +35,18 @@
               $335.68
             </h5>
           </li>
-        </ul>
+        </ul> ---->
         <div class="w-auto c-cost">
           <div class="d-inline-block align-middle text-yellow">
             <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
           </div>
           <div class="d-inline-block text-white align-middle wallet-box">
-            <span class="text-light font-16">Wallet balance</span>
+            <span class="text-light font-16">Wallet Balance</span>
             <h5 class="text-light font-weight-bolder">$435,320.68</h5>
           </div>
         </div>
         <!-- Same code - shown only on larger devices -->
-        <ul class="list-style-none stats p-0 d-none d-none d-md-block">
+        <!---<ul class="list-style-none stats p-0 d-none d-none d-md-block">
           <li>
             <i class="text-purple font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
@@ -67,8 +67,35 @@
               $335.68
             </h5>
           </li>
-        </ul>
+        </ul> ---->
+        <div class="row mt-3 align-middle">
+          <div class="col-sm-12 col-md-6 mt-3">
+            <i class="text-purple font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 25% GRX</span>
+            <br>
+            <h5 class="font-weight-bolder">
+              $1,000,000,000,00
+            </h5>
+            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" type="button"
+                    class="text-light btn bg-purple mt-4">Deposit</button>
+          </div>
+          <div class="col-sm-12 col-md-6 mt-3">
+            <i class="m-r-5 text-sky font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16"> 75% XLM</span>
+            <br>
+            <h5 class="m-b-0 font-weight-bolder">
+              $1,000,000,000,00
+            </h5>
+            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" type="button"
+                    class="text-light btn bg-purple mt-4">Withdraw</button>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

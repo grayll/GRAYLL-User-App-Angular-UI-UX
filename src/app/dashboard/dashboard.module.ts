@@ -10,8 +10,12 @@ import {SharedModule} from '../shared/shared.module';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {NgbTabsetModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
+import {DepositPopupComponent} from "../wallet/wallet-stats/deposit-popup/deposit-popup.component";
+import {WithdrawPopupComponent} from "../wallet/wallet-stats/withdraw/withdraw-popup/withdraw-popup.component";
+import {PopupModule} from "../shared/popup/popup.module";
+import {NgxFlagIconCssModule} from "ngx-flag-icon-css";
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
     InfoBoxesComponent,
     WalletComponent,
     TradeComponent,
-    HeaderBoxesComponent
+    HeaderBoxesComponent,
+    DepositPopupComponent,
+    WithdrawPopupComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +35,10 @@ import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
     NgSelectModule,
     FormsModule,
     FontAwesomeModule,
-    NgbTabsetModule
+    NgbTooltipModule,
+    NgbTabsetModule,
+    PopupModule,
+    NgxFlagIconCssModule
   ]
 })
 export class DashboardModule { }

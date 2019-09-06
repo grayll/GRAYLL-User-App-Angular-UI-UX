@@ -28,4 +28,18 @@ export class OpenAlgoPositionSuccessComponent implements OnInit {
     });
   }
 
+  goToOverview() {
+    this.popupService.close().then(() => {
+      setTimeout(() => {
+        this.router.navigate(['/system/overview']);
+        this.scrollToSystemActivity();
+      }, 200);
+    });
+  }
+
+  scrollToSystemActivity() {
+    const el = document.getElementById('systemActivityTable');
+    el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
 }

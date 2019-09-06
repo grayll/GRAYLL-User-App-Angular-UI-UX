@@ -12,6 +12,16 @@
   border: 0;
 }
 
+.c-cost {
+  margin-top: 8px;
+  padding: 20px 20px;
+  border: 1px solid #40278C !important;
+  border-radius: 5px;
+  i {
+    font-size: 48px;
+  }
+}
+
 ::ng-deep .nav-pills {
   .nav-link {
     border-radius: 0;

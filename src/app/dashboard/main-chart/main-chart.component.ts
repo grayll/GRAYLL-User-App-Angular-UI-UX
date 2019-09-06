@@ -72,4 +72,10 @@ export class MainChartComponent implements AfterViewInit {
     });
   }
 
+
+  scrollToOpenAlgoPositionForm() {
+    const el = document.getElementById('algoPositionForm');
+    el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
 }

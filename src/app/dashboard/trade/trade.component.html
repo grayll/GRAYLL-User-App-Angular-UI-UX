@@ -1,12 +1,47 @@
 <div class="card border-0 h-100">
   <div class="card-body bg-pink">
-    <div class="d-md-flex align-items-center m-b-20">
-      <div class="text-light">
-        <h5 class="card-title">Trade GRX</h5>
-        <h6 class="font-16">Buy &amp; Sell GRAYLL GRX</h6>
+    <div class="row mt-4">
+      <div class="bottom-border-navy-animated col-12" routerLink="/system/overview">
+        <div class="w-auto c-cost text-left">
+          <div class="d-inline-block align-middle mr-1 text-purple">
+            <fa-icon [icon]="faChartLine" size="3x" fixedWidth></fa-icon>
+          </div>
+          <div class="d-inline-block text-white align-middle">
+            <span class="text-light font-16">Algo System Balance</span>
+            <h5 class="text-light font-weight-bolder">$1,000,000,000,00</h5>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 4px">
+          <div class="col-sm-12 col-md-6 mt-4">
+            <i class="text-yellow font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16 text-white"> 25% GRX</span>
+            <br>
+            <h5 class="font-weight-bolder text-white">
+              $1,000,000,000,00
+            </h5>
+          </div>
+          <div class="col-sm-12 col-md-6 mt-4">
+            <i class="m-r-5 text-white font-16">
+              <fa-icon [icon]="faCircle"></fa-icon>
+            </i>
+            <span class="font-16 text-white"> 75% XLM</span>
+            <br>
+            <h5 class="m-b-0 font-weight-bolder text-white">
+              $1,000,000,000,00
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <button type="button" routerLink="/system/overview" class="text-light btn bg-purple mt-3">Open</button>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <button type="button" routerLink="/system/overview" class="text-light btn bg-purple mt-3">Close</button>
       </div>
     </div>
-    <ngb-tabset type="pills" class="custom-pills">
+    <!---<ngb-tabset type="pills" class="custom-pills">
       <ngb-tab title="Buy">
         <ng-template ngbTabContent>
           <form class="mt-2">
@@ -62,5 +97,10 @@
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
+    <div class="row">
+        <div class="w-auto c-cost text-center">
+
+        </div>
+    </div>--->
   </div>
 </div>
