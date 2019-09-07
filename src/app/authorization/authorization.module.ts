@@ -9,13 +9,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from '../shared/shared.module';
+import {ConfirmEmailComponent} from './confirm-email/confirm-email.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     NewPasswordComponent,
     TwoFactorComponent,
-    RegisterComponent
+    RegisterComponent,
+    ConfirmEmailComponent
   ],
   imports: [
     CommonModule,

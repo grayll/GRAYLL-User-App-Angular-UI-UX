@@ -16,7 +16,9 @@ export class SystemComponent implements OnInit {
     this.loadDataFromRoute();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0, 0);
+  }
 
   private loadDataFromRoute() {
     const data = this.activatedRoute.snapshot.data;

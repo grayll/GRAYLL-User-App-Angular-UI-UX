@@ -13,9 +13,7 @@
               <ng-container *ngFor="let item of algoItems">
                 <ngb-tab [id]="item.id">
                   <ng-template ngbTabTitle>
-                    {{item.name}}
-                    <br>
-                    {{item.tabName}}
+                    {{item.name}} {{item.tabName}}
                   </ng-template>
                   <ng-template ngbTabContent></ng-template>
                 </ngb-tab>
