@@ -4,11 +4,11 @@ import {SettingsService} from '../../settings.service';
 import {SnotifyService} from 'ng-snotify';
 
 @Component({
-  selector: 'app-disable-wallet-messages',
-  templateUrl: './disable-wallet-messages.component.html',
-  styleUrls: ['./disable-wallet-messages.component.css']
+  selector: 'app-disable-wallet-notifications-settings',
+  templateUrl: './disable-wallet-notifications-settings.component.html',
+  styleUrls: ['./disable-wallet-notifications-settings.component.css']
 })
-export class DisableWalletMessagesComponent implements OnInit {
+export class DisableWalletNotificationsSettingsComponent implements OnInit {
 
   @ViewChild('content') modal;
 
@@ -24,8 +24,8 @@ export class DisableWalletMessagesComponent implements OnInit {
 
   disable() {
     this.popupService.close().then(() => {
-      this.settingsService.sendWalletMessagesDisabled();
-      this.snotifyService.simple('Wallet messages disabled.');
+      this.settingsService.sendWalletEmailNotificationsDisabled();
+      this.snotifyService.simple('E-mail wallet notifications disabled.');
     });
   }
 
