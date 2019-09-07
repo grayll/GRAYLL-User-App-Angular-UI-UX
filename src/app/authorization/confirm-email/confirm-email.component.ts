@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-confirm-email',
@@ -9,7 +9,13 @@ export class ConfirmEmailComponent implements OnInit {
 
   constructor() { }
 
+  didResent: boolean;
+
   ngOnInit() {
+  }
+
+  resendEmail() {
+    this.didResent = true;
   }
 
 }

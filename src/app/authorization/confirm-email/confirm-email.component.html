@@ -6,16 +6,19 @@
         <h4 class="text-light">Confirm Your Email</h4>
       </div>
       <div class="card-body">
+        <div class="alert alert-success" *ngIf="didResent">
+          A confirmation email has been resent.
+        </div>
         <p class="mb-0 text-light">Registration almost completed! We have sent an email to <strong>hello@grayll.io</strong>
           to verify your registration.</p>
       </div>
       <div class="card-footer">
         <div class="row float-right">
           <div class="col">
-            <button class="btn btn-yellow">Resend Email</button>
+            <button (click)="resendEmail()" class="btn btn-yellow">Resend Email</button>
           </div>
           <div class="col">
-            <button class="btn btn-purple">Sign In</button>
+            <button routerLink="/login" class="btn btn-purple">Sign In</button>
           </div>
         </div>
       </div>
