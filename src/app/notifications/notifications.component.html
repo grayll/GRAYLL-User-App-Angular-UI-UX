@@ -18,7 +18,7 @@
                   Algo System Notifications
                 </div>
                 <div class="col-5 align-self-center text-right bottom-border-navy-animated" (click)="filterReadAlgoNotifications()">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" style="margin-right: 15px;">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">
                       {{notificationsService.getNumberOfUnreadAlgoNotifications()}}
@@ -39,7 +39,7 @@
                   </div>
                 </div>
               </div>
-              <div style="overflow-y: scroll; height:470px;">
+              <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
                 <ng-container *ngFor="let notification of algoNotificationsToShow">
                   <app-algo-notification-item
                     (click)="markAlgoNotificationAsRead(notification)"
@@ -61,7 +61,7 @@
                   Wallet Notifications
                 </div>
                 <div class="col-5 align-self-center text-right bottom-border-navy-animated" (click)="filterReadWalletNotifications()">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" style="margin-right: 15px;">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">
                       {{notificationsService.getNumberOfUnreadWalletNotifications()}}
@@ -82,7 +82,7 @@
                   </div>
                 </div>
               </div>
-              <div style="overflow-y: scroll; height:470px;">
+              <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
                 <ng-container *ngFor="let notification of walletNotificationsToShow">
                   <app-algo-notification-item
                     (click)="markWalletNotificationAsRead(notification)"
@@ -104,7 +104,7 @@
                   System Notifications
                 </div>
                 <div class="col-5 align-self-center text-right bottom-border-navy-animated" (click)="filterReadSystemNotifications()">
-                  <a href="javascript:void(0)" class="navy-link">
+                  <a href="javascript:void(0)" class="navy-link" style="margin-right: 15px;">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
                     <span class="badge bg-yellow text-light badge-number">
                       {{notificationsService.getNumberOfUnreadSystemNotifications()}}
@@ -125,7 +125,7 @@
                   </div>
                 </div>
               </div>
-              <div style="overflow-y: scroll; height: 470px;">
+              <div style="overflow-y: scroll; height: 440px;overflow-x: hidden">
                 <ng-container *ngFor="let notification of systemNotificationsToShow">
                   <app-algo-notification-item
                     (click)="markSystemNotificationAsRead(notification)"
