@@ -13,44 +13,79 @@ export class NotificationsSettingsComponent implements OnDestroy {
   // RxJS graceful unsubscribe
   private subscriptions = new SubSink();
 
-  isGeneralEnabled = false;
-  isWalletEnabled = true;
-  isAlgoEnabled = false;
+  isGeneralEmailEnabled = false;
+  isWalletEmailEnabled = true;
+  isAlgoEmailEnabled = false;
+
+  isGeneralAppEnabled = false;
+  isWalletAppEnabled = true;
+  isAlgoAppEnabled = false;
 
   constructor(
     private snotifyService: SnotifyService,
     private settingsService: SettingsService
   ) {
-    this.observeWalletNotificationsDisabled();
-    this.observeAlgoNotificationsDisabled();
+    this.observeWalletEmailNotificationsDisabled();
+    this.observeWalletAppNotificationsDisabled();
+    this.observeAlgoEmailNotificationsDisabled();
+    this.observeAlgoAppNotificationsDisabled();
   }
 
-  private observeWalletNotificationsDisabled() {
-    this.subscriptions.sink = this.settingsService.observeWalletNotificationsDisabled()
+  private observeWalletEmailNotificationsDisabled() {
+    this.subscriptions.sink = this.settingsService.observeWalletEmailNotificationsDisabled()
       .subscribe(() => {
-        this.isWalletEnabled = false;
+        this.isWalletEmailEnabled = false;
       });
   }
 
-  private observeAlgoNotificationsDisabled() {
-    this.subscriptions.sink = this.settingsService.observeAlgoNotificationsDisabled()
+  private observeWalletAppNotificationsDisabled() {
+    this.subscriptions.sink = this.settingsService.observeWalletAppNotificationsDisabled()
+      .subscribe(() => {
+        this.isWalletAppEnabled = false;
+      });
+  }
+
+  private observeAlgoEmailNotificationsDisabled() {
+    this.subscriptions.sink = this.settingsService.observeAlgoEmailNotificationsDisabled()
     .subscribe(() => {
-      this.isAlgoEnabled = false;
+      this.isAlgoEmailEnabled = false;
     });
   }
 
-  toggleGeneral() {
-    this.isGeneralEnabled = !this.isGeneralEnabled;
+  private observeAlgoAppNotificationsDisabled() {
+    this.subscriptions.sink = this.settingsService.observeAlgoAppNotificationsDisabled()
+      .subscribe(() => {
+        this.isAlgoAppEnabled = false;
+      });
+  }
+
+  toggleGeneralEmail() {
+    this.isGeneralEmailEnabled = !this.isGeneralEmailEnabled;
     this.saveSettings();
   }
 
-  enableWalletNotifications() {
-    this.isWalletEnabled = true;
+  toggleGeneralApp() {
+    this.isGeneralAppEnabled = !this.isGeneralAppEnabled;
     this.saveSettings();
   }
 
-  enableAlgoNotifications() {
-    this.isAlgoEnabled = true;
+  enableWalletEmailNotifications() {
+    this.isWalletEmailEnabled = true;
+    this.saveSettings();
+  }
+
+  enableAlgoEmailNotifications() {
+    this.isAlgoEmailEnabled = true;
+    this.saveSettings();
+  }
+
+  enableWalletAppNotifications() {
+    this.isWalletAppEnabled = true;
+    this.saveSettings();
+  }
+
+  enableAlgoAppNotifications() {
+    this.isAlgoAppEnabled = true;
     this.saveSettings();
   }
 

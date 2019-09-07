@@ -24,8 +24,8 @@ export class DisableAlgoNotificationsSettingsComponent implements OnInit {
 
   disable() {
     this.popupService.close().then(() => {
-      this.settingsService.sendAlgoNotificationsDisabled();
-      this.snotifyService.simple('Algo system notifications disabled.');
+      this.settingsService.sendAlgoEmailNotificationsDisabled();
+      this.snotifyService.simple('E-mail Algo system notifications disabled.');
     });
   }
 
