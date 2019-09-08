@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../shared/popup/popup.service';
 import {Router} from '@angular/router';
+import {SharedService} from '../../../shared/shared.service';
+import {AlgoPositionModel} from '../../algo-position.model';
 
 @Component({
   selector: 'app-open-algo-position-success',
@@ -10,14 +12,17 @@ import {Router} from '@angular/router';
 export class OpenAlgoPositionSuccessComponent implements OnInit {
 
   @ViewChild('content') modal;
+  algoPosition: AlgoPositionModel;
 
   constructor(
     public popupService: PopupService,
-    private router: Router
+    private router: Router,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
     this.popupService.open(this.modal);
+    this.algoPosition = this.sharedService.getOpenedAlgoPosition();
   }
 
   goToError() {

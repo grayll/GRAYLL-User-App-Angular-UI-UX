@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {faBell, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
+import {AlgoPositionModel} from '../algo-position.model';
+import {Router} from '@angular/router';
+import {SharedService} from '../../shared/shared.service';
+import {ErrorService} from '../../shared/error/error.service';
 
 @Component({
   selector: 'app-system-header-boxes',
@@ -13,6 +17,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
   GRXValue: string;
   totalGRX: number;
   selectedTab: any;
+  algoPosition: AlgoPositionModel;
   countdownConfig: CountdownConfig = {
     leftTime: 60,
     template: '$!s!',
@@ -24,33 +29,42 @@ export class SystemHeaderBoxesComponent implements OnInit {
       id: 'GRY 1',
       name: 'GRY | 1',
       value: 'Balthazar',
+      token: 'GRY',
       tabName: 'Balthzr'
     },
     {
       id: 'GRY 2',
       name: 'GRY | 2',
       value: 'Kaspar',
+      token: 'GRY',
       tabName: 'Kaspar'
     },
     {
       id: 'GRY 3',
       name: 'GRY | 3',
       value: 'Melkior',
+      token: 'GRY',
       tabName: 'Melkior'
     },
     {
       id: 'GRZ',
       name: 'GRZ',
       value: 'Arkady',
+      token: 'GRZ',
       tabName: 'Arkady'
     }
   ];
   faBell = faBell;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private sharedService: SharedService,
+    private errorService: ErrorService
+  ) {
     this.GRXValue = null;
     this.totalGRX = 99999999999.99998;
     this.selectedTab = this.algoItems[0];
+    this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name);
   }
 
   ngOnInit() {
@@ -61,12 +75,63 @@ export class SystemHeaderBoxesComponent implements OnInit {
   }
 
   didChangeTab(id: string) {
-    this.selectedTab = this.algoItems.find((i) => i.id === id);
+    const algoItem = this.algoItems.find((i) => i.id === id);
+    this.selectedTab = algoItem;
+    this.algoPosition.item = algoItem.name;
   }
 
   scrollToSystemActivity() {
     const el = document.getElementById('systemActivityTable');
     el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
+  openAlgoPosition() {
+    this.errorService.clearError();
+    if (this.clientValidation()) {
+      this.populateAlgoModel();
+      this.openPopup();
+    }
+  }
+
+  private clientValidation(): boolean {
+    if (!this.algoPosition.usdValue || !this.algoPosition.itemAmount || !this.GRXValue) {
+      this.errorService.handleError(null, 'All fields are required.');
+      return false;
+    }
+    if (!this.isValidNumber(this.algoPosition.usdValue)) {
+      this.errorService.handleError(null, 'Please enter a valid USD Value.');
+      return false;
+    }
+    if (+this.algoPosition.usdValue < 10) {
+      this.errorService.handleError(null, 'Minimum USD Value is $10.');
+      return false;
+    }
+    if (!this.isValidNumber(this.GRXValue)) {
+      this.errorService.handleError(null, 'Please enter a valid GRX Amount.');
+      return false;
+    }
+    if (!this.isValidNumber(this.algoPosition.itemAmount)) {
+      this.errorService.handleError(null, 'Please enter a valid amount.');
+      return false;
+    }
+    return true;
+  }
+
+  private populateAlgoModel() {
+    this.algoPosition.grxAmount = +this.GRXValue;
+    this.algoPosition.itemAmount = +this.algoPosition.itemAmount;
+    this.algoPosition.usdValue = +this.algoPosition.usdValue;
+    this.algoPosition.token = this.selectedTab.id;
+  }
+
+  private openPopup() {
+    this.sharedService.openAlgoPosition(this.algoPosition);
+    this.router.navigate(['/system/overview', {outlets: {popup: 'open-algo-position-success'}}]);
+  }
+
+  private isValidNumber(value: string): boolean {
+    const num = Number(value);
+    return !isNaN(num);
   }
 
 }

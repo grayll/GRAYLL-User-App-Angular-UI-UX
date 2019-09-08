@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../shared/popup/popup.service';
+import {SharedService} from '../../../shared/shared.service';
+import {AlgoPositionModel} from '../../algo-position.model';
 
 @Component({
   selector: 'app-open-algo-position-error',
@@ -9,13 +11,16 @@ import {PopupService} from '../../../shared/popup/popup.service';
 export class OpenAlgoPositionErrorComponent implements OnInit {
 
   @ViewChild('content') modal;
+  algoPosition: AlgoPositionModel;
 
   constructor(
-    public popupService: PopupService
+    public popupService: PopupService,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit() {
     this.popupService.open(this.modal);
+    this.algoPosition = this.sharedService.getOpenedAlgoPosition();
   }
 
 }
