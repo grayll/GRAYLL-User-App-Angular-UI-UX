@@ -51,3 +51,10 @@
     padding-bottom: 0!important;
   }
 }
+
+
+@media (max-width: 480px) {
+  .chart {
+    padding-right: 30px;
+  }
+}
