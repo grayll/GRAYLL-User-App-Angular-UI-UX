@@ -3,10 +3,10 @@
     <div class="col">
       <span class="lead align-middle">Activity</span>
     </div>
-    <div class="col-xs-12 col-md-5 justify-content-center align-items-center">
-      <ngb-tabset type="pills" class="custom-pills" (tabChange)="onTabChange($event.nextId)">
+    <div class="col-xs-12 col-md-5">
+      <ngb-tabset type="pills" class="custom-pills" justify="center" (tabChange)="onTabChange($event.nextId)">
         <ng-container *ngFor="let tab of activityTabs">
-          <ngb-tab [id]="tab.id" [title]="tab.name"></ngb-tab>
+            <ngb-tab [id]="tab.id" [title]="tab.name"></ngb-tab>
         </ng-container>
       </ngb-tabset>
     </div>
