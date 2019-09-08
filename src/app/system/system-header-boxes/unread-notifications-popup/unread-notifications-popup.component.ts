@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../../shared/popup/popup.service';
+import {AlgoNotificationModel} from '../../../notifications/notification.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-unread-notifications-popup',
@@ -9,20 +11,70 @@ import {PopupService} from '../../../shared/popup/popup.service';
 export class UnreadNotificationsPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
+  algoNotifications = [];
 
   constructor(
-    public popupService: PopupService
-  ) { }
+    public popupService: PopupService,
+    private router: Router
+  ) {
+    this.algoNotifications = [
+      new AlgoNotificationModel(
+        1,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        2,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        10,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        11,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        12,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      )
+    ];
+  }
 
   ngOnInit() {
     this.popupService.open(this.modal);
   }
 
   close() {
-    alert('After clicking close, notifications will be marked as read. This was just a brief overview so that the user does not have to ' +
-      'navigate away from the page to see what\'s new. For more information, she can always go to the Notifications page to read the ' +
-      'contents of each notification respectively.');
     this.popupService.close();
+  }
+
+  goTo(link: string) {
+    this.popupService.close().then(() => {
+      setTimeout(() => {
+        this.router.navigate([link]);
+      }, 200);
+    });
   }
 
 }

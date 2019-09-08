@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AlgoNotificationModel} from '../notification.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AlgoNotificationModel} from '../../notifications/notification.model';
 import {faChevronCircleUp, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-algo-notification-item',
@@ -10,13 +11,17 @@ import {faChevronCircleUp, faPlusCircle} from '@fortawesome/free-solid-svg-icons
 export class AlgoNotificationItemComponent implements OnInit {
 
   @Input() notification: AlgoNotificationModel;
+  @Input() isInPopup: boolean;
+  @Output() routeTo = new EventEmitter<string>();
   isContentCollapsed = true;
 
   faPlus = faPlusCircle;
   faMinus = faChevronCircleUp;
   faExpand: any;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.faExpand = this.faPlus;
   }
 
@@ -26,6 +31,14 @@ export class AlgoNotificationItemComponent implements OnInit {
   expandNotification() {
     this.isContentCollapsed = !this.isContentCollapsed;
     this.faExpand = this.isContentCollapsed ? this.faPlus : this.faMinus;
+  }
+
+  goTo(link: string) {
+    if (this.isInPopup) {
+      this.routeTo.emit(link);
+    } else {
+      this.router.navigate([link]);
+    }
   }
 
 }

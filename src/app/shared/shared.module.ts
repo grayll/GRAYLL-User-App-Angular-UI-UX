@@ -14,6 +14,7 @@ import {ChartsModule} from 'ng2-charts';
 import {FormsModule} from '@angular/forms';
 import {ActivityComponent} from './system-activity/activity.component';
 import {CountdownModule} from 'ngx-countdown';
+import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notification-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CountdownModule} from 'ngx-countdown';
     AccountActivityComponent,
     CancelActiveOrdersPopupComponent,
     MainChartComponent,
-    ActivityComponent
+    ActivityComponent,
+    AlgoNotificationItemComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import {CountdownModule} from 'ngx-countdown';
     NavbarComponent,
     AccountActivityComponent,
     MainChartComponent,
-    ActivityComponent
+    ActivityComponent,
+    AlgoNotificationItemComponent
   ]
 })
 export class SharedModule { }

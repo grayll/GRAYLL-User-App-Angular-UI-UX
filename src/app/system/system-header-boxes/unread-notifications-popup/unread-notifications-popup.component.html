@@ -1,16 +1,27 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Unread Notifications"></app-popup-header>
   <div class="modal-body">
-    <p class="text-purple text-center lead">GRY 1</p>
     <div class="row my-2 d-flex align-items-center justify-content-center">
-      <div class="col text-purple">
-        <ul class="list-group">
-          <li class="list-group-item">Notification description 1</li>
-          <li class="list-group-item">Notification description 2</li>
-          <li class="list-group-item">Notification description 3</li>
-          <li class="list-group-item">Notification description 4</li>
-          <li class="list-group-item">Notification description 5</li>
-        </ul>
+      <div class="col-12">
+        <div class="row">
+          <div class="col text-right">
+            <a href="javascript:void(0)" class="text-right purple-link mb-1" (click)="goTo('/notifications/overview')">
+              View All Notifications
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col text-light">
+        <ng-container *ngFor="let notification of algoNotifications">
+          <app-algo-notification-item
+            (routeTo)="goTo($event)"
+            [isInPopup]="true"
+            [notification]="notification">
+          </app-algo-notification-item>
+        </ng-container>
+        <p class="text-center mb-0" *ngIf="algoNotifications.length === 0">
+          There are no unread system notifications.
+        </p>
       </div>
     </div>
   </div>
