@@ -51,3 +51,12 @@
     background-color: #414755;
   }
 }
+
+@media (max-width: 480px) {
+  ::ng-deep .nav-tabs {
+    .nav-link {
+      font-size: 0.7rem;
+      text-align: left;
+    }
+  }
+}

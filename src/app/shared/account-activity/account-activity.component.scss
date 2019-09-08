@@ -15,18 +15,8 @@
   margin-top: -4px!important;
 }
 
-input{
-  border:none;
-  background-color: transparent;
-}
-
 fa-icon:hover {
   cursor: pointer!important;
-}
-
-.search .input-group-text {
-  border-color: #40278C;
-  border-left: 0;
 }
 
 ::ng-deep .nav-pills {
@@ -43,8 +33,4 @@ fa-icon:hover {
       border-bottom: 2px solid #40278C!important;
     }
   }
-}
-
-::ng-deep ul.nav-pills {
-  justify-content: center!important;
 }

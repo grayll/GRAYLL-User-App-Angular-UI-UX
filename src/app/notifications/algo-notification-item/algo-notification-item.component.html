@@ -17,9 +17,8 @@
           <div class="col-10">
             Notification Subject
           </div>
-          <div class="col text-right">
-            <fa-icon (click)="expandNotification()" class="hover"
-                     [attr.aria-expanded]="!isContentCollapsed" aria-controls="collapsedContent" [icon]="faExpand"></fa-icon>
+          <div class="col text-right hover" (click)="expandNotification()">
+            <fa-icon [attr.aria-expanded]="!isContentCollapsed" aria-controls="collapsedContent" [icon]="faExpand"></fa-icon>
           </div>
         </div>
         <div id="collapsedContent" [ngbCollapse]="isContentCollapsed">

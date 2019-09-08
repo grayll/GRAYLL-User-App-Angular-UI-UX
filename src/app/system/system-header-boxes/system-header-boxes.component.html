@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm-12 col-lg-4">
-    <div class="card border-0 no-margin" style="height: 562px!important;">
+    <div class="card border-0 no-margin" style="min-height: 562px!important;">
       <div class="card-body gradient-box">
         <div class="row">
           <div class="col">
             <p class="text-light font-14 mt-2 font-weight-bolder">Open Algorithmic Position</p>
           </div>
         </div>
-        <div class="row" id="algoPositionForm">
+        <div class="row">
           <div class="col-12">
             <ngb-tabset type="pills" id="items" (tabChange)="didChangeTab($event.nextId)">
               <ng-container *ngFor="let item of algoItems">

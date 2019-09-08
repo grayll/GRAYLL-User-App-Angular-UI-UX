@@ -6,7 +6,7 @@ import {SnotifyService} from 'ng-snotify';
 @Component({
   selector: 'app-account-activity',
   templateUrl: './account-activity.component.html',
-  styleUrls: ['./account-activity.component.css']
+  styleUrls: ['./account-activity.component.scss']
 })
 export class AccountActivityComponent implements OnInit {
 
