@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faChevronCircleDown, faChevronCircleUp, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-notifications',
@@ -24,6 +25,8 @@ export class NotificationsComponent implements OnInit {
   // Font Awesome Icons
   faBell = faBell;
   faSearch = faSearch;
+  faUp = faChevronCircleUp;
+  faDown = faChevronCircleDown;
 
   constructor(
     public notificationsService: NotificationsService
@@ -226,6 +229,10 @@ export class NotificationsComponent implements OnInit {
       this.notificationsService.decreaseNumberOfAllUnreadNotifications();
       this.notificationsService.decreaseNumberOfUnreadSystemNotifications();
     }
+  }
+
+  scrollXBy(offset: number) {
+    window.scrollBy({top: offset, left: 0, behavior: 'smooth'});
   }
 
 }

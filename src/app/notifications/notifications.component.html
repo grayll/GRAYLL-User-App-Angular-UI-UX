@@ -144,3 +144,16 @@
     </div>
   </div>
 </div>
+
+<div class="scroll-buttons float-right d-md-none" style="position: fixed; right: 0; bottom: 0">
+  <div class="row">
+    <div class="col">
+      <fa-icon [icon]="faUp" size="3x" (click)="scrollXBy(-300)"></fa-icon>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <fa-icon (click)="scrollXBy(300)" [icon]="faDown" size="3x"></fa-icon>
+    </div>
+  </div>
+</div>
