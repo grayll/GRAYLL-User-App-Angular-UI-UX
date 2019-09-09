@@ -133,8 +133,16 @@
               <div class="card border-0">
                 <div class="card-body gradient-box">
                   <div class="row">
-                    <div class="col-12 font-weight-bolder">
+                    <div class="col-7 font-weight-bolder">
                       Unread Notifications
+                    </div>
+                    <div class="col-5 align-self-center text-right">
+                      <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
+                        <fa-icon [icon]="faBell" size="lg"></fa-icon>
+                        <span class="badge bg-yellow text-light badge-number">
+                          {{algoNotifications.length}}
+                        </span>
+                      </a>
                     </div>
                   </div>
                   <div class="row my-3">
@@ -157,6 +165,9 @@
                         [notification]="notification">
                       </app-algo-notification-item>
                     </ng-container>
+                    <p class="text-center mb-0" *ngIf="algoNotifications.length === 0">
+                      There are no unread notifications.
+                    </p>
                   </div>
                 </div>
               </div>

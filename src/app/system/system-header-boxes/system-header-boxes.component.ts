@@ -77,7 +77,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
     this.GRXValue = null;
     this.totalGRX = 99999999999.99998;
     this.selectedTab = this.algoItems[0];
-    this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name);
+    this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name, null, null, null, null);
     this.algoNotifications = [
       new AlgoNotificationModel(
         1,
@@ -205,6 +205,10 @@ export class SystemHeaderBoxesComponent implements OnInit {
   markAlgoNotificationAsRead(notification: AlgoNotificationModel) {
     if (!notification.isRead) {
       notification.isRead = true;
+      const index = this.algoNotifications.indexOf(notification, 0);
+      if (index > -1) {
+        this.algoNotifications.splice(index, 1);
+      }
       this.notificationsService.decreaseNumberOfAllUnreadNotifications();
       this.notificationsService.decreaseNumberOfUnreadAlgoNotifications();
     }
