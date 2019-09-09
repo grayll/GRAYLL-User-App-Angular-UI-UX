@@ -94,15 +94,15 @@ export class SystemHeaderBoxesComponent implements OnInit {
   }
 
   private clientValidation(): boolean {
-    if (!this.algoPosition.usdValue || !this.algoPosition.itemAmount || !this.GRXValue) {
-      this.errorService.handleError(null, 'All fields are required.');
+    if (!this.algoPosition.usdValue && !this.algoPosition.itemAmount && !this.GRXValue) {
+      this.errorService.handleError(null, 'Please enter a value of ~$10 or more in one of the fields.');
       return false;
     }
     if (!this.isValidNumber(this.algoPosition.usdValue)) {
       this.errorService.handleError(null, 'Please enter a valid USD Value.');
       return false;
     }
-    if (+this.algoPosition.usdValue < 10) {
+    if (this.algoPosition.usdValue && +this.algoPosition.usdValue < 10) {
       this.errorService.handleError(null, 'Minimum USD Value is $10.');
       return false;
     }
@@ -110,8 +110,16 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter a valid GRX Amount.');
       return false;
     }
+    if (this.GRXValue && +this.GRXValue < 10) {
+      this.errorService.handleError(null, 'Minimum GRX Amount is $10.');
+      return false;
+    }
     if (!this.isValidNumber(this.algoPosition.itemAmount)) {
       this.errorService.handleError(null, 'Please enter a valid amount.');
+      return false;
+    }
+    if (this.algoPosition.itemAmount && +this.algoPosition.itemAmount < 10) {
+      this.errorService.handleError(null, 'Minimum amount is $10.');
       return false;
     }
     return true;
