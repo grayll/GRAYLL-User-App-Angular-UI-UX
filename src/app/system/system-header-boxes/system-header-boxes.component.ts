@@ -154,7 +154,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter a value of ~$10 or more in one of the fields.');
       return false;
     }
-    if (!this.isValidNumber(this.algoPosition.usdValue)) {
+    if (this.algoPosition.usdValue && !this.isValidNumber(this.algoPosition.usdValue)) {
       this.errorService.handleError(null, 'Please enter a valid USD Value.');
       return false;
     }
@@ -162,7 +162,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.errorService.handleError(null, 'Minimum USD Value is $10.');
       return false;
     }
-    if (!this.isValidNumber(this.GRXValue)) {
+    if (this.GRXValue && !this.isValidNumber(this.GRXValue)) {
       this.errorService.handleError(null, 'Please enter a valid GRX Amount.');
       return false;
     }
@@ -170,7 +170,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.errorService.handleError(null, 'Minimum GRX Amount is $10.');
       return false;
     }
-    if (!this.isValidNumber(this.algoPosition.itemAmount)) {
+    if (this.algoPosition.itemAmount && !this.isValidNumber(this.algoPosition.itemAmount)) {
       this.errorService.handleError(null, 'Please enter a valid amount.');
       return false;
     }
