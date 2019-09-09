@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {ActivityComponent} from './system-activity/activity.component';
 import {CountdownModule} from 'ngx-countdown';
 import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notification-item.component';
+import {CustomModalComponent} from './custom-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notif
     CancelActiveOrdersPopupComponent,
     MainChartComponent,
     ActivityComponent,
-    AlgoNotificationItemComponent
+    AlgoNotificationItemComponent,
+    CustomModalComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notif
     AccountActivityComponent,
     MainChartComponent,
     ActivityComponent,
-    AlgoNotificationItemComponent
+    AlgoNotificationItemComponent,
+    CustomModalComponent
   ]
 })
 export class SharedModule { }

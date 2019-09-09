@@ -111,7 +111,12 @@
   width: 100%; /* This will be the new width of your border when on hover */
 }
 
-.input-group-text {
+#open-form .input-group-text {
+  border: 0!important;
+  border-right: 2px solid #cfa256!important;
+}
+
+#amount-form .input-group-text {
   border: 0!important;
   border-right: 2px solid #cfa256!important;
 }
@@ -119,6 +124,45 @@
 .badge-number {
   position: relative;
   top: -6px;
+}
+
+.card {
+  background-color: #636fa4 !important;
+}
+
+.card-body {
+  border-radius: 4px !important;
+}
+
+.purple-line {
+  margin: 0!important;
+  border-color: #40278c!important;
+}
+
+.search .input-group-text {
+  border-color: #40278C;
+  border-left: 0;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media (min-width: 992px) {

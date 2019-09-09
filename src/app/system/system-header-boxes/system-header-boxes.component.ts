@@ -1,23 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import {faBell, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faInfoCircle, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 import {AlgoPositionModel} from '../algo-position.model';
 import {Router} from '@angular/router';
 import {SharedService} from '../../shared/shared.service';
 import {ErrorService} from '../../shared/error/error.service';
+import {CustomModalService} from '../../shared/custom-modal.service';
+import {AlgoNotificationModel} from '../../notifications/notification.model';
+import {NotificationsService} from '../../notifications/notifications.service';
 
 @Component({
   selector: 'app-system-header-boxes',
   templateUrl: './system-header-boxes.component.html',
-  styleUrls: ['./system-header-boxes.component.scss']
+  styleUrls: [
+    './system-header-boxes.component.scss',
+    '../../shared/custom-modal.scss'
+  ]
 })
 export class SystemHeaderBoxesComponent implements OnInit {
-
-  faInfo = faInfoCircle;
+  
   GRXValue: string;
   totalGRX: number;
   selectedTab: any;
   algoPosition: AlgoPositionModel;
+  algoNotifications: AlgoNotificationModel[];
+  bodyText: string;
   countdownConfig: CountdownConfig = {
     leftTime: 60,
     template: '$!s!',
@@ -54,20 +61,69 @@ export class SystemHeaderBoxesComponent implements OnInit {
       tabName: 'Arkady'
     }
   ];
+  
+  // Font Awesome Icons
+  faInfo = faInfoCircle;
+  faSearch = faSearch;
   faBell = faBell;
 
   constructor(
     private router: Router,
     private sharedService: SharedService,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private customModalService: CustomModalService,
+    public notificationsService: NotificationsService
   ) {
     this.GRXValue = null;
     this.totalGRX = 99999999999.99998;
     this.selectedTab = this.algoItems[0];
     this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name);
+    this.algoNotifications = [
+      new AlgoNotificationModel(
+        1,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        2,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        10,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        11,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        12,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      )
+    ];
   }
 
   ngOnInit() {
+    this.bodyText = 'This text can be updated in modal 1';
   }
 
   populateMaxGRX() {
@@ -140,6 +196,18 @@ export class SystemHeaderBoxesComponent implements OnInit {
   private isValidNumber(value: string): boolean {
     const num = Number(value);
     return !isNaN(num);
+  }
+
+  openModal(id: string) {
+    this.customModalService.open(id);
+  }
+
+  markAlgoNotificationAsRead(notification: AlgoNotificationModel) {
+    if (!notification.isRead) {
+      notification.isRead = true;
+      this.notificationsService.decreaseNumberOfAllUnreadNotifications();
+      this.notificationsService.decreaseNumberOfUnreadAlgoNotifications();
+    }
   }
 
 }
