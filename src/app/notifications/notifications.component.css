@@ -51,6 +51,12 @@
   border-left: 0;
 }
 
+.scroll-cont {
+  -webkit-overflow-scrolling: touch!important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 280px;
+}
 
 /* width */
 ::-webkit-scrollbar {
