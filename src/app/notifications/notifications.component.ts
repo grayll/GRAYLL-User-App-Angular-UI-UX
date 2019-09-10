@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {faBell, faChevronCircleDown, faChevronCircleUp, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
-import {of} from 'rxjs';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-notifications',
@@ -10,6 +10,8 @@ import {of} from 'rxjs';
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent implements OnInit {
+
+  @ViewChild(NgbCarousel) carousel;
 
   private isShowingAllAlgoNotifications = true;
   private isShowingAllWalletNotifications = true;
@@ -231,8 +233,12 @@ export class NotificationsComponent implements OnInit {
     }
   }
 
-  scrollXBy(offset: number) {
-    window.scrollBy({top: offset, left: 0, behavior: 'smooth'});
+  swipeLeft() {
+    this.carousel.next();
+  }
+
+  swipeRight() {
+    this.carousel.prev();
   }
 
 }

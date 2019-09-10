@@ -5,7 +5,7 @@ import {NotificationsRoutingModule} from './notifications.routing.module';
 import {SharedModule} from '../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {PopupModule} from '../shared/popup/popup.module';
-import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarouselModule, NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
     FontAwesomeModule,
     NotificationsRoutingModule,
     PopupModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    NgbCarouselModule
   ]
 })
 export class NotificationsModule { }
