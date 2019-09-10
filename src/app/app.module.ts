@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -9,6 +9,17 @@ import {SnotifyModule, SnotifyService} from 'ng-snotify';
 import {NotifierConfig} from './shared/configurations/snotify.conf';
 import {SharedModule} from './shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+declare var Hammer: any;
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  buildHammer(element: HTMLElement) {
+    const mc = new Hammer(element, {
+      touchAction: 'pan-y'
+    });
+    return mc;
+  }
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +37,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   providers: [
     ErrorService,
     { provide: 'SnotifyToastConfig', useValue: NotifierConfig},
-    SnotifyService
+    SnotifyService,
+    {
+      // hammer instantion with custom config
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig ,
+    },
   ],
   bootstrap: [AppComponent]
 })

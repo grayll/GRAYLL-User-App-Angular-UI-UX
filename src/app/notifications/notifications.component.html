@@ -152,8 +152,7 @@
               <div class="col-12">
                 <div class="card border-0">
                   <div class="card-body gradient-box">
-                    <div class="row" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-8 font-weight-bolder">
                         Algo System Notifications
                       </div>
@@ -166,8 +165,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="row my-3" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row my-3" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col search">
                         <div class="input-group">
                           <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
@@ -180,8 +178,7 @@
                         </div>
                       </div>
                     </div >
-                    <div style="overflow-y: auto; height:370px;overflow-x: hidden"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" [style.touch-action]="'pan-y'">
+                    <div style="overflow-y: scroll; height:56vh;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of algoNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markAlgoNotificationAsRead(notification)"
@@ -200,8 +197,7 @@
               <div class="col-12">
                 <div class="card border-0">
                   <div class="card-body gradient-box">
-                    <div class="row" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-7 font-weight-bolder">
                         Wallet Notifications
                       </div>
@@ -214,8 +210,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="row my-3" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row my-3" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col search">
                         <div class="input-group">
                           <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
@@ -228,8 +223,7 @@
                         </div>
                       </div>
                     </div>
-                    <div style="overflow-y: auto; height:370px;overflow-x: hidden" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div style="overflow-y: scroll; height:56vh;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of walletNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markWalletNotificationAsRead(notification)"
@@ -248,8 +242,7 @@
               <div class="col-12">
                 <div class="card border-0">
                   <div class="card-body gradient-box">
-                    <div class="row" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-7 font-weight-bolder">
                         General Notifications
                       </div>
@@ -262,8 +255,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="row my-3" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div class="row my-3" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col search">
                         <div class="input-group">
                           <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
@@ -276,8 +268,7 @@
                         </div>
                       </div>
                     </div>
-                    <div style="overflow-y: auto; height: 370px;overflow-x: hidden" [style.touch-action]="'pan-y'"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div style="overflow-y: scroll; height: 56vh;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of systemNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markSystemNotificationAsRead(notification)"
