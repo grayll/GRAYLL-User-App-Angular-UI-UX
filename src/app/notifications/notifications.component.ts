@@ -16,7 +16,8 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   private isShowingAllAlgoNotifications = true;
   private isShowingAllWalletNotifications = true;
   private isShowingAllSystemNotifications = true;
-
+  private didScroll;
+  
   algoNotifications: AlgoNotificationModel[] = [];
   algoNotificationsToShow: AlgoNotificationModel[] = [];
   walletNotifications: WalletNotificationModel[] = [];
@@ -33,20 +34,33 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
+    this.didScroll = function(event) {
+      console.log('desilo se');
+      let isInScrollDiv = false;
+      // @ts-ignore
+      event.path.forEach((item) => {
+        if (item.className === 'scroll-cont') {
+          isInScrollDiv = true;
+          console.log('unutar sam!');
+        }
+      });
+      if (!isInScrollDiv) {
+        event.preventDefault();
+      }
+    }
   }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('overflow-hidden');
-    window.addEventListener('touchstart', function(event) {
-      event.preventDefault();
-    }, {passive: false});
+    window.addEventListener('touchmove', this.didScroll, {passive: false} );
   }
 
   ngOnDestroy(): void {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('overflow-hidden');
     body.classList.add('overflow-auto');
+    window.removeEventListener('touchmove', this.didScroll );
   }
 
   private populateNotifications() {

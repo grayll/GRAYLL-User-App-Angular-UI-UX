@@ -180,7 +180,7 @@
                       </div>
                     </div >
                     <div style="overflow:hidden scroll;height:50vh;overscroll-behavior:none"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of algoNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markAlgoNotificationAsRead(notification)"
@@ -227,7 +227,7 @@
                       </div>
                     </div>
                     <div style="overflow:hidden scroll;height:50vh;overscroll-behavior:none"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of walletNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markWalletNotificationAsRead(notification)"
@@ -274,7 +274,7 @@
                       </div>
                     </div>
                     <div style="overflow:hidden scroll;height:50vh;overscroll-behavior:none"
-                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                         (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of systemNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markSystemNotificationAsRead(notification)"
