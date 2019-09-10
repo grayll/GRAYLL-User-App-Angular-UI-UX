@@ -58,6 +58,14 @@
   height: 280px;
 }
 
+.size-card {
+  position: fixed;
+  top: 106px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 3px;
