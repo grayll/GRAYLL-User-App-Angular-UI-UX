@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {faBell, faChevronCircleDown, faChevronCircleUp, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
@@ -27,8 +27,6 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   // Font Awesome Icons
   faBell = faBell;
   faSearch = faSearch;
-  faUp = faChevronCircleUp;
-  faDown = faChevronCircleDown;
 
   constructor(
     public notificationsService: NotificationsService
@@ -40,6 +38,9 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('overflow-hidden');
+    window.addEventListener('touchstart', function(event) {
+      event.preventDefault();
+    }, {passive: false});
   }
 
   ngOnDestroy(): void {
