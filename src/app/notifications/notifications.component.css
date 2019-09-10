@@ -55,7 +55,11 @@
   -webkit-overflow-scrolling: touch!important;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 280px;
+  position: absolute;
+  top: 110px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
 }
 
 .size-card {
@@ -98,6 +102,31 @@
   outline: 0!important;
 }
 
+::ng-deep .carousel-control-prev {
+  display: block;
+  position: absolute;
+  top: 103px;
+  left: -156px;
+}
+
+::ng-deep .carousel-control-prev-icon {
+  background-image: url('../../assets/images/left-chevron.png');
+  width: 15px;
+  height: 24px;
+}
+
+::ng-deep .carousel-control-next {
+  display: block;
+  position: absolute;
+  top: 103px;
+  left: 156px;
+}
+
+::ng-deep .carousel-control-next-icon {
+  background-image: url('../../assets/images/right-chevron.png');
+  width: 15px;
+  height: 24px;
+}
 @media (min-width: 760px) {
   .page-wrapper {
     margin: 14px auto 0 auto;

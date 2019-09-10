@@ -13,7 +13,9 @@ export class AlgoNotificationItemComponent implements OnInit {
   @Input() notification: AlgoNotificationModel;
   @Input() isInPopup: boolean;
   @Output() routeTo = new EventEmitter<string>();
+  @Output() markAsRead = new EventEmitter<AlgoNotificationModel>();
   isContentCollapsed = true;
+  isMarkedAsRead = false;
 
   faPlus = faPlusCircle;
   faMinus = faChevronCircleUp;
@@ -25,12 +27,19 @@ export class AlgoNotificationItemComponent implements OnInit {
     this.faExpand = this.faPlus;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   expandNotification() {
+    this.markNotificationAsRead();
     this.isContentCollapsed = !this.isContentCollapsed;
     this.faExpand = this.isContentCollapsed ? this.faPlus : this.faMinus;
+  }
+
+  private markNotificationAsRead() {
+    if (this.isContentCollapsed && !this.isMarkedAsRead) {
+      this.isMarkedAsRead = true;
+      this.markAsRead.emit(this.notification);
+    }
   }
 
   goTo(link: string) {

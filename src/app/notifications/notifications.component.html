@@ -182,7 +182,7 @@
                     <div (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of algoNotificationsToShow">
                         <app-algo-notification-item
-                          (click)="markAlgoNotificationAsRead(notification)"
+                          (markAsRead)="markAlgoNotificationAsRead(notification)"
                           [notification]="notification">
                         </app-algo-notification-item>
                       </ng-container>
@@ -197,7 +197,7 @@
             <ng-template ngbSlide>
               <div class="col-12">
                 <div class="card border-0">
-                  <div class="card-body gradient-box">
+                  <div class="card-body gradient-box size-card">
                     <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-7 font-weight-bolder">
                         Wallet Notifications
@@ -228,7 +228,7 @@
                     <div (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of walletNotificationsToShow">
                         <app-algo-notification-item
-                          (click)="markWalletNotificationAsRead(notification)"
+                          (markAsRead)="markWalletNotificationAsRead(notification)"
                           [notification]="notification">
                         </app-algo-notification-item>
                       </ng-container>
@@ -243,7 +243,7 @@
             <ng-template ngbSlide>
               <div class="col-12">
                 <div class="card border-0">
-                  <div class="card-body gradient-box">
+                  <div class="card-body gradient-box size-card">
                     <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-7 font-weight-bolder">
                         General Notifications
@@ -274,7 +274,7 @@
                     <div (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of systemNotificationsToShow">
                         <app-algo-notification-item
-                          (click)="markSystemNotificationAsRead(notification)"
+                          (markAsRead)="markSystemNotificationAsRead(notification)"
                           [notification]="notification">
                         </app-algo-notification-item>
                       </ng-container>
