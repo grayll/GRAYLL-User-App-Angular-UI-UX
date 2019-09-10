@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {faBell, faChevronCircleDown, faChevronCircleUp, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
@@ -9,7 +9,7 @@ import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent implements OnInit, OnDestroy {
 
   @ViewChild(NgbCarousel) carousel;
 
@@ -37,7 +37,16 @@ export class NotificationsComponent implements OnInit {
     this.populateNumberOfUnreadNotifications();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('overflow-hidden');
+  }
+
+  ngOnDestroy(): void {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.remove('overflow-hidden');
+    body.classList.add('overflow-auto');
+  }
 
   private populateNotifications() {
     this.algoNotifications = [
