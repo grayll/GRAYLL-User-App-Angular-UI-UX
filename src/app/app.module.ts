@@ -39,9 +39,8 @@ export class MyHammerConfig extends HammerGestureConfig  {
     { provide: 'SnotifyToastConfig', useValue: NotifierConfig},
     SnotifyService,
     {
-      // hammer instantion with custom config
       provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig ,
+      useClass: MyHammerConfig,
     },
   ],
   bootstrap: [AppComponent]
