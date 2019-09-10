@@ -1,11 +1,12 @@
 .main-wrapper {
+  padding-top: 50px;
   width: 100%!important;
   height: 100%!important;
-  overflow: hidden scroll;
+  overflow: hidden;
 }
 
 .page-wrapper {
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
   background-color: #414755;
 }
 
@@ -85,7 +86,7 @@
 
 @media (min-width: 760px) {
   .page-wrapper {
-    margin: 64px auto 0 auto;
+    margin: 14px auto 0 auto;
     max-width: 1200px;
     position: relative;
   }
