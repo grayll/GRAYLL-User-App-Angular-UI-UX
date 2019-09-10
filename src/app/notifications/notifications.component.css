@@ -1,6 +1,7 @@
 .main-wrapper {
-  width: 100%;
-  overflow: hidden;
+  width: 100%!important;
+  height: 100%!important;
+  overflow: hidden scroll;
 }
 
 .page-wrapper {
