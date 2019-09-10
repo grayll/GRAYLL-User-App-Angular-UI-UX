@@ -178,7 +178,7 @@
                         </div>
                       </div>
                     </div >
-                    <div style="overflow-y: scroll; height:370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div style="overflow-y: auto; height:370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of algoNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markAlgoNotificationAsRead(notification)"
@@ -223,7 +223,7 @@
                         </div>
                       </div>
                     </div>
-                    <div style="overflow-y: scroll; height:370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div style="overflow-y: auto; height:370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of walletNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markWalletNotificationAsRead(notification)"
@@ -239,10 +239,10 @@
               </div>
             </ng-template>
             <ng-template ngbSlide>
-              <div class="col-12 h-100">
-                <div class="card border-0 h-100">
-                  <div class="card-body gradient-box h-100">
-                    <div class="row h-100" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+              <div class="col-12">
+                <div class="card border-0">
+                  <div class="card-body gradient-box">
+                    <div class="row" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <div class="col-7 font-weight-bolder">
                         General Notifications
                       </div>
@@ -268,7 +268,7 @@
                         </div>
                       </div>
                     </div>
-                    <div style="overflow-y: scroll; height: 370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
+                    <div style="overflow-y: auto; height: 370px;overflow-x: hidden" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
                       <ng-container *ngFor="let notification of systemNotificationsToShow">
                         <app-algo-notification-item
                           (click)="markSystemNotificationAsRead(notification)"
