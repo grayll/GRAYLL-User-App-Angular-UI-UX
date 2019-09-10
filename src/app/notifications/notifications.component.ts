@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Directive, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
@@ -9,6 +9,7 @@ import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
+
 export class NotificationsComponent implements OnInit, OnDestroy {
 
   @ViewChild(NgbCarousel) carousel;
@@ -16,8 +17,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   private isShowingAllAlgoNotifications = true;
   private isShowingAllWalletNotifications = true;
   private isShowingAllSystemNotifications = true;
-  private didScroll;
-  
+
   algoNotifications: AlgoNotificationModel[] = [];
   algoNotificationsToShow: AlgoNotificationModel[] = [];
   walletNotifications: WalletNotificationModel[] = [];
@@ -34,33 +34,16 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
-    this.didScroll = function(event) {
-      console.log('desilo se');
-      let isInScrollDiv = false;
-      // @ts-ignore
-      event.path.forEach((item) => {
-        if (item.className === 'scroll-cont') {
-          isInScrollDiv = true;
-          console.log('unutar sam!');
-        }
-      });
-      if (!isInScrollDiv) {
-        event.preventDefault();
-      }
-    }
   }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
-    body.classList.add('overflow-hidden');
-    window.addEventListener('touchmove', this.didScroll, {passive: false} );
+    body.classList.add('dark-navy-bg');
   }
 
   ngOnDestroy(): void {
     const body = document.getElementsByTagName('body')[0];
-    body.classList.remove('overflow-hidden');
-    body.classList.add('overflow-auto');
-    window.removeEventListener('touchmove', this.didScroll );
+    body.classList.remove('dark-navy-bg');
   }
 
   private populateNotifications() {
