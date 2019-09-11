@@ -32,11 +32,14 @@
   </div>
 
   <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'transfers'">
-    <div class="col-md-2 col-xs">
+    <div class="col" *ngIf="!showMoreDetails">
+      <span class="align-middle font-weight-bolder font-14">Transfers (11)</span>
+    </div>
+    <div class="col-md-2 col-xs" *ngIf="showMoreDetails">
       <span class="align-middle font-weight-bolder font-14">Transfers (11)</span><br>
       <span class="text-light font-10 font-weight-bolder">Most Recent Transfers</span>
     </div>
-    <div class="col">
+    <div class="col" *ngIf="showMoreDetails">
       <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
         All Completed Transfers
       </a>
@@ -44,11 +47,14 @@
   </div>
 
   <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'networkHistory'">
-    <div class="col-md-2 col-xs">
+    <div class="col" *ngIf="!showMoreDetails">
+      <span class="align-middle font-weight-bolder font-14">Network History (6)</span>
+    </div>
+    <div class="col-md-2 col-xs" *ngIf="showMoreDetails">
       <span class="align-middle font-weight-bolder font-14">Network History (6)</span><br>
       <span class="text-light font-10 font-weight-bolder">Most Recent Network History</span>
     </div>
-    <div class="col">
+    <div class="col" *ngIf="showMoreDetails">
       <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
         Full Network History
       </a>

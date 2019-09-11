@@ -86,10 +86,10 @@
               </div>
               <div class="fixed-desktop-box">
                 <ng-container *ngFor="let notification of walletNotificationsToShow">
-                  <app-algo-notification-item
+                  <app-wallet-notification-item
                     (markAsRead)="markWalletNotificationAsRead(notification)"
                     [notification]="notification">
-                  </app-algo-notification-item>
+                  </app-wallet-notification-item>
                 </ng-container>
                 <p class="text-center mb-0" *ngIf="walletNotificationsToShow.length === 0">
                   There are no unread wallet notifications.
@@ -129,10 +129,10 @@
               </div>
               <div class="fixed-desktop-box">
                 <ng-container *ngFor="let notification of systemNotificationsToShow">
-                  <app-algo-notification-item
+                  <app-general-notification-item
                     (markAsRead)="markSystemNotificationAsRead(notification)"
                     [notification]="notification">
-                  </app-algo-notification-item>
+                  </app-general-notification-item>
                 </ng-container>
                 <p class="text-center mb-0" *ngIf="systemNotificationsToShow.length === 0">
                   There are no unread system notifications.
@@ -227,10 +227,10 @@
                     </div>
                     <div (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of walletNotificationsToShow">
-                        <app-algo-notification-item
+                        <app-wallet-notification-item
                           (markAsRead)="markWalletNotificationAsRead(notification)"
                           [notification]="notification">
-                        </app-algo-notification-item>
+                        </app-wallet-notification-item>
                       </ng-container>
                       <p class="text-center mb-0" *ngIf="walletNotificationsToShow.length === 0">
                         There are no unread wallet notifications.
@@ -273,10 +273,10 @@
                     </div>
                     <div (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()" class="scroll-cont">
                       <ng-container *ngFor="let notification of systemNotificationsToShow">
-                        <app-algo-notification-item
+                        <app-general-notification-item
                           (markAsRead)="markSystemNotificationAsRead(notification)"
                           [notification]="notification">
-                        </app-algo-notification-item>
+                        </app-general-notification-item>
                       </ng-container>
                       <p class="text-center mb-0" *ngIf="systemNotificationsToShow.length === 0">
                         There are no unread system notifications.

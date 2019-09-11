@@ -14,18 +14,17 @@ export class WalletNotificationModel {
     public id?: number,
     public subject?: string,
     public content?: string,
-    public positionId?: number,
+    public transactionId?: number,
     public isRead?: boolean,
     public datetime?: any
   ) {}
 }
 
-export class SystemNotificationModel {
+export class GeneralNotificationModel {
   constructor(
     public id?: number,
     public subject?: string,
     public content?: string,
-    public positionId?: number,
     public isRead?: boolean,
     public datetime?: any
   ) {}

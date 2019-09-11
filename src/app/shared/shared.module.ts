@@ -16,6 +16,8 @@ import {ActivityComponent} from './system-activity/activity.component';
 import {CountdownModule} from 'ngx-countdown';
 import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notification-item.component';
 import {CustomModalComponent} from './custom-modal.component';
+import { WalletNotificationItemComponent } from './wallet-notification-item/wallet-notification-item.component';
+import { GeneralNotificationItemComponent } from './general-notification-item/general-notification-item.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {CustomModalComponent} from './custom-modal.component';
     MainChartComponent,
     ActivityComponent,
     AlgoNotificationItemComponent,
-    CustomModalComponent
+    CustomModalComponent,
+    WalletNotificationItemComponent,
+    GeneralNotificationItemComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +51,9 @@ import {CustomModalComponent} from './custom-modal.component';
     MainChartComponent,
     ActivityComponent,
     AlgoNotificationItemComponent,
-    CustomModalComponent
+    CustomModalComponent,
+    WalletNotificationItemComponent,
+    GeneralNotificationItemComponent
   ]
 })
 export class SharedModule { }

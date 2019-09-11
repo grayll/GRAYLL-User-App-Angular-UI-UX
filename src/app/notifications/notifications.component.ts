@@ -1,6 +1,6 @@
-import {Component, Directive, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
-import {AlgoNotificationModel, SystemNotificationModel, WalletNotificationModel} from './notification.model';
+import {AlgoNotificationModel, GeneralNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,8 +22,8 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   algoNotificationsToShow: AlgoNotificationModel[] = [];
   walletNotifications: WalletNotificationModel[] = [];
   walletNotificationsToShow: WalletNotificationModel[] = [];
-  systemNotifications: SystemNotificationModel[] = [];
-  systemNotificationsToShow: SystemNotificationModel[] = [];
+  systemNotifications: GeneralNotificationModel[] = [];
+  systemNotificationsToShow: GeneralNotificationModel[] = [];
 
   // Font Awesome Icons
   faBell = faBell;
@@ -99,7 +99,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ];
     this.algoNotificationsToShow = this.algoNotifications;
     this.walletNotifications = [
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         3,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -107,7 +107,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         4,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -115,7 +115,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         true,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         13,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -123,7 +123,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         14,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -131,7 +131,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         16,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -139,7 +139,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new WalletNotificationModel(
         9,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -150,51 +150,45 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     ];
     this.walletNotificationsToShow = this.walletNotifications;
     this.systemNotifications = [
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         5,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         15,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         17,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         6,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         false,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         7,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         true,
         Date.now()
       ),
-      new AlgoNotificationModel(
+      new GeneralNotificationModel(
         8,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
         false,
         Date.now()
       )
@@ -256,7 +250,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     }
   }
 
-  markSystemNotificationAsRead(notification: SystemNotificationModel) {
+  markSystemNotificationAsRead(notification: GeneralNotificationModel) {
     if (!notification.isRead) {
       notification.isRead = true;
       this.notificationsService.decreaseNumberOfAllUnreadNotifications();
