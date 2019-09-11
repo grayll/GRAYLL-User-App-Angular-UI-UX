@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-data-header-boxes',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataHeaderBoxesComponent implements OnInit {
 
+  @ViewChild(NgbCarousel) carouselData;
+
   public lineChartData: Array<any> = [
     { data: [12, 19, 3, 5, 2, 3], label: 'Balance $' }
   ];
-  
+
   public lineChartLabels: Array<any> = [
     '2012',
     '2013',
@@ -67,6 +70,14 @@ export class DataHeaderBoxesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  swipeLeft() {
+    this.carouselData.next();
+  }
+
+  swipeRight() {
+    this.carouselData.prev();
   }
 
 }
