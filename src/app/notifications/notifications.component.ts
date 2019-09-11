@@ -57,6 +57,14 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         Date.now()
       ),
       new AlgoNotificationModel(
+        18,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
         2,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -124,6 +132,14 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         Date.now()
       ),
       new AlgoNotificationModel(
+        16,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
         9,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
@@ -144,6 +160,14 @@ export class NotificationsComponent implements OnInit, OnDestroy {
       ),
       new AlgoNotificationModel(
         15,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new AlgoNotificationModel(
+        17,
         'GRZ | Arkady',
         '0.11% ROI Increase | 18.81% Total Position ROI',
         10108181408618385411,

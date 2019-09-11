@@ -15,6 +15,24 @@
   min-height: calc(100vh - 100px);
 }
 
+.fixed-desktop-cards {
+  position: absolute;
+  top: 56px;
+  left: 20px;
+  right: 20px;
+  bottom: 30px;
+}
+
+.fixed-desktop-box {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+}
+
 .navy-link {
   color: #40278C!important;
 }
@@ -104,9 +122,9 @@
 
 ::ng-deep .carousel-control-prev {
   display: block;
-  position: absolute;
-  top: 103px;
-  left: -156px;
+  position: fixed;
+  top: 205px;
+  left: 0;
 }
 
 ::ng-deep .carousel-control-prev-icon {
@@ -117,9 +135,9 @@
 
 ::ng-deep .carousel-control-next {
   display: block;
-  position: absolute;
-  top: 103px;
-  left: 156px;
+  position: fixed;
+  top: 205px;
+  right: 0;
 }
 
 ::ng-deep .carousel-control-next-icon {
@@ -127,6 +145,7 @@
   width: 15px;
   height: 24px;
 }
+
 @media (min-width: 760px) {
   .page-wrapper {
     margin: 14px auto 0 auto;
@@ -137,5 +156,11 @@
   .main-wrapper {
     background-color: #414755;
     height: 100%!important;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 991px) {
+  .size-card {
+    top: 120px;
   }
 }
