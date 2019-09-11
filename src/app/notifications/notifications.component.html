@@ -44,7 +44,7 @@
               <div class="fixed-desktop-box">
                 <ng-container *ngFor="let notification of algoNotificationsToShow">
                   <app-algo-notification-item
-                    (click)="markAlgoNotificationAsRead(notification)"
+                    (markAsRead)="markAlgoNotificationAsRead(notification)"
                     [notification]="notification">
                   </app-algo-notification-item>
                 </ng-container>
@@ -87,7 +87,7 @@
               <div class="fixed-desktop-box">
                 <ng-container *ngFor="let notification of walletNotificationsToShow">
                   <app-algo-notification-item
-                    (click)="markWalletNotificationAsRead(notification)"
+                    (markAsRead)="markWalletNotificationAsRead(notification)"
                     [notification]="notification">
                   </app-algo-notification-item>
                 </ng-container>
@@ -130,7 +130,7 @@
               <div class="fixed-desktop-box">
                 <ng-container *ngFor="let notification of systemNotificationsToShow">
                   <app-algo-notification-item
-                    (click)="markSystemNotificationAsRead(notification)"
+                    (markAsRead)="markSystemNotificationAsRead(notification)"
                     [notification]="notification">
                   </app-algo-notification-item>
                 </ng-container>
