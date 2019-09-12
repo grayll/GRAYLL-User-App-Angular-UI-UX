@@ -19,7 +19,7 @@ fa-icon:hover {
   cursor: pointer!important;
 }
 
-::ng-deep .nav-pills {
+:host ::ng-deep .nav-pills {
   .nav-link {
     border-radius: 0;
     opacity: 0.7;

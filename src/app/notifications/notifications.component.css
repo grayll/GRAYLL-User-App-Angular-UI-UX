@@ -30,7 +30,7 @@
   top: 120px;
   left: 20px;
   right: 20px;
-  bottom: 0;
+  bottom: 20px;
 }
 
 .navy-link {
@@ -122,9 +122,9 @@
 
 :host ::ng-deep .carousel-control-prev {
   display: block;
-  position: fixed;
-  top: 205px;
-  left: 0;
+  position: absolute;
+  top: 100px;
+  left: 12px;
 }
 
 :host ::ng-deep .carousel-control-prev-icon {
@@ -135,9 +135,9 @@
 
 :host ::ng-deep .carousel-control-next {
   display: block;
-  position: fixed;
-  top: 205px;
-  right: 0;
+  position: absolute;
+  top: 100px;
+  right: -311px;
 }
 
 :host ::ng-deep .carousel-control-next-icon {

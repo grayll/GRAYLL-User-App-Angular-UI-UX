@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {faBell, faInfoCircle, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 import {AlgoPositionModel} from '../algo-position.model';
@@ -8,6 +8,7 @@ import {ErrorService} from '../../shared/error/error.service';
 import {CustomModalService} from '../../shared/custom-modal.service';
 import {AlgoNotificationModel} from '../../notifications/notification.model';
 import {NotificationsService} from '../../notifications/notifications.service';
+import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-system-header-boxes',
@@ -18,7 +19,9 @@ import {NotificationsService} from '../../notifications/notifications.service';
   ]
 })
 export class SystemHeaderBoxesComponent implements OnInit {
-  
+
+  @ViewChild(NgbCarousel) carouselSystem;
+
   GRXValue: string;
   totalGRX: number;
   selectedTab: any;
@@ -61,7 +64,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
       tabName: 'Arkady'
     }
   ];
-  
+
   // Font Awesome Icons
   faInfo = faInfoCircle;
   faSearch = faSearch;
@@ -212,6 +215,14 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.notificationsService.decreaseNumberOfAllUnreadNotifications();
       this.notificationsService.decreaseNumberOfUnreadAlgoNotifications();
     }
+  }
+
+  swipeLeft() {
+    this.carouselSystem.next();
+  }
+
+  swipeRight() {
+    this.carouselSystem.prev();
   }
 
 }
