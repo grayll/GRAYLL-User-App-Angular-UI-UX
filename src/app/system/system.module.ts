@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {CountdownModule} from 'ngx-countdown';
 import {OpenAlgoPositionSuccessComponent} from './system-header-boxes/open-algo-position-success/open-algo-position-success.component';
 import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-position-error/open-algo-position-error.component';
+import {UnreadNotificationsComponent} from './system-header-boxes/unread-notifications/unread-notifications.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-po
     SystemHeaderBoxesComponent,
     CancelAlgoPositionsComponent,
     OpenAlgoPositionSuccessComponent,
-    OpenAlgoPositionErrorComponent
+    OpenAlgoPositionErrorComponent,
+    UnreadNotificationsComponent
   ],
   imports: [
     CommonModule,

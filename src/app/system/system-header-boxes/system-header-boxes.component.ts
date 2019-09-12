@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {faBell, faInfoCircle, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 import {AlgoPositionModel} from '../algo-position.model';
 import {Router} from '@angular/router';
@@ -13,10 +13,7 @@ import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-system-header-boxes',
   templateUrl: './system-header-boxes.component.html',
-  styleUrls: [
-    './system-header-boxes.component.scss',
-    '../../shared/custom-modal.scss'
-  ]
+  styleUrls: ['./system-header-boxes.component.scss']
 })
 export class SystemHeaderBoxesComponent implements OnInit {
 
@@ -27,7 +24,6 @@ export class SystemHeaderBoxesComponent implements OnInit {
   selectedTab: any;
   algoPosition: AlgoPositionModel;
   algoNotifications: AlgoNotificationModel[];
-  bodyText: string;
   countdownConfig: CountdownConfig = {
     leftTime: 60,
     template: '$!s!',
@@ -67,7 +63,6 @@ export class SystemHeaderBoxesComponent implements OnInit {
 
   // Font Awesome Icons
   faInfo = faInfoCircle;
-  faSearch = faSearch;
   faBell = faBell;
 
   constructor(
@@ -81,53 +76,9 @@ export class SystemHeaderBoxesComponent implements OnInit {
     this.totalGRX = 99999999999.99998;
     this.selectedTab = this.algoItems[0];
     this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name, null, null, null, null);
-    this.algoNotifications = [
-      new AlgoNotificationModel(
-        1,
-        'GRZ | Arkady',
-        '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
-        false,
-        Date.now()
-      ),
-      new AlgoNotificationModel(
-        2,
-        'GRZ | Arkady',
-        '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
-        false,
-        Date.now()
-      ),
-      new AlgoNotificationModel(
-        10,
-        'GRZ | Arkady',
-        '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
-        false,
-        Date.now()
-      ),
-      new AlgoNotificationModel(
-        11,
-        'GRZ | Arkady',
-        '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
-        false,
-        Date.now()
-      ),
-      new AlgoNotificationModel(
-        12,
-        'GRZ | Arkady',
-        '0.11% ROI Increase | 18.81% Total Position ROI',
-        10108181408618385411,
-        false,
-        Date.now()
-      )
-    ];
   }
 
-  ngOnInit() {
-    this.bodyText = 'This text can be updated in modal 1';
-  }
+  ngOnInit() {}
 
   populateMaxGRX() {
     this.GRXValue = this.totalGRX.toString();
@@ -203,18 +154,6 @@ export class SystemHeaderBoxesComponent implements OnInit {
 
   openModal(id: string) {
     this.customModalService.open(id);
-  }
-
-  markAlgoNotificationAsRead(notification: AlgoNotificationModel) {
-    if (!notification.isRead) {
-      notification.isRead = true;
-      const index = this.algoNotifications.indexOf(notification, 0);
-      if (index > -1) {
-        this.algoNotifications.splice(index, 1);
-      }
-      this.notificationsService.decreaseNumberOfAllUnreadNotifications();
-      this.notificationsService.decreaseNumberOfUnreadAlgoNotifications();
-    }
   }
 
   swipeLeft() {

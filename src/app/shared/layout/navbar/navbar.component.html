@@ -9,26 +9,33 @@
     </button>
     <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse text-right" id="navbarsDefault">
       <ul class="navbar-nav ml-auto pb-0">
-        <li class="nav-item" data-toggle="tooltip" title="SYSTEM">
+        <li class="nav-item" data-toggle="tooltip" title="ALGO SYSTEM"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link" routerLink="/system/overview">
-            <span class="d-inline d-md-none mr-2">System</span>
+            <span class="d-inline d-md-none mr-2">GRAYLL System</span>
             <fa-icon [icon]="faChartLine" size="lg"></fa-icon>
+            <span class="badge bg-yellow text-light badge-number">
+              {{notificationsService.getNumberOfUnreadGrayllSystemNotifications()}}
+            </span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="WALLET">
+        <li class="nav-item" data-toggle="tooltip" title="WALLET"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link" routerLink="/wallet/overview">
             <span class="d-inline d-md-none mr-2">Wallet</span>
             <fa-icon [icon]="faWallet" size="lg"></fa-icon>
             <span class="badge bg-yellow text-light badge-number">5</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="DATA" routerLink="/data/overview">
+        <li class="nav-item" data-toggle="tooltip" title="DATA" routerLink="/data/overview"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link">
             <span class="d-inline d-md-none mr-2">Data</span>
             <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="NOTIFICATIONS" routerLink="/notifications/overview">
+        <li class="nav-item" data-toggle="tooltip" title="NOTIFICATIONS" routerLink="/notifications/overview"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link">
             <span class="d-inline d-md-none mr-2">Notifications</span>
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
@@ -37,13 +44,15 @@
             </span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="SETTINGS" routerLink="/settings/profile">
+        <li class="nav-item" data-toggle="tooltip" title="SETTINGS" routerLink="/settings/profile"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link">
             <span class="d-inline d-md-none mr-2">Settings</span>
             <fa-icon [icon]="faUser" size="lg"></fa-icon>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" title="SIGN OUT">
+        <li class="nav-item" data-toggle="tooltip" title="SIGN OUT"
+            (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link">
             <span class="d-inline d-md-none mr-2">Sign Out</span>
             <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>

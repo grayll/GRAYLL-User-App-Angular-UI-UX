@@ -124,7 +124,9 @@
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                    <span class="badge bg-yellow text-light badge-number">5</span>
+                    <span class="badge bg-yellow text-light badge-number">
+                      {{notificationsService.numberOfGRY1Notifications}}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -182,13 +184,15 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+                <div class="border-navy-hover" (click)="openModal('unread-gry2-notifications')"
                      style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                    <span class="badge bg-yellow text-light badge-number">5</span>
+                    <span class="badge bg-yellow text-light badge-number">
+                      {{notificationsService.numberOfGRY2Notifications}}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -249,13 +253,15 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+                <div class="border-navy-hover" (click)="openModal('unread-gry3-notifications')"
                      style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                    <span class="badge bg-yellow text-light badge-number">5</span>
+                    <span class="badge bg-yellow text-light badge-number">
+                      {{notificationsService.numberOfGRY3Notifications}}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -313,13 +319,15 @@
                 <h6 class="text-white font-weight-bolder m-b-0">GRZ | $0.08000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;">
-                <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+                <div class="border-navy-hover" (click)="openModal('unread-grz-notifications')"
                      style="outline:0!important">
                   <span class="font-weight-bolder">Unread Notifications</span>
                   <br>
                   <a href="javascript:void(0)" class="navy-link mt-1">
                     <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                    <span class="badge bg-yellow text-light badge-number">5</span>
+                    <span class="badge bg-yellow text-light badge-number">
+                      {{notificationsService.numberOfGRZNotifications}}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -741,46 +749,4 @@
   </ngb-carousel>
 </div>
 
-<app-jw-modal id="unread-gry1-notifications">
-  <div class="card border-0">
-    <div class="card-body gradient-box">
-      <div class="row">
-        <div class="col-7 font-weight-bolder">
-          Unread Notifications
-        </div>
-        <div class="col-5 align-self-center text-right">
-          <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
-            <fa-icon [icon]="faBell" size="lg"></fa-icon>
-            <span class="badge bg-yellow text-light badge-number">
-                          {{algoNotifications.length}}
-                        </span>
-          </a>
-        </div>
-      </div>
-      <div class="row my-3">
-        <div class="col search" style="border-color:#40278C!important;border-left:0!important;">
-          <div class="input-group">
-            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important">
-            <span class="input-group-append">
-                      <div class="input-group-text bg-transparent">
-                        <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
-                      </div>
-                    </span>
-          </div>
-        </div>
-      </div>
-      <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
-        <ng-container *ngFor="let notification of algoNotifications">
-          <app-algo-notification-item
-            (click)="markAlgoNotificationAsRead(notification)"
-            [notification]="notification">
-          </app-algo-notification-item>
-        </ng-container>
-        <p class="text-center mb-0" *ngIf="algoNotifications.length === 0">
-          There are no unread notifications.
-        </p>
-      </div>
-    </div>
-  </div>
-</app-jw-modal>
+<app-unread-notifications></app-unread-notifications>
