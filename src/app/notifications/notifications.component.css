@@ -122,9 +122,9 @@
 
 :host ::ng-deep .carousel-control-prev {
   display: block;
-  position: absolute;
-  top: 100px;
-  left: 12px;
+  position: fixed;
+  top: 206px;
+  left: 2px;
 }
 
 :host ::ng-deep .carousel-control-prev-icon {
@@ -135,9 +135,9 @@
 
 :host ::ng-deep .carousel-control-next {
   display: block;
-  position: absolute;
-  top: 100px;
-  right: -351px;
+  position: fixed;
+  top: 206px;
+  right: 2px;
 }
 
 :host ::ng-deep .carousel-control-next-icon {
