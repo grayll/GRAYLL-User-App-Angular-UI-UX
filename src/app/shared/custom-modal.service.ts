@@ -26,8 +26,5 @@ export class CustomModalService {
     // close modal specified by id
     const modal: any = this.modals.filter(x => x.id === id)[0];
     modal.close();
-    // make page scrollable again
-    const body = document.getElementsByTagName('body')[0];
-    body.classList.remove('overflow-hidden');
   }
 }

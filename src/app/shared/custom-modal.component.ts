@@ -17,6 +17,11 @@ import {CustomModalService} from './custom-modal.service';
 export class CustomModalComponent implements OnInit, OnDestroy {
   @Input() id: string;
   private element: any;
+  
+  didScroll = function(event) {
+    console.log('Touch move');
+    event.preventDefault();
+  };
 
   constructor(private modalService: CustomModalService, private el: ElementRef) {
     this.element = el.nativeElement;
@@ -35,11 +40,11 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     document.body.appendChild(this.element);
 
     // close modal on background click
-    this.element.addEventListener('click', (e: any) => {
-      if (e.target.className === 'jw-modal') {
-        modal.close();
-      }
-    });
+    // this.element.addEventListener('click', (e: any) => {
+    //   if (e.target.className === 'jw-modal') {
+    //     modal.close();
+    //   }
+    // });
 
     // add self (this modal instance) to the modal service so it's accessible from controllers
     this.modalService.add(this);
@@ -59,6 +64,7 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     const root = document.getElementsByTagName('html')[0];
     root.classList.add('overflow-hidden');
     document.body.classList.add('overflow-hidden');
+    document.addEventListener('touchmove', this.didScroll, false);
   }
 
   // close modal
@@ -68,5 +74,6 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     const root = document.getElementsByTagName('html')[0];
     root.classList.remove('overflow-hidden');
     document.body.classList.remove('overflow-hidden');
+    document.removeEventListener('touchmove', this.didScroll, false);
   }
 }

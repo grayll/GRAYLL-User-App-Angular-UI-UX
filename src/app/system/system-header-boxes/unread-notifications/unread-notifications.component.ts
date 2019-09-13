@@ -187,6 +187,20 @@ export class UnreadNotificationsComponent implements OnInit {
   }
 
   closePopup(id: string) {
+    switch (id) {
+      case 'unread-gry1-notifications':
+        this.gry1notifications = this.gry1notifications.filter((n) => !n.isRead);
+        break;
+      case 'unread-gry2-notifications':
+        this.gry2notifications = this.gry2notifications.filter((n) => !n.isRead);
+        break;
+      case 'unread-gry3-notifications':
+        this.gry3notifications = this.gry3notifications.filter((n) => !n.isRead);
+        break;
+      default:
+        this.grznotifications = this.grznotifications.filter((n) => !n.isRead);
+        break;
+    }
     this.customModalService.close(id);
   }
 
