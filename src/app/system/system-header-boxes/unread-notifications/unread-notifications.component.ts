@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NotificationsService} from '../../../notifications/notifications.service';
-import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faSearch, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {GRY1NotificationModel} from '../../../notifications/notification.model';
+import {CustomModalService} from '../../../shared/custom-modal.service';
 
 @Component({
   selector: 'app-unread-notifications',
@@ -21,9 +22,11 @@ export class UnreadNotificationsComponent implements OnInit {
   // Font Awesome Icons
   faSearch = faSearch;
   faBell = faBell;
+  faTimes = faTimes;
 
   constructor(
-    public notificationsService: NotificationsService
+    public notificationsService: NotificationsService,
+    private customModalService: CustomModalService
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
@@ -181,6 +184,10 @@ export class UnreadNotificationsComponent implements OnInit {
       this.notificationsService.decreaseNumberOfAllGrayllSystemdNotifications();
       this.notificationsService.decreaseNumberOfGRZNotifications();
     }
+  }
+
+  closePopup(id: string) {
+    this.customModalService.close(id);
   }
 
 }

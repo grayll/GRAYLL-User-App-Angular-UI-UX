@@ -5,13 +5,16 @@
         <div class="col-7 font-weight-bolder">
           Unread GRY | 1 Notifications
         </div>
-        <div class="col-5 align-self-center text-right">
-          <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
+        <div class="col-4 align-self-center text-right">
+          <a href="javascript:void(0)" class="navy-span">
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
             <span class="badge bg-yellow text-light badge-number">
               {{notificationsService.numberOfGRY1Notifications}}
             </span>
           </a>
+        </div>
+        <div class="col-1" (click)="closePopup('unread-gry1-notifications')">
+          <fa-icon style="color: #40278C;" [icon]="faTimes"></fa-icon>
         </div>
       </div>
       <div class="row my-3">
@@ -49,13 +52,16 @@
         <div class="col-7 font-weight-bolder">
           Unread GRY | 2 Notifications
         </div>
-        <div class="col-5 align-self-center text-right">
-          <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
+        <div class="col-4 align-self-center text-right">
+          <a href="javascript:void(0)" class="navy-span">
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
             <span class="badge bg-yellow text-light badge-number">
               {{notificationsService.numberOfGRY2Notifications}}
             </span>
           </a>
+        </div>
+        <div class="col-1" (click)="closePopup('unread-gry2-notifications')">
+          <fa-icon style="color: #40278C;" [icon]="faTimes"></fa-icon>
         </div>
       </div>
       <div class="row my-3">
@@ -93,13 +99,16 @@
         <div class="col-7 font-weight-bolder">
           Unread GRY | 3 Notifications
         </div>
-        <div class="col-5 align-self-center text-right">
+        <div class="col-4 align-self-center text-right">
           <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
             <span class="badge bg-yellow text-light badge-number">
               {{notificationsService.numberOfGRY3Notifications}}
             </span>
           </a>
+        </div>
+        <div class="col-1" (click)="closePopup('unread-gry3-notifications')">
+          <fa-icon style="color: #40278C;" [icon]="faTimes"></fa-icon>
         </div>
       </div>
       <div class="row my-3">
@@ -137,13 +146,16 @@
         <div class="col-7 font-weight-bolder">
           Unread GRZ Notifications
         </div>
-        <div class="col-5 align-self-center text-right">
-          <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
+        <div class="col-4 align-self-center text-right">
+          <a href="javascript:void(0)" class="navy-span">
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
             <span class="badge bg-yellow text-light badge-number">
               {{notificationsService.numberOfGRZNotifications}}
             </span>
           </a>
+        </div>
+        <div class="col-1" (click)="closePopup('unread-grz-notifications')">
+          <fa-icon style="color: #40278C;" [icon]="faTimes"></fa-icon>
         </div>
       </div>
       <div class="row my-3">
