@@ -3,7 +3,7 @@
     <div class="card-body gradient-box">
       <div class="row">
         <div class="col-7 font-weight-bolder">
-          Unread GRY1 Notifications
+          Unread GRY | 1 Notifications
         </div>
         <div class="col-5 align-self-center text-right">
           <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
+      <div class="mobile-system-nots" style="overflow-y: scroll; height:440px;overflow-x: hidden">
         <ng-container *ngFor="let notification of gry1notifications">
           <app-algo-notification-item
             (markAsRead)="markGRY1NotificationAsRead(notification)"
@@ -47,7 +47,7 @@
     <div class="card-body gradient-box">
       <div class="row">
         <div class="col-7 font-weight-bolder">
-          Unread GRY2 Notifications
+          Unread GRY | 2 Notifications
         </div>
         <div class="col-5 align-self-center text-right">
           <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
+      <div class="mobile-system-nots" style="overflow-y: scroll; height:440px;overflow-x: hidden">
         <ng-container *ngFor="let notification of gry2notifications">
           <app-algo-notification-item
             (markAsRead)="markGRY2NotificationAsRead(notification)"
@@ -91,7 +91,7 @@
     <div class="card-body gradient-box">
       <div class="row">
         <div class="col-7 font-weight-bolder">
-          Unread GRY3 Notifications
+          Unread GRY | 3 Notifications
         </div>
         <div class="col-5 align-self-center text-right">
           <a href="javascript:void(0)" class="navy-span" style="margin-right: 15px">
@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-      <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
+      <div class="mobile-system-nots" style="overflow-y: scroll; height:440px;overflow-x: hidden">
         <ng-container *ngFor="let notification of gry3notifications">
           <app-algo-notification-item
             (markAsRead)="markGRY3NotificationAsRead(notification)"
@@ -159,7 +159,7 @@
           </div>
         </div>
       </div>
-      <div style="overflow-y: scroll; height:440px;overflow-x: hidden">
+      <div style="overflow-y: scroll; height:440px;overflow-x: hidden" class="mobile-system-nots">
         <ng-container *ngFor="let notification of grznotifications">
           <app-algo-notification-item
             (markAsRead)="markGRZNotificationAsRead(notification)"

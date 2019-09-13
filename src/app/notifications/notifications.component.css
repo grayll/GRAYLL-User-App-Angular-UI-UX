@@ -165,3 +165,10 @@
     top: 120px;
   }
 }
+
+@media (max-width: 420px) {
+  h4 {
+    position: fixed;
+    top: 48px;
+  }
+}

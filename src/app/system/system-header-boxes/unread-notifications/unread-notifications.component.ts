@@ -56,6 +56,30 @@ export class UnreadNotificationsComponent implements OnInit {
         10108181408618385411,
         false,
         Date.now()
+      ),
+      new GRY1NotificationModel(
+        18,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new GRY1NotificationModel(
+        2,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new GRY1NotificationModel(
+        11,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
       )
     ];
     this.gry2notifications = [
