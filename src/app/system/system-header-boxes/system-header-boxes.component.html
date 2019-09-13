@@ -500,13 +500,15 @@
               <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
-              <div class="border-navy-hover" style="outline:0!important"
+              <div class="mobile-bottom-border" style="outline:0!important"
                    (click)="openModal('unread-gry1-notifications')">
                 <span class="font-weight-bolder">Unread Notifications</span>
                 <br>
                 <a href="javascript:void(0)" class="navy-link mt-1">
                   <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                  <span class="badge bg-yellow text-light badge-number">5</span>
+                  <span class="badge bg-yellow text-light badge-number">
+                    {{notificationsService.numberOfGRY1Notifications}}
+                  </span>
                 </a>
               </div>
             </div>
@@ -528,7 +530,7 @@
           </div>
           <div class="row mt-3 px-1">
             <div class="col">
-              <div class="border-navy-hover" (click)="scrollToSystemActivity()">
+              <div class="mobile-bottom-border" (click)="scrollToSystemActivity()">
                 <h6 class="text-white font-weight-bolder">
                   GRY 1 | Positions
                 </h6>
@@ -564,13 +566,15 @@
               <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
-              <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+              <div class="mobile-bottom-border" (click)="openModal('unread-gry2-notifications')"
                    style="outline:0!important">
                 <span class="font-weight-bolder">Unread Notifications</span>
                 <br>
                 <a href="javascript:void(0)" class="navy-link mt-1">
                   <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                  <span class="badge bg-yellow text-light badge-number">5</span>
+                  <span class="badge bg-yellow text-light badge-number">
+                    {{notificationsService.numberOfGRY2Notifications}}
+                  </span>
                 </a>
               </div>
             </div>
@@ -592,7 +596,7 @@
           </div>
           <div class="row mt-3 px-1">
             <div class="col">
-              <div class="border-navy-hover" (click)="scrollToSystemActivity()">
+              <div class="mobile-bottom-border" (click)="scrollToSystemActivity()">
                 <h6 class="text-white font-weight-bolder">
                   GRY 2 | Positions
                 </h6>
@@ -629,13 +633,15 @@
               <h6 class="text-white font-weight-bolder m-b-0">GRY | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
-              <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+              <div class="mobile-bottom-border" (click)="openModal('unread-gry3-notifications')"
                    style="outline:0!important">
                 <span class="font-weight-bolder">Unread Notifications</span>
                 <br>
                 <a href="javascript:void(0)" class="navy-link mt-1">
                   <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                  <span class="badge bg-yellow text-light badge-number">5</span>
+                  <span class="badge bg-yellow text-light badge-number">
+                    {{notificationsService.numberOfGRY3Notifications}}
+                  </span>
                 </a>
               </div>
             </div>
@@ -657,7 +663,7 @@
           </div>
           <div class="row mt-3 px-1">
             <div class="col">
-              <div class="border-navy-hover" (click)="scrollToSystemActivity()">
+              <div class="mobile-bottom-border" (click)="scrollToSystemActivity()">
                 <h6 class="text-white font-weight-bolder">
                   GRY 3 | Positions
                 </h6>
@@ -693,13 +699,15 @@
               <h6 class="text-white font-weight-bolder m-b-0">GRZ | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
-              <div class="border-navy-hover" (click)="openModal('unread-gry1-notifications')"
+              <div class="mobile-bottom-border" (click)="openModal('unread-grz-notifications')"
                    style="outline:0!important">
                 <span class="font-weight-bolder">Unread Notifications</span>
                 <br>
                 <a href="javascript:void(0)" class="navy-link mt-1">
                   <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                  <span class="badge bg-yellow text-light badge-number">5</span>
+                  <span class="badge bg-yellow text-light badge-number">
+                    {{notificationsService.numberOfGRZNotifications}}
+                  </span>
                 </a>
               </div>
             </div>
@@ -721,7 +729,7 @@
           </div>
           <div class="row mt-3 px-1">
             <div class="col">
-              <div class="border-navy-hover" (click)="scrollToSystemActivity()">
+              <div class="mobile-bottom-border" (click)="scrollToSystemActivity()">
                 <h6 class="text-white font-weight-bolder">
                   GRZ | Positions
                 </h6>

@@ -127,6 +127,12 @@ h6 {
   width: 100%; /* This will be the new width of your border when on hover */
 }
 
+.mobile-bottom-border:hover {
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
+}
+
+
 /* Removing blue glow border from all form-control form-control-no-border inputs */
 .form-control-no-border:focus {
   border-color: #ced4da!important;

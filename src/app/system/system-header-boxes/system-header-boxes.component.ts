@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import {SharedService} from '../../shared/shared.service';
 import {ErrorService} from '../../shared/error/error.service';
 import {CustomModalService} from '../../shared/custom-modal.service';
-import {AlgoNotificationModel} from '../../notifications/notification.model';
 import {NotificationsService} from '../../notifications/notifications.service';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 
@@ -23,7 +22,6 @@ export class SystemHeaderBoxesComponent implements OnInit {
   totalGRX: number;
   selectedTab: any;
   algoPosition: AlgoPositionModel;
-  algoNotifications: AlgoNotificationModel[];
   countdownConfig: CountdownConfig = {
     leftTime: 60,
     template: '$!s!',

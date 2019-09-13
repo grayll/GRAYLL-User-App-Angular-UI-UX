@@ -134,10 +134,11 @@
 }
 
 :host ::ng-deep .carousel-control-next {
+  width: 15px;
   display: block;
   position: fixed;
   top: 206px;
-  right: 2px;
+  right: 23px;
 }
 
 :host ::ng-deep .carousel-control-next-icon {
