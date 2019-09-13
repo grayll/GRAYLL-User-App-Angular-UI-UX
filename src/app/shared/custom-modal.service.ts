@@ -20,9 +20,6 @@ export class CustomModalService {
     // open modal specified by id
     const modal: any = this.modals.filter(x => x.id === id)[0];
     modal.open();
-    // disable background page scroll
-    const body = document.getElementsByTagName('body')[0];
-    body.classList.add('overflow-hidden');
   }
 
   close(id: string) {

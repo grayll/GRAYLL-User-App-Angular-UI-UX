@@ -55,11 +55,18 @@ export class CustomModalComponent implements OnInit, OnDestroy {
   open(): void {
     this.element.style.display = 'block';
     document.body.classList.add('jw-modal-open');
+    // disable background page scroll
+    const root = document.getElementsByTagName('html')[0];
+    root.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden');
   }
 
   // close modal
   close(): void {
     this.element.style.display = 'none';
     document.body.classList.remove('jw-modal-open');
+    const root = document.getElementsByTagName('html')[0];
+    root.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden');
   }
 }
