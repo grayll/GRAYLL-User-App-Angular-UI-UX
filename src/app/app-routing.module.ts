@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/wallet/overview',
+    redirectTo: '/dashboard/overview',
     pathMatch: 'full'
   },
   {

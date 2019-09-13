@@ -167,6 +167,9 @@
 }
 
 @media (max-width: 420px) {
+  .main-wrapper {
+    padding-top: 0;
+  }
   h4 {
     position: fixed;
     top: 48px;
