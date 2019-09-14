@@ -58,11 +58,7 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     // disable background page scroll
     const root = document.getElementsByTagName('html')[0];
     root.classList.add('overflow-hidden');
-    root.classList.add('position-fixed');
-    root.classList.add('w-100');
     document.body.classList.add('overflow-hidden');
-    document.body.classList.add('position-fixed');
-    document.body.classList.add('w-100');
   }
 
   // close modal
@@ -71,10 +67,6 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     document.body.classList.remove('jw-modal-open');
     const root = document.getElementsByTagName('html')[0];
     root.classList.remove('overflow-hidden');
-    root.classList.remove('position-fixed');
-    root.classList.remove('w-100');
     document.body.classList.remove('overflow-hidden');
-    document.body.classList.remove('position-fixed');
-    document.body.classList.remove('w-100');
   }
 }
