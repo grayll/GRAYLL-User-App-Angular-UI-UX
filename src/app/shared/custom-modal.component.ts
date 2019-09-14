@@ -61,7 +61,7 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     root.classList.add('position-fixed');
     root.classList.add('w-100');
     document.body.classList.add('overflow-hidden');
-    document.body.classList.add('position-fixe');
+    document.body.classList.add('position-fixed');
     document.body.classList.add('w-100');
   }
 
