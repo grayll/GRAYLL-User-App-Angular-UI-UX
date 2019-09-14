@@ -13,11 +13,7 @@ import {CustomModalService} from '../../../shared/custom-modal.service';
   ]
 })
 
-declare var lastY; // Needed in order to determine direction of scroll.
-
 export class UnreadNotificationsComponent implements OnInit {
-
-  private elements: HTMLCollectionOf<Element>;
 
   gry1notifications: GRY1NotificationModel[];
   gry2notifications: GRY1NotificationModel[];
@@ -29,54 +25,20 @@ export class UnreadNotificationsComponent implements OnInit {
   faBell = faBell;
   faTimes = faTimes;
 
-  touchStart = function(event) {
-    console.log('Touch start');
-    lastY = event.touches[0].clientY;
-  };
-
-  touchMove = function(event) {
-    const top = event.touches[0].clientY;
-
-    // Determine scroll position and direction.
-    const scrollTop = event.currentTarget.scrollTop();
-    const direction = (lastY - top) < 0 ? 'up' : 'down';
-
-    if (scrollTop === 0 && direction === 'up') {
-      // Prevent scrolling up when already at top as this introduces a freeze.
-      event.preventDefault();
-    } else if (scrollTop >= (event.currentTarget.scrollHeight - event.currentTarget.outerHeight()) && direction === 'down') {
-      // Prevent scrolling down when already at bottom as this also introduces a freeze.
-      event.preventDefault();
-    }
-
-    lastY = top;
-  };
-
   constructor(
     public notificationsService: NotificationsService,
     private customModalService: CustomModalService
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
-    lastY = 0;
   }
 
   ngOnInit() {
-    this.preventScroll();
+    this.loadPopupElementsById();
   }
 
-  private preventScroll() {
-    this.elements = document.getElementsByClassName('mobile-system-nots');
-    this.elements.item(0).addEventListener('touchstart', this.touchStart);
-    this.elements.item(1).addEventListener('touchstart', this.touchStart);
-    this.elements.item(2).addEventListener('touchstart', this.touchStart);
-    this.elements.item(3).addEventListener('touchstart', this.touchStart);
-
-    this.elements.item(0).addEventListener('touchmove', this.touchMove);
-    this.elements.item(1).addEventListener('touchmove', this.touchMove);
-    this.elements.item(2).addEventListener('touchmove', this.touchMove);
-    this.elements.item(3).addEventListener('touchmove', this.touchMove);
-
+  private loadPopupElementsById() {
+    this.customModalService.mobileScrollContainer = document.querySelector('.mobile-system-nots');
   }
 
   private populateNotifications() {

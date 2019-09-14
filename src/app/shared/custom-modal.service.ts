@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class CustomModalService {
   private modals: any[] = [];
+  private unreadNotificationsMobileScrollContainer: Element;
+
+  set mobileScrollContainer(element: Element) { this.unreadNotificationsMobileScrollContainer = element; }
+  get mobileScrollContainer() { return this.unreadNotificationsMobileScrollContainer; }
 
   constructor() {}
 

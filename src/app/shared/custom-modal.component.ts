@@ -1,5 +1,7 @@
 import { Component, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 import {CustomModalService} from './custom-modal.service';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 
 @Component({
   selector: 'app-jw-modal',
@@ -55,18 +57,13 @@ export class CustomModalComponent implements OnInit, OnDestroy {
   open(): void {
     this.element.style.display = 'block';
     document.body.classList.add('jw-modal-open');
-    // disable background page scroll
-    const root = document.getElementsByTagName('html')[0];
-    root.classList.add('overflow-hidden');
-    document.body.classList.add('overflow-hidden');
+    disableBodyScroll(this.modalService.mobileScrollContainer);
   }
 
   // close modal
   close(): void {
     this.element.style.display = 'none';
     document.body.classList.remove('jw-modal-open');
-    const root = document.getElementsByTagName('html')[0];
-    root.classList.remove('overflow-hidden');
-    document.body.classList.remove('overflow-hidden');
+    enableBodyScroll(this.modalService.mobileScrollContainer);
   }
 }
