@@ -36,7 +36,7 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     // move element to bottom of page (just before </body>) so it can be displayed above everything else
     document.body.appendChild(this.element);
 
-    // close modal on background click
+    // to close modal on background click
     // this.element.addEventListener('click', (e: any) => {
     //   if (e.target.className === 'jw-modal') {
     //     modal.close();
@@ -60,13 +60,13 @@ export class CustomModalComponent implements OnInit, OnDestroy {
         e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
         break;
       case 'unread-gry2-notifications':
-        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        e ? enableBodyScroll(this.modalService.gry2mobileScrollContainer) : disableBodyScroll(this.modalService.gry2mobileScrollContainer);
         break;
       case 'unread-gry3-notifications':
-        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        e ? enableBodyScroll(this.modalService.gry3mobileScrollContainer) : disableBodyScroll(this.modalService.gry3mobileScrollContainer);
         break;
       default:
-        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        e ? enableBodyScroll(this.modalService.grzmobileScrollContainer) : disableBodyScroll(this.modalService.grzmobileScrollContainer);
         break;
     }
   }
