@@ -38,7 +38,11 @@ export class UnreadNotificationsComponent implements OnInit {
   }
 
   private loadPopupElementsById() {
-    this.customModalService.mobileScrollContainer = document.querySelector('.mobile-system-nots');
+    const elements: NodeListOf<Element> = document.querySelectorAll('.mobile-system-nots');
+    this.customModalService.gry1mobileScrollContainer = elements[0];
+    this.customModalService.gry2mobileScrollContainer = elements[1];
+    this.customModalService.gry3mobileScrollContainer = elements[2];
+    this.customModalService.grzmobileScrollContainer = elements[3];
   }
 
   private populateNotifications() {
@@ -111,6 +115,30 @@ export class UnreadNotificationsComponent implements OnInit {
       )
     ];
     this.gry3notifications = [
+      new GRY1NotificationModel(
+        18,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new GRY1NotificationModel(
+        2,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
+      new GRY1NotificationModel(
+        11,
+        'GRZ | Arkady',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      ),
       new GRY1NotificationModel(
         18,
         'GRZ | Arkady',

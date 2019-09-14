@@ -53,17 +53,33 @@ export class CustomModalComponent implements OnInit, OnDestroy {
     this.element.remove();
   }
 
-  // open modal
-  open(): void {
-    this.element.style.display = 'block';
-    document.body.classList.add('jw-modal-open');
-    disableBodyScroll(this.modalService.mobileScrollContainer);
+  private enableBackgroundScroll(id: string, enable: boolean) {
+    const e = enable;
+    switch (id) {
+      case 'unread-gry1-notifications':
+        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        break;
+      case 'unread-gry2-notifications':
+        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        break;
+      case 'unread-gry3-notifications':
+        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        break;
+      default:
+        e ? enableBodyScroll(this.modalService.gry1mobileScrollContainer) : disableBodyScroll(this.modalService.gry1mobileScrollContainer);
+        break;
+    }
   }
 
-  // close modal
-  close(): void {
+  open(id: string): void {
+    this.element.style.display = 'block';
+    document.body.classList.add('jw-modal-open');
+    this.enableBackgroundScroll(id, false);
+  }
+
+  close(id: string): void {
     this.element.style.display = 'none';
     document.body.classList.remove('jw-modal-open');
-    enableBodyScroll(this.modalService.mobileScrollContainer);
+    this.enableBackgroundScroll(id, true);
   }
 }
