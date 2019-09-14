@@ -13,7 +13,7 @@ import {CustomModalService} from '../../../shared/custom-modal.service';
   ]
 })
 
-let lastY = 0; // Needed in order to determine direction of scroll.
+declare var lastY; // Needed in order to determine direction of scroll.
 
 export class UnreadNotificationsComponent implements OnInit {
 
@@ -58,6 +58,7 @@ export class UnreadNotificationsComponent implements OnInit {
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
+    lastY = 0;
   }
 
   ngOnInit() {
