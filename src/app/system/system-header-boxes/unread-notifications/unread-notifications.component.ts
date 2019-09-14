@@ -38,7 +38,7 @@ export class UnreadNotificationsComponent implements OnInit {
     const top = event.touches[0].clientY;
 
     // Determine scroll position and direction.
-    const scrollTop = $(event.currentTarget).scrollTop();
+    const scrollTop = event.currentTarget.scrollTop();
     const direction = (lastY - top) < 0 ? 'up' : 'down';
 
     if (scrollTop === 0 && direction === 'up') {
