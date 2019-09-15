@@ -46,7 +46,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     body.classList.add('dark-navy-bg');
     setTimeout(() => {
       this.loadMobileNotificationContainers();
-    }, 0);
+    }, 100);
   }
 
   private loadMobileNotificationContainers() {
@@ -54,7 +54,6 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     this.algoNotificationsMobileScrollContainer = elements[0];
     this.walletNotificationsMobileScrollContainer = elements[1];
     this.generalNotificationsMobileScrollContainer = elements[2];
-    console.log(elements);
     disableBodyScroll(this.algoNotificationsMobileScrollContainer);
     disableBodyScroll(this.walletNotificationsMobileScrollContainer);
     disableBodyScroll(this.generalNotificationsMobileScrollContainer);
