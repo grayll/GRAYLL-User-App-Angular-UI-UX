@@ -3,6 +3,7 @@ import {faBell, faSearch} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, GeneralNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-notifications',
@@ -25,6 +26,10 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   systemNotifications: GeneralNotificationModel[] = [];
   systemNotificationsToShow: GeneralNotificationModel[] = [];
 
+  private walletNotificationsMobileScrollContainer: Element;
+  private algoNotificationsMobileScrollContainer: Element;
+  private generalNotificationsMobileScrollContainer: Element;
+
   // Font Awesome Icons
   faBell = faBell;
   faSearch = faSearch;
@@ -39,11 +44,25 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('dark-navy-bg');
+    this.loadMobileNotificationContainers();
+  }
+
+  private loadMobileNotificationContainers() {
+    const elements: NodeListOf<Element> = document.querySelectorAll('.mobile-system-nots');
+    this.algoNotificationsMobileScrollContainer = elements[0];
+    this.walletNotificationsMobileScrollContainer = elements[1];
+    this.generalNotificationsMobileScrollContainer = elements[2];
+    disableBodyScroll(this.algoNotificationsMobileScrollContainer);
+    disableBodyScroll(this.walletNotificationsMobileScrollContainer);
+    disableBodyScroll(this.generalNotificationsMobileScrollContainer);
   }
 
   ngOnDestroy(): void {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('dark-navy-bg');
+    enableBodyScroll(this.algoNotificationsMobileScrollContainer);
+    enableBodyScroll(this.walletNotificationsMobileScrollContainer);
+    enableBodyScroll(this.generalNotificationsMobileScrollContainer);
   }
 
   private populateNotifications() {
