@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 declare var Hammer: any;
 
+// Solve conflict when swiping mobile cards
 export class MyHammerConfig extends HammerGestureConfig  {
   buildHammer(element: HTMLElement) {
     const mc = new Hammer(element, {

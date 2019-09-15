@@ -1,0 +1,83 @@
+<div class="d-flex" [class.toggled]="isMenuToggled" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-purple border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+      <div class="row">
+        <div class="col-4">
+          <a class="navbar-brand ml-1" routerLink="/admin/overview">
+            <img src="assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="Logo">
+          </a>
+        </div>
+        <div class="col align-self-center">
+          <h4 class="text-white mb-0 font-weight-bolder">GRAYLL</h4>
+        </div>
+      </div>
+    </div>
+    <div class="list-group list-group-flush bg-transparent">
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        User Management and Activity
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Issues Management
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Charts from Database
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        User Activity Reports
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Security
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Algorithm Management
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Adjust Parameters/Variables
+      </a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg bg-transparent border-bottom">
+      <button (click)="isMenuToggled = !isMenuToggled" class="btn btn-purple" id="menu-toggle">
+        Admin Menu
+      </button>
+
+      <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+              data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse text-right" id="navbarsDefault">
+        <ul class="navbar-nav ml-auto pb-0">
+          <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+            <a href="javascript:void(0)" class="nav-link navy-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+            <a href="javascript:void(0)" class="nav-link navy-link">
+              Settings
+            </a>
+          </li>
+          <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+            <a href="javascript:void(0)" class="nav-link navy-link">
+              Sign out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid text-white">
+      <h1 class="mt-4">Admin Panel</h1>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>

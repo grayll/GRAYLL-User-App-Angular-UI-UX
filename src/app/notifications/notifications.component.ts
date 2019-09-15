@@ -44,7 +44,9 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('dark-navy-bg');
-    this.loadMobileNotificationContainers();
+    setTimeout(() => {
+      this.loadMobileNotificationContainers();
+    }, 0);
   }
 
   private loadMobileNotificationContainers() {
@@ -52,6 +54,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     this.algoNotificationsMobileScrollContainer = elements[0];
     this.walletNotificationsMobileScrollContainer = elements[1];
     this.generalNotificationsMobileScrollContainer = elements[2];
+    console.log(elements);
     disableBodyScroll(this.algoNotificationsMobileScrollContainer);
     disableBodyScroll(this.walletNotificationsMobileScrollContainer);
     disableBodyScroll(this.generalNotificationsMobileScrollContainer);
