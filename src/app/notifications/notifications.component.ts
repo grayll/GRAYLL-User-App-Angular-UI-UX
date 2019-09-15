@@ -48,7 +48,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   }
 
   private loadMobileNotificationContainers() {
-    const elements: NodeListOf<Element> = document.querySelectorAll('.mobile-system-nots');
+    const elements: NodeListOf<Element> = document.querySelectorAll('.scroll-cont');
     this.algoNotificationsMobileScrollContainer = elements[0];
     this.walletNotificationsMobileScrollContainer = elements[1];
     this.generalNotificationsMobileScrollContainer = elements[2];
