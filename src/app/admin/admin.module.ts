@@ -5,11 +5,13 @@ import {AdminComponent} from './admin.component';
 import {AdminRoutingModule} from './admin-routing.module';
 import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { UserManagementComponent } from './user-management/user-management.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserManagementComponent
   ],
   imports: [
     CommonModule,

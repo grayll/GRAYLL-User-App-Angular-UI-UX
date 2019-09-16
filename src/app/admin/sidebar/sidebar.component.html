@@ -1,3 +1,43 @@
-<p>
-  sidebar works!
-</p>
+<div [class.toggled]="isMenuToggled" id="wrapper">
+  <div class="bg-purple border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+      <div class="row">
+        <div class="col-4">
+          <a class="navbar-brand ml-1" routerLink="/admin/overview">
+            <img src="assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="Logo">
+          </a>
+        </div>
+        <div class="col align-self-center">
+          <h4 class="text-white mb-0 font-weight-bolder">GRAYLL</h4>
+        </div>
+      </div>
+    </div>
+    <div class="list-group list-group-flush bg-transparent">
+      <a href="javascript:void(0)" [routerLink]="['/admin/overview', {outlets: {admin: 'user-management'}}]"
+         class="list-group-item list-group-item-action bg-transparent text-white">
+        User Management and Activity
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Issues Management
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Charts from Database
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        User Activity Reports
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Alerts and Notifications
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Security
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Algorithm Management
+      </a>
+      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
+        Adjust Parameters/Variables
+      </a>
+    </div>
+  </div>
+</div>
