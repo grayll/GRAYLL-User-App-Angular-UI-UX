@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as c3 from 'c3';
+import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-user-management',
@@ -7,8 +8,72 @@ import * as c3 from 'c3';
   styleUrls: ['./user-management.component.css']
 })
 export class UserManagementComponent implements OnInit {
-
-  constructor() { }
+  
+  public config: PerfectScrollbarConfigInterface = {};
+  
+  single: any[];
+  dateData: any[];
+  dateDataWithRange: any[];
+  range = false;
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  tooltipDisabled = false;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  yAxisLabel = 'Campaign Success Rate';
+  showGridLines = true;
+  innerPadding = 0;
+  autoScale = true;
+  timeline = false;
+  barPadding = 5;
+  groupPadding = 0;
+  roundDomains = false;
+  maxRadius = 10;
+  minRadius = 3;
+  view = '';
+  showLabels = true;
+  explodeSlices = false;
+  doughnut = false;
+  arcWidth = 0.25;
+  rangeFillOpacity = 0.15;
+  
+  colorScheme = {
+    domain: ['#4fc3f7', '#fb8c00', '#7460ee', '#f62d51', '#20c997', '#2962FF']
+  };
+  schemeType = 'ordinal';
+  
+  constructor() {
+    this.single = [
+      {
+        name: 'Germany',
+        value: 40
+      },
+        {
+          name: 'USA',
+          value: 24
+        },
+        {
+          name: 'France',
+          value: 36
+        },
+        {
+          name: 'India',
+          value: 36
+        },
+        {
+          name: 'Spain',
+          value: 33
+        },
+        {
+          name: 'Italy',
+          value: 35
+        }
+      ];
+  }
 
   ngOnInit() {
     const chart2 = c3.generate({

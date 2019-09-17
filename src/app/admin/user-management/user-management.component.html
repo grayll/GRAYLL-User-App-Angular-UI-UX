@@ -1,6 +1,8 @@
 <h2 class="mt-4 mb-3">User Management and Activity</h2>
 
 <div class="row">
+
+  <!-- Number of Users -->
   <div class="col-md-4 col-sm-12">
     <div class="card border card-hover text-light h-100" style="background-color: rgba(255, 255, 255, 0.1)">
       <div class="card-body">
@@ -31,6 +33,7 @@
     </div>
   </div>
 
+  <!-- Peak Hours -->
   <div class="col-md-8 col-sm-12">
     <div class="row">
       <!-- column -->
@@ -70,5 +73,64 @@
       </div>
     </div>
   </div>
+</div>
 
+<!-- Geogrpahic Locations -->
+<div class="row mt-3">
+  <!-- column -->
+  <div class="col-sm-12">
+    <div class="card border text-light" style="background-color: rgba(255, 255, 255, 0.1)">
+      <div class="card-body">
+        <h4 class="card-title">Top Locations</h4>
+        <h5 class="card-subtitle">Country Data</h5>
+        <div class="row">
+          <!-- column -->
+          <div class="col-sm-12 col-md-5 col-lg-7">
+            <div class="m-t-40 countries">
+              <ngx-charts-bar-vertical [scheme]="colorScheme" [schemeType]="schemeType" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+                                       [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                                       [tooltipDisabled]="tooltipDisabled" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showGridLines]="showGridLines"
+                                       [barPadding]="60" [view]="view" [roundDomains]="roundDomains">
+              </ngx-charts-bar-vertical>
+            </div>
+          </div>
+          <!-- column -->
+          <div class="col-sm-12 col-md-6 col-lg-4 ml-auto">
+            <ul class="list-style-none pr-1 country-list" [perfectScrollbar]="config">
+              <li class="d-flex border-bottom pt-2 p-b-20 align-items-center">
+                <i class="flag-icon flag-icon-it mr-1" title="it" id="it"></i>
+                <span class="text-light">Italy</span>
+                <h5 class="ml-auto mb-0">24</h5>
+              </li>
+              <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
+                <i class="flag-icon flag-icon-us mr-15" title="us" id="us"></i>
+                <span class="text-light">USA</span>
+                <h5 class="ml-auto mb-0">18</h5>
+              </li>
+              <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
+                <i class="flag-icon flag-icon-de mr-15" title="de" id="de"></i>
+                <span class="text-light">Germany</span>
+                <h5 class="ml-auto mb-0">14</h5>
+              </li>
+              <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
+                <i class="flag-icon flag-icon-in mr-15" title="in" id="in"></i>
+                <span class="text-light">India</span>
+                <h5 class="ml-auto mb-0">15</h5>
+              </li>
+              <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
+                <i class="flag-icon flag-icon-fr mr-15" title="in" id="fr"></i>
+                <span class="text-light">France</span>
+                <h5 class="ml-auto mb-0">09</h5>
+              </li>
+              <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
+                <i class="flag-icon flag-icon-es mr-15" title="es" id="es"></i>
+                <span class="text-light">Spain</span>
+                <h5 class="ml-auto mb-0">15</h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
