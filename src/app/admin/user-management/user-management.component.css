@@ -6,3 +6,15 @@
   height: 250px;
   position: relative;
 }
+
+@media (min-width: 991px) {
+  .m-bottom {
+    margin-bottom: 1rem!important;
+  }
+}
+
+@media (max-width: 991px) {
+  .card {
+    height: auto!important;
+  }
+}

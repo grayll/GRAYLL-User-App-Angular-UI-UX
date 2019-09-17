@@ -9,6 +9,7 @@ import {SnotifyModule, SnotifyService} from 'ng-snotify';
 import {NotifierConfig} from './shared/configurations/snotify.conf';
 import {SharedModule} from './shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 declare var Hammer: any;
 
@@ -33,7 +34,8 @@ export class MyHammerConfig extends HammerGestureConfig  {
     AppRoutingModule,
     SharedModule,
     SnotifyModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ErrorService,

@@ -1,5 +1,5 @@
 <div [class.toggled]="isMenuToggled" id="wrapper" class="sticky-top">
-  <div class="bg-purple border-right" id="sidebar-wrapper">
+  <div class="bg-pink border-right" id="sidebar-wrapper">
     <div class="sidebar-heading">
       <div class="row">
         <div class="col-4">
@@ -12,32 +12,55 @@
         </div>
       </div>
     </div>
-    <div class="list-group list-group-flush bg-transparent">
-      <a href="javascript:void(0)" [routerLink]="['/admin/overview', {outlets: {admin: 'user-management'}}]"
-         class="list-group-item list-group-item-action bg-transparent text-white">
-        User Management and Activity
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Issues Management
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Charts from Database
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        User Activity Reports
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Alerts and Notifications
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Security
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Algorithm Management
-      </a>
-      <a href="javascript:void(0)" class="list-group-item list-group-item-action bg-transparent text-white">
-        Adjust Parameters/Variables
-      </a>
+    <div class="bg-pink settings-menu">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 0"
+            [ngClass]="activeLink === 0 ? 'active' : ''">
+          User Management and Activity
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 1"
+            [ngClass]="activeLink === 1 ? 'active' : ''">
+          Issues Management
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 2"
+            [ngClass]="activeLink === 2 ? 'active' : ''">
+          Charts from Database
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            [routerLink]="['/admin/overview', {outlets: {admin: 'user-management'}}]"
+            (click)="activeLink = 3"
+            [ngClass]="activeLink === 3 ? 'active' : ''">
+          User Activity Reports
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 4"
+            [ngClass]="activeLink === 4 ? 'active' : ''">
+          Alerts and Notifications
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 5"
+            [ngClass]="activeLink === 5 ? 'active' : ''">
+          Security
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 6"
+            [ngClass]="activeLink === 6? 'active' : ''">
+          Algorithm Management
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 7"
+            [ngClass]="activeLink === 7 ? 'active' : ''">
+          Adjust Parameters/Variables
+        </li>
+        <li class="list-group-item bg-transparent list-group-item-action"
+            (click)="activeLink = 8"
+            [ngClass]="activeLink === 8 ? 'active' : ''">
+          Alerts and Notifications
+        </li>
+      </ul>
     </div>
   </div>
 </div>

@@ -8,9 +8,9 @@ import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
   styleUrls: ['./user-management.component.css']
 })
 export class UserManagementComponent implements OnInit {
-  
+
   public config: PerfectScrollbarConfigInterface = {};
-  
+
   single: any[];
   dateData: any[];
   dateDataWithRange: any[];
@@ -24,7 +24,7 @@ export class UserManagementComponent implements OnInit {
   tooltipDisabled = false;
   xAxisLabel = 'Country';
   showYAxisLabel = true;
-  yAxisLabel = 'Campaign Success Rate';
+  yAxisLabel = 'Number of Users By Country';
   showGridLines = true;
   innerPadding = 0;
   autoScale = true;
@@ -40,37 +40,37 @@ export class UserManagementComponent implements OnInit {
   doughnut = false;
   arcWidth = 0.25;
   rangeFillOpacity = 0.15;
-  
+
   colorScheme = {
-    domain: ['#4fc3f7', '#fb8c00', '#7460ee', '#f62d51', '#20c997', '#2962FF']
+    domain: ['#40278C', '#40278C', '#40278C', '#40278C', '#40278C', '#40278C']
   };
   schemeType = 'ordinal';
-  
+
   constructor() {
     this.single = [
       {
         name: 'Germany',
-        value: 40
+        value: 5440
       },
         {
           name: 'USA',
-          value: 24
+          value: 4224
         },
         {
           name: 'France',
-          value: 36
+          value: 3336
         },
         {
           name: 'India',
-          value: 36
+          value: 2336
         },
         {
           name: 'Spain',
-          value: 33
+          value: 1133
         },
         {
           name: 'Italy',
-          value: 35
+          value: 535
         }
       ];
   }
@@ -106,7 +106,7 @@ export class UserManagementComponent implements OnInit {
         hide: true
       },
       color: {
-        pattern: ['#2961ff', '#ff821c', '#ff821c', '#7e74fb']
+        pattern: ['#40278C', '#40278C', '#40278C', '#40278C']
       }
     });
   }

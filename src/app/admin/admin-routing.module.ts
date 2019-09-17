@@ -8,6 +8,11 @@ const sidebarRoutes: Routes = [
     path: 'user-management',
     component: UserManagementComponent,
     outlet: 'admin'
+  },
+  {
+    path: '',
+    component: UserManagementComponent,
+    outlet: 'admin'
   }
 ];
 

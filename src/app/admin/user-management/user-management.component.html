@@ -1,10 +1,10 @@
-<h2 class="mt-4 mb-3">User Management and Activity</h2>
+<h2 class="my-3">User Management and Activity</h2>
 
 <div class="row">
 
   <!-- Number of Users -->
-  <div class="col-md-4 col-sm-12">
-    <div class="card border card-hover text-light h-100" style="background-color: rgba(255, 255, 255, 0.1)">
+  <div class="col-xl-4 col-sm-12 m-bottom">
+    <div class="card border bg-gradient text-light h-100">
       <div class="card-body">
         <div class="mt-5 text-center">
           <span class="display-4 d-block font-medium">31,632</span>
@@ -34,11 +34,11 @@
   </div>
 
   <!-- Peak Hours -->
-  <div class="col-md-8 col-sm-12">
+  <div class="col-xl-8 col-sm-12 m-bottom">
     <div class="row">
       <!-- column -->
       <div class="col-sm-12">
-        <div class="card border text-light h-100" style="background-color: rgba(255, 255, 255, 0.1)">
+        <div class="card border bg-gradient text-light h-100">
           <h3 class="text-center mt-3">Peak Hours</h3>
           <div class="row">
             <!-- column -->
@@ -76,10 +76,10 @@
 </div>
 
 <!-- Geogrpahic Locations -->
-<div class="row mt-3">
+<div class="row">
   <!-- column -->
   <div class="col-sm-12">
-    <div class="card border text-light" style="background-color: rgba(255, 255, 255, 0.1)">
+    <div class="card border bg-gradient text-light">
       <div class="card-body">
         <h4 class="card-title">Top Locations</h4>
         <h5 class="card-subtitle">Country Data</h5>
@@ -98,32 +98,32 @@
           <div class="col-sm-12 col-md-6 col-lg-4 ml-auto">
             <ul class="list-style-none pr-1 country-list" [perfectScrollbar]="config">
               <li class="d-flex border-bottom pt-2 p-b-20 align-items-center">
-                <i class="flag-icon flag-icon-it mr-1" title="it" id="it"></i>
+                <i class="flag-icon flag-icon-it mr-2" title="it" id="it"></i>
                 <span class="text-light">Italy</span>
                 <h5 class="ml-auto mb-0">24</h5>
               </li>
               <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
-                <i class="flag-icon flag-icon-us mr-15" title="us" id="us"></i>
+                <i class="flag-icon flag-icon-us mr-2" title="us" id="us"></i>
                 <span class="text-light">USA</span>
                 <h5 class="ml-auto mb-0">18</h5>
               </li>
               <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
-                <i class="flag-icon flag-icon-de mr-15" title="de" id="de"></i>
+                <i class="flag-icon flag-icon-de mr-2" title="de" id="de"></i>
                 <span class="text-light">Germany</span>
                 <h5 class="ml-auto mb-0">14</h5>
               </li>
               <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
-                <i class="flag-icon flag-icon-in mr-15" title="in" id="in"></i>
+                <i class="flag-icon flag-icon-in mr-2" title="in" id="in"></i>
                 <span class="text-light">India</span>
                 <h5 class="ml-auto mb-0">15</h5>
               </li>
               <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
-                <i class="flag-icon flag-icon-fr mr-15" title="in" id="fr"></i>
+                <i class="flag-icon flag-icon-fr mr-2" title="in" id="fr"></i>
                 <span class="text-light">France</span>
                 <h5 class="ml-auto mb-0">09</h5>
               </li>
               <li class="d-flex border-bottom pt-2 pb-2 align-items-center">
-                <i class="flag-icon flag-icon-es mr-15" title="es" id="es"></i>
+                <i class="flag-icon flag-icon-es mr-2" title="es" id="es"></i>
                 <span class="text-light">Spain</span>
                 <h5 class="ml-auto mb-0">15</h5>
               </li>
@@ -131,6 +131,223 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4 col-sm-12 m-bottom">
+    <div class="card border text-light bg-gradient h-100">
+      <div class="card-body">
+        <div class="row text-center mt-3">
+          <div class="col align-self-center">
+            <h5 class="card-title mb-0">Average GRX holding</h5>
+            <h4 class="card-title mb-0">$0.0000</h4>
+          </div>
+          <div class="col align-self-center">
+            <h5 class="card-title mb-0">Median GRX holding</h5>
+            <h4 class="card-title mb-0">$0.0000</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-sm-12 m-bottom">
+    <div class="card border text-light bg-gradient h-100">
+      <div class="card-body">
+        <div class="row text-center mt-3">
+          <div class="col align-self-center">
+            <h5 class="card-title mb-0">Number of GRY Contracts</h5>
+            <h4 class="card-title mb-0">999999999</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-sm-12 m-bottom">
+    <div class="card border text-light bg-gradient h-100">
+      <div class="card-body">
+        <div class="row text-center mt-3">
+          <div class="col align-self-center">
+            <h5 class="card-title mb-0">Value of GRX Contracts</h5>
+            <h4 class="card-title mb-0">$99999999.99</h4>
+          </div>
+          <div class="col align-self-center">
+            <h5 class="card-title mb-0">Median GRX holding</h5>
+            <h4 class="card-title mb-0">$99999999.99</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- User Transaction History -->
+<div class="row">
+  <div class="col">
+    <h3>User Transaction History</h3>
+    <div class="table-responsive bg-gradient text-light">
+      <table class="table mb-0">
+        <thead>
+        <tr class="font-weight-bolder text-light font-10">
+          <th>Date</th>
+          <th>Type</th>
+          <th>Asset</th>
+          <th>Issuer</th>
+          <th>Amount</th>
+          <th>Filled</th>
+          <th>Price (XLM)</th>
+          <th>Price (USD)</th>
+          <th>Total Price (XLM)</th>
+          <th>Total Price (USD)</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody class="font-8 text-light">
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>29,999,999,999,999.22222</td>
+          <td>100%</td>
+          <td>9999.44444</td>
+          <td>9999.44444</td>
+          <td>29,999,999,999,999.22222</td>
+          <td>29,999,999,999,999.22222</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+
+        <tr>
+          <td>18/08/2019 04:14</td>
+          <td>BUY</td>
+          <td>GRAYLL</td>
+          <td>grayll.io</td>
+          <td>1.00000</td>
+          <td>0%</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td>0.14500</td>
+          <td><a href="javascript:void(0)" class="purple-link">Details</a></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
