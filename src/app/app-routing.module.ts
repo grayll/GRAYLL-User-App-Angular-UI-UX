@@ -33,12 +33,8 @@ const routes: Routes = [
     loadChildren: './settings/settings.module#SettingsModule'
   },
   {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule'
-  },
-  {
     path: '',
-    redirectTo: '/admin/overview',
+    redirectTo: '/dashboard/overview',
     pathMatch: 'full'
   },
   {
