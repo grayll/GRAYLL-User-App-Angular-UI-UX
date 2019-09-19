@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {faChartLine} from '@fortawesome/free-solid-svg-icons';
+import {faChartLine, faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,6 +9,9 @@ import {faChartLine} from '@fortawesome/free-solid-svg-icons';
 export class DashboardComponent {
 
   faChartLine = faChartLine;
+  faWarning = faExclamationTriangle;
+
+  isLoanPaid: boolean;
 
   constructor() { }
 
