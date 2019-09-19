@@ -17,6 +17,7 @@ import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number
 import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
 import {DisableWalletAppNotificationsSettingsComponent} from "./notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component";
 import {DisableAlgoAppNotificationsSettingsComponent} from "./notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component";
+import {ConfirmAuthorityPopupComponent} from './confirm-authority-popup/confirm-authority-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -99,6 +100,11 @@ const popupRoutes: Routes = [
     component: VerifyPhoneNumberComponent,
     outlet: 'popup'
   },
+  {
+    path: 'reveal-secret-key',
+    component: ConfirmAuthorityPopupComponent,
+    outlet: 'popup'
+  }
 ];
 
 const routes: Routes = [

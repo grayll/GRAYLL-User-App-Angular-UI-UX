@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {SnotifyService} from 'ng-snotify';
 import {SettingsService} from '../../../settings.service';
 import {SharedService} from '../../../../shared/shared.service';
+import {UserService} from '../../../../authorization/user.service';
 
 @Component({
   selector: 'app-enable-two-fa-last-step',
@@ -19,7 +20,8 @@ export class EnableTwoFaLastStepComponent implements OnInit {
     private router: Router,
     private snotifyService: SnotifyService,
     private settingsService: SettingsService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -42,6 +44,7 @@ export class EnableTwoFaLastStepComponent implements OnInit {
     .then(() => {
       setTimeout(() => {
         this.snotifyService.simple('Two-factor authentication enabled.');
+        this.userService.enable2FA(true);
         this.settingsService.sendTwoFAEnabledToObserver(true);
       }, 50);
     })

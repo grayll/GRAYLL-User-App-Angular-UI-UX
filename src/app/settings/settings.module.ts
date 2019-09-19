@@ -31,6 +31,7 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {DataSettingsComponent} from './data-settings/data-settings.component';
 import { DisableWalletAppNotificationsSettingsComponent } from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
 import { DisableAlgoAppNotificationsSettingsComponent } from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
+import {ConfirmAuthorityPopupComponent} from './confirm-authority-popup/confirm-authority-popup.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DisableAlgoAppNotificationsSettingsComponent } from './notifications-se
     VerifyPhoneNumberComponent,
     DataSettingsComponent,
     DisableWalletAppNotificationsSettingsComponent,
-    DisableAlgoAppNotificationsSettingsComponent
+    DisableAlgoAppNotificationsSettingsComponent,
+    ConfirmAuthorityPopupComponent
   ],
   imports: [
     CommonModule,

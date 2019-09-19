@@ -9,6 +9,7 @@ export class SettingsService {
   // Security
   private twoFAEnabled: Subject<boolean>;
   private multisignatureEnabled: Subject<boolean>;
+  private confirmAuthority: Subject<boolean>;
 
   // Notifications
   private walletEmailNotificationsDisabled: Subject<void>;
@@ -17,6 +18,20 @@ export class SettingsService {
   private algoAppNotificationsDisabled: Subject<void>;
 
   constructor() { }
+
+  public observeConfirmAuthority(): Observable<boolean> {
+    if (!this.confirmAuthority) {
+      this.confirmAuthority = new Subject<boolean>();
+    }
+    return this.confirmAuthority.asObservable();
+  }
+
+  public sendConfirmAuthorityToObserver(confirm: boolean): void {
+    if (!this.confirmAuthority) {
+      this.confirmAuthority = new Subject<boolean>();
+    }
+    this.confirmAuthority.next(confirm);
+  }
 
   public observeTwoFAEnabled(): Observable<boolean> {
     if (!this.twoFAEnabled) {
