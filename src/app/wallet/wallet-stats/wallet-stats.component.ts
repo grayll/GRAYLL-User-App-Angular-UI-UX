@@ -5,6 +5,7 @@ import {SnotifyService} from 'ng-snotify';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 import {SubSink} from 'subsink';
 import {SettingsService} from '../../settings/settings.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-wallet-stats',
@@ -32,7 +33,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   constructor(
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
+    private router: Router
   ) {
     this.federationAddress = 'grayll3*grayll.io';
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
@@ -61,6 +63,10 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     if (this.clipboardService.copyFromContent(this.stellarAddress)) {
       this.snotifyService.simple('Stellar address copied.');
     }
+  }
+
+  revealSecretKey() {
+    this.router.navigate(['/wallet/overview', {outlets: {popup: 'reveal-secret-key'}}]);
   }
 
   hideSecretKey() {
