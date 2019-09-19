@@ -10,7 +10,7 @@ import {DisableTwoFaComponent} from './security/two-FA-enable/disable-two-fa/dis
 import {ClipboardModule} from 'ngx-clipboard';
 import {SharedModule} from '../shared/shared.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {NgbModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PopupModule} from '../shared/popup/popup.module';
 import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
 import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
@@ -29,9 +29,8 @@ import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
 import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {DataSettingsComponent} from './data-settings/data-settings.component';
-import { DisableWalletAppNotificationsSettingsComponent } from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
-import { DisableAlgoAppNotificationsSettingsComponent } from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
-import {ConfirmAuthorityPopupComponent} from './confirm-authority-popup/confirm-authority-popup.component';
+import {DisableWalletAppNotificationsSettingsComponent} from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
+import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +55,7 @@ import {ConfirmAuthorityPopupComponent} from './confirm-authority-popup/confirm-
     VerifyPhoneNumberComponent,
     DataSettingsComponent,
     DisableWalletAppNotificationsSettingsComponent,
-    DisableAlgoAppNotificationsSettingsComponent,
-    ConfirmAuthorityPopupComponent
+    DisableAlgoAppNotificationsSettingsComponent
   ],
   imports: [
     CommonModule,

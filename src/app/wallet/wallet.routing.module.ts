@@ -7,7 +7,7 @@ import {ReviewWithdrawPopupComponent} from './wallet-stats/withdraw/review-withd
 import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-success-popup/withdraw-success-popup.component';
 import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
 import {CancelActiveOrdersPopupComponent} from '../shared/account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
-import {RevealSecretKeyPopupComponent} from './reveal-secret-key-popup/reveal-secret-key-popup.component';
+import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 
 const popupRoutes: Routes = [
   {

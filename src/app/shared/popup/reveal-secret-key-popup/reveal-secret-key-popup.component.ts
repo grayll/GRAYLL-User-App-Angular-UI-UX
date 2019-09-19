@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../shared/popup/popup.service';
-import {SettingsService} from '../../settings/settings.service';
-import {ErrorService} from '../../shared/error/error.service';
-import {UserService} from '../../authorization/user.service';
-import {UserModel} from '../../models/user.model';
+import {UserModel} from '../../../models/user.model';
+import {PopupService} from '../popup.service';
+import {SettingsService} from '../../../settings/settings.service';
+import {ErrorService} from '../../error/error.service';
+import {UserService} from '../../../authorization/user.service';
 
 @Component({
   selector: 'app-reveal-secret-key-popup',

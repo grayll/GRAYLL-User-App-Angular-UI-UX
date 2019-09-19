@@ -1,3 +1,5 @@
+<router-outlet name="popup"></router-outlet>
+
 <app-navbar></app-navbar>
 
 <div class="main-wrapper">
@@ -22,7 +24,7 @@
             <fa-icon [icon]="faWarning" class="text-danger" [fixedWidth]="true"></fa-icon>
             Please click the button "Pay Off Loan" to return the 1.50 XLM loan to GRAYLL.
           </div>
-          <button class="btn btn-purple">Pay Off Loan</button>
+          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xlm-loan'}}]">Pay Off Loan</button>
         </div>
       </div>
 

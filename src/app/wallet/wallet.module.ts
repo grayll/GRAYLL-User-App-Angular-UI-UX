@@ -15,7 +15,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
-import {RevealSecretKeyPopupComponent} from './reveal-secret-key-popup/reveal-secret-key-popup.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import {RevealSecretKeyPopupComponent} from './reveal-secret-key-popup/reveal-se
     WithdrawPopupComponent,
     WithdrawSuccessPopupComponent,
     ReviewWithdrawPopupComponent,
-    WithdrawErrorPopupComponent,
-    RevealSecretKeyPopupComponent
+    WithdrawErrorPopupComponent
   ],
   imports: [
     CommonModule,

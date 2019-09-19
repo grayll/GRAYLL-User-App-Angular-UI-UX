@@ -18,6 +18,7 @@ import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notif
 import {CustomModalComponent} from './custom-modal.component';
 import { WalletNotificationItemComponent } from './wallet-notification-item/wallet-notification-item.component';
 import { GeneralNotificationItemComponent } from './general-notification-item/general-notification-item.component';
+import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GeneralNotificationItemComponent } from './general-notification-item/ge
     AlgoNotificationItemComponent,
     CustomModalComponent,
     WalletNotificationItemComponent,
-    GeneralNotificationItemComponent
+    GeneralNotificationItemComponent,
+    RevealSecretKeyPopupComponent
   ],
   imports: [
     CommonModule,
