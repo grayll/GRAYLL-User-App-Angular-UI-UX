@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {faEnvelope, faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ErrorService} from '../../shared/error/error.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,8 @@ export class RegisterComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private router: Router
   ) {
     this.initForm();
   }
