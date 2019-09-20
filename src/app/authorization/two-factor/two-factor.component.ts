@@ -19,7 +19,8 @@ export class TwoFactorComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private errorService: ErrorService
+    private errorService: ErrorService,
+    private router: Router
   ) {
     this.initForm();
   }
@@ -42,7 +43,7 @@ export class TwoFactorComponent {
   loginClicked() {
     if (!this.clientValidation()) { return; }
     this.errorService.clearError();
-    alert('Frontend validation passed');
+    this.router.navigate(['/dashboard/overview']);
   }
 
 }

@@ -19,6 +19,7 @@ import {CustomModalComponent} from './custom-modal.component';
 import { WalletNotificationItemComponent } from './wallet-notification-item/wallet-notification-item.component';
 import { GeneralNotificationItemComponent } from './general-notification-item/general-notification-item.component';
 import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
+import {ActivateAccountPopupComponent} from './popup/activate-account/activate-account-popup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/rev
     CustomModalComponent,
     WalletNotificationItemComponent,
     GeneralNotificationItemComponent,
-    RevealSecretKeyPopupComponent
+    RevealSecretKeyPopupComponent,
+    ActivateAccountPopupComponent
   ],
   imports: [
     CommonModule,

@@ -7,8 +7,8 @@ import {UserModel} from '../models/user.model';
 })
 export class UserService {
 
-  private readonly userSubject = new BehaviorSubject<UserModel>(new UserModel(1, true));
-  
+  private readonly userSubject = new BehaviorSubject<UserModel>(new UserModel(1, true, false, false));
+
   getUser(): UserModel {
     return this.userSubject.getValue();
   }
@@ -20,6 +20,12 @@ export class UserService {
   public enable2FA(value: boolean) {
     const newUser: UserModel = this.userSubject.getValue();
     newUser.is2FAEnabled = value;
+    this.setUser(newUser);
+  }
+
+  public activateAccount() {
+    const newUser: UserModel = this.userSubject.getValue();
+    newUser.isAccountActivated = true;
     this.setUser(newUser);
   }
 

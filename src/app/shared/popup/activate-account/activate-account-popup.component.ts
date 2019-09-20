@@ -1,13 +1,14 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../popup.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../../authorization/user.service';
 
 @Component({
   selector: 'app-pay-loan-popup',
-  templateUrl: './pay-loan-popup.component.html',
-  styleUrls: ['./pay-loan-popup.component.scss']
+  templateUrl: './activate-account-popup.html',
+  styleUrls: ['./activate-account-popup.component.scss']
 })
-export class PayLoanPopupComponent implements OnInit {
+export class ActivateAccountPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
   error: boolean;
@@ -16,7 +17,8 @@ export class PayLoanPopupComponent implements OnInit {
 
   constructor(
     private popupService: PopupService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,7 @@ export class PayLoanPopupComponent implements OnInit {
     if (this.didShowErrorOnce) {
       this.error = false;
       this.success = true;
+      this.userService.activateAccount();
     } else {
       this.error = true;
     }

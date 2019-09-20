@@ -57,7 +57,7 @@ export class RegisterComponent {
   registerClicked() {
     if (!this.clientValidation()) { return; }
     this.errorService.clearError();
-    alert('Frontend validation passed.');
+    this.router.navigate(['/login/confirm-email']);
   }
 
 }
