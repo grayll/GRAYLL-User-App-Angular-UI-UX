@@ -7,9 +7,10 @@
     <div class="container-fluid pt-0">
 
       <div *ngIf="!isLoanPaid; else notPaid">
-        <div class="alert d-flex align-items-center justify-content-between alert-warning d-lg-none" role="alert">
+        <!-- Display on mobile -->
+        <div class="alert justify-content-between alert-warning d-lg-none loan-unpaid-mobile" role="alert">
           <div style="display: inline;">
-            <fa-icon [icon]="faWarning" class="text-danger" [fixedWidth]="true"></fa-icon>
+            <fa-icon [icon]="faWarning" class="text-purple" [fixedWidth]="true"></fa-icon>
             Please click the button "Pay Off Loan" to return the 1.50 XLM loan to GRAYLL.
           </div>
           <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xlm-loan'}}]">Pay Off Loan</button>
@@ -19,9 +20,10 @@
           Dashboard
         </h4>
 
+        <!-- Display on larger devices -->
         <div class="alert alert-warning loan-unpaid justify-content-between d-none d-lg-flex" role="alert">
           <div style="display: inline;">
-            <fa-icon [icon]="faWarning" class="text-danger" [fixedWidth]="true"></fa-icon>
+            <fa-icon [icon]="faWarning" class="text-purple" [fixedWidth]="true"></fa-icon>
             Please click the button "Pay Off Loan" to return the 1.50 XLM loan to GRAYLL.
           </div>
           <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xlm-loan'}}]">Pay Off Loan</button>

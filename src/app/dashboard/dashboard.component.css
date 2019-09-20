@@ -24,6 +24,12 @@
   align-items: center;
 }
 
+.loan-unpaid-mobile {
+  margin-top: calc(50px + 1rem);
+  display: flex;
+  align-items: center;
+}
+
 @media (min-width: 760px) {
   .page-wrapper {
     margin: 64px auto 0 auto;
