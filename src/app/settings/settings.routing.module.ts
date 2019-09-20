@@ -17,8 +17,8 @@ import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number
 import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
 import {DisableWalletAppNotificationsSettingsComponent} from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
 import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
-import {ActivateAccountPopupComponent} from '../shared/popup/activate-account/activate-account-popup.component';
 import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
+import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -108,7 +108,7 @@ const popupRoutes: Routes = [
   },
   {
     path: 'xlm-loan',
-    component: ActivateAccountPopupComponent,
+    component: XlmLoanPopupComponent,
     outlet: 'popup'
   }
 ];

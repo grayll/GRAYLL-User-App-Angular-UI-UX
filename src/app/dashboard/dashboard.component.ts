@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {faChartLine, faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
+import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import {UserModel} from '../models/user.model';
 import {UserService} from '../authorization/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {SharedService} from '../shared/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,15 +12,16 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  faChartLine = faChartLine;
-  faWarning = faExclamationTriangle;
-
   user: UserModel;
+
+  // Font Awesome Icons
+  faWarning = faExclamationTriangle;
 
   constructor(
     private userService: UserService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public sharedService: SharedService
   ) {
     this.user = this.userService.getUser();
   }

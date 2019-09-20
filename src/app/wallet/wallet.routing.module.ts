@@ -8,6 +8,7 @@ import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-su
 import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
 import {CancelActiveOrdersPopupComponent} from '../shared/account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
 import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
+import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -43,6 +44,11 @@ const popupRoutes: Routes = [
   {
     path: 'reveal-secret-key',
     component: RevealSecretKeyPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'xlm-loan',
+    component: XlmLoanPopupComponent,
     outlet: 'popup'
   }
 ];

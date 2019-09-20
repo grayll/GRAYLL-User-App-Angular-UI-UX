@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {UserModel} from '../models/user.model';
+import {SharedService} from '../shared/shared.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private readonly userSubject = new BehaviorSubject<UserModel>(new UserModel(1, true, false, false));
+  private readonly userSubject = new BehaviorSubject<UserModel>(
+    new UserModel(
+      1,
+      true,
+      false,
+      false,
+      2
+    )
+  );
+
+  constructor() {}
 
   getUser(): UserModel {
     return this.userSubject.getValue();
@@ -29,5 +40,9 @@ export class UserService {
     this.setUser(newUser);
   }
 
-  constructor() { }
+  public loanPaid(value: boolean) {
+    const newUser: UserModel = this.userSubject.getValue();
+    newUser.isLoadPaid = value;
+    this.setUser(newUser);
+  }
 }
