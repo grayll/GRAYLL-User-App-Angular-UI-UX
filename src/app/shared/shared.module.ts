@@ -21,6 +21,7 @@ import { GeneralNotificationItemComponent } from './general-notification-item/ge
 import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 import {ActivateAccountPopupComponent} from './popup/activate-account/activate-account-popup.component';
 import {XlmLoanPopupComponent} from './popup/xlm-loan-popup/xlm-loan-popup.component';
+import {XlmBalanceStatusPopupComponent} from './popup/xlm-balance-status-popup/xlm-balance-status-popup.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {XlmLoanPopupComponent} from './popup/xlm-loan-popup/xlm-loan-popup.compo
     GeneralNotificationItemComponent,
     RevealSecretKeyPopupComponent,
     ActivateAccountPopupComponent,
-    XlmLoanPopupComponent
+    XlmLoanPopupComponent,
+    XlmBalanceStatusPopupComponent
   ],
   imports: [
     CommonModule,
