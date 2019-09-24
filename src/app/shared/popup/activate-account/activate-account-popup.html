@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Account Activation | 1.50 XLM Loan"></app-popup-header>
-  <div class="modal-body p-4">
+  <div class="modal-body">
 
     <div class="row mb-1" *ngIf="!success && !error">
       <div class="col-12 text-center">
@@ -43,8 +43,8 @@
       <div class="row mb-1">
         <div class="col-12 text-center">
           <p class="text-purple">
-            Please save your Secret Key to recover your account, it must not be shared. Anyone that has your secret key
-            has access to your wallet and the assets.
+            Please save your Secret Key to recover your account, <br> you should never share your Secret Key. <br>
+            Anyone that has your secret key has access to your wallet and the assets.
           </p>
           <div class="row mb-3" *ngIf="!isSecretKeyRevealed">
             <button (click)="isSecretKeyRevealed = true" class="btn btn-block btn-yellow w-auto mx-auto">
