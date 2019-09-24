@@ -41,8 +41,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   private showActivationPopup() {
-    if (!this.user.isAccountActivated) {
-      this.router.navigate([{outlets: {popup: 'activate-account'}}], {relativeTo: this.route});
-    }
+    setTimeout(() => {
+      if (!this.user.isAccountActivated) {
+        this.router.navigate([{outlets: {popup: 'activate-account'}}], {relativeTo: this.route});
+      }
+    }, 1000);
   }
 }
