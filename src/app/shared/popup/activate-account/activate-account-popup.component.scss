@@ -1,3 +1,18 @@
+.disabled-field {
+  color: #f8f9fa!important;
+  -webkit-text-fill-color: #f8f9fa;
+  opacity: 1; /* required on iOS */
+}
+
+::ng-deep .bs-tooltip-auto[x-placement^=bottom] ::ng-deep .arrow::before,
+::ng-deep .bs-tooltip-bottom ::ng-deep .arrow::before {
+  border-bottom-color: #40278C!important;
+}
+
+::ng-deep .tooltip-inner {
+  background-color: #40278C!important;
+}
+
 .success-checkmark {
   width: 80px;
   height: 115px;

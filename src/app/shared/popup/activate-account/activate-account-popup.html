@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
   <app-popup-header popupHeaderTitle="Account Activation | 1.50 XLM Loan"></app-popup-header>
-  <div class="modal-body">
+  <div class="modal-body p-4">
 
     <div class="row mb-1" *ngIf="!success && !error">
       <div class="col-12 text-center">
@@ -42,6 +42,23 @@
 
       <div class="row mb-1">
         <div class="col-12 text-center">
+          <p class="text-purple">
+            Please save your Secret Key to recover your account, it must not be shared. Anyone that has your secret key
+            has access to your wallet and the assets.
+          </p>
+          <div class="row mb-3" *ngIf="!isSecretKeyRevealed">
+            <button (click)="isSecretKeyRevealed = true" class="btn btn-block btn-yellow w-auto mx-auto">
+              Reveal Secret Key
+            </button>
+          </div>
+          <div class="row mb-3" *ngIf="isSecretKeyRevealed">
+            <div class="col-md-8 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
+              <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-gradient disabled-field">
+            </div>
+            <div class="col-md-4 col-sm-12 mt-xs-4 mt-xs-4">
+              <button (click)="copySecretKey()" class="btn float-right btn-yellow">Copy</button>
+            </div>
+          </div>
           <p class="text-purple">
             Please deposit a minimum of 2.00 XLM (Stellar Lumens) to your GRAYLL Account wallet to pay off the
             1.50 XLM loan and have 0.50 XLM for the minimal cost of transfers on the Stellar Network.
