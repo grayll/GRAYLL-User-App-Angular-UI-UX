@@ -1,15 +1,19 @@
 <ng-template #content let-modal>
-  <app-popup-header popupHeaderTitle="Account Activation | 1.50 XLM Loan"></app-popup-header>
+  <app-popup-header
+    [hideCloseButton]="hideCloseButton"
+    [onCloseRedirectTo]="onCloseRedirectTo"
+    popupHeaderTitle="Account Activation | 1.50 XLM Loan">
+  </app-popup-header>
   <div class="modal-body">
-
-    <div class="row mb-1" *ngIf="!success && !error">
+    <app-error></app-error>
+    <div class="row mb-1" *ngIf="!success && !error && firstPopup">
       <div class="col-12 text-center">
         <p class="text-purple">
           All active Stellar Network Accounts must maintain a minimum balance of Stellar
           Lumens (XLM), which will be reserved by the Stellar Network.
         </p>
         <p class="text-purple">
-          To provide you with an integrated and efficient service, GRAYLL will loan you 1.50 XLM
+          To provide you with an integrated and efficient service, GRAYLL will lend you 1.50 XLM
           to create your active Stellar Network account for GRAYLL.
         </p>
         <p class="text-purple font-weight-bolder">
@@ -21,6 +25,8 @@
           If the loan is not paid within 60 days, your GRAYLL account will become invalid. You will receive
           timely notifications to remind you of the loan status.
         </p>
+        <input type="text" class="form-control mx-auto w-75 purple-input" [(ngModel)]="password"
+               placeholder="Re-Enter Your Sign Up Password">
       </div>
     </div>
 
@@ -46,6 +52,14 @@
             Please save your Secret Key to recover your account, <br> you should never share your Secret Key. <br>
             Anyone that has your Secret Key has access to your wallet and the assets.
           </p>
+          <div class="row mb-3">
+            <div class="col-md-8 col-sm-12 text-center" placement="bottom" [ngbTooltip]="seed" triggers="click:blur">
+              <input disabled [value]="seed" type="text" class="form-control form-control-no-border bg-gradient disabled-field">
+            </div>
+            <div class="col-md-4 col-sm-12 mt-xs-4 mt-xs-4">
+              <button (click)="copySeed()" class="btn float-right btn-yellow btn-block">Copy Seed</button>
+            </div>
+          </div>
           <div class="row mb-3" *ngIf="!isSecretKeyRevealed">
             <button (click)="isSecretKeyRevealed = true" class="btn btn-block btn-yellow w-auto mx-auto">
               Reveal Secret Key
@@ -59,14 +73,6 @@
               <button (click)="copySecretKey()" class="btn float-right btn-yellow btn-block">Copy</button>
             </div>
           </div>
-          <p class="text-purple">
-            Please deposit a minimum of 2.00 XLM (Stellar Lumens) to your GRAYLL Account wallet to pay off the
-            1.50 XLM loan and have 0.50 XLM for the minimal cost of transfers on the Stellar Network.
-          </p>
-          <p class="text-purple">
-            Once you have paid off the loan, you will have full access to the GRAYLL Algorithmic System and other
-            features and functions.
-          </p>
         </div>
       </div>
     </ng-container>
@@ -94,14 +100,27 @@
       </div>
     </ng-container>
 
+    <ng-container *ngIf="displayFinalLayOffLoanPopup && !firstPopup">
+      <p class="lead text-purple text-center">Pay Off 1.50 XLM Loan</p>
+      <p class="text-purple text-center">
+        Please deposit a minimum of 2.00 XLM (Stellar Lumens) to your GRAYLL Account wallet to pay off the
+        1.50 XLM loan and have 0.50 XLM for the minimal cost of transfers on the Stellar Network.
+      </p>
+      <p class="text-purple text-center">
+        Once you have paid off the loan, you will have full access to the GRAYLL Algorithmic System and other
+        features and functions.
+      </p>
+    </ng-container>
+
   </div>
 
   <div class="modal-footer">
     <div class="row text-center" style="display: contents!important;">
       <div class="col">
-        <button class="btn btn-purple" *ngIf="!success && !error" (click)="activate()">Activate</button>
-        <button class="btn btn-purple" *ngIf="success" (click)="goToDeposit()">Pay Off Loan</button>
+        <button class="btn btn-purple" *ngIf="!success && !error && firstPopup" (click)="activate()">Activate</button>
         <button class="btn btn-purple" *ngIf="error" (click)="retry()">Retry</button>
+        <button class="btn btn-purple" *ngIf="success" (click)="displayLoan()">Next</button>
+        <button class="btn btn-purple" *ngIf="canGoToDeposit" (click)="goToDeposit()">Pay Off Loan</button>
       </div>
     </div>
   </div>

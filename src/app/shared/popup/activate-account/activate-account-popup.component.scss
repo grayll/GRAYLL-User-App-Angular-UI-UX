@@ -4,6 +4,10 @@
   opacity: 1; /* required on iOS */
 }
 
+.purple-input {
+  color : #40278C!important;
+}
+
 ::ng-deep .bs-tooltip-auto[x-placement^=bottom] ::ng-deep .arrow::before,
 ::ng-deep .bs-tooltip-bottom ::ng-deep .arrow::before {
   border-bottom-color: #40278C!important;
