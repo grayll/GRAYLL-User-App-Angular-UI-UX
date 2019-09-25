@@ -18,6 +18,8 @@ export class PopupHeaderComponent implements OnChanges {
     this.popupClosed.emit(true);
     if (this.onCloseRedirectTo) {
       this.popupService.closeAndRedirectTo(this.onCloseRedirectTo);
+    } else {
+      this.popupService.close();
     }
   }
 
