@@ -17,6 +17,14 @@
   background-color: #40278C!important;
 }
 
+@media (max-width: 400px) {
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
 .success-checkmark {
   width: 80px;
   height: 115px;
