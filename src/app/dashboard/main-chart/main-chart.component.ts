@@ -11,15 +11,15 @@ export class MainChartComponent implements AfterViewInit {
   timespanFilter = [
     {
       id: 1,
-      name: 'Monthly'
-    },
-    {
-      id: 2,
       name: 'Daily'
     },
     {
-      id: 3,
+      id: 2,
       name: 'Weekly'
+    },
+    {
+      id: 3,
+      name: 'Monthly'
     },
     {
       id: 4,
