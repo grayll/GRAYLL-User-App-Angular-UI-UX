@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {faArrowAltCircleDown, faCopy, faInfoCircle, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import {faArrowAltCircleDown, faCopy, faInfoCircle, faSearch, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 
@@ -33,6 +33,7 @@ export class AccountActivityComponent implements OnInit {
   faClose = faTimesCircle;
   faInfo = faInfoCircle;
   faCopy = faCopy;
+  faSearch = faSearch;
 
   constructor(
     private clipboardService: ClipboardService,

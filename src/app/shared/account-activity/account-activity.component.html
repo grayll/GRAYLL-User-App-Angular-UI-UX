@@ -29,6 +29,22 @@
       <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
       <span class="ml-1 cancel text-danger">Cancel All Active Orders</span>
     </div>
+    <div class="col">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
   </div>
 
   <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'transfers'">
@@ -44,6 +60,22 @@
         All Completed Transfers
       </a>
     </div>
+    <div class="col">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
   </div>
 
   <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'networkHistory'">
@@ -59,6 +91,22 @@
         Full Network History
       </a>
     </div>
+    <div class="col">
+      <div class="row">
+        <div class="col search">
+          <div class="input-group">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
+                   type="search" style="border-color: #40278C!important">
+            <span class="input-group-append">
+              <div class="input-group-text bg-transparent">
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block"></div>
   </div>
 </div>
 

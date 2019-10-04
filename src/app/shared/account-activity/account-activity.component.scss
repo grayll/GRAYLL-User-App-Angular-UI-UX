@@ -19,6 +19,11 @@ fa-icon:hover {
   cursor: pointer!important;
 }
 
+.search .input-group-text {
+  border-color: #40278C;
+  border-left: 0;
+}
+
 :host ::ng-deep .nav-pills {
   .nav-link {
     border-radius: 0;
