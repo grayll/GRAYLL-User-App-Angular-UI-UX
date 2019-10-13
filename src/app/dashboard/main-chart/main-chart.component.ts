@@ -11,23 +11,31 @@ export class MainChartComponent implements AfterViewInit {
   timespanFilter = [
     {
       id: 1,
-      name: 'Daily'
+      name: 'Milliseconds'
     },
     {
       id: 2,
-      name: 'Weekly'
+      name: 'Seconds'
     },
     {
       id: 3,
-      name: 'Monthly'
+      name: 'Minutes'
     },
     {
       id: 4,
-      name: 'Yearly'
+      name: 'Hours'
+    },
+    {
+      id: 5,
+      name: 'Days'
+    },
+    {
+      id: 6,
+      name: 'Weeks'
     }
   ];
 
-  selectedTimespan: {id: number, name: string} = this.timespanFilter[0];
+  selectedTimespan: {id: number, name: string} = this.timespanFilter[2];
 
   constructor(
     private router: Router
