@@ -4,7 +4,8 @@
       <span class="lead align-middle">Activity</span>
     </div>
     <div class="col-xs-12 col-md-5">
-      <ngb-tabset type="pills" class="custom-pills" justify="center" (tabChange)="onTabChange($event.nextId)">
+      <ngb-tabset type="pills" class="custom-pills" justify="center"
+                  (tabChange)="onTabChange($event.nextId)" [activeId]="activeTabId">
         <ng-container *ngFor="let tab of activityTabs">
             <ngb-tab [id]="tab.id" [title]="tab.name"></ngb-tab>
         </ng-container>
@@ -56,7 +57,7 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Transfers</span>
     </div>
     <div class="col" *ngIf="showMoreDetails">
-      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
+      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview/wallet-activity/transfers">
         All Completed Transfers
       </a>
     </div>
@@ -87,7 +88,7 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Network History</span>
     </div>
     <div class="col" *ngIf="showMoreDetails">
-      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
+      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview/wallet-activity/networkHistory">
         Full Network History
       </a>
     </div>
@@ -363,13 +364,15 @@
   </table>
 </div>
 
-<div class="row m-0 justify-content-center align-items-center p-2 bg-gradient text-light" *ngIf="selectedTab.id === 'allOrders'">
+<div class="row m-0 justify-content-center align-items-center p-2 bg-gradient text-light"
+     *ngIf="selectedTab.id === 'allOrders'" id="completedOrdersContainer">
   <div class="col-md-2 col-xs pl-0">
     <span class="align-middle font-14 font-weight-bolder">Completed Orders (10)</span><br>
     <span class="text-light font-10 font-weight-bolder">Most Recent Completed Orders</span>
   </div>
   <div class="col">
-    <a href="javascript:void(0)" class="purple-link font-14">
+    <a href="javascript:void(0)" class="purple-link font-14" *ngIf="showAllCompletedOrders"
+       routerLink="/data/overview/wallet-activity/all-orders/completed-orders">
       All Completed Orders
     </a>
   </div>

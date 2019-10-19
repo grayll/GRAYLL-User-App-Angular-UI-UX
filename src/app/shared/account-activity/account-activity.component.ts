@@ -11,6 +11,9 @@ import {SnotifyService} from 'ng-snotify';
 export class AccountActivityComponent implements OnInit {
 
   @Input() showMoreDetails: boolean;
+  @Input() activeTabId: string;
+  @Input() showAllCompletedOrders: boolean;
+  @Input() scrollToCompletedOrders: boolean;
 
   selectedTab: {id: string, name: string};
   activityTabs = [
@@ -43,6 +46,19 @@ export class AccountActivityComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setActiveTab();
+  }
+
+  private setActiveTab() {
+    if (this.activeTabId) {
+      this.selectedTab = this.activityTabs.find((t) => t.id === this.activeTabId);
+      if (this.scrollToCompletedOrders) {
+        setTimeout(() => {
+          const el = document.getElementById('completedOrdersContainer');
+          el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+        }, 500);
+      }
+    }
   }
 
   onTabChange(id: string) {

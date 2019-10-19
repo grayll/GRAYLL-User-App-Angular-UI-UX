@@ -19,6 +19,7 @@ import {CountdownConfig} from 'ngx-countdown/src/countdown.config';
 export class ActivityComponent implements OnInit, OnChanges {
 
   @Input() activeTabId: string;
+  @Input() showCompletedOrdersLink: boolean;
 
   selectedTab: {id: string, name: string};
   isSortedUpByPositionValue: boolean;
@@ -58,11 +59,11 @@ export class ActivityComponent implements OnInit, OnChanges {
   constructor(
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.setActiveTab();
   }
-
-  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.activeTabId && changes.activeTabId.currentValue) {
@@ -71,7 +72,11 @@ export class ActivityComponent implements OnInit, OnChanges {
   }
 
   private setActiveTab() {
-    this.selectedTab = this.activityTabs[0];
+    if (this.activeTabId) {
+      this.selectedTab = this.activityTabs.find((t) => t.id === this.activeTabId);
+    } else {
+      this.selectedTab = this.activityTabs[0];
+    }
   }
 
   sortByPositionValue() {

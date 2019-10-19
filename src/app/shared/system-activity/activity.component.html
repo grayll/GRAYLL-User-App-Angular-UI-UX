@@ -121,7 +121,8 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
     </div>
     <div class="col">
-      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview">
+      <a href="javascript:void(0)" class="purple-link font-14" *ngIf="showCompletedOrdersLink"
+         routerLink="/data/overview/system-activity/closed-algo-positions">
         All Closed Algo Positions
       </a>
     </div>

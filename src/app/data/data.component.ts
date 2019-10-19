@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {faChartLine, faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
+import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import {SharedService} from '../shared/shared.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-data',
@@ -11,18 +12,45 @@ export class DataComponent implements OnInit, OnDestroy {
 
   // Font Awesome Icons
   faWarning = faExclamationTriangle;
+  activeTabId: string;
+  activeSubTabId: string;
 
   constructor(
-    public sharedService: SharedService
-  ) { }
+    public sharedService: SharedService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
+    this.loadDataFromRoute();
     this.changeBackgroundColor(true);
   }
 
   ngOnDestroy(): void {
     this.changeBackgroundColor(false);
+  }
+
+  private loadDataFromRoute() {
+    const data = this.activatedRoute.snapshot.data;
+    if (data.tab) {
+      switch (data.tab) {
+        case 'system-activity':
+          this.activeTabId = 'system-activity';
+          this.activeSubTabId = 'closedAlgoPositions';
+          break;
+        default:
+          if (data.subTab) {
+            this.activeTabId = 'wallet-activity';
+            this.activeSubTabId = data.subTab;
+            break;
+          }
+      }
+      this.activeTabId = data.tab;
+      setTimeout(() => {
+        const el = document.getElementById('tabs');
+        el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+      }, 500);
+    }
   }
 
   private changeBackgroundColor(addClass: boolean) {

@@ -42,17 +42,20 @@
       <!-- Large chart -->
       <app-main-chart></app-main-chart>
 
-      <div class="justify-content-center align-items-center">
-        <ngb-tabset>
-          <ngb-tab title="GRAYLL System Activity">
+      <div class="justify-content-center align-items-center" id="tabs">
+        <ngb-tabset [activeId]="activeTabId">
+          <ngb-tab title="GRAYLL System Activity" id="system-activity">
             <ng-template ngbTabContent>
-              <app-activity></app-activity>
+              <app-activity [activeTabId]="activeSubTabId"></app-activity>
             </ng-template>
           </ngb-tab>
 
-          <ngb-tab title="GRAYLL Wallet Activity">
+          <ngb-tab title="GRAYLL Wallet Activity" id="wallet-activity">
             <ng-template ngbTabContent>
-              <app-account-activity></app-account-activity>
+              <app-account-activity
+                [scrollToCompletedOrders]="activeSubTabId !== 'transfers'"
+                [activeTabId]="activeSubTabId">
+              </app-account-activity>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
