@@ -72,7 +72,7 @@ export class ActivityComponent implements OnInit, OnChanges {
   }
 
   private setActiveTab() {
-    if (this.activeTabId) {
+    if (this.activeTabId && this.activeTabId !== 'allOrders' && this.activeTabId !== 'transfers' && this.activeTabId !== 'networkHistory') {
       this.selectedTab = this.activityTabs.find((t) => t.id === this.activeTabId);
     } else {
       this.selectedTab = this.activityTabs[0];
