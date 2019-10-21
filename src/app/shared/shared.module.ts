@@ -22,6 +22,7 @@ import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/rev
 import {ActivateAccountPopupComponent} from './popup/activate-account/activate-account-popup.component';
 import {XlmLoanPopupComponent} from './popup/xlm-loan-popup/xlm-loan-popup.component';
 import {XlmBalanceStatusPopupComponent} from './popup/xlm-balance-status-popup/xlm-balance-status-popup.component';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {XlmBalanceStatusPopupComponent} from './popup/xlm-balance-status-popup/x
     ChartsModule,
     FormsModule,
     CountdownModule,
-    NgbTooltipModule
+    NgbTooltipModule,
+    InfiniteScrollModule
   ],
   exports: [
     ErrorComponent,
