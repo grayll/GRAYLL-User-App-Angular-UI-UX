@@ -7,8 +7,8 @@ export class AlgoPositionModel {
 		public algorithm?: string,
 		public priceUSD?: number,
 		public priceGRX?: number,
-		public positionValueUSD?: number,
-		public positionProfitUSD?: number,
+		public positionValueUSD?: string,
+		public positionProfitUSD?: string,
 		public roi?: number,
 		public grayllTransactionId?: string,
 		public stellarTransactionId?: string
