@@ -237,7 +237,7 @@ h6 {
 .right-arrow-mobile-scroll-indicator-div {
   position: absolute;
   right: 14px;
-  margin-top: -14px;
+  margin-top: 4px;
 }
 
 .right-arrow-mobile-scroll-indicator-img {
