@@ -131,6 +131,9 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollOpenOrders()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr *ngFor="let order of openOrders">
       <td class="width-91px">{{order.date}}</td>
       <td class="width-41px">{{order.type}}</td>
@@ -168,6 +171,9 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollTransfers()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr *ngFor="let transfer of transfers">
       <td class="width-91px">{{transfer.date}}</td>
       <td class="purple-link width-91px">{{transfer.counterparty}}</td>
@@ -203,6 +209,9 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollNetworkHistory()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr *ngFor="let item of networkHistories">
       <td class="width-91px">{{item.date}}</td>
       <td class="width-91px">{{item.operation}}</td>
@@ -253,6 +262,9 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollCompletedOrders()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr *ngFor="let order of completedOrders">
       <td class="width-91px">{{order.date}}</td>
       <td class="width-41px">{{order.type}}</td>

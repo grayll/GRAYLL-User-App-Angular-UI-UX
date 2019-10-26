@@ -86,6 +86,9 @@
     </thead>
 
     <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr *ngFor="let position of openAlgoPositions">
       <td class="width-91px">{{position.openDate}}</td>
       <td class="width-51px">{{position.status}}</td>
@@ -178,6 +181,9 @@
     </thead>
 
     <tbody class="font-8 text-light">
+    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+      <img class="right-arrow-mobile-scroll-indicator-img" src="../../../../../assets/images/right-chevron.png" alt="Scroll right for more">
+    </div>
     <tr>
       <td class="width-91px">18/08/2019 04:14</td>
       <td class="width-51px">CLOSED</td>
