@@ -120,8 +120,9 @@
 </div>
 
 <div class="bg-gradient text-light" *ngIf="selectedTab">
-  <div class="row justify-content-center align-items-center mb-1 p-2"
+  <div class="row justify-content-center align-items-center mb-1 p-2 pt-4"
        *ngIf="selectedTab.id === 'closedAlgoPositions' || selectedTab.id === 'allAlgoPositions'">
+    <hr class="m-0 py-2 w-100" style="border-color: #fff;">
     <div class="col-md-2 col-xs">
       <span class="align-middle font-14 font-weight-bolder">Closed Algo Positions (10)</span><br>
       <span class="text-light font-10 font-weight-bolder">Most Recent Closed Positions</span>
