@@ -1,0 +1,41 @@
+<ng-template #content let-modal>
+    <app-popup-header
+      [hideCloseButton]="hideCloseButton"
+      [onCloseRedirectTo]="onCloseRedirectTo"
+      popupHeaderTitle="KYC Document | Upload Successful">
+    </app-popup-header>
+    <div class="modal-body">
+      <ng-container>
+        <div class="success-checkmark">
+          <div class="check-icon">
+            <span class="icon-line line-tip"></span>
+            <span class="icon-line line-long"></span>
+            <div class="icon-circle"></div>
+            <div class="icon-fix"></div>
+          </div>
+        </div>
+  
+        <div class="row text-center">
+          <div class="col">
+            <p class="text-purple font-16">KYC Document | Upload Successful</p>
+          </div>
+        </div>
+  
+        <div class="row mb-1">
+          <div class="col-12 text-center">
+            <p class="text-purple">
+              You successfully submitted your document. 
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="modal-footer justify-content-center">
+      <div class="row text-center" style="display: contents!important;">
+        <div class="col">
+          <button class="btn btn-purple" (click)="close()">Close</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>

@@ -1,0 +1,11 @@
+@media (max-width: 420px) {
+    .center-mobile {
+      display: contents!important;
+      text-align: center!important;
+    }
+  }
+
+.privacy-hover:hover{
+  color:#CFA256;
+}
+  

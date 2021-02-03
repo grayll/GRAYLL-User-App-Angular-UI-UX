@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {faBell, faExclamationTriangle, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faExclamationTriangle, faSearch, faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import {AlgoNotificationModel, GeneralNotificationModel, WalletNotificationModel} from './notification.model';
 import {NotificationsService} from './notifications.service';
 import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 import {SharedService} from '../shared/shared.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-notifications',
@@ -34,11 +35,13 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   // Font Awesome Icons
   faWarning = faExclamationTriangle;
   faBell = faBell;
+  faCheckCircle = faCheckCircle;
   faSearch = faSearch;
-
+  notifiType: any = '';
   constructor(
     public notificationsService: NotificationsService,
-    public sharedService: SharedService
+    public sharedService: SharedService,
+    public modalService: NgbModal,
   ) {
     this.populateNotifications();
     this.populateNumberOfUnreadNotifications();
@@ -292,6 +295,45 @@ export class NotificationsComponent implements OnInit, OnDestroy {
 
   swipeRight() {
     this.carousel.prev();
+  }
+
+  openConfirmModal(modal, type) {
+    console.log("Here", modal);
+    this.notifiType = type;
+    this.modalService.open(modal).result.then(
+      res => {
+        this.notifiType = '';
+      },
+      res => {
+        this.notifiType = '';
+      }
+    );
+  }
+
+  markAsRead(modal) {
+    if (this.notifiType === 'algo') {
+      this.algoNotificationsToShow.forEach(ele => {
+        ele.isRead = true;
+      });
+      this.notificationsService.decreaseNumberOfAllUnreadNotificationsBy(this.notificationsService.getNumberOfUnreadAlgoNotifications());
+      this.notificationsService.setNumberOfUnreadAlgoNotifications(0);
+      console.log(this.notificationsService.getNumberOfUnreadAlgoNotifications());
+    }
+    if (this.notifiType === 'wallet') {
+      this.walletNotificationsToShow.forEach(ele => {
+        ele.isRead = true;
+      });
+      this.notificationsService.decreaseNumberOfAllUnreadNotificationsBy(this.notificationsService.getNumberOfUnreadWalletNotifications());
+      this.notificationsService.setNumberOfUnreadWalletNotifications(0);
+    }
+    if (this.notifiType === 'general') {
+      this.systemNotificationsToShow.forEach(ele => {
+        ele.isRead = true;
+      });
+      this.notificationsService.decreaseNumberOfAllUnreadNotificationsBy(this.notificationsService.getNumberOfUnreadSystemNotifications())
+      this.notificationsService.setNumberOfUnreadSystemNotifications(0);
+    }
+    this.modalService.dismissAll();
   }
 
 }

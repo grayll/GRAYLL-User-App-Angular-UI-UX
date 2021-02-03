@@ -31,6 +31,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {DataSettingsComponent} from './data-settings/data-settings.component';
 import {DisableWalletAppNotificationsSettingsComponent} from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
 import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
+import { KycSettingsComponent } from './kyc-settings/kyc-settings.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-sett
     VerifyPhoneNumberComponent,
     DataSettingsComponent,
     DisableWalletAppNotificationsSettingsComponent,
-    DisableAlgoAppNotificationsSettingsComponent
+    DisableAlgoAppNotificationsSettingsComponent,
+    KycSettingsComponent
   ],
   imports: [
     CommonModule,
@@ -68,7 +71,25 @@ import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-sett
     FormsModule,
     ReactiveFormsModule,
     NgxFlagIconCssModule,
-    NgSelectModule
+    NgSelectModule,
+    NgCircleProgressModule.forRoot({
+      "radius": 60,
+      "space": -10,
+      "outerStrokeGradient": true,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#4882c2",
+      "outerStrokeGradientStopColor": "#53a9ff",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 10,
+      "title": "UI",
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showBackground": false,
+      "clockwise": false,
+      "startFromZero": false,
+      "lazy": true
+    })
   ]
 })
 export class SettingsModule { }

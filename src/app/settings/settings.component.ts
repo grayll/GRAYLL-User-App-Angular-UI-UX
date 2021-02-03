@@ -1,6 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {faBell, faChartBar, faCommentAlt, faExclamationTriangle, faLock, faUser, faWallet} from '@fortawesome/free-solid-svg-icons';
+import {faBell, faChartBar, faCommentAlt, faExclamationTriangle, faLock, faUser, faWallet, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import {SharedService} from '../shared/shared.service';
+import { SettingsService } from './settings.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
@@ -17,9 +19,11 @@ export class SettingsComponent implements OnInit, OnDestroy {
   faWallet = faWallet;
   faLock = faLock;
   faWarning = faExclamationTriangle;
+  faHandshake = faHandshake;
 
   activeTabId = 'Profile';
 
+  subscription: Subscription;
   navigationSettingPages = [
     {
       name: 'Profile',
@@ -45,14 +49,30 @@ export class SettingsComponent implements OnInit, OnDestroy {
       name: 'Security',
       icon: this.faLock,
       routerLink: '/settings/profile/security'
+    },
+    {
+      name: 'KYC',
+      icon: this.faHandshake,
+      routerLink: '/settings/profile/kyc'
     }
   ];
 
   constructor(
-    public sharedService: SharedService
-  ) {}
+    public sharedService: SharedService,
+    private settingsService: SettingsService
+  ) {
+  
+  }
 
   ngOnInit(): void {
+    this.subscription = this.settingsService.getActiveId().subscribe( data => {
+      if (data.activedId) {
+        this.activeTabId = data.activedId;
+        
+      } else {
+        this.activeTabId = 'Profile';
+      }
+    });
     this.changeBackgroundColor(true);
   }
 
@@ -67,5 +87,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   tabChanged(newTabId: string) {
     this.activeTabId = newTabId;
+    this.settingsService.setActiveId(newTabId);
   }
 }

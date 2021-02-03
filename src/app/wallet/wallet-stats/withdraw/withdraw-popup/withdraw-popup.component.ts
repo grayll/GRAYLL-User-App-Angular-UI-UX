@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../../../shared/popup/popup.service';
-import {faEnvelope, faMobile, faWallet} from '@fortawesome/free-solid-svg-icons';
-import {SharedService} from '../../../../shared/shared.service';
-import {Router} from '@angular/router';
-import {ErrorService} from '../../../../shared/error/error.service';
-import {WithdrawModel} from '../withdraw.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PopupService } from '../../../../shared/popup/popup.service';
+import { faEnvelope, faMobile, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { SharedService } from '../../../../shared/shared.service';
+import { Router } from '@angular/router';
+import { ErrorService } from '../../../../shared/error/error.service';
+import { WithdrawModel } from '../withdraw.model';
 
 @Component({
   selector: 'app-withdraw-popup',
@@ -53,14 +53,19 @@ export class WithdrawPopupComponent implements OnInit {
     private router: Router,
     private errorService: ErrorService
   ) {
+    const withdrawData = JSON.parse(localStorage.getItem('withdrawData'));
     this.totalXLM = 99999999999.99999;
     this.totalGRX = 99999999999.99999;
-    this.XLMValue = null;
-    this.memoMessage = null;
-    this.GRXValue = null;
-    this.recipient = null;
+    this.XLMValue = withdrawData && withdrawData['XLMValue'] ? withdrawData['XLMValue'] : null;
+    this.memoMessage = withdrawData && withdrawData['memoMessage'] ? withdrawData['memoMessage'] : null;
+    this.GRXValue = withdrawData && withdrawData['GRXValue'] ? withdrawData['GRXValue'] : null;
+    this.recipient = withdrawData && withdrawData['recipient'] ? withdrawData['recipient'] : null;
+    this.emailAddress = withdrawData && withdrawData['emailAddress'] ? withdrawData['emailAddress'] : null;
+    this.phoneNumber = withdrawData && withdrawData['phoneNumber'] ? withdrawData['phoneNumber'] : null;
+    this.selectedCountryCode = withdrawData && withdrawData['selectedCountryCode'] ? withdrawData['selectedCountryCode'] : null;
     this.withdrawModel = new WithdrawModel();
     this.isMemoMessageSelected = true;
+
   }
 
   ngOnInit() {
@@ -75,32 +80,34 @@ export class WithdrawPopupComponent implements OnInit {
 
   populateMaxGRX() {
     this.GRXValue = this.totalGRX.toString();
+    this.onChange(this.GRXValue);
   }
 
   populateMaxXLM() {
     this.XLMValue = this.totalXLM.toString();
+    this.onChange(this.XLMValue);
   }
 
   next() {
     this.errorService.clearError();
     this.showOrHideUIElements();
-    if (!this.clientValidation()) {return; }
+    if (!this.clientValidation()) { return; }
     if ((this.memoMessage && this.selectedTabId === 'wallet') ||
       (this.noMemoMessageSelected) ||
       (this.selectedTabId !== 'wallet')) {
-        this.sharedService.showModalOverview();
-        // Populate Withdraw Model
-        this.withdrawModel.address = this.recipient;
-        this.withdrawModel.emailAddress = this.emailAddress;
-        this.withdrawModel.grxAmount = +this.GRXValue;
-        this.withdrawModel.memoMessage = this.memoMessage;
-        this.withdrawModel.phoneNumber = this.phoneNumber;
-        this.withdrawModel.xlmAmount = +this.XLMValue;
-        this.popupService.close()
+      this.sharedService.showModalOverview();
+      // Populate Withdraw Model
+      this.withdrawModel.address = this.recipient;
+      this.withdrawModel.emailAddress = this.emailAddress;
+      this.withdrawModel.grxAmount = +this.GRXValue;
+      this.withdrawModel.memoMessage = this.memoMessage;
+      this.withdrawModel.phoneNumber = this.phoneNumber;
+      this.withdrawModel.xlmAmount = +this.XLMValue;
+      this.popupService.close()
         .then(() => {
           setTimeout(() => {
             this.sharedService.setWithdrawModel(this.withdrawModel);
-            this.router.navigate(['/wallet/overview', {outlets: {popup: 'review-withdraw'}}]);
+            this.router.navigate(['/wallet/overview', { outlets: { popup: 'review-withdraw' } }]);
           }, 50);
         })
         .catch((error) => console.log(error));
@@ -153,5 +160,15 @@ export class WithdrawPopupComponent implements OnInit {
 
   isValidPhoneNumber(value: string): boolean {
     return this.isValidNumber(value.replace('+', ''));
+  }
+
+  onChange(property) {
+    let localData = localStorage.getItem('withdrawData');
+    if (localData) {
+      let parsedLocalData = JSON.parse(localData);
+      localStorage.setItem('withdrawData', JSON.stringify({ ...parsedLocalData, [property]: this[property] }));
+    } else {
+      localStorage.setItem('withdrawData', JSON.stringify({ [property]: this[property] }));
+    }
   }
 }

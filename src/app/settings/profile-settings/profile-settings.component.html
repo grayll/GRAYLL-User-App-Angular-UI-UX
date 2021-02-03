@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-xs-12">
     <div class="card border-0">
-      <div class="card-body bg-gradient text-light">
+      <div class="card-body bg-gradient text-light" data-intercom-target="General GRAYLL Profile">
         <div class="row">
           <div class="col">
             <p class="lead">General GRAYLL Profile</p>
@@ -9,8 +9,10 @@
             <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                <input disabled [value]="federationAddress" type="text" class="form-control form-control-no-border bg-transparent text-light">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
+                triggers="click:blur">
+                <input disabled [value]="federationAddress" type="text"
+                  class="form-control form-control-no-border bg-transparent text-light">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -20,12 +22,12 @@
             <div class="row justify-content-center text-center d-sm-none">
               <div class="col-12 justify-content-center">
                 <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]"
-                        class="btn btn-purple mt-3 mb-2">Edit Federation Address</button>
+                  class="btn btn-purple mt-3 mb-2">Edit Federation Address</button>
               </div>
             </div>
 
             <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]"
-                    class="btn btn-purple mt-3 mb-2 d-none d-sm-block">Edit Federation Address</button>
+              class="btn btn-purple mt-3 mb-2 d-none d-sm-block">Edit Federation Address</button>
             <p>Changing your GRAYLL alias also changes your network payment alias (aka your federation address).</p>
           </div>
         </div>
@@ -33,15 +35,17 @@
     </div>
 
     <div class="card border-0 public-key-card">
-      <div class="card-body bg-gradient text-light">
+      <div class="card-body bg-gradient text-light" data-intercom-target="Stellar Address">
         <div class="row">
           <div class="col">
             <p class="lead mb-0"><strong>Stellar Address</strong> (Public Key)</p>
             <p>The Stellar wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
-                <input disabled [value]="stellarAddress" type="text" class="form-control form-control-no-border bg-transparent text-light">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress"
+                triggers="click:blur">
+                <input disabled [value]="stellarAddress" type="text"
+                  class="form-control form-control-no-border bg-transparent text-light">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="copyStellarAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -58,19 +62,23 @@
       <div class="card-body bg-gradient text-light">
         <div class="row">
           <div class="col">
-            <form>
+            <form #userForm="ngForm" name="user-profile" (submit)="save()" autocomplete="on">
               <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" class="form-control form-control-no-border bg-transparent text-light" id="first_name" placeholder="">
+                <input type="text" [(ngModel)]="userData.firstName" (input)="onChange('firstName')"
+                  autocomplete="given-name" name="firstName"
+                  class="form-control form-control-no-border bg-transparent text-light" id="first_name" placeholder="">
               </div>
               <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" class="form-control form-control-no-border bg-transparent text-light" id="last_name" placeholder="">
+                <input type="text" [(ngModel)]="userData.lastName" (input)="onChange('lastName')"
+                  autocomplete="family-name" name="lastName"
+                  class="form-control form-control-no-border bg-transparent text-light" id="last_name" placeholder="">
               </div>
-              <div class="form-group">
+              <div class="form-group" data-intercom-target="Account Email">
                 <label for="email">Account Email</label>
-                <a [routerLink]="[{outlets: {popup: 'change-email-address'}}]"
-                  href="javascript:void(0)" class="float-right text-purple">Change Email</a>
+                <a [routerLink]="[{outlets: {popup: 'change-email-address'}}]" href="javascript:void(0)"
+                  class="float-right text-purple">Change Email</a>
                 <span class="badge float-right text-light bg-yellow mr-1" style="line-height: normal">
                   <fa-icon [icon]="faCheck"></fa-icon>
                   Verified
@@ -79,21 +87,28 @@
                   <fa-icon [icon]="faExclamation"></fa-icon>
                   Unverified
                 </span>
-                <input type="email" class="form-control form-control-no-border bg-transparent text-light" id="email" placeholder="hello@grayll.io">
+                <input type="email" [(ngModel)]="userData.email" (input)="onChange('email')" autocomplete="email"
+                  name="email" class="form-control form-control-no-border bg-transparent text-light" id="email"
+                  placeholder="hello@grayll.io">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <a [routerLink]="[{outlets: {popup: 'change-password'}}]"
-                  href="javascript:void(0)" class="float-right text-purple">Change Password</a>
-                <input type="password" class="form-control form-control-no-border bg-transparent text-light" id="password" placeholder="********">
+                <a [routerLink]="[{outlets: {popup: 'change-password'}}]" href="javascript:void(0)"
+                  class="float-right text-purple">Change Password</a>
+                <input type="password" [(ngModel)]="userData.password" autocomplete="current-password" name="password"
+                  class="form-control form-control-no-border bg-transparent text-light" id="password"
+                  placeholder="********">
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <a [routerLink]="[{outlets: {popup: 'change-phone-number'}}]"
-                  href="javascript:void(0)" class="float-right text-purple">Phone Number</a>
+                <a [routerLink]="[{outlets: {popup: 'change-phone-number'}}]" href="javascript:void(0)"
+                  class="float-right text-purple">Phone Number</a>
 
                 <!-- Phone number not set -->
-                <input type="text" class="form-control form-control-no-border bg-transparent text-light" id="phone" placeholder="Not set">
+                <input type="text" [(ngModel)]="userData.phoneNumber" (input)="onChange('phoneNumber')"
+                  autocomplete="tel" name="phoneNumber"
+                  class="form-control form-control-no-border bg-transparent text-light" id="phone"
+                  placeholder="Not set">
 
                 <!-- Phone number set -->
                 <div class="input-group">
@@ -102,11 +117,12 @@
                       <flag-icon [country]="'ba'"></flag-icon>
                     </div>
                   </div>
-                  <input type="text" class="form-control form-control-no-border bg-transparent text-light" id="inlineFormInputGroup" disabled value="+387 63 763 354">
+                  <input type="text" class="form-control form-control-no-border bg-transparent text-light"
+                    id="inlineFormInputGroup" disabled value="+387 63 763 354">
                 </div>
                 <!-- End Phone number set -->
               </div>
-              <button (click)="save()" class="btn btn-purple">Save Changes</button>
+              <button type="submit" class="btn btn-purple">Save Changes</button>
             </form>
           </div>
         </div>

@@ -15,7 +15,7 @@ export class RegisterComponent {
   emailIcon = faEnvelope;
   keyIcon  = faKey;
   registerForm: FormGroup;
-
+  honeypot: any = '';
   get name() { return this.registerForm.get('name') }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
@@ -58,6 +58,9 @@ export class RegisterComponent {
 
   registerClicked() {
     if (!this.clientValidation()) { return; }
+    if (this.honeypot) {
+      return false;
+    }
     this.errorService.clearError();
     this.router.navigate(['/login/confirm-email']);
   }

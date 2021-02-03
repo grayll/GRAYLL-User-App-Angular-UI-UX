@@ -164,6 +164,10 @@ h6 {
   min-width: 140px!important;
 }
 
+.ngb-dp-arrow-btn {
+  min-width: 0px !important;
+}
+
 .modal-backdrop.show {
   opacity: 0.8!important;
 }
@@ -194,8 +198,12 @@ h6 {
   font-size: 1rem!important;
 }
 
+.width-175px {
+  width: 175px!important;
+}
+
 .width-111px {
-  width: 111px!important;
+  width: 112px!important;
 }
 
 .width-101px {
@@ -218,6 +226,10 @@ h6 {
   width: 71px!important;
 }
 
+.width-64px {
+  width: 64px!important;
+}
+
 .width-61px {
   width: 61px!important;
 }
@@ -228,6 +240,10 @@ h6 {
 
 .width-51px {
   width: 51px!important;
+}
+
+.width-44px {
+  width: 44px!important;
 }
 
 .width-41px {
@@ -242,4 +258,12 @@ h6 {
 
 .right-arrow-mobile-scroll-indicator-img {
   width: 16px;
+}
+
+.colored-text {
+  color: #58468c;
+}
+
+.margin-1 {
+  margin-left: 2px;
 }

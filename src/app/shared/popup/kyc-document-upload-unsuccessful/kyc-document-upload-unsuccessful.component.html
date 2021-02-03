@@ -1,0 +1,39 @@
+<ng-template #content let-modal>
+    <app-popup-header
+      [hideCloseButton]="hideCloseButton"
+      [onCloseRedirectTo]="onCloseRedirectTo"
+      popupHeaderTitle="KYC Document | Upload Unsuccessful">
+    </app-popup-header>
+    <div class="modal-body">
+      <ng-container>
+        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;">
+          <span class="swal2-x-mark">
+            <span class="swal2-x-mark-line-left"></span>
+            <span class="swal2-x-mark-line-right"></span>
+          </span>
+        </div>
+  
+        <div class="row text-center">
+          <div class="col">
+            <p class="text-purple font-16">KYC Document | Upload Unsuccessful</p>
+          </div>
+        </div>
+  
+        <div class="row mb-1">
+          <div class="col-12 text-center">
+            <p class="text-purple">
+              Please retry uploading the document. <br/> all documents must be in PDF format only.
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="modal-footer justify-content-center">
+      <div class="row text-center" style="display: contents!important;">
+        <div class="col">
+          <button class="btn btn-purple" (click)="close()">Retry</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>

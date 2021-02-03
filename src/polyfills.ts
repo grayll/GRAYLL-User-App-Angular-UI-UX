@@ -62,3 +62,6 @@ import 'hammerjs';
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+(window as any).process = {
+    env: { DEBUG: undefined },
+};

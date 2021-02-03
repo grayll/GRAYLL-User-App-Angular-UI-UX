@@ -28,6 +28,12 @@ export class NotificationsService {
     this.numberOfAllUnreadNotifications += count;
   }
 
+  decreaseNumberOfAllUnreadNotificationsBy(count: number) {
+    if (this.numberOfAllUnreadNotifications > 0) {
+      this.numberOfAllUnreadNotifications -= count;
+    }
+  }
+
   decreaseNumberOfAllUnreadNotifications() {
     if (this.numberOfAllUnreadNotifications > 0) {
       this.numberOfAllUnreadNotifications--;
@@ -142,5 +148,6 @@ export class NotificationsService {
       this.numberOfGRZNotifications--;
     }
   }
+
 
 }

@@ -19,8 +19,32 @@ import {DisableWalletAppNotificationsSettingsComponent} from './notifications-se
 import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
 import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
-
+import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
+import {KycPopupComponent} from '../shared/popup/kyc-popup/kyc-popup.component';
+import { KycDocumentUploadInProgressComponent } from '../shared/popup/kyc-document-upload-in-progress/kyc-document-upload-in-progress.component';
+import { KycDocumentUploadSuccessfulComponent } from '../shared/popup/kyc-document-upload-successful/kyc-document-upload-successful.component';
+import { KycDocumentUploadUnsuccessfulComponent } from '../shared/popup/kyc-document-upload-unsuccessful/kyc-document-upload-unsuccessful.component';
 const popupRoutes: Routes = [
+  {
+    path: 'kyc',
+    component: KycPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'kyc-document-upload-in-progress',
+    component: KycDocumentUploadInProgressComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'kyc-document-upload-successful',
+    component: KycDocumentUploadSuccessfulComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'kyc-document-upload-unsuccessful',
+    component: KycDocumentUploadUnsuccessfulComponent,
+    outlet: 'popup'
+  },
   {
     path: 'google-authenticator',
     component: GoogleAuthenticatorComponent,
@@ -110,7 +134,12 @@ const popupRoutes: Routes = [
     path: 'xlm-loan',
     component: XlmLoanPopupComponent,
     outlet: 'popup'
-  }
+  },
+  {
+    path: 'xml-referral',
+    component: XlmReferralPopupComponent,
+    outlet: 'popup'
+  },
 ];
 
 const routes: Routes = [

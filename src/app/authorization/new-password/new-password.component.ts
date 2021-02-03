@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {faKey} from '@fortawesome/free-solid-svg-icons';
+import {faKey, faUser} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ErrorService} from '../../shared/error/error.service';
 
@@ -11,6 +11,7 @@ import {ErrorService} from '../../shared/error/error.service';
 export class NewPasswordComponent {
 
   keyIcon  = faKey;
+  userIcon = faUser;
   newPasswordForm: FormGroup;
 
   get password() { return this.newPasswordForm.get('password'); }

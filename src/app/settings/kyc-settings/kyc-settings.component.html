@@ -1,0 +1,436 @@
+<div class="row">
+  <div class="col-md-6 col-xs-12 mb-3">
+    <div class="card border-0 h-100 ">
+      <div class="card-body bg-gradient text-light">
+        <div class="row">
+          <div class="col">
+            <form name="user" (submit)="usersave()" autocomplete="on">
+              <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" [(ngModel)]="userData.firstName" name="firstName"
+                  class="form-control form-control-no-border bg-transparent text-light" id="first_name" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" [(ngModel)]="userData.lastName" name="lastName"
+                  class="form-control form-control-no-border bg-transparent text-light" id="last_name" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="birthday">Date of Birth</label>
+                <div class="input-group form-inline">
+                    <input class="form-control form-control-no-border bg-transparent text-light"  placeholder="DD/MM/YYYY"
+                          name="d" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <span class="input-group-text" (click)="d.toggle()" ><fa-icon [icon]="faCalendar" style="color:lightgray" size="md" ></fa-icon></span>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" [(ngModel)]="userData.nationality" name="nationality"
+                  class="form-control form-control-no-border bg-transparent text-light" id="nationality" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="government_id">Government ID Number</label>
+                <input type="text" [(ngModel)]="userData.governmentID" name="government_id"
+                  class="form-control form-control-no-border bg-transparent text-light" id="government_id" placeholder="">
+              </div>
+              <div class="form-group">
+                <p class="mb-0" for="personal_company">Personal or Company Application</p>
+                <div class="form-check form-check-inline">
+                    <label class="cont">Personal
+                        <input type="radio" value="personal" name="personal_company">
+                        <span class="radio"></span>
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="cont">Company(Organisation, Partnership)
+                        <input type="radio" value="company" name="personal_company">
+                        <span class="radio"></span>
+                    </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-purple">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 col-xs-12 mb-3">
+    <div class="card border-0 h-100 ">
+      <div class="card-body bg-gradient text-light">
+        <div class="row">
+          <div class="col">
+            <form name="company" (submit)="companysave()" autocomplete="on">
+              <div class="form-group">
+                <label for="company_name">Company Name</label>
+                <input type="text" [(ngModel)]="companyData.companyName" name="company_name"
+                  class="form-control form-control-no-border bg-transparent text-light" id="company_name" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="company_registration">Company Registration #</label>
+                <input type="text" [(ngModel)]="companyData.companyRegistration" name="company_registration"
+                  class="form-control form-control-no-border bg-transparent text-light" id="company_registration" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="address_line1">Address Line 1</label>
+                <input type="text" [(ngModel)]="companyData.addressLine1" name="address_line1"
+                  class="form-control form-control-no-border bg-transparent text-light" id="address_line1" placeholder="Residential/Company">
+              </div>
+              <div class="form-group">
+                <label for="address_line2">Address Line 2</label>
+                <input type="text" [(ngModel)]="companyData.addressLine2" name="address_line2"
+                  class="form-control form-control-no-border bg-transparent text-light" id="address_line2" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" [(ngModel)]="companyData.city" name="city"
+                  class="form-control form-control-no-border bg-transparent text-light" id="city" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" [(ngModel)]="companyData.country" name="country"
+                  class="form-control form-control-no-border bg-transparent text-light" id="country" placeholder="">
+              </div>
+              <button type="submit" class="btn btn-purple">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="required_kyc_doc">
+      <div class="card border-0 mb-0">
+          <div class="card-body bg-gradient text-light">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h5>Required KYC Documents</h5>
+                      <p>Please upload the required documents (PDF format only) for your application to use GRAYLL Services. For a partnership, company or organisation application please provide the additional documents requested. Once you have submitted all required documents for our review it will take up to 7 days to approve or decline your application. We may require further information to enable us to provide you GRALL Services and remain compliant with government regulations.</p>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row mb-lg-5" >
+                    <div class="form-group ">
+                      <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="government_id"/>
+                      <input type="file"
+                              id="government_id"
+                              accept=".pdf"
+                              class="uplaod-file"
+                              (change)="handleFileInput($event.target.files)">
+                    </div>
+                    <div class="form-group">
+                      <p class="mb-0 text-purple padding-left-2">Government Issued ID must be valid for at least 6 months</p>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="passport" name="passport" (change)="idCheck($event)"/>
+                            <span class="default"></span>
+                        </label>
+                        <label for="passport" class="form-check-label">Passport</label> -->
+                        <label class="cont">Passport
+                            <input type="radio" value="passport" name="government_issued_id" (change)="idCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="national_id" name="passport" value="true" (change)="idCheck($event)" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="national_id" class="form-check-label">National ID Card</label> -->
+                        <label class="cont">National ID Card
+                            <input type="radio" value="national_id" name="government_issued_id" (change)="idCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="drivers_license" name="passport" (change)="idCheck($event)"/>
+                              <span class="default"></span>
+                          </label>
+                          <label for="drivers_license" class="form-check-label">Driver's License</label> -->
+                          <label class="cont">Driver's License
+                              <input type="radio" value="drivers_license" name="government_issued_id" (change)="idCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row mb-lg-5">
+                  <div class="form-group ">
+                      <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="income"/>
+                      <input type="file"
+                              id="income"
+                              accept=".pdf"
+                              class="uplaod-file"
+                              (change)="handleFileInput($event.target.files)">
+                  </div>
+                  <div class="form-group">
+                    <p class="mb-0 text-purple padding-left-2">Proof of Income</p>
+                    <div class="form-check d-flex align-items-center pl-3">
+                      <!-- <label class="checkbox">
+                          <input type="radio" id="pay_slips" />
+                          <span class="default"></span>
+                      </label>
+                      <label for="pay_slips" class="form-check-label">Last 6 Months Pay Slips</label> -->
+                      <label class="cont">Last 6 Months Pay Slips
+                          <input type="radio" name="income" value="pay_slips" (change) = "incomeCheck($event)">
+                          <span class="radio"></span>
+                      </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center pl-3">
+                      <!-- <label class="checkbox">
+                          <input type="checkbox" id="personal_bank" />
+                          <span class="default"></span>
+                      </label>
+                      <label for="personal_bank" class="form-check-label">Last 6 Months Personal Bank Statements</label> -->
+                      <label class="cont">Last 6 Months Personal Bank Statements
+                          <input type="radio" name="income" value = "personal_bank" (change) = "incomeCheck($event)">
+                          <span class="radio"></span>
+                      </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="tax_returns" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="tax_returns" class="form-check-label">Last 2 Years Tax Returns</label> -->
+                        <label class="cont">Last 2 Years Tax Returns
+                            <input type="radio" name="income" value ="tax_returns" (change) = "incomeCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                    </div>
+                    <p class="mb-0 text-purple padding-left-2 font-italic">(Application must include Tax Returns)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row" >
+                    <div class="form-group ">
+                      <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="address"/>
+                      <input type="file"
+                              id="address"
+                              accept=".pdf"
+                              class="uplaod-file"
+                              (change)="handleFileInput($event.target.files)">
+                    </div>
+                    <div class="form-group">
+                      <p class="mb-0 text-purple padding-left-2">Proof of Address</p>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="utility_bill" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="utility_bill" class="form-check-label">Utility Bill</label> -->
+                        <label class="cont">Utility Bill
+                            <input type="radio" name="proof_address" value="utility_bill" (change) ="addressCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="bank_statement" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="bank_statement" class="form-check-label">Bank Statement</label> -->
+                        <label class="cont">Bank Statement
+                            <input type="radio" name="proof_address" value="bank_statement" (change) ="addressCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="rental_lease" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="rental_lease" class="form-check-label">Rental/Lease Agreement</label> -->
+                          <label class="cont">Rental/Lease Agreement
+                              <input type="radio" name="proof_address" value="rental_lease" (change) ="addressCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="property_tax_receipt" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="property_tax_receipt" class="form-check-label">Property Tax Receipt</label> -->
+                          <label class="cont">Property Tax Receipt
+                              <input type="radio" name="proof_address" value="property_tax_receipt" (change) ="addressCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="tax_return" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="tax_return" class="form-check-label">Tax Return</label> -->
+                          <label class="cont">Tax Return
+                              <input type="radio" name="proof_address" value="tax_return" (change) ="addressCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <p class="mb-0 text-purple padding-left-2 font-italic">(Application must include 2 documents)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row">
+                  <div class="form-group ">
+                      <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="personal_liquid_assets"/>
+                      <input type="file"
+                              id="personal_liquid_assets"
+                              accept=".pdf"
+                              class="uplaod-file"
+                              (change)="handleFileInput($event.target.files)">
+                  </div>
+                  <div class="form-group">
+                    <p class="mb-0 text-purple padding-left-2">Proof of Personal Liquid Assets</p>
+                    <div class="form-check d-flex align-items-center pl-3">
+                      <!-- <label class="checkbox">
+                          <input type="checkbox" id="share_stock_bond" />
+                          <span class="default"></span>
+                      </label>
+                      <label for="share_stock_bond" class="form-check-label">Share/Stock/Bond Certificates</label> -->
+                      <label class="cont">Share/Stock/Bond Certificates
+                          <input type="radio" name="proof_personal_liquid_assets" value="share_stock_bond" (change)="personalLiquidAssetsCheck($event)" >
+                          <span class="radio"></span>
+                      </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center pl-3">
+                      <!-- <label class="checkbox">
+                          <input type="checkbox" id="saving_deposit" />
+                          <span class="default"></span>
+                      </label>
+                      <label for="saving_deposit" class="form-check-label">Last 2 Months Saving/Deposit Account Statements/Certificates</label> -->
+                      <label class="cont">Last 2 Months Saving/Deposit Account Statements/Certificates
+                          <input type="radio" name="proof_personal_liquid_assets" value="saving_deposit" (change)="personalLiquidAssetsCheck($event)">
+                          <span class="radio"></span>
+                      </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="retirement" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="retirement" class="form-check-label">Last 2 Months Retirement Account Statements</label> -->
+                        <label class="cont">Last 2 Months Retirement Account Statements
+                            <input type="radio" name="proof_personal_liquid_assets" value="retirement" (change)="personalLiquidAssetsCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="investment" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="investment" >Last 2 Months Investment Account Statements</label> -->
+                        <label class="cont">Last 2 Months Investment Account Statements
+                            <input type="radio" name="proof_personal_liquid_assets"  value="investment" (change)="personalLiquidAssetsCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row" >
+                      <div class="form-group ">
+                        <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="company_registration"/>
+                        <input type="file"
+                                id="company_registration"
+                                accept=".pdf"
+                                class="uplaod-file"
+                                (change)="handleFileInput($event.target.files)">
+                      </div>
+                      <div class="form-group">
+                        <p class="mb-0 text-purple padding-left-2">Company Registration</p>
+                        <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="incorporation_formation" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="incorporation_formation" class="form-check-label">Certificates of Incorporation/Formation</label> -->
+                          <label class="cont">Certificates of Incorporation/Formation
+                              <input type="radio" name="company_registration" value="incorporation_formation" (change) ="companyRegistrationCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-xs-12 d-lg-flex flex-lg-row">
+                    <div class="form-group ">
+                        <img src="../../../assets/images/uploadicon.png" height="100px" class="ml-3" for="company_financials"/>
+                        <input type="file"
+                                id="company_financials"
+                                accept=".pdf"
+                                class="uplaod-file"
+                                (change)="handleFileInput($event.target.files)">
+                    </div>
+                    <div class="form-group">
+                      <p class="mb-0 text-purple padding-left-2">Company Financials</p>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="tax_returns_2" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="tax_returns_2" class="form-check-label">Last 2 Years Tax Returns</label> -->
+                        <label class="cont">Last 2 Years Tax Returns
+                            <input type="radio" name="company_financials" value="tax_returns_2" (change)="companyFinancialsCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" id="financial_statements" />
+                            <span class="default"></span>
+                        </label>
+                        <label for="financial_statements" class="form-check-label">Last 2 Years Financial Statements</label> -->
+                        <label class="cont">Last 2 Years Financial Statements
+                            <input type="radio" name="company_financials" value="financial_statements" (change)="companyFinancialsCheck($event)">
+                            <span class="radio"></span>
+                        </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="balance_sheets" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="balance_sheets" class="form-check-label">Last 2 Years Balance Sheets</label> -->
+                          <label class="cont">Last 2 Years Balance Sheets
+                              <input type="radio" name="company_financials" value="balance_sheets" (change)="companyFinancialsCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="bank_statements" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="bank_statements" class="form-check-label">Last 6 Months Bank Statements</label> -->
+                          <label class="cont">Last 6 Months Bank Statements
+                              <input type="radio" name="company_financials" value="bank_statements" (change)="companyFinancialsCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <div class="form-check d-flex align-items-center pl-3">
+                          <!-- <label class="checkbox">
+                              <input type="checkbox" id="investment_account_statements" />
+                              <span class="default"></span>
+                          </label>
+                          <label for="investment_account_statements" class="form-check-label">Last 6 Months Investment Account Statements</label> -->
+                          <label class="cont">Last 6 Months Investment Account Statements
+                              <input type="radio" name="company_financials" value="investment_account_statements" (change)="companyFinancialsCheck($event)">
+                              <span class="radio"></span>
+                          </label>
+                      </div>
+                      <p class="mb-0 text-purple padding-left-2 font-italic">(Company applications must include all documents above, Investment Account statements are optional to improve application approval requirements)</p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>

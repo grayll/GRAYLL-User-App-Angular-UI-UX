@@ -5,10 +5,11 @@ import {CancelAlgoPositionsComponent} from '../shared/system-activity/cancel-alg
 import {OpenAlgoPositionSuccessComponent} from './system-header-boxes/open-algo-position-success/open-algo-position-success.component';
 import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-position-error/open-algo-position-error.component';
 import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
 
 const popupRoutes: Routes = [
   {
-    path: 'cancel-algo-positions',
+    path: 'cancel-algo-positions/:name',
     component: CancelAlgoPositionsComponent,
     outlet: 'popup'
   },
@@ -25,6 +26,11 @@ const popupRoutes: Routes = [
   {
     path: 'xlm-loan',
     component: XlmLoanPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'xml-referral',
+    component: XlmReferralPopupComponent,
     outlet: 'popup'
   }
 ];

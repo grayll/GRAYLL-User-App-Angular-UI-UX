@@ -43,7 +43,10 @@ export class TwoFactorComponent {
   loginClicked() {
     if (!this.clientValidation()) { return; }
     this.errorService.clearError();
-    this.router.navigate(['/dashboard/overview']);
+    //this.router.navigate(['/dashboard/overview']);
+    this.router.navigate(['/settings/profile']).then( ()=>
+      this.router.navigate(['/settings/profile', {outlets: {popup: 'kyc'}}])
+    )
   }
-
 }
+

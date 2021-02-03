@@ -1,11 +1,11 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {faChartLine, faCircle, faWallet} from '@fortawesome/free-solid-svg-icons';
-import {ClipboardService} from 'ngx-clipboard';
-import {SnotifyService} from 'ng-snotify';
-import {NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
-import {SubSink} from 'subsink';
-import {SettingsService} from '../../settings/settings.service';
-import {Router} from '@angular/router';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { faChartLine, faCircle, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { ClipboardService } from 'ngx-clipboard';
+import { SnotifyService } from 'ng-snotify';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+import { SubSink } from 'subsink';
+import { SettingsService } from '../../settings/settings.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wallet-stats',
@@ -27,6 +27,15 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   GRXValue: string;
   secretKey: string;
   isSecretKeyRevealed: boolean;
+  buyGRX = {
+    XLMValue: '',
+    GRXValue: '',
+  };
+
+  sellGRX = {
+    XLMValue: '',
+    GRXValue: '',
+  };
 
   private subscriptions = new SubSink();
 
@@ -36,6 +45,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     private settingsService: SettingsService,
     private router: Router
   ) {
+    const buyGRX = JSON.parse(localStorage.getItem('buyGRX'));
+    const sellGRX = JSON.parse(localStorage.getItem('sellGRX'));
     this.federationAddress = 'grayll3*grayll.io';
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
@@ -43,6 +54,11 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     this.totalGRX = 99999999999.99999;
     this.XLMValue = null;
     this.GRXValue = null;
+    this.buyGRX.XLMValue = buyGRX && buyGRX['XLMValue'] ? buyGRX['XLMValue'] : null;
+    this.sellGRX.XLMValue = sellGRX && sellGRX['XLMValue'] ? sellGRX['XLMValue'] : null;
+    this.buyGRX.GRXValue = buyGRX && buyGRX['GRXValue'] ? buyGRX['GRXValue'] : null;
+    this.sellGRX.GRXValue = sellGRX && sellGRX['GRXValue'] ? sellGRX['GRXValue'] : null;
+
   }
 
   ngOnInit() {
@@ -66,7 +82,7 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   }
 
   revealSecretKey() {
-    this.router.navigate(['/wallet/overview', {outlets: {popup: 'reveal-secret-key'}}]);
+    this.router.navigate(['/wallet/overview', { outlets: { popup: 'reveal-secret-key' } }]);
   }
 
   hideSecretKey() {
@@ -75,18 +91,18 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
 
   observeRevealSecretKey() {
     this.subscriptions.sink = this.settingsService.observeConfirmAuthority()
-    .subscribe((confirm) => {
-      // Not a secure solution. Please make a request to backend to get the code
-      this.isSecretKeyRevealed = confirm;
-    });
+      .subscribe((confirm) => {
+        // Not a secure solution. Please make a request to backend to get the code
+        this.isSecretKeyRevealed = confirm;
+      });
   }
 
-  populateMaxXLM() {
-    this.XLMValue = this.totalXLM.toString();
+  populateMaxXLM(obj, prop) {
+    this[obj][prop] = this.totalXLM.toString();
   }
 
-  populateMaxGRX() {
-    this.GRXValue = this.totalGRX.toString();
+  populateMaxGRX(obj, prop) {
+    this[obj][prop] = this.totalGRX.toString();
   }
 
   goToTop() {
@@ -99,6 +115,26 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
 
   swipeRight() {
     this.carouselWallet.prev();
+  }
+
+  onChangeBuy(property) {
+    let localData = localStorage.getItem('buyGRX');
+    if (localData) {
+      let parsedLocalData = JSON.parse(localData);
+      localStorage.setItem('buyGRX', JSON.stringify({ ...parsedLocalData, [property]: this.buyGRX[property] }));
+    } else {
+      localStorage.setItem('buyGRX', JSON.stringify({ [property]: this.buyGRX[property] }));
+    }
+  }
+
+  onChangeSell(property) {
+    let localData = localStorage.getItem('sellGRX');
+    if (localData) {
+      let parsedLocalData = JSON.parse(localData);
+      localStorage.setItem('sellGRX', JSON.stringify({ ...parsedLocalData, [property]: this.sellGRX[property] }));
+    } else {
+      localStorage.setItem('sellGRX', JSON.stringify({ [property]: this.sellGRX[property] }));
+    }
   }
 
 }

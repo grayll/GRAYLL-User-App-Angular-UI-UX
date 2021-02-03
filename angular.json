@@ -13,14 +13,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/code",
+            "outputPath": "code",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.css",
@@ -29,7 +30,9 @@
               "node_modules/@ng-select/ng-select/themes/default.theme.css",
               "node_modules/flag-icon-css/css/flag-icon.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/addtohomescreen.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -55,7 +58,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -89,7 +94,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },

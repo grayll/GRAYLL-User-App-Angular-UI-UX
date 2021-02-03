@@ -5,7 +5,7 @@ import {ErrorPageComponent} from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     loadChildren: './authorization/authorization.module#AuthorizationModule'
   },
   {
@@ -33,7 +33,11 @@ const routes: Routes = [
     loadChildren: './settings/settings.module#SettingsModule'
   },
   {
-    path: '',
+    path: 'referral',
+    loadChildren: './referral/referral.module#ReferralModule'
+  },
+  {
+    path: 'dashboard',
     redirectTo: '/dashboard/overview',
     pathMatch: 'full'
   },

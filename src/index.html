@@ -1,15 +1,55 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Code</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/icons/icon-192x192.png">
+  <title>GRAYLL</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&amp;display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel='manifest' href='/manifest.webmanifest'>
+  <meta name="theme-color" content="#1976d2">
+  <script>
+    /*
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("[PWA Builder] active service worker found, no need to register");
+      } else {
+        // Register the service worker
+        navigator.serviceWorker
+          .register("pwabuilder-sw.js", {
+            scope: "./"
+          })
+          .then(function (reg) {
+            console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+    */
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
+  <script>
+    window.intercomSettings = {
+      app_id: "v9vzre42",
+      //app_id: "qu23mgu1",
+    };
+  </script>
+  <script>
+  // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/v9vzre42'
+  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/v9vzre42';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+  </script>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
+
 </html>

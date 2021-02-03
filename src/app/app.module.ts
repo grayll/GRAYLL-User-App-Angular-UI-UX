@@ -10,6 +10,13 @@ import {NotifierConfig} from './shared/configurations/snotify.conf';
 import {SharedModule} from './shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './_services/interceptor.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 declare var Hammer: any;
 
@@ -27,7 +34,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
   declarations: [
     AppComponent,
     NotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,11 +42,33 @@ export class MyHammerConfig extends HammerGestureConfig  {
     SharedModule,
     SnotifyModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
+    NgCircleProgressModule.forRoot({
+      "radius": 60,
+      "space": -10,
+      "outerStrokeGradient": true,
+      "outerStrokeWidth": 10,
+      "outerStrokeColor": "#4882c2",
+      "outerStrokeGradientStopColor": "#53a9ff",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 10,
+      "title": "UI",
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showBackground": false,
+      "clockwise": false,
+      "startFromZero": false,
+      "lazy": true
+    })
   ],
   providers: [
     ErrorService,
     { provide: 'SnotifyToastConfig', useValue: NotifierConfig},
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     SnotifyService,
     {
       provide: HAMMER_GESTURE_CONFIG,

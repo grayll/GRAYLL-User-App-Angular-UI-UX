@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {PopupService} from '../../popup/popup.service';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-cancel-algo-positions',
@@ -7,15 +8,24 @@ import {PopupService} from '../../popup/popup.service';
   styleUrls: ['./cancel-algo-positions.component.css']
 })
 export class CancelAlgoPositionsComponent implements OnInit {
-  
+
   @ViewChild('content') modal;
-  
+  algoName: any = '';
   constructor(
-    public popupService: PopupService
+    public popupService: PopupService,
+    private route: ActivatedRoute
   ) { }
-  
+
   ngOnInit() {
     this.popupService.open(this.modal);
+    this.route.params.subscribe((param) => {
+      let params = param.name;
+      let index = params.indexOf("GR");
+      this.algoName = params.substring(index, params.length);
+
+      // let split = param.name.split('|');
+      // this.algoName = split[1].trim() || "";
+    });
   }
 
 }

@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {SnotifyService} from 'ng-snotify';
 import {PopupService} from '../../../shared/popup/popup.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-deposit-popup',
@@ -17,7 +18,8 @@ export class DepositPopupComponent implements OnInit {
   constructor(
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService,
-    public popupService: PopupService
+    public popupService: PopupService,
+    private router: Router,
   ) {
     this.federationAddress = 'grayll3*grayll.io';
     this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
@@ -37,6 +39,14 @@ export class DepositPopupComponent implements OnInit {
     if (this.clipboardService.copyFromContent(this.stellarAddress)) {
       this.snotifyService.simple('Stellar address copied.');
     }
+  }
+  //goto KYC 
+  gotoKYC(){
+    this.popupService.close().then(() => {
+      setTimeout(() => {
+        this.router.navigate(['/settings/profile', {outlets: {popup: 'kyc'}}]);
+      }, 200);
+    });
   }
 
 }

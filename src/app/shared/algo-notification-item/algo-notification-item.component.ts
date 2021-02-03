@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AlgoNotificationModel} from '../../notifications/notification.model';
 import {faChevronCircleUp, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-algo-notification-item',
@@ -22,7 +23,8 @@ export class AlgoNotificationItemComponent implements OnInit {
   faExpand: any;
 
   constructor(
-    private router: Router
+    private router: Router,
+    public modalService: NgbModal,
   ) {
     this.faExpand = this.faPlus;
   }

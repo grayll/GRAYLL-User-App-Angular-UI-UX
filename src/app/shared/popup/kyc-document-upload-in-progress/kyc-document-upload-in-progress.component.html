@@ -1,0 +1,51 @@
+<ng-template #content let-modal>
+    <app-popup-header
+      [hideCloseButton]="hideCloseButton"
+      [onCloseRedirectTo]="onCloseRedirectTo"
+      popupHeaderTitle="KYC Document | Loading...">
+    </app-popup-header>
+    <div class="modal-body">
+      <ng-container>
+          <div class="row justify-content-center">
+              <circle-progress
+              [percent]="100"
+              [radius]="50"
+              [outerStrokeWidth]="10"
+              [innerStrokeWidth]="10"
+              [space] = "-10"
+              [outerStrokeColor]="'#4882c2'"
+              [innerStrokeColor]="'#e7e8ea'"
+              [titleFontSize]= "24"
+              [unitsFontSize]= "24"
+              [showSubtitle] = "false"
+              [showTitle] = "false"
+              [animation]="true"
+              [animationDuration]="2000"
+              [startFromZero]="false"
+              [responsive]="false"
+            ></circle-progress>
+          </div>
+        <div class="row text-center">
+          <div class="col">
+            <p class="text-purple font-16">KYC Document | Upload in Progress</p>
+          </div>
+        </div>
+  
+        <div class="row mb-1">
+          <div class="col-12 text-center">
+            <p class="text-purple">
+              Your upload of document is in progress <br/> all documents must be in PDF format only.
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="modal-footer justify-content-center">
+      <div class="row text-center" style="display: contents!important;">
+        <div class="col">
+          <button class="btn btn-purple" (click)="close()">Cancel Upload</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>

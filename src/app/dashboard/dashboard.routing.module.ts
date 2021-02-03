@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {ActivateAccountPopupComponent} from '../shared/popup/activate-account/activate-account-popup.component';
 import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
 import {XlmBalanceStatusPopupComponent} from '../shared/popup/xlm-balance-status-popup/xlm-balance-status-popup.component';
 
 const popupRoutes: Routes = [
@@ -19,6 +20,11 @@ const popupRoutes: Routes = [
   {
     path: 'xlm-balance-status',
     component: XlmBalanceStatusPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'xml-referral',
+    component: XlmReferralPopupComponent,
     outlet: 'popup'
   }
 ];

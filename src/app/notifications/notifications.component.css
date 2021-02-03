@@ -1,194 +1,212 @@
 .main-wrapper {
-  padding-top: 50px;
-  width: 100%!important;
-  height: 100%!important;
-  overflow: hidden;
+    padding-top: 50px;
+    width: 100%!important;
+    height: 100%!important;
+    overflow: hidden;
 }
 
 .page-wrapper {
-  margin: 0 auto;
-  background-color: #414755;
+    margin: 0 auto;
+    background-color: #414755;
 }
 
-.page-wrapper > .container-fluid {
-  padding: 20px;
-  min-height: calc(100vh - 100px);
+.page-wrapper>.container-fluid {
+    padding: 20px;
+    min-height: calc(100vh - 100px);
 }
 
 .fixed-desktop-cards {
-  position: absolute;
-  top: 56px;
-  left: 20px;
-  right: 20px;
-  bottom: 34px;
+    position: absolute;
+    top: 56px;
+    left: 20px;
+    right: 20px;
+    bottom: 34px;
 }
 
 .fixed-desktop-box {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  top: 120px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
 }
 
 .loan-unpaid {
-  position: absolute;
-  top: 0;
-  left: 20%;
-  right: 20%;
-  margin-top: 6px;
-  margin-bottom: 0;
-  padding: 0.1rem 1.25rem;
-  align-items: center;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    margin-top: 6px;
+    margin-bottom: 0;
+    padding: 0.1rem 1.25rem;
+    align-items: center;
 }
 
 .loan-unpaid-mobile {
-  margin-top: calc(50px + 1rem);
-  display: flex;
-  align-items: center;
+    margin-top: calc(50px + 1rem);
+    display: flex;
+    align-items: center;
 }
 
 .navy-link {
-  color: #40278C!important;
+    color: #40278C!important;
 }
 
 .navy-link:hover {
-  color: #cfa256!important;
-  cursor: pointer!important;
+    color: #cfa256!important;
+    cursor: pointer!important;
 }
 
 .badge-number {
-  position: absolute;
-  top: -10px;
+    position: absolute;
+    top: -10px;
 }
 
 .gradient-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
-  color: white!important;
+    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    color: white!important;
 }
+
 .card {
-  background-color: #636fa4 !important;
+    background-color: #636fa4 !important;
 }
 
 .card-body {
-  border-radius: 4px !important;
+    border-radius: 4px !important;
 }
 
 .purple-line {
-  margin: 0!important;
-  border-color: #40278c!important;
+    margin: 0!important;
+    border-color: #40278c!important;
 }
 
 .search .input-group-text {
-  border-color: #40278C;
-  border-left: 0;
+    border-color: #40278C;
+    border-left: 0;
 }
 
 .scroll-cont {
-  -webkit-overflow-scrolling: touch!important;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  position: absolute;
-  top: 110px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+    -webkit-overflow-scrolling: touch!important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 110px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
 }
 
 .size-card {
-  position: fixed;
-  top: 106px;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+    position: fixed;
+    top: 106px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
 }
+
 
 /* width */
+
 ::-webkit-scrollbar {
-  width: 3px;
+    width: 3px;
 }
+
 
 /* Track */
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
+
 
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #888;
+    background: #888;
 }
 
+
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
 
 :host ::ng-deep .carousel-inner {
-  outline: 0!important;
+    outline: 0!important;
 }
 
 :host ::ng-deep .carousel-item.active {
-  outline: 0!important;
+    outline: 0!important;
 }
 
 :host ::ng-deep .carousel {
-  outline: 0!important;
+    outline: 0!important;
 }
 
 :host ::ng-deep .carousel-control-prev {
-  display: block;
-  position: fixed;
-  top: 206px;
-  left: 2px;
+    display: block;
+    position: fixed;
+    top: 206px;
+    left: 2px;
 }
 
 :host ::ng-deep .carousel-control-prev-icon {
-  background-image: url('../../assets/images/left-chevron.png');
-  width: 15px;
-  height: 24px;
+    background-image: url('../../assets/images/left-chevron.png');
+    width: 15px;
+    height: 24px;
 }
 
 :host ::ng-deep .carousel-control-next {
-  width: 15px;
-  display: block;
-  position: fixed;
-  top: 206px;
-  right: 23px;
+    width: 15px;
+    display: block;
+    position: fixed;
+    top: 206px;
+    right: 23px;
 }
 
 :host ::ng-deep .carousel-control-next-icon {
-  background-image: url('../../assets/images/right-chevron.png');
-  width: 15px;
-  height: 24px;
+    background-image: url('../../assets/images/right-chevron.png');
+    width: 15px;
+    height: 24px;
+}
+
+#confirm-content,
+#confirm-caption {
+    padding: 0;
+    margin-bottom: 0;
 }
 
 @media (min-width: 760px) {
-  .page-wrapper {
-    margin: 14px auto 0 auto;
-    max-width: 1200px;
-    position: relative;
-  }
-
-  .main-wrapper {
-    background-color: #414755;
-    height: 100%!important;
-  }
+    .page-wrapper {
+        margin: 14px auto 0 auto;
+        max-width: 1200px;
+        position: relative;
+    }
+    .main-wrapper {
+        background-color: #414755;
+        height: 100%!important;
+    }
 }
 
 @media (min-width: 760px) and (max-width: 991px) {
-  .size-card {
-    top: 120px;
-  }
+    .size-card {
+        top: 120px;
+    }
 }
 
 @media (max-width: 420px) {
-  .main-wrapper {
-    padding-top: 0;
-  }
-  h4 {
-    position: fixed;
-    top: 48px;
-  }
+    .main-wrapper {
+        padding-top: 0;
+    }
+    /* h4 {
+        position: fixed;
+        top: 48px;
+    } */
+}
+
+@media (max-width: 420px) {
+    #modal-basic-title {}
 }

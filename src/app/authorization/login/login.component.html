@@ -1,53 +1,133 @@
 <div class="container h-100">
-  <div class="row justify-content-center align-items-center h-100">
-    <div class="col-12 text-center">
-      <div class="card" style="margin: 0 auto">
-        <div class="card-header">
-          <img class="img img-fluid logo" src="assets/images/logo.png" alt="Logo">
-          <h4 class="text-light">Sign in to GRAYLL</h4>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="loginForm">
-            <app-error></app-error>
-            <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
-              Please enter your email address.
-            </small>
-            <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
-              Please enter a valid email address.
-            </small>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-              <span class="input-group-text">
-                  <fa-icon [icon]="userIcon"></fa-icon>
-              </span>
-              </div>
-              <input formControlName="email" type="email" class="form-control form-control-no-border" placeholder="Email">
+    <div class="row justify-content-center align-items-center h-100 card-top">
+        <div class="col-12 text-center hhh">
+            <div class="card" style="margin: 0 auto">
+                <div class="card-header">
+                    <img class="img img-fluid logo" src="assets/images/logo.png" alt="Logo">
+                    <h4 class="text-light">Sign in to GRAYLL</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm">
+                        <app-error></app-error>
+                        <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+                            Please enter your email address.
+                        </small>
+                        <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+                            Please enter a valid email address.
+                        </small>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <fa-icon [icon]="userIcon"></fa-icon>
+                                </span>
+                            </div>
+                            <input formControlName="email" type="email" class="form-control form-control-no-border" placeholder="Email" (input)="onChange('email')">
+                        </div>
+                        <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
+                            Please enter your password.
+                        </small>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <fa-icon [icon]="keyIcon"></fa-icon>
+                                </span>
+                            </div>
+                            <input formControlName="password" type="password" class="form-control form-control-no-border" placeholder="Password">
+                            <input type="hidden" name="honeypet" [(ngModel)]="honeypot">
+                        </div>
+                        <div class="form-group mb-0">
+                            <button (click)="loginClicked()" class="btn btn-block login_btn">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center">
+                        <a class="blue-link" routerLink="/new-password">Forgot your password?</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a class="blue-link" routerLink="/register">Don't have an account?</a>
+                    </div>
+                </div>
             </div>
-            <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
-              Please enter your password.
-            </small>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-              <span class="input-group-text">
-                <fa-icon [icon]="keyIcon"></fa-icon>
-              </span>
-              </div>
-              <input formControlName="password" type="password" class="form-control form-control-no-border" placeholder="Password">
-            </div>
-            <div class="form-group mb-0">
-              <button (click)="loginClicked()" class="btn btn-block login_btn">Login</button>
-            </div>
-          </form>
         </div>
-        <div class="card-footer">
-          <div class="d-flex justify-content-center">
-            <a class="blue-link" routerLink="/login/new-password">Forgot your password?</a>
-          </div>
-          <div class="d-flex justify-content-center">
-            <a class="blue-link" routerLink="/login/register">Don't have an account?</a>
-          </div>
+        <!-- <div class="col-12 text-center fixed-bottom " style = "bottom: calc(25% - 120px)"> -->
+        <div class="col-12 text-center">
+            <button id="setup_button" (click)="installApp()" class="col-12 text-center btn-install">
+                <span class="desktop">
+                    <ng-container *ngIf="!(this.browserPlatform=='samsung' || this.browserPlatform=='iphone' || this.browserPlatform=='ipad')">
+                        Install GRAYLL App on my Desktop</ng-container>
+                    <ng-container *ngIf="this.browserPlatform=='samsung' || this.browserPlatform=='iphone' || this.browserPlatform=='ipad'">Add GRAYLL App to Home Screen</ng-container>
+                </span>
+                <span class="phone">Add GRAYLL App to Home Screen</span>
+            </button>
         </div>
-      </div>
+        <div class="col-12 text-center">
+            <div class="col-12 d-flex justify-content-center">
+                <a class="blue-link" href="https://grayll.io/privacy"><p class="mb-0">Privacy</p></a>&nbsp;
+                <p class="text-light mb-0">|</p>&nbsp;
+                <a class="blue-link" href="https://grayll.io/terms-of-service"><p class="mb-0">Terms</p></a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+<!--IOS Popup-->
+<!-- <div
+  [ngClass]="{'ath-container banner-bottom-center d-none': !iosguide,'ath-container banner-bottom-center': iosguide}">
+  <div class="ath-banner ath-guidance"><img src="assets/images/addtohomescreen/iosguide.gif" class="d-flex"></div>
+
+</div> -->
+<!-- <div *ngIf="iosguide">
+    <div class="ath-banner ath-guidance">
+        <img src="assets/images/addtohomescreen/iosguide.gif" class="d-flex">
+    </div>
+
+</div> -->
+
+<!--IOS Popup-->
+<!--Safari & iPad Popup-->
+<!-- <div class="ath-container banner-bottom-center" [ngClass]="{'d-none': !this.safariguide}">
+  <div class="ath-banner ath-guidance"><img src="assets/images/addtohomescreen/safari-ipad-share-a2hs.png"
+      class="d-flex"></div>
+
+</div> -->
+
+<!-- <div *ngIf="safariguide">
+    <div class="ath-banner ath-guidance">
+        <img src="assets/images/addtohomescreen/safari-ipad-share-a2hs.png" class="d-flex">
+    </div>
+
+</div> -->
+
+<!--Safari & iPad Popup-->
+<!--Firefox Popup-->
+<!-- <div class="ath-container banner-bottom-center" [ngClass]="{'d-none': !firefoxguide}">
+    <div class="ath-banner ath-guidance">
+        <img src="assets/images/addtohomescreen/firefox.png" class="d-flex" style="width: 460px">
+    </div>
+
+</div> -->
+<!-- Firefox Popup -->
+<ng-template #content let-modal>
+    <div _ngcontent-whb-c12="" class="modal-header">
+        <p style="font-size: 22px;" _ngcontent-whb-c12="" class="text-purple" id="modal-basic-title">Welcome to the GRAYLL App & Intelligence</p>
+        <button _ngcontent-whb-c12="" aria-label="Close" class="close" type="button" (click)="modalClose()">
+            <span _ngcontent-whb-c12="" aria-hidden="true">×</span>
+        </button>
+        <span _ngcontent-whb-c12="" ngbautofocus=""></span>
+    </div>
+    <div _ngcontent-iit-c11="" class="modal-body">
+        <div _ngcontent-iit-c11="" class="row mb-1">
+            <div _ngcontent-iit-c11="" class="col-12 text-center">
+                <p _ngcontent-iit-c11="" class="text-purple"> To avoid loss of your time and unnecessary confusion PLEASE READ all instructions carefully - When you see
+                    the REFRESH button please CLICK it to load the latest version of the GRAYLL App. </p>
+            </div>
+        </div>
+    </div>
+    <div _ngcontent-mfk-c11="" class="modal-footer justify-content-center">
+        <div _ngcontent-mfk-c11="" class="row text-center" style="display: contents!important;">
+            <div _ngcontent-mfk-c11="" class="col">
+                <button _ngcontent-mfk-c11="" class="btn btn-purple" (click)="modalClose()">Read</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

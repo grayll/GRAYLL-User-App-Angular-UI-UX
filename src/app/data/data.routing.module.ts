@@ -2,11 +2,17 @@ import {RouterModule, Routes} from '@angular/router';
 import {DataComponent} from './data.component';
 import {NgModule} from '@angular/core';
 import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
 
 const popupRoutes: Routes = [
   {
     path: 'xlm-loan',
     component: XlmLoanPopupComponent,
+    outlet: 'popup'
+  },
+  {
+    path: 'xml-referral',
+    component: XlmReferralPopupComponent,
     outlet: 'popup'
   }
 ];

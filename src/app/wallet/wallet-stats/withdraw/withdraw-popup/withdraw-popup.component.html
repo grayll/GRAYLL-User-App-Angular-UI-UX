@@ -23,7 +23,8 @@
               </p>
               <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Recipient</p>
               <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                     placeholder="Stellar Wallet or Federation Address" [(ngModel)]="recipient">
+                placeholder="Stellar Wallet or Federation Address" [(ngModel)]="recipient"
+                (input)="onChange('recipient')">
 
               <ngb-tabset type="pills">
                 <ngb-tab>
@@ -36,7 +37,9 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="GRX Amount">
                       </div>
                       <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -49,7 +52,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -64,7 +69,9 @@
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Amount">
+                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="XLM Amount">
                       </div>
                       <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -77,7 +84,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -85,26 +94,30 @@
               </ngb-tabset>
               <div class="form-group" *ngIf="!noMemoMessageSelected">
                 <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Memo Message</p>
-                <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                       placeholder="Memo Message" [(ngModel)]="memoMessage">
+                <input type="text" class="form-control form-control-no-border bg-gradient text-light"
+                  style="height: 46px" placeholder="Memo Message" [(ngModel)]="memoMessage"
+                  (input)="onChange('memoMessage')">
                 <span class="text-purple">28 bytes left</span>
               </div>
               <div class="form-group mb-0">
                 <div class="form-check form-check-inline">
                   <label class="checkbox">
-                    <input [(ngModel)]="noMemoMessageSelected" type="checkbox" id="noMemoMessage"/>
+                    <input [(ngModel)]="noMemoMessageSelected" type="checkbox" id="noMemoMessage" />
                     <span class="default"></span>
                   </label>
-                  <label for="noMemoMessage" class="font-weight-bolder form-check-label text-purple">No Memo Message</label>
+                  <label for="noMemoMessage" class="font-weight-bolder form-check-label text-purple">No Memo
+                    Message</label>
                 </div>
               </div>
               <div class="alert alert-warning" *ngIf="noMemoMessageSelected">
                 <p class="text-purple">
                   <span class="font-weight-bolder">IMPORTANT
+                    <br>
+                    Some recipients (Bittrex, Kraken, Binance, Bitfinex, Coinbase and others) may require a transaction
+                    memo message</span> to be provided for correct forwarding of your Stellar Network assets.
                   <br>
-                  Some recipients (Bittrex, Kraken, Binance, Bitfinex, Coinbase and others) may require a transaction memo message</span> to be provided for correct forwarding of your Stellar Network assets.
-                  <br>
-                  In cases when a memo message is required by the receiving party, failure to include the memo with your transaction may result in your funds being lost forever and GRAYLL won't be able to help.
+                  In cases when a memo message is required by the receiving party, failure to include the memo with your
+                  transaction may result in your funds being lost forever and GRAYLL won't be able to help.
                 </p>
               </div>
               <div class="alert alert-warning" *ngIf="!isMemoMessageSelected && !noMemoMessageSelected">
@@ -129,25 +142,24 @@
                 <div class="input-group bg-gradient" style="border-radius: 0.3rem!important">
                   <div class="input-group-prepend">
                     <div class="input-group-text fixed-input-height bg-transparent border-0">
-                      <ng-select [searchable]="true"
-                                 [items]="countryCodes"
-                                 [(ngModel)]="selectedCountryCode"
-                                 [clearable]="false">
+                      <ng-select [searchable]="true" [items]="countryCodes" [(ngModel)]="selectedCountryCode"
+                        (change)="onChange('selectedCountryCode')" [clearable]="false" bindValue="selectedCountryCode">
                         <ng-template ng-label-tmp let-item="item">
-                    <span>
-                      <flag-icon [country]="item"></flag-icon>
-                    </span>
+                          <span>
+                            <flag-icon [country]="item"></flag-icon>
+                          </span>
                         </ng-template>
                         <ng-template ng-option-tmp let-item="item" let-search="searchTerm" let-index="index">
-                    <span>
-                      <flag-icon [country]="item"></flag-icon>
-                    </span>
+                          <span>
+                            <flag-icon [country]="item"></flag-icon>
+                          </span>
                         </ng-template>
                       </ng-select>
                     </div>
                   </div>
-                  <input [(ngModel)]="phoneNumber"
-                         class="form-control form-control-no-border fixed-input-height bg-transparent text-light border-0" id="phoneNumber">
+                  <input [(ngModel)]="phoneNumber" (input)="onChange('phoneNumber')"
+                    class="form-control form-control-no-border fixed-input-height bg-transparent text-light border-0"
+                    id="phoneNumber">
                 </div>
               </div>
               <p class="mt-1 text-purple">Sending to the following address: {{phoneNumber}}*grayll.io</p>
@@ -162,7 +174,9 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="GRX Amount">
                       </div>
                       <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -175,7 +189,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -190,7 +206,9 @@
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Amount">
+                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="XLM Amount">
                       </div>
                       <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -203,7 +221,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -211,8 +231,9 @@
               </ngb-tabset>
               <div class="form-group" *ngIf="!noMemoMessageSelected">
                 <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Memo Message</p>
-                <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                       placeholder="Memo Message" [(ngModel)]="memoMessage">
+                <input type="text" class="form-control form-control-no-border bg-gradient text-light"
+                  style="height: 46px" placeholder="Memo Message" [(ngModel)]="memoMessage"
+                  (input)="onChange('memoMessage')">
                 <span class="text-purple">28 bytes left</span>
               </div>
             </ng-template>
@@ -229,7 +250,7 @@
               </div>
               <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Email Address</p>
               <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                     placeholder="Email Address" [(ngModel)]="emailAddress">
+                placeholder="Email Address" [(ngModel)]="emailAddress" (input)="onChange('emailAddress')">
               <p class="mt-1 text-purple">Sending to the following address: {{emailAddress}}*grayll.io</p>
               <ngb-tabset type="pills">
                 <ngb-tab>
@@ -242,7 +263,9 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX Amount">
+                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="GRX Amount">
                       </div>
                       <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -255,7 +278,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -270,7 +295,9 @@
                             <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Amount">
+                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="XLM Amount">
                       </div>
                       <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
                       <br>
@@ -283,7 +310,9 @@
                         <div class="input-group-prepend">
                           <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                         </div>
-                        <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                        <input type="text"
+                          class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                          placeholder="USD Value">
                       </div>
                     </div>
                   </ng-template>
@@ -291,8 +320,9 @@
               </ngb-tabset>
               <div class="form-group" *ngIf="!noMemoMessageSelected">
                 <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Memo Message</p>
-                <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                       placeholder="Memo Message" [(ngModel)]="memoMessage">
+                <input type="text" class="form-control form-control-no-border bg-gradient text-light"
+                  style="height: 46px" placeholder="Memo Message" [(ngModel)]="memoMessage"
+                  (input)="onChange('memoMessage')">
                 <span class="text-purple">28 bytes left</span>
               </div>
             </ng-template>

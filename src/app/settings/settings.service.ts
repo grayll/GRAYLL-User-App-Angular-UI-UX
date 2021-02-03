@@ -17,7 +17,18 @@ export class SettingsService {
   private algoEmailNotificationsDisabled: Subject<void>;
   private algoAppNotificationsDisabled: Subject<void>;
 
+  // enable tabs
+  private activedId: Subject<any> = new Subject<any>();
+
   constructor() { }
+
+  public setActiveId(activedId:string) {
+    this.activedId.next({activedId});
+  }
+
+  public getActiveId(): Observable<any> {
+    return this.activedId.asObservable();
+  }
 
   public observeConfirmAuthority(): Observable<boolean> {
     if (!this.confirmAuthority) {

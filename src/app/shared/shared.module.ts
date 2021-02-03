@@ -11,7 +11,7 @@ import {PopupModule} from './popup/popup.module';
 import {MainChartComponent} from '../dashboard/main-chart/main-chart.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {ChartsModule} from 'ng2-charts';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ActivityComponent} from './system-activity/activity.component';
 import {CountdownModule} from 'ngx-countdown';
 import {AlgoNotificationItemComponent} from './algo-notification-item/algo-notification-item.component';
@@ -21,8 +21,16 @@ import { GeneralNotificationItemComponent } from './general-notification-item/ge
 import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 import {ActivateAccountPopupComponent} from './popup/activate-account/activate-account-popup.component';
 import {XlmLoanPopupComponent} from './popup/xlm-loan-popup/xlm-loan-popup.component';
+import {XlmReferralPopupComponent} from './popup/xlm-referral-popup/xlm-referral-popup.component';
+import {XlmReferralRemovePopupComponent} from './popup/xlm-referral-remove-popup/xlm-referral-remove-popup.component';
+import {XlmReferrerRemovePopupComponent} from './popup/xlm-referrer-remove-popup/xlm-referrer-remove-popup.component';
+import {XlmReferralResendPopupComponent} from './popup/xlm-referral -resend-popup/xlm-referral-resend-popup.component';
+import {XlmReferralEditPopupComponent} from './popup/xlm-referral-edit-popup/xlm-referral-edit-popup.component';
 import {XlmBalanceStatusPopupComponent} from './popup/xlm-balance-status-popup/xlm-balance-status-popup.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { LoaderScreenComponent } from './loader-screen/loader-screen.component';
+import { SwUpdateNotifiyComponent } from './sw-update-notifiy/sw-update-notifiy.component';
+import { ReferralActivityComponent } from './referral-activity/referral-activity.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +47,16 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     RevealSecretKeyPopupComponent,
     ActivateAccountPopupComponent,
     XlmLoanPopupComponent,
-    XlmBalanceStatusPopupComponent
+    XlmReferralPopupComponent,
+    XlmBalanceStatusPopupComponent,
+    LoaderScreenComponent,
+    LoaderScreenComponent,
+    SwUpdateNotifiyComponent,
+    ReferralActivityComponent,
+    XlmReferralRemovePopupComponent,
+    XlmReferrerRemovePopupComponent,
+    XlmReferralResendPopupComponent,
+    XlmReferralEditPopupComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +70,8 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     FormsModule,
     CountdownModule,
     NgbTooltipModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ReactiveFormsModule
   ],
   exports: [
     ErrorComponent,
@@ -64,7 +82,10 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     AlgoNotificationItemComponent,
     CustomModalComponent,
     WalletNotificationItemComponent,
-    GeneralNotificationItemComponent
+    GeneralNotificationItemComponent,
+    LoaderScreenComponent,
+    SwUpdateNotifiyComponent,
+    ReferralActivityComponent,
   ]
 })
 export class SharedModule { }
