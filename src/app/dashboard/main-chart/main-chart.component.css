@@ -1,5 +1,6 @@
 .main-chart {
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0);
+  /* background-image: linear-gradient(to right, #636fa4, #e8cbc0); */
+  background-image: linear-gradient(to right,#380808,#685d73);
   color: #fff;
   border-radius: 4px!important;
 }
@@ -31,14 +32,14 @@
 
 ::ng-deep .ng-option {
   color: white!important;
-  background-color: #40278C!important;
+  background-color: #CFA256!important;
   height: 36px!important;
   width: 100px!important;
 }
 
 ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
   background-color: #e8cbc0!important;
-  color: #40278C!important;
+  color: #CFA256!important;
   height: 36px!important;
   width: 100px!important;
 }
@@ -50,7 +51,7 @@
 }
 
 ::ng-deep .ng-select-container {
-  background-color: #40278C!important;
+  background-color: #CFA256!important;
   color: white!important;
   height: 36px!important;
   width: 100px!important;

@@ -1,15 +1,18 @@
 .first-box {
-  background-color: #636fa4 !important;
+  /* background-color: #636fa4 !important; */
+  background-color: #380808 !important;
   color: white!important;
 }
 
 .second-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+  background: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
 }
 
 .third-box {
-  background-color: #e8cbc0;
+  /* background-color: #e8cbc0; */
+  background-color: #685d73;
   color: white!important;
 }
 
@@ -23,10 +26,12 @@
 
 @media (max-width: 991px) {
   .first-box {
-    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+    background: linear-gradient(to right,#380808,#685d73) !important;
   }
 
   .third-box {
-    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+    background: linear-gradient(to right,#380808,#685d73) !important;
   }
 }

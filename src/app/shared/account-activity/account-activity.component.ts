@@ -85,7 +85,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         }
       });
 
-    //  this.addDataInFirebase(); 
+      this.addDataInFirebase(); 
 
     this.openOrders$ = this.accountActivityService.orders.subscribe(res => {
       this.openOrders = [...res];
@@ -115,8 +115,10 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '0.1450'
     );
 
-    this.accountActivityService.addOrder({ ...mockup });
-
+    for( var i=0; i<=10; i++){
+      this.accountActivityService.addOrder({ ...mockup });
+    }
+   
     mockup = new TransfersModel(
       2,
       '06/08/2019 18:29',
@@ -126,8 +128,10 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '-39,333,999,999,999.22222'
     );
 
-    this.accountActivityService.addTransfer({ ...mockup })
-
+    for( var i=0; i<=10; i++){
+      this.accountActivityService.addTransfer({ ...mockup });
+    }
+  
     mockup = new NetworkHistoryModel(
       '0109281408618385411',
       '06/08/2019 20:01',
@@ -137,7 +141,10 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       null
     );
 
-    this.accountActivityService.addNetworkHistory({ ...mockup });
+    for( var i=0; i<=10; i++){
+      this.accountActivityService.addNetworkHistory({ ...mockup });
+    }
+  
   }
 
   private populateOpenOrders() {

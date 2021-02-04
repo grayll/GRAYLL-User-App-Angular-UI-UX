@@ -13,7 +13,7 @@
         </div>
         <div class="col text-center" data-intercom-target="Download Activity History">
             <hr class="mt-0 d-sm-none">
-            <a class="purple-link" (click)="DownloadPdf()">
+            <a class="gold-link" (click)="DownloadPdf()">
                 <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
                 Download Activity History
             </a>
@@ -39,7 +39,7 @@
                     </ng-select>
                 </div>
                 <div class="" style="width: 25%;padding-right: 10px;">
-                    <button class="btn btn-purple submit-btn" [routerLink]="['/system/overview', {outlets: {popup: 'cancel-algo-positions/' + algoName}}]">Submit</button>
+                    <button class="btn btn-gold submit-btn" [routerLink]="['/system/overview', {outlets: {popup: 'cancel-algo-positions/' + algoName}}]">Submit</button>
                 </div>
             </div>
         </div>
@@ -47,10 +47,10 @@
             <div class="row ">
                 <div class="col search ">
                     <div class="input-group ">
-                        <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light " type="search " style="border-color: #40278C!important " [formControl]="searchControl ">
+                        <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light " type="search " style="border-color: #CFA256!important " [formControl]="searchControl ">
                         <span class="input-group-append ">
               <div class="input-group-text bg-transparent ">
-                <fa-icon style="color: #40278C " [icon]="faSearch "></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch "></fa-icon>
               </div>
             </span>
                     </div>
@@ -74,16 +74,16 @@
                 <th (click)="sortByPositionValue() " class="cancel width-91px " data-intercom-target="Position Value">
                     Position Value
                     <br> (USD)
-                    <fa-icon [icon]="faSortByPositionValue " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByPositionValue " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th (click)="sortByPositionProfit() " class="cancel width-91px " data-intercom-target="Position Profit">
                     Position Profit
                     <br> (USD)
-                    <fa-icon [icon]="faSortByPositionProfit " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByPositionProfit " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th (click)="sortByROI() " class="cancel width-51px " data-intercom-target="ROI">
                     ROI
-                    <fa-icon [icon]="faSortByROI " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByROI " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th class="width-101px " data-intercom-target="Grayll Transaction ID">GRAYLL <br> Transaction ID</th>
                 <th class="width-101px " data-intercom-target="Stellar Transaction ID">Stellar <br> Transaction ID</th>
@@ -112,7 +112,7 @@
                 <td class="width-101px ">{{position.stellarTransactionId}}</td>
                 <td class="text-center width-41px ">
                     <a href="https://stellar.expert/explorer/public " target="_blank ">
-                        <fa-icon [icon]="faInfo " class="purple-link cancel "></fa-icon>
+                        <fa-icon [icon]="faInfo " class="gold-link cancel "></fa-icon>
                     </a>
                 </td>
                 <td class="width-61px ">
@@ -134,7 +134,7 @@
             <span class="text-light font-10 font-weight-bolder ">Most Recent Closed Positions</span>
         </div>
         <div class="col ">
-            <a href="javascript:void(0) " class="purple-link font-14 " *ngIf="showCompletedOrdersLink " routerLink="/data/overview/system-activity/closed-algo-positions ">
+            <a href="javascript:void(0) " class="gold-link font-14 " *ngIf="showCompletedOrdersLink " routerLink="/data/overview/system-activity/closed-algo-positions ">
         All Closed Algo Positions
       </a>
         </div>
@@ -142,10 +142,10 @@
             <div class="row ">
                 <div class="col search ">
                     <div class="input-group ">
-                        <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light " type="search " style="border-color: #40278C!important " [formControl]="searchControl2 ">
+                        <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light " type="search " style="border-color: #CFA256!important " [formControl]="searchControl2 ">
                         <span class="input-group-append ">
               <div class="input-group-text bg-transparent ">
-                <fa-icon style="color: #40278C " [icon]="faSearch "></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch "></fa-icon>
               </div>
             </span>
                     </div>
@@ -168,15 +168,15 @@
                 <th class="width-73px ">Price (USD)</th>
                 <th (click)="sortByPositionValue() " class="cancel width-91px ">
                     Position Value <br> (USD)
-                    <fa-icon [icon]="faSortByPositionValue " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByPositionValue " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th (click)="sortByPositionProfit() " class="cancel width-91px ">
                     Position Profit <br> (USD)
-                    <fa-icon [icon]="faSortByPositionProfit " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByPositionProfit " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th (click)="sortByROI() " class="cancel width-51px ">
                     ROI
-                    <fa-icon [icon]="faSortByROI " style="color: #40278C; "></fa-icon>
+                    <fa-icon [icon]="faSortByROI " style="color: #CFA256; "></fa-icon>
                 </th>
                 <th class="width-101px ">GRAYLL <br> Transaction ID</th>
                 <th class="width-101px ">Stellar <br> Transaction ID</th>
@@ -203,83 +203,83 @@
                 <td class="width-101px ">{{position.grayllTransactionId}}</td>
                 <td class="width-101px ">{{position.stellarTransactionId}}</td>
                 <!-- <td class="width-101px ">0108181408618385411</td> -->
-                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
             </tr>
 
-            <!-- <tr>
-      <td class="width-91px ">18/08/2019 04:14</td>
-      <td class="width-51px ">CLOSED</td>
-      <td class="width-71px ">23:59 | 12</td>
-      <td class="width-61px ">GRY 1</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-91px ">2,110,000,000.55555</td>
-      <td class="width-91px ">1,000,000,000.55555</td>
-      <td class="width-51px ">110.22%</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
-    </tr>
+            <tr>
+                <td class="width-91px ">18/08/2019 04:14</td>
+                <td class="width-51px ">CLOSED</td>
+                <td class="width-71px ">23:59 | 12</td>
+                <td class="width-61px ">GRY 1</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-91px ">2,110,000,000.55555</td>
+                <td class="width-91px ">1,000,000,000.55555</td>
+                <td class="width-51px ">110.22%</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
+                </tr>
 
-    <tr>
-      <td class="width-91px ">18/08/2019 04:14</td>
-      <td class="width-51px ">CLOSED</td>
-      <td class="width-71px ">23:59 | 12</td>
-      <td class="width-61px ">GRY 1</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-91px ">2,110,000,000.55555</td>
-      <td class="width-91px ">1,000,000,000.55555</td>
-      <td class="width-51px ">110.22%</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
-    </tr>
+                <tr>
+                <td class="width-91px ">18/08/2019 04:14</td>
+                <td class="width-51px ">CLOSED</td>
+                <td class="width-71px ">23:59 | 12</td>
+                <td class="width-61px ">GRY 1</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-91px ">2,110,000,000.55555</td>
+                <td class="width-91px ">1,000,000,000.55555</td>
+                <td class="width-51px ">110.22%</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
+                </tr>
 
-    <tr>
-      <td class="width-91px ">18/08/2019 04:14</td>
-      <td class="width-51px ">CLOSED</td>
-      <td class="width-71px ">23:59 | 12</td>
-      <td class="width-61px ">GRY 1</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-91px ">2,110,000,000.55555</td>
-      <td class="width-91px ">1,000,000,000.55555</td>
-      <td class="width-51px ">110.22%</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
-    </tr>
+                <tr>
+                <td class="width-91px ">18/08/2019 04:14</td>
+                <td class="width-51px ">CLOSED</td>
+                <td class="width-71px ">23:59 | 12</td>
+                <td class="width-61px ">GRY 1</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-91px ">2,110,000,000.55555</td>
+                <td class="width-91px ">1,000,000,000.55555</td>
+                <td class="width-51px ">110.22%</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
+                </tr>
 
-    <tr>
-      <td class="width-91px ">18/08/2019 04:14</td>
-      <td class="width-51px ">CLOSED</td>
-      <td class="width-71px ">23:59 | 12</td>
-      <td class="width-61px ">GRY 1</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-91px ">2,110,000,000.55555</td>
-      <td class="width-91px ">1,000,000,000.55555</td>
-      <td class="width-51px ">110.22%</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
-    </tr>
+                <tr>
+                <td class="width-91px ">18/08/2019 04:14</td>
+                <td class="width-51px ">CLOSED</td>
+                <td class="width-71px ">23:59 | 12</td>
+                <td class="width-61px ">GRY 1</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-91px ">2,110,000,000.55555</td>
+                <td class="width-91px ">1,000,000,000.55555</td>
+                <td class="width-51px ">110.22%</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
+                </tr>
 
-    <tr>
-      <td class="width-91px ">18/08/2019 04:14</td>
-      <td class="width-51px ">CLOSED</td>
-      <td class="width-71px ">23:59 | 12</td>
-      <td class="width-61px ">GRY 1</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-73px ">0.14500</td>
-      <td class="width-91px ">2,110,000,000.55555</td>
-      <td class="width-91px ">1,000,000,000.55555</td>
-      <td class="width-51px ">110.22%</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-101px ">0108181408618385411</td>
-      <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="purple-link ">Details</a></td>
-    </tr> -->
+                <tr>
+                <td class="width-91px ">18/08/2019 04:14</td>
+                <td class="width-51px ">CLOSED</td>
+                <td class="width-71px ">23:59 | 12</td>
+                <td class="width-61px ">GRY 1</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-73px ">0.14500</td>
+                <td class="width-91px ">2,110,000,000.55555</td>
+                <td class="width-91px ">1,000,000,000.55555</td>
+                <td class="width-51px ">110.22%</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-101px ">0108181408618385411</td>
+                <td class="width-53px "><a href="https://stellar.expert/explorer/public " target="_blank " class="gold-link ">Details</a></td>
+                </tr>
         </tbody>
     </table>
 </div>

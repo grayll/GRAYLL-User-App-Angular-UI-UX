@@ -24,7 +24,7 @@ export const environment = {
   //   messagingSenderId: "227799760832",
   //   appId: "1:227799760832:web:9032039cea6f89106b1225",
   //   measurementId: "G-ELEBZBQ86K"
-  //},
+  // }
   algolia: {
     app_id: 'BXFJWGU0RM',
     search_key: '6c4198951d5ceb7bfa8a101d89406825'

@@ -11,6 +11,7 @@ import { ClipboardService } from 'ngx-clipboard';
 import { SnotifyService } from 'ng-snotify';
 import { CountdownConfig } from 'ngx-countdown/src/countdown.config';
 import { AllTransactionsModel } from '../../data/models/allTransactionsModel';
+import { AlgoPositionModelReferral } from '../../data/models/algoPositionModelReferral';
 import { FormControl } from '@angular/forms';
 import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
@@ -118,7 +119,7 @@ export class ReferralActivityComponent implements OnInit, OnChanges {
         }
       });
 
-    // let mockup = new AlgoPositionModel(
+    // let mockup = new AlgoPositionModelReferral(
     //   1,
     //   '18/12/2019 03:14',
     //   'OPEN',
@@ -135,18 +136,18 @@ export class ReferralActivityComponent implements OnInit, OnChanges {
 
     // this.algoPositionService.addAlgoPosition({...mockup});
 
-    this.algoPositions$ = this.algoPositionService.algoPositions.subscribe(res => {
-      this.openAlgoPositions = [];
-      this.closeAlgoPositions = [];
-      console.log('run,', res)
-      res.map(el => {
-        if (el && el['status'] === 'OPEN') {
-          this.openAlgoPositions.push({ ...el });
-        } else {
-          this.closeAlgoPositions.push({ ...el });
-        }
-      });
-    });
+    // this.algoPositions$ = this.algoPositionService.algoPositions.subscribe(res => {
+    //   this.openAlgoPositions = [];
+    //   this.closeAlgoPositions = [];
+    //   console.log('run,', res)
+    //   res.map(el => {
+    //     if (el && el['status'] === 'OPEN') {
+    //       this.openAlgoPositions.push({ ...el });
+    //     } else {
+    //       this.closeAlgoPositions.push({ ...el });
+    //     }
+    //   });
+    // });
   }
 
   ngOnChanges(changes: SimpleChanges): void {

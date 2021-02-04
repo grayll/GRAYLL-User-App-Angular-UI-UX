@@ -1,5 +1,6 @@
 .gradient-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  // background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
 }
 
@@ -34,14 +35,14 @@
     border-radius: 0;
     opacity: 0.7;
     font-size: 0.9rem;
-    color: #fff!important;
+    color: #CFA256!important;
     text-align: center;
     max-width: 82px;
 
     &.active {
       opacity: 1;
       background-color: transparent;
-      border-bottom: 2px solid #fff!important;
+      border-bottom: 2px solid #CFA256!important;
     }
   }
 }
@@ -111,7 +112,7 @@
 }
 
 .navy-link {
-  color: #40278C!important;
+  color: #CFA256!important;
 }
 
 .navy-span {
@@ -128,7 +129,7 @@ a.navy-span:hover {
 }
 
 .navy-link-white {
-  color: #40278C!important;
+  color: #CFA256!important;
 }
 
 .navy-link-white:hover {
@@ -149,7 +150,7 @@ a.navy-span:hover {
   content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   width: 0%; /* Change this to whatever width you want to have before hover. */
-  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
+  border-bottom: 2px solid #CFA256!important; /* This creates the border. Replace black with whatever color you want. */
   transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
 }
 

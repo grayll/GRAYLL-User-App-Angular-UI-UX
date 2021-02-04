@@ -13,7 +13,7 @@
     </div>
     <div class="col text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="purple-link" (click)="DownloadPdf()"  data-intercom-target="Download Activity History">
+      <a class="gold-link" (click)="DownloadPdf()"  data-intercom-target="Download Activity History">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download Activity History
       </a>
@@ -35,10 +35,10 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important" [formControl]="searchControl">
+                   type="search" style="border-color: #CFA256 !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -57,7 +57,7 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Transfers</span>
     </div>
     <div class="col" *ngIf="showMoreDetails">
-      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview/wallet-activity/transfers">
+      <a href="javascript:void(0)" class="gold-link font-14" routerLink="/data/overview/wallet-activity/transfers">
         All Completed Transfers
       </a>
     </div>
@@ -66,10 +66,10 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important" [formControl]="searchControl">
+                   type="search" style="border-color: #CFA256 !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -88,7 +88,7 @@
       <span class="text-light font-10 font-weight-bolder">Most Recent Network History</span>
     </div>
     <div class="col" *ngIf="showMoreDetails">
-      <a href="javascript:void(0)" class="purple-link font-14" routerLink="/data/overview/wallet-activity/networkHistory">
+      <a href="javascript:void(0)" class="gold-link font-14" routerLink="/data/overview/wallet-activity/networkHistory">
         Full Network History
       </a>
     </div>
@@ -97,10 +97,10 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #40278C!important" [formControl]="searchControl">
+                   type="search" style="border-color: #CFA256 !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #CFA256 " [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -176,13 +176,13 @@
     </div>
     <tr *ngFor="let transfer of searchControl.value?searchResult:transfers">
       <td class="width-91px">{{transfer.date}}</td>
-      <td class="purple-link width-91px">{{transfer.counterparty}}</td>
+      <td class="gold-link width-91px">{{transfer.counterparty}}</td>
       <td class="width-41px">{{transfer.asset}}</td>
       <td class="width-51px">{{transfer.issuer}}</td>
       <td class="width-111px">{{transfer.amount}}</td>
       <td class="text-center width-41px">
         <a href="https://stellar.expert/explorer/public" target="_blank">
-          <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
+          <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
         </a>
       </td>
     </tr>
@@ -222,7 +222,7 @@
       </td>
       <td class="text-center width-41px">
         <a href="https://stellar.expert/explorer/public" target="_blank">
-          <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
+          <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
         </a>
       </td>
     </tr>
@@ -238,7 +238,7 @@
     <span class="text-light font-10 font-weight-bolder">Most Recent Completed Orders</span>
   </div>
   <div class="col">
-    <a href="javascript:void(0)" class="purple-link font-14" *ngIf="showAllCompletedOrders"
+    <a href="javascript:void(0)" class="gold-link font-14" *ngIf="showAllCompletedOrders"
        routerLink="/data/overview/wallet-activity/all-orders/completed-orders">
       All Completed Orders
     </a>
@@ -279,7 +279,7 @@
       <td class="width-73px">{{order.totalPriceXLM}}</td>
       <td class="width-73px">{{order.totalPriceUSD}}</td>
       <td class="width-61px">
-        <a href="javascript:void(0)" class="purple-link">Details</a>
+        <a href="javascript:void(0)" class="gold-link">Details</a>
       </td>
     </tr>
     </tbody>

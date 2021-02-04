@@ -15,7 +15,7 @@ li.nav-item a {
   padding: 0 14px;
   font-size: 0.875rem;
   line-height: 64px;
-  color: #40278c !important;
+  color: #CFA256 !important;
 }
 
 .badge-number {
@@ -53,7 +53,7 @@ li.nav-item a {
   li[alt]:hover:after {
     content: attr(alt);
     position: absolute;
-    background-color: #40278c;
+    background-color: #CFA256;
     color: white;
     padding: 5px;
     -webkit-border-radius: 4px;
@@ -69,7 +69,7 @@ li.nav-item a {
     position: absolute;
     top: 64px;
     right: 0;
-    background-color: #40278c;
+    background-color: #CFA256;
     color: white;
     padding: 5px;
     -webkit-border-radius: 4px;
@@ -97,6 +97,6 @@ li.nav-item a {
   }
 
   .navbar {
-    background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    background-image: linear-gradient(to right,#380808,#685d73) !important;
   }
 }

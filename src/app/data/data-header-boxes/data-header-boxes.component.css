@@ -1,15 +1,16 @@
 .first-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+  background: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
 }
 
 .second-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
 }
 
 .third-box {
-  background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  background: linear-gradient(to right,#380808,#685d73) !important;
   color: white!important;
 }
 

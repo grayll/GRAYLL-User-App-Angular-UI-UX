@@ -5,7 +5,7 @@
   
   .page-wrapper {
     margin: 50px auto 0 auto;
-    background-color: #414755;
+    background-color: #303030;
   }
   
   .page-wrapper > .container-fluid {
@@ -38,7 +38,7 @@
     }
   
     .main-wrapper {
-      background-color: #414755;
+      background-color: #303030;
     }
   }
   

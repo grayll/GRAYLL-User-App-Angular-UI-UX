@@ -1,5 +1,5 @@
 .colored-text-second {
-  color: #40278c!important;
+  color: #CFA256 !important;
 }
 
 .full-width {
@@ -8,7 +8,8 @@
 
 .first-box {
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
-  background-color: #e8cbc0;
+  /* background-color: #e8cbc0; */
+  background-color: #380808; 
   color: white !important;
 }
 
@@ -18,7 +19,8 @@
 
 .second-box {
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
-  background-color: #e8cbc0;
+  /* background-color: #e8cbc0; */
+  background-color: #380808; 
   color: white !important;
   height: auto;
   padding: 0.6rem;
@@ -37,7 +39,8 @@
   flex-direction: column;
   justify-content: space-between;
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
-  background-color: #e8cbc0;
+  /* background-color: #e8cbc0; */
+  background-color: #380808; 
   color: white !important;
 }
 
@@ -50,7 +53,7 @@
 }
 
 .card {
-  background-color: #636fa4 !important;
+  background-color: #CFA256 !important;
 }
 
 .pointer:hover {
@@ -63,7 +66,7 @@
 
 .border-navy {
   border-radius: 0.3rem;
-  border: 1px solid #636fa4 !important;
+  border: 1px solid #CFA256 !important;
   padding: 0.5rem;
   flex-grow: 1;
   display: flex;
@@ -93,7 +96,7 @@
 }
 
 .heading {
-  color: #40278c;
+  color: #CFA256 ;
 }
 
 .italic-content {

@@ -7,7 +7,7 @@
 
 .page-wrapper {
     margin: 0 auto;
-    background-color: #414755;
+    background-color: #303030;
 }
 
 .page-wrapper>.container-fluid {
@@ -51,7 +51,7 @@
 }
 
 .navy-link {
-    color: #40278C!important;
+    color: #CFA256!important;
 }
 
 .navy-link:hover {
@@ -65,7 +65,8 @@
 }
 
 .gradient-box {
-    background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+    /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+    background: linear-gradient(to right,#380808,#685d73) !important;
     color: white!important;
 }
 
@@ -83,7 +84,7 @@
 }
 
 .search .input-group-text {
-    border-color: #40278C;
+    border-color: #CFA256;
     border-left: 0;
 }
 
@@ -186,7 +187,7 @@
         position: relative;
     }
     .main-wrapper {
-        background-color: #414755;
+        background-color: #303030;
         height: 100%!important;
     }
 }

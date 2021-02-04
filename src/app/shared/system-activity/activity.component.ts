@@ -143,18 +143,18 @@ export class ActivityComponent implements OnInit, OnChanges {
 
     // this.algoPositionService.addAlgoPosition({...mockup});
 
-    this.algoPositions$ = this.algoPositionService.algoPositions.subscribe(res => {
-      this.openAlgoPositions = [];
-      this.closeAlgoPositions = [];
-      console.log('run,', res)
-      res.map(el => {
-        if (el && el['status'] === 'OPEN') {
-          this.openAlgoPositions.push({ ...el });
-        } else {
-          this.closeAlgoPositions.push({ ...el });
-        }
-      });
-    });
+    // this.algoPositions$ = this.algoPositionService.algoPositions.subscribe(res => {
+    //   this.openAlgoPositions = [];
+    //   this.closeAlgoPositions = [];
+    //   console.log('run,', res)
+    //   res.map(el => {
+    //     if (el && el['status'] === 'OPEN') {
+    //       this.openAlgoPositions.push({ ...el });
+    //     } else {
+    //       this.closeAlgoPositions.push({ ...el });
+    //     }
+    //   });
+    // });
   }
 
   ngOnChanges(changes: SimpleChanges): void {

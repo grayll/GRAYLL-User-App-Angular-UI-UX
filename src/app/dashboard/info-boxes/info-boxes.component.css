@@ -4,7 +4,8 @@
 }
 
 .bg-gradient {
-  background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important;
+  /* background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
+  background-image: linear-gradient(to right,#380808,#685d73) !important;
   color: white;
   border-radius: 4px!important;
 }
