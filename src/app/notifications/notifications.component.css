@@ -3,11 +3,12 @@
     width: 100%!important;
     height: 100%!important;
     overflow: hidden;
+    background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
 }
 
 .page-wrapper {
     margin: 0 auto;
-    background-color: #303030;
+    /* background-color: #303030; */
 }
 
 .page-wrapper>.container-fluid {
@@ -51,11 +52,11 @@
 }
 
 .navy-link {
-    color: #CFA256!important;
+    color: #40278C!important;
 }
 
 .navy-link:hover {
-    color: #cfa256!important;
+    color: #40278C!important;
     cursor: pointer!important;
 }
 
@@ -67,7 +68,6 @@
 .gradient-box {
     /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
     background: linear-gradient(to right,#380808,#685d73) !important;
-    color: white!important;
 }
 
 .card {
@@ -84,7 +84,7 @@
 }
 
 .search .input-group-text {
-    border-color: #CFA256;
+    border-color: #40278C;
     border-left: 0;
 }
 

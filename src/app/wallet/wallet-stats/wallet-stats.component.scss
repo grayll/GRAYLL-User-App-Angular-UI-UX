@@ -8,7 +8,7 @@
 
 .c-cost {
   padding: 20px 20px;
-  border: 1px solid #CFA256 !important;
+  border: 1px solid #40278C !important;
   border-radius: 5px;
 }
 
@@ -44,12 +44,12 @@ ul {
     border-radius: 0;
     opacity: 0.7;
     font-size: 0.9rem;
-    color: #CFA256!important;
-
+    color: #40278C!important;
+    
     &.active {
       opacity: 1;
       background-color: transparent;
-      border-bottom: 2px solid #CFA256!important;
+      border-bottom: 2px solid #40278C!important;
     }
   }
 }
@@ -82,19 +82,21 @@ input {
 }
 
 .first-box {
-  background-color: #380808 !important;
-  color: white!important;
+  background-color: white !important;
+  color: #40278C!important;
 }
 
 .second-box {
   // background: linear-gradient(to right, #636fa4, #e8cbc0) !important;
-  background: linear-gradient(to right,#380808,#685d73) !important;
-  color: white!important;
+  //background: linear-gradient(to right,#380808,#685d73) !important;
+  background-color: white !important;
+  color: #40278C!important;
 }
 
 .third-box {
-  background-color: #685d73;
-  color: white!important;
+  //background-color: #685d73;
+  background-color: white !important;
+  color: #40278C!important;
 }
 
 .card {
@@ -106,7 +108,7 @@ input {
 }
 
 .purple-link:hover {
-  color: #CFA256!important;
+  color: #40278C!important;
 }
 
 .gold-link {
@@ -165,6 +167,10 @@ input {
 
 :host #tabset-mobile ::ng-deep .custom-pills ul {
   justify-content: center!important;
+}
+
+.form-control-no-border{
+  border:1px solid white  !important;
 }
 
 @media (max-width: 480px) {

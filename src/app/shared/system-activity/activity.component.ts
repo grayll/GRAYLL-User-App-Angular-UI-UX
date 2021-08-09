@@ -38,28 +38,28 @@ export class ActivityComponent implements OnInit, OnChanges {
   activityTabs = [
     {
       id: 'openAlgoPositions',
-      name: 'Open Algo Positions'
+      name: 'Open DeFi Positions'
     },
     {
       id: 'closedAlgoPositions',
-      name: 'Closed Algo Positions'
+      name: 'Closed DeFi Positions'
     },
     {
       id: 'allAlgoPositions',
-      name: 'All Algo Positions'
+      name: 'All DeFi Positions'
     }
   ];
 
   //dropdown items
   dropdownItems = [
-    "Close All Algo Positions GRZ",
-    "Close All Algo Positions GRY 1",
-    "Close All Algo Positions GRY 2",
-    "Close All Algo Positions GRY 3"
+    "Close All DeFi Positions GLP1",
+    "Close All DeFi Positions GETP1",
+    "Close All DeFi Positions 2LYF",
+    "Close All DeFi Positions DX2Y"
   ];
 
   //variable to be sent to the modal
-  algoName: any = 'Close All Algo Positions GRZ';
+  algoName: any = 'Close All DeFi Positions GLP1';
 
   // Font Awesome Icons
   faDownload = faArrowAltCircleDown;
@@ -86,7 +86,7 @@ export class ActivityComponent implements OnInit, OnChanges {
     'Open Date',
     'Status',
     'Duration',
-    'Algorithm',
+    'Service',
     'Price (GRX)',
     'Price (USD)',
     'Position Value (USD)',
@@ -232,7 +232,7 @@ export class ActivityComponent implements OnInit, OnChanges {
       '18/08/2019 04:14',
       'OPEN',
       86400,
-      'GRY 1',
+      'GLP1',
       0.14500,
       0.14500,
       '2,110,000,000.55555',

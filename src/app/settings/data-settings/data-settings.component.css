@@ -103,7 +103,7 @@
     height: 14px;
     margin: 0 .25em;
     width: 14px;
-    border: 1px solid #fff;
+    border: 1px solid #40278c;
     float: right
 }
 
@@ -148,15 +148,15 @@
     -moz-animation: check .8s;
     -o-animation: check .8s;
     animation: check .8s;
-    border-color: #CFA256
+    border-color: #40278c
 }
 
 .checkbox input:checked+.default:after {
-    border-color: #CFA256
+    border-color: #40278c
 }
 
 ::ng-deep .btn-link {
-    color: #CFA256!important;
+    color: #40278c!important;
 }
 
 select:focus::-ms-value {
@@ -204,6 +204,7 @@ select:focus::-ms-value {
     width: 14px;
     background-color: #eee;
     border-radius: 50%;
+    border: 1px solid #40278c;
 }
 
 .cont:hover input~.radio {
@@ -212,7 +213,7 @@ select:focus::-ms-value {
 
 .cont input:checked~.radio {
     background-color: white;
-    border: 1px solid #CFA256;
+    border: 1px solid #40278c;
 }
 
 .radio:after {
@@ -231,19 +232,19 @@ select:focus::-ms-value {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #CFA256;
+    background: #40278c;
 }
 
 ::ng-deep #country .ng-option {
     color: white!important;
-    background-image: linear-gradient(to right,#380808,#685d73) !important;
+    background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
     height: 36px!important;
     width: 100% !important;
 }
 
 ::ng-deep #country .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
     background-color: #e8cbc0!important;
-    color: #CFA256!important;
+    color: #40278c!important;
     height: 36px!important;
     /* width: 300px!important; */
 }
@@ -255,10 +256,14 @@ select:focus::-ms-value {
 }
 
 ::ng-deep #country .ng-select-container {
-    background-image: linear-gradient(to right,#380808,#685d73) !important;
+    background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
     color: white!important;
     height: 36px!important;
     width: 100% !important;
     border-radius: 4px!important;
     border: 0!important;
+}
+
+::ng-deep #country .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    color: white !important;
 }

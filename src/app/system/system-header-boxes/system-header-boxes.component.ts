@@ -30,32 +30,32 @@ export class SystemHeaderBoxesComponent implements OnInit {
   };
   algoItems = [
     {
-      id: 'GRY 1',
-      name: 'GRY | 1',
-      value: 'Balthazar',
+      id: 'GLP1',
+      name: 'GLP1',
+      value: 'GRAYLL 1',
       token: 'GRY',
-      tabName: 'Balthzr'
+      tabName: 'GRAYLL 1'
     },
     {
-      id: 'GRY 2',
-      name: 'GRY | 2',
-      value: 'Kaspar',
+      id: 'GETP1',
+      name: 'GETP1',
+      value: 'GRAYLL 2',
       token: 'GRY',
-      tabName: 'Kaspar'
+      tabName: 'GRAYLL 2'
     },
     {
-      id: 'GRY 3',
-      name: 'GRY | 3',
-      value: 'Melkior',
+      id: '2LYF',
+      name: '2LYF',
+      value: 'GRAYLL 3',
       token: 'GRY',
-      tabName: 'Melkior'
+      tabName: 'GRAYLL 3'
     },
     {
-      id: 'GRZ',
-      name: 'GRZ',
-      value: 'Arkady',
+      id: 'DX2Y',
+      name: 'DX2Y',
+      value: 'GRAYLL 4',
       token: 'GRZ',
-      tabName: 'Arkady'
+      tabName: 'GRAYLL 4'
     }
   ];
 

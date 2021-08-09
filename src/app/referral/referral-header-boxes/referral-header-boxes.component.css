@@ -9,8 +9,8 @@
 .first-box {
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
   /* background-color: #e8cbc0; */
-  background-color: #380808; 
-  color: white !important;
+  background-color: white; 
+  color: #40278C !important;
 }
 
 .first-content-div {
@@ -20,8 +20,8 @@
 .second-box {
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
   /* background-color: #e8cbc0; */
-  background-color: #380808; 
-  color: white !important;
+  background-color: white; 
+  color: #40278C !important;
   height: auto;
   padding: 0.6rem;
   display: flex;
@@ -40,8 +40,8 @@
   justify-content: space-between;
   /* background: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
   /* background-color: #e8cbc0; */
-  background-color: #380808; 
-  color: white !important;
+  background-color: white; 
+  color: #40278C !important;
 }
 
 .third-box h5 {
@@ -53,7 +53,7 @@
 }
 
 .card {
-  background-color: #CFA256 !important;
+  background-color: #40278c !important;
 }
 
 .pointer:hover {
@@ -66,7 +66,7 @@
 
 .border-navy {
   border-radius: 0.3rem;
-  border: 1px solid #CFA256 !important;
+  border: 1px solid #40278c !important;
   padding: 0.5rem;
   flex-grow: 1;
   display: flex;
@@ -96,7 +96,7 @@
 }
 
 .heading {
-  color: #CFA256 ;
+  color: #40278c ;
 }
 
 .italic-content {

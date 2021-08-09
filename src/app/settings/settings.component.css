@@ -1,11 +1,12 @@
 .main-wrapper {
   width: 100%;
   overflow: hidden;
+  background: linear-gradient(to right,#716c80,#d9c3cb) !important;
 }
 
 .page-wrapper {
   margin: 50px auto 0 auto;
-  background-color: #303030;
+  /* background-color: #303030; */
   min-height: calc(100vh - 64px);
 }
 
@@ -31,19 +32,19 @@
 }
 
 .settings-menu ul li {
-  color: white!important;
+  color: #40278C!important;
 }
 
 .settings-menu ul li:hover {
   cursor: pointer;
   color: white!important;
-  background-color: #CFA256!important;
+  background-color: #40278C!important;
 }
 
 .settings-menu ul li.active {
-  border: 1px solid #CFA256!important;
+  border: 1px solid #40278C!important;
   color: white!important;
-  background-color: #CFA256!important;
+  background-color: #40278C!important;
 }
 
 .card-body {
@@ -108,7 +109,9 @@ fa-icon {
   }
 
   .main-wrapper {
-    background-color: #303030;
+    /* background-color: #303030; */
+    /* background: linear-gradient(to right,#716c80,#d9c3cb) !important; */
+
   }
 }
 

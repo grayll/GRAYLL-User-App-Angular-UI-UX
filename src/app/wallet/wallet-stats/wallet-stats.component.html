@@ -7,21 +7,21 @@
       <div class="card-body first-box">
 
         <div class="w-auto c-cost c-cost-wallet" data-intercom-target="Wallet Ballance">
-          <div class="d-inline-block align-middle text-yellow">
+          <div class="d-inline-block align-middle text-purple">
             <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
           </div>
           <div class="d-inline-block text-white align-middle wallet-box">
-            <span class="text-light font-16">Wallet Balance</span>
-            <h5 class="text-light font-weight-bolder mb-0">$100,000,000,000.00</h5>
+            <span class="text-purple font-16">Wallet Balance</span>
+            <h5 class="text-purple font-weight-bolder mb-0">$100,000,000,000.00</h5>
             <small>
-              <a href="javascript:void(0)" class="white-link" [routerLink]="[{outlets: {popup: 'xlm-balance-status'}}]">
+              <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'xlm-balance-status'}}]">
                 1.50 XLM Reserved ($0.11381)
               </a>
             </small>
           </div>
         </div>
 
-        <div class="row text-light pt-2 pb-0">
+        <div class="row text-purple pt-2 pb-0">
           <div class="col">
             <i class="text-purple font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
@@ -43,45 +43,57 @@
             </h5>
           </div>
         </div>
-
-        <div class="row mb-5 mt-3">
+        <div class="d-flex justify-content-center">
+          <div class="row text-purple pt-2 pb-0 ">
+            <div class="col">
+              <i class="text-green font-16">
+                <fa-icon [icon]="faCircle"></fa-icon>
+              </i>
+              <span class="font-16"> 50% USDC</span>
+              <br>
+              <h5 class="p-font">
+                $1,000,000,000.00
+              </h5>
+            </div>
+          </div>
+        </div>
+   
+        <div class="row">
           <div class="col-6">
-            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-gold"
-              (click)="goToTop()" data-intercom-target="Deposit Btn">Deposit</button>
+            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple" (click)="goToTop()" data-intercom-target="Deposit Btn">Deposit</button>
           </div>
           <div class="col-6 text-right">
-            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-gold"
-              (click)="goToTop()" data-intercom-target="Withdraw Btn">Withdraw</button>
+            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple" (click)="goToTop()" data-intercom-target="Withdraw Btn">Withdraw</button>
           </div>
         </div>
 
         <div class="bottom-border-navy-animated" routerLink="/system/overview" style="outline: none!important">
-          <div class="w-auto c-cost mt-5" data-intercom-target="Algo System Balance">
-            <div class="d-inline-block align-middle text-yellow">
+          <div class="w-auto c-cost mt-3" data-intercom-target="Algo System Balance">
+            <div class="d-inline-block align-middle text-purple">
               <fa-icon [icon]="faChartLine" size="3x" fixedWidth></fa-icon>
             </div>
-            <div class="d-inline-block text-white align-middle wallet-box">
-              <span class="text-light font-16" routerLink="/system/overview">Algo System Balance</span>
-              <h5 class="text-light font-weight-bolder">$100,000,000,000.00</h5>
+            <div class="d-inline-block text-purple align-middle wallet-box">
+              <span class="text-purple font-16" routerLink="/system/overview">DeFi System Balance</span>
+              <h5 class="text-purple font-weight-bolder">$100,000,000,000.00</h5>
             </div>
           </div>
 
-          <div class="row pt-2 text-light">
+          <div class="row pt-2 text-purple">
             <div class="col">
               <i class="text-yellow font-16">
                 <fa-icon [icon]="faCircle"></fa-icon>
               </i>
-              <span class="font-16"> 25% GRY</span>
+              <span class="font-16"> 25% GLP1</span>
               <br>
               <h5 class="p-font">
                 $1,000,000,000.00
               </h5>
             </div>
             <div class="col text-right">
-              <i class="text-pink font-16">
+              <i class="text-blue font-16">
                 <fa-icon [icon]="faCircle"></fa-icon>
               </i>
-              <span class="font-16"> 75% GRZ</span>
+              <span class="font-16"> 75% GEP1</span>
               <br>
               <h5 class="p-font">
                 $1,000,000,000.00
@@ -99,17 +111,15 @@
     <div class="card border-0">
       <div class="card-body second-box">
 
-        <div class="row text-light">
+        <div class="row text-purple">
           <div class="col-md-12">
             <div data-intercom-target="Federation Address">
               <p class="lead mb-0">Federation Address (Payment Alias)</p>
               <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
-                  triggers="click:blur">
-                  <input disabled [value]="federationAddress" type="text"
-                    class="form-control form-control-no-border bg-transparent text-light"
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
+                  <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -124,10 +134,8 @@
               <p>The Stellar wallet address is the public key associated with this account.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress"
-                  triggers="click:blur">
-                  <input disabled [value]="stellarAddress" type="text"
-                    class="form-control form-control-no-border bg-transparent text-light"
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
+                  <input disabled [value]="stellarAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -149,11 +157,8 @@
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
-              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
-                triggers="click:blur">
-                <input disabled [value]="secretKey" type="text"
-                  class="form-control form-control-no-border bg-transparent text-light"
-                  style="border-left: 1px solid white">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
+                <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-transparent text-light" style="border-left: 1px solid white">
               </div>
               <div class="col-md-6 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="hideSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
@@ -172,150 +177,261 @@
     <div class="card border-0 mb-0">
       <div class="card-body third-box" data-intercom-target="Trade GRX Box">
         <div class="d-md-flex align-items-center">
-          <div class="text-light">
-            <p class="lead">Trade GRX</p>
+          <div class="text-purple">
+            <p class="lead mb-0">Trade</p>
           </div>
         </div>
         <ngb-tabset type="pills" class="custom-pills">
-          <ngb-tab title="Buy">
+          <ngb-tab title="GRX | XLM">
             <ng-template ngbTabContent>
-              <form class="mt-2">
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX Amount">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                      </span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="GRX Amount" name="GRXValue" [(ngModel)]="buyGRX.GRXValue"
-                      (input)="onChangeBuy('GRXValue')">
-                  </div>
-                </div>
-                <div class="form-group float-right mb-0">
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Ask</a>
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Bid</a>
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Last</a>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX/USD Price">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                      </span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="GRX/USD Price">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
-                      </span>
-                    </div>
-                    <input [value]="XLMValue" type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="XLM Value" name="XLMValue" [(ngModel)]="buyGRX.XLMValue"
-                      (input)="onChangeBuy('XLMValue')">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                    <div class="input-group-prepend">
-                      <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="USD Value">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col">
-                    <button type="button" class="text-light btn btn-gold" data-intercom-target="Buy GRX Btn">Buy GRX</button>
-                  </div>
-                  <div class="col" data-intercom-target="Max Available XML">
-                    <a class="gold-link" href="javascript:void(0)" (click)="populateMaxXLM('buyGRX','XLMValue')">
-                      Max Available XLM: {{totalXLM}}
-                    </a>
-                  </div>
-                </div>
-              </form>
+                <ngb-tabset type="pills" class="custom-pills">
+                    <ngb-tab title="Buy">
+                      <ng-template ngbTabContent>
+                        <form class="mt-2">
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX Amount">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                                </span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX Amount"
+                                name="GRXValue" [(ngModel)]="buyGRX.GRXValue" (input)="onChangeBuy('GRXValue')">
+                            </div>
+                          </div>
+                          <div class="form-group float-right mb-0">
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX/USD Price">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                                </span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX/USD Price">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
+                                </span>
+                              </div>
+                              <input [value]="XLMValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                                placeholder="XLM Value" name="XLMValue" [(ngModel)]="buyGRX.XLMValue" (input)="onChangeBuy('XLMValue')">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                              <div class="input-group-prepend">
+                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col">
+                              <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRX Btn">Buy GRX</button>
+                            </div>
+                            <div class="col" data-intercom-target="Max Available XML">
+                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxXLM('buyGRX','XLMValue')">
+                                Max Available XLM: {{totalXLM}}
+                              </a>
+                            </div>
+                          </div>
+                        </form>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Sell">
+                      <ng-template ngbTabContent>
+                        <form class="mt-2">
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                                </span>
+                              </div>
+                              <input [value]="GRXValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                                placeholder="GRX Amount" name="GRXValue" [(ngModel)]="sellGRX.GRXValue" (input)="onChangeSell('GRXValue')">
+                            </div>
+                          </div>
+                          <div class="form-group float-right mb-0">
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                                </span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX/USD Price">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text bg-purple">
+                                  <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
+                                </span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Value"
+                                name="XLMValue" [(ngModel)]="sellGRX.XLMValue" (input)="onChangeSell('XLMValue')">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group input-group-lg fixed-input-height">
+                              <div class="input-group-prepend">
+                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                              </div>
+                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col">
+                              <button type="button" class="text-light btn btn-purple">Sell GRX</button>
+                            </div>
+                            <div class="col">
+                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRX('sellGRX','GRXValue')">
+                                Max Available GRX: {{totalGRX}}
+                              </a>
+                            </div>
+                          </div>
+                        </form>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
             </ng-template>
           </ngb-tab>
-          <ngb-tab title="Sell">
-            <ng-template ngbTabContent>
-              <form class="mt-2">
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                      </span>
-                    </div>
-                    <input [value]="GRXValue" type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="GRX Amount" name="GRXValue" [(ngModel)]="sellGRX.GRXValue"
-                      (input)="onChangeSell('GRXValue')">
-                  </div>
-                </div>
-                <div class="form-group float-right mb-0">
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Ask</a>
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Bid</a>
-                  <a class="mr-1 gold-link" href="javascript:void(0)">Last</a>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                      </span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="GRX/USD Price">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-purple">
-                        <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
-                      </span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="XLM Value" name="XLMValue" [(ngModel)]="sellGRX.XLMValue"
-                      (input)="onChangeSell('XLMValue')">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-lg fixed-input-height">
-                    <div class="input-group-prepend">
-                      <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                    </div>
-                    <input type="text"
-                      class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                      placeholder="USD Value">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col">
-                    <button type="button" class="text-light btn btn-gold">Sell GRX</button>
-                  </div>
-                  <div class="col">
-                    <a class="gold-link" href="javascript:void(0)" (click)="populateMaxGRX('sellGRX','GRXValue')">
-                      Max Available GRX: {{totalGRX}}
-                    </a>
-                  </div>
-                </div>
-              </form>
-            </ng-template>
-          </ngb-tab>
+          <ngb-tab title="XLM | USDC">
+              <ng-template ngbTabContent>
+                  <ngb-tabset type="pills" class="custom-pills">
+                      <ngb-tab title="Buy">
+                        <ng-template ngbTabContent>
+                          <form class="mt-2">
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX Amount">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USDC Amount"
+                                  name="GRXValue" [(ngModel)]="buyGRX.GRXValue" (input)="onChangeBuy('GRXValue')">
+                              </div>
+                            </div>
+                            <div class="form-group float-right mb-0">
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX/USD Price">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM/USDC Price">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text bg-purple">
+                                    <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
+                                  </span>
+                                </div>
+                                <input [value]="XLMValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                                  placeholder="XLM Value" name="XLMValue" [(ngModel)]="buyGRX.XLMValue" (input)="onChangeBuy('XLMValue')">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col">
+                                <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRX Btn">Buy USDC</button>
+                              </div>
+                              <div class="col" data-intercom-target="Max Available XML">
+                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxXLM('buyGRX','XLMValue')">
+                                  Max Available XLM: {{totalXLM}}
+                                </a>
+                              </div>
+                            </div>
+                          </form>
+                        </ng-template>
+                      </ngb-tab>
+                      <ngb-tab title="Sell">
+                        <ng-template ngbTabContent>
+                          <form class="mt-2">
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input [value]="GRXValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                                  placeholder="USDC Amount" name="GRXValue" [(ngModel)]="sellGRX.GRXValue" (input)="onChangeSell('GRXValue')">
+                              </div>
+                            </div>
+                            <div class="form-group float-right mb-0">
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM/USDC Price">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text bg-purple">
+                                    <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
+                                  </span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Value"
+                                  name="XLMValue" [(ngModel)]="sellGRX.XLMValue" (input)="onChangeSell('XLMValue')">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group input-group-lg fixed-input-height">
+                                <div class="input-group-prepend">
+                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                                </div>
+                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col">
+                                <button type="button" class="text-light btn btn-purple">Sell USDC</button>
+                              </div>
+                              <div class="col">
+                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRX('sellGRX','GRXValue')">
+                                  Max Available USDC: {{totalGRX}}
+                                </a>
+                              </div>
+                            </div>
+                          </form>
+                        </ng-template>
+                      </ngb-tab>
+                    </ngb-tabset>
+              </ng-template>
+            </ngb-tab>
         </ngb-tabset>
+       
       </div>
     </div>
   </div>
@@ -329,16 +445,16 @@
         <div class="card-body second-box" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
 
           <div class="w-auto c-cost">
-            <div class="d-inline-block align-middle text-yellow">
+            <div class="d-inline-block align-middle text-purple">
               <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
             </div>
-            <div class="d-inline-block text-white align-middle wallet-box">
-              <span class="text-light font-16">Wallet Balance</span>
-              <h5 class="text-light font-weight-bolder">$100,000,000,000.00</h5>
+            <div class="d-inline-block text-purple align-middle wallet-box">
+              <span class="text-purple font-16">Wallet Balance</span>
+              <h5 class="text-purple font-weight-bolder">$100,000,000,000.00</h5>
             </div>
           </div>
 
-          <div class="row text-light pt-2 pb-0">
+          <div class="row text-purple pt-2 pb-0">
             <div class="col">
               <i class="text-purple font-16">
                 <fa-icon [icon]="faCircle"></fa-icon>
@@ -349,7 +465,7 @@
                 $1,000,000,000.00
               </h5>
             </div>
-            <div class="col text-right">
+            <div class="col text-purple">
               <i class="text-sky font-16">
                 <fa-icon [icon]="faCircle"></fa-icon>
               </i>
@@ -363,27 +479,25 @@
 
           <div class="row mb-5 mt-3">
             <div class="col-6">
-              <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-gold"
-                (click)="goToTop()">Deposit</button>
+              <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple" (click)="goToTop()">Deposit</button>
             </div>
             <div class="col-6 text-right">
-              <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-gold"
-                (click)="goToTop()">Withdraw</button>
+              <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple" (click)="goToTop()">Withdraw</button>
             </div>
           </div>
 
           <div class="mobile-bottom-border" routerLink="/system/overview" style="outline: none!important">
             <div class="w-auto c-cost mt-5">
-              <div class="d-inline-block align-middle text-yellow">
+              <div class="d-inline-block align-middle text-purple">
                 <fa-icon [icon]="faChartLine" size="3x" fixedWidth></fa-icon>
               </div>
-              <div class="d-inline-block text-white align-middle wallet-box">
-                <span class="text-light font-16" routerLink="/system/overview">Algo System Balance</span>
-                <h5 class="text-light font-weight-bolder">$100,000,000,000.00</h5>
+              <div class="d-inline-block text-purple align-middle wallet-box">
+                <span class="text-purple font-16" routerLink="/system/overview">DeFi System Balance</span>
+                <h5 class="text-purple font-weight-bolder">$100,000,000,000.00</h5>
               </div>
             </div>
 
-            <div class="row pt-2 text-light">
+            <div class="row pt-2 text-purple">
               <div class="col">
                 <i class="text-yellow font-16">
                   <fa-icon [icon]="faCircle"></fa-icon>
@@ -414,16 +528,14 @@
       <div class="card border-0 mb-0">
         <div class="card-body second-box" (swipeleft)="swipeLeft()" (swipeRight)="swipeRight()">
 
-          <div class="row text-light">
+          <div class="row text-purple">
             <div class="col-md-12">
               <p class="lead mb-0">Federation Address (Payment Alias)</p>
               <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
-                  triggers="click:blur">
-                  <input disabled [value]="federationAddress" type="text"
-                    class="form-control form-control-no-border bg-transparent text-light"
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
+                  <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -437,10 +549,8 @@
               <p>The Stellar wallet address is the public key associated with this account.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress"
-                  triggers="click:blur">
-                  <input disabled [value]="stellarAddress" type="text"
-                    class="form-control form-control-no-border bg-transparent text-light"
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
+                  <input disabled [value]="stellarAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -454,16 +564,13 @@
               <p>Your secret key is hidden and must not be shared.</p>
 
               <div class="row" *ngIf="!isSecretKeyRevealed">
-                <button (click)="revealSecretKey()" class="btn btn-block btn-yellow w-auto mx-auto">Reveal Secret
-                  Key</button>
+                <button (click)="revealSecretKey()" class="btn btn-block btn-yellow w-auto mx-auto">Reveal Secret Key
+                </button>
               </div>
 
               <div class="row" *ngIf="isSecretKeyRevealed">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
-                  triggers="click:blur">
-                  <input disabled [value]="secretKey" type="text"
-                    class="form-control form-control-no-border bg-transparent text-light"
-                    style="border-left: 1px solid white">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
+                  <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-transparent text-purple" style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12 mt-xs-4 mt-xs-4">
                   <button (click)="hideSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
@@ -496,15 +603,13 @@
                           <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                         </span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="GRX Amount">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX Amount">
                     </div>
                   </div>
                   <div class="form-group float-right mb-0">
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Ask</a>
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Bid</a>
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Last</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
                   </div>
                   <div class="form-group">
                     <div class="input-group input-group-lg fixed-input-height">
@@ -513,9 +618,7 @@
                           <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                         </span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="GRX/USD Price">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX/USD Price">
                     </div>
                   </div>
                   <div class="form-group">
@@ -525,8 +628,7 @@
                           <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
                         </span>
                       </div>
-                      <input [value]="XLMValue" type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                      <input [value]="XLMValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
                         placeholder="XLM Value">
                     </div>
                   </div>
@@ -535,17 +637,15 @@
                       <div class="input-group-prepend">
                         <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="USD Value">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col">
-                      <button type="button" class="text-light btn btn-gold">Buy GRX</button>
+                      <button type="button" class="text-light btn btn-purple">Buy GRX</button>
                     </div>
                     <div class="col">
-                      <a class="gold-link" href="javascript:void(0)" (click)="populateMaxXLM('buyGRX','XLMValue')">
+                      <a class="purple-link" href="javascript:void(0)" (click)="populateMaxXLM('buyGRX','XLMValue')">
                         Max Available XLM: {{totalXLM}}
                       </a>
                     </div>
@@ -563,15 +663,14 @@
                           <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                         </span>
                       </div>
-                      <input [value]="GRXValue" type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                      <input [value]="GRXValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
                         placeholder="GRX Amount">
                     </div>
                   </div>
                   <div class="form-group float-right mb-0">
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Ask</a>
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Bid</a>
-                    <a class="mr-1 gold-link" href="javascript:void(0)">Last</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                    <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
                   </div>
                   <div class="form-group">
                     <div class="input-group input-group-lg fixed-input-height">
@@ -580,9 +679,7 @@
                           <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                         </span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="GRX/USD Price">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRX/USD Price">
                     </div>
                   </div>
                   <div class="form-group">
@@ -592,9 +689,7 @@
                           <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="Stellar Logo">
                         </span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="XLM Value">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="XLM Value">
                     </div>
                   </div>
                   <div class="form-group">
@@ -602,17 +697,15 @@
                       <div class="input-group-prepend">
                         <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                       </div>
-                      <input type="text"
-                        class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                        placeholder="USD Value">
+                      <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col">
-                      <button type="button" class="text-light btn btn-gold">Sell GRX</button>
+                      <button type="button" class="text-light btn btn-purple">Sell GRX</button>
                     </div>
                     <div class="col">
-                      <a class="gold-link" href="javascript:void(0)" (click)="populateMaxGRX('sellGRX','GRXValue')">
+                      <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRX('sellGRX','GRXValue')">
                         Max Available GRX: {{totalGRX}}
                       </a>
                     </div>

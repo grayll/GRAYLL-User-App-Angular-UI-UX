@@ -56,11 +56,11 @@ export class InfoBoxesComponent implements AfterViewInit {
   public lineChartColors: Array<any> = [
     {
       backgroundColor: 'transparent',
-      borderColor: '#CFA256',
-      pointBackgroundColor: '#CFA256',
-      pointBorderColor: '#CFA256',
-      pointHoverBackgroundColor: '#CFA256',
-      pointHoverBorderColor: '#CFA256'
+      borderColor: '#40278C',
+      pointBackgroundColor: '#40278C',
+      pointBorderColor: '#40278C',
+      pointHoverBackgroundColor: '#40278C',
+      pointHoverBorderColor: '#40278C'
     }
   ];
   public lineChartLegend = false;

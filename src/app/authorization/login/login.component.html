@@ -4,15 +4,15 @@
             <div class="card" style="margin: 0 auto">
                 <div class="card-header">
                     <img class="img img-fluid logo" src="assets/images/logo.png" alt="Logo">
-                    <h4 class="text-light">Sign in to GRAYLL</h4>
+                    <h4 class="text-purple">Sign in to GRAYLL</h4>
                 </div>
                 <div class="card-body">
                     <form [formGroup]="loginForm">
                         <app-error></app-error>
-                        <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+                        <small class="text-purple" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
                             Please enter your email address.
                         </small>
-                        <small class="text-light" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+                        <small class="text-purple" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
                             Please enter a valid email address.
                         </small>
                         <div class="input-group form-group">
@@ -23,7 +23,7 @@
                             </div>
                             <input formControlName="email" type="email" class="form-control form-control-no-border" placeholder="Email" (input)="onChange('email')">
                         </div>
-                        <small class="text-light" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
+                        <small class="text-purple" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
                             Please enter your password.
                         </small>
                         <div class="input-group form-group">
@@ -64,7 +64,7 @@
         <div class="col-12 text-center">
             <div class="col-12 d-flex justify-content-center">
                 <a class="blue-link" href="https://grayll.io/privacy"><p class="mb-0">Privacy</p></a>&nbsp;
-                <p class="text-light mb-0">|</p>&nbsp;
+                <p class="text-purple mb-0">|</p>&nbsp;
                 <a class="blue-link" href="https://grayll.io/terms-of-service"><p class="mb-0">Terms</p></a>
             </div>
         </div>

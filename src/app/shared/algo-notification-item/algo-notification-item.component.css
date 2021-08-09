@@ -6,6 +6,15 @@
   color: #fff!important;
 }
 
+.purple-link {
+  color: #40278C!important;
+}
+
+.purple-link:hover {
+  color: #cfa256!important;
+  cursor: pointer!important;
+}
+
 .white-link:hover {
   color: #cfa256!important;
   cursor: pointer!important;

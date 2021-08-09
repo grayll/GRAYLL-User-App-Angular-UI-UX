@@ -4,8 +4,13 @@
       text-align: center!important;
     }
   }
-
+.privacy-hover{
+  color:#15c;
+}
 .privacy-hover:hover{
   color:#CFA256;
+}
+.privacy-underline {
+  text-decoration: underline;
 }
   

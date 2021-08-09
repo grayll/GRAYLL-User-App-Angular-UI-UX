@@ -14,6 +14,11 @@
   color: white!important;
 }
 
+.bg-white {
+  background: white !important;
+  color: #40278C !important;
+}
+
 .card {
   background-color: #636fa4 !important;
 }

@@ -7,7 +7,8 @@ html, body {
 
 body {
   /* background: linear-gradient(to right,#636fa4,#e8cbc0); */
-  background: linear-gradient(to right,#380808,#685d73);
+  /* background: linear-gradient(to right,#380808,#685d73); */
+  background: linear-gradient(to right,#716c80,#d9c3cb);
   font-family: 'Nunito', sans-serif !important;
   font-size: 0.875rem!important;
 }
@@ -69,7 +70,16 @@ h6 {
 
 .bg-gradient {
   /* background-image: linear-gradient(to right, #636fa4, #e8cbc0) !important; */
-  background-image: linear-gradient(to right,#380808,#685d73) !important;
+  /* background-image: linear-gradient(to right,#380808,#685d73) !important; */
+  background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
+}
+
+.bg-navy-blue {
+  color: #40278C !important;
+}
+
+.bg-white {
+  color: #FFFFFF !important;
 }
 
 .text-pink {
@@ -81,11 +91,27 @@ h6 {
 }
 
 .text-purple {
-  color: #40278C;
+  color: #40278C !important;
 }
 
 .text-sky {
   color: #CEDEFE;
+}
+
+.text-green {
+  color: green;
+}
+
+.text-brown {
+  color: #380808;
+}
+
+.text-darkblue {
+  color: #86a3b0;
+}
+
+.text-blue {
+  color: #85efff;
 }
 
 .btn-purple {
@@ -134,7 +160,7 @@ h6 {
   content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   width: 0%; /* Change this to whatever width you want to have before hover. */
-  border-bottom: 2px solid #CFA256!important; /* This creates the border. Replace black with whatever color you want. */
+  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
   transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
 }
 
@@ -144,18 +170,25 @@ h6 {
 
 .mobile-bottom-border:hover {
   padding-bottom: 0.1rem;
-  border-bottom: 2px solid #CFA256!important; /* This creates the border. Replace black with whatever color you want. */
+  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
 }
 
 
 /* Removing blue glow border from all form-control form-control-no-border inputs */
 .form-control-no-border:focus {
-  border-color: #ced4da!important;
+  border-color: #40278C!important;
   outline: 0!important;
   -webkit-box-shadow: none!important;
   box-shadow: none!important;
 }
 
+.form-control{
+  border-color: #40278C!important;
+}
+
+.form-control:focus{
+  border-color: #40278C!important;
+}
 /* Overriding default settings to satisfy client's requests */
 .row {
   margin-left: -10px!important;

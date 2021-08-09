@@ -3,7 +3,7 @@
 }
 
 .purple-link:hover {
-    color: #CFA256!important;
+    color: #40278C!important;
     cursor: pointer!important;
 }
 
@@ -37,7 +37,7 @@ fa-icon:hover {
 }
 
 .search .input-group-text {
-    border-color: #CFA256;
+    border-color: #40278C;
     border-left: 0;
 }
 
@@ -113,7 +113,7 @@ td {
 
 ::ng-deep #algoDropdown .ng-option {
     color: white!important;
-    background-image: linear-gradient(to right,#380808,#685d73) !important;
+    background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
     height: 36px!important;
     // width: 300px!important;
     width: 100%!important;
@@ -135,7 +135,7 @@ td {
 }
 
 ::ng-deep #algoDropdown .ng-select-container {
-    background-image: linear-gradient(to right,#380808,#685d73) !important;
+    background-image: linear-gradient(to right,#716c80,#d9c3cb) !important;
     color: white!important;
     height: 36px!important;
     // width: 300px!important;

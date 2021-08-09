@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {PopupService} from '../../popup/popup.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PopupService } from '../../popup/popup.service';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -20,7 +20,7 @@ export class CancelAlgoPositionsComponent implements OnInit {
     this.popupService.open(this.modal);
     this.route.params.subscribe((param) => {
       let params = param.name;
-      let index = params.indexOf("GR");
+      let index = params.indexOf("Po") + 9;
       this.algoName = params.substring(index, params.length);
 
       // let split = param.name.split('|');

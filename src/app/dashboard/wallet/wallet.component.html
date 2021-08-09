@@ -1,8 +1,8 @@
 <div class="card e-campaign border-0 h-100">
-  <div class="card-body bg-gradient pb-0" data-intercom-target="Wallet Balance">
+  <div class="card-body bg-white pb-0" data-intercom-target="Wallet Balance">
     <div class="row">
       <div class="col-sm-12 col-md-6 text-center">
-        <div class="css-bar css-bar-25 css-bar-xlg css-bar-purple">
+        <div class="css-bar css-bar-25 css-bar-xlg css-bar-purple css-bar-green">
           <div class="data-text">
             <h1 class="success-rate font-light">25
               <span class="icon">%</span>
@@ -19,8 +19,8 @@
                 <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
               </div>
               <div class="d-inline-block text-white align-middle wallet-box">
-                <span routerLink="/wallet/overview" style="outline: none!important" class="text-light font-16">Wallet Balance</span>
-                <h5 routerLink="/wallet/overview" style="outline: none!important" class="text-light font-weight-bolder mb-0">$435,320.68</h5>
+                <span routerLink="/wallet/overview" style="outline: none!important" class="text-purple font-16">Wallet Balance</span>
+                <h5 routerLink="/wallet/overview" style="outline: none!important" class="text-purple font-weight-bolder mb-0">$435,320.68</h5>
                 <small>
                   <a href="javascript:void(0)" class="navy-link" [routerLink]="[{outlets: {popup: 'xlm-balance-status'}}]">
                     1.50 XLM Reserved ($0.11381)
@@ -28,7 +28,7 @@
                 </small>
               </div>
             </div>
-            <div class="row mt-3" routerLink="/wallet/overview" style="outline: none!important">
+            <div class="row mt-3 text-purple" routerLink="/wallet/overview" style="outline: none!important">
               <div class="col-6 mt-3">
                 <i class="text-purple font-16">
                   <fa-icon [icon]="faCircle"></fa-icon>
@@ -43,21 +43,34 @@
                 <i class="m-r-5 text-sky font-16">
                   <fa-icon [icon]="faCircle"></fa-icon>
                 </i>
-                <span class="font-16"> 75% XLM</span>
+                <span class="font-16">50% XLM</span>
                 <br>
                 <p class="m-b-0 font-weight-bolder p-font">
                   $1,000,000,000.00
                 </p>
               </div>
+              
+              <div class="col-12 mt-3  d-flex justify-content-center">
+                <div>
+                    <i class="m-r-5 text-green font-16">
+                        <fa-icon [icon]="faCircle"></fa-icon>
+                      </i>
+                      <span class="font-16"> 25% USDC</span>
+                      <br>
+                      <p class="m-b-0 font-weight-bolder p-font">
+                        $1,000,000,000.00
+                      </p>
+                </div>            
+              </div>
             </div>
           </div>
           <div class="col-6 mt-2">
             <button [routerLink]="['/wallet/overview', {outlets: {popup: 'deposit'}}]" type="button"
-                    class="text-light btn btn-gold mt-2">Deposit</button>
+                    class="text-light btn btn-purple mt-2">Deposit</button>
           </div>
           <div class="col-6 mt-2 text-right">
             <button [routerLink]="['/wallet/overview', {outlets: {popup: 'withdraw'}}]" type="button"
-                    class="text-light btn btn-gold mt-2">Withdraw</button>
+                    class="text-light btn btn-purple mt-2">Withdraw</button>
           </div>
         </div>
       </div>

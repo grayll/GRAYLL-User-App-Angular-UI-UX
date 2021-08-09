@@ -11,6 +11,15 @@
   cursor: pointer!important;
 }
 
+.purple-link {
+  color: #40278C!important;
+}
+
+.purple-link:hover {
+  color: #cfa256!important;
+  cursor: pointer!important;
+}
+
 .hover {
   outline: none!important;
 }

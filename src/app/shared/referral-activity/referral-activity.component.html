@@ -1,5 +1,5 @@
 <router-outlet name="popup"></router-outlet>
-<div class="bg-gradient text-light mt-3" id="systemActivityTable">
+<div class="bg-white text-purple mt-3" id="systemActivityTable">
   <div class="row align-items-center justify-content-center p-2">
     <div class="col">
       <span class="lead align-middle">Activity</span>
@@ -13,7 +13,7 @@
     </div>
     <div class="col text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="gold-link" (click)="DownloadPdf()" data-intercom-target="Download Activity History">
+      <a class="purple-link" (click)="DownloadPdf()" data-intercom-target="Download Activity History">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download Activity History
       </a>
@@ -23,7 +23,7 @@
   <hr class="mt-0 mb-0">
 </div>
 
-<div class="bg-gradient text-light">
+<div class="bg-white text-purple">
   <div class="row justify-content-center align-items-center mb-1 p-2">
     <div class="col-md-4 col-xs">
       <span class="align-middle font-weight-bolder font-14" *ngIf="selectedTab && (selectedTab.id === 'pendingInvites')">Pending Contacts (1,234,567,890)</span>
@@ -33,11 +33,11 @@
       <div class="row">
         <div class="col search">
           <div class="input-group">
-            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-light"
-                   type="search" style="border-color: #CFA256!important" [formControl]="searchControl">
+            <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-purple"
+                   type="search" style="border-color: #40278C!important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
-                <fa-icon style="color: #CFA256" [icon]="faSearch"></fa-icon>
+                <fa-icon style="color: #40278C" [icon]="faSearch"></fa-icon>
               </div>
             </span>
           </div>
@@ -48,11 +48,11 @@
   </div>
 </div>
 
-<div class="table-responsive bg-gradient text-light pull-top"
+<div class="table-responsive bg-white text-purple pull-top"
      *ngIf="selectedTab && (selectedTab.id === 'allTransactions')">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-light">
+    <tr class="font-weight-bolder font-10 text-purple">
       <th class="width-91px" (click)="sortByPositionValue()" data-intercom-target="Date">Date</th>
       <th class="width-101px" data-intercom-target="First Name">First Name</th>
       <th class="width-101px" data-intercom-target="Last Name">Last Name</th>
@@ -67,7 +67,7 @@
     </tr>
     </thead>
 
-    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
       <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
     </div>
@@ -87,7 +87,7 @@
       </td>
       <td class="width-41px text-center">
         <a href="https://stellar.expert/explorer/public" target="_blank">
-          <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
+          <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
         </a>
       </td>
     </tr>
@@ -95,11 +95,11 @@
   </table>
 </div>
 
-<div class="table-responsive bg-gradient text-light pull-top"
+<div class="table-responsive bg-white text-purple pull-top"
      *ngIf="selectedTab && (selectedTab.id === 'referralContacts')">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-light">
+    <tr class="font-weight-bolder font-10 text-purple">
       <th class="width-91px" (click)="sortByPositionValue()" data-intercom-target="Date">Date<br><i>(Invite Confirmed)</i></th>
       <th class="width-101px" data-intercom-target="First Name">First Name</th>
       <th class="width-101px" data-intercom-target="Last Name">Last Name</th>
@@ -121,7 +121,7 @@
     </tr>
     </thead>
 
-    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
       <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
     </div>
@@ -153,11 +153,11 @@
   </table>
 </div>
 
-<div class="table-responsive bg-gradient text-light pull-top"
+<div class="table-responsive bg-white text-purple pull-top"
      *ngIf="selectedTab && (selectedTab.id === 'pendingInvites')">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-light">
+    <tr class="font-weight-bolder font-10 text-purple">
       <th class="width-91px" (click)="sortByPositionValue()" data-intercom-target="Date">Date<br><i>(Invite Sent)</i></th>
       <th class="width-101px" data-intercom-target="First Name">First Name</th>
       <th class="width-101px" data-intercom-target="Last Name">Last Name</th>
@@ -175,7 +175,7 @@
     </tr>
     </thead>
 
-    <tbody class="font-8 text-light" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
     <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
       <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
     </div>
