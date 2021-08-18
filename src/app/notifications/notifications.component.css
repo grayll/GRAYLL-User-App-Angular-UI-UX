@@ -10,7 +10,10 @@
     margin: 0 auto;
     /* background-color: #303030; */
 }
-
+.bg-white {
+    background-color: white;
+    color: #40278C!important;
+}
 .page-wrapper>.container-fluid {
     padding: 20px;
     min-height: calc(100vh - 100px);

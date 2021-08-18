@@ -192,3 +192,9 @@
   left: 36px;
   top: 10px;
 }
+
+@media (min-width: 1100px) {
+  .margintop-neg5 {
+    margin-top: -2.5rem !important;
+  }
+}
