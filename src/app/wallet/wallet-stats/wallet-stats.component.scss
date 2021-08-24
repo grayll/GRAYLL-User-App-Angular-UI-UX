@@ -44,12 +44,12 @@ ul {
     border-radius: 0;
     opacity: 0.7;
     font-size: 0.9rem;
-    color: #40278C!important;
+    color: #CFA256!important;
     
     &.active {
       opacity: 1;
       background-color: transparent;
-      border-bottom: 2px solid #40278C!important;
+      border-bottom: 2px solid #CFA256!important;
     }
   }
 }
@@ -171,6 +171,72 @@ input {
 
 .form-control-no-border{
   border:1px solid white  !important;
+}
+
+.badge-number {
+  position: relative;
+  top: -6px;
+}
+///
+.navy-link {
+  color: #40278C!important;
+}
+
+.navy-span {
+  color: #40278C!important;
+}
+
+a.navy-span:hover {
+  cursor: default;
+}
+
+.navy-link:hover {
+  color: #40278C!important;
+  cursor: pointer!important;
+}
+
+.navy-link-yellow {
+  color: #CFA256!important;
+}
+
+.navy-link-yellow:hover {
+  color: #CFA256!important;
+}
+
+.navy-link-purple {
+  color: #40278C!important;
+}
+
+.navy-link-purple:hover {
+  color: #40278C!important;
+}
+
+.border-navy {
+  padding: 0.5rem;
+}
+
+.border-navy-hover:hover {
+  cursor: pointer;
+}
+
+/* Animate bottom border on hover */
+.border-navy-hover:after {
+  padding-bottom: 0.5rem;
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  width: 0%; /* Change this to whatever width you want to have before hover. */
+  border-bottom: 2px solid #40278C!important; /* This creates the border. Replace black with whatever color you want. */
+  transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+}
+
+.border-navy-hover:hover:after {
+  width: 100%; /* This will be the new width of your border when on hover */
+}
+
+.information-icon{
+ position: absolute;
+  // top: 0;
+  // right: 0;
 }
 
 @media (max-width: 480px) {

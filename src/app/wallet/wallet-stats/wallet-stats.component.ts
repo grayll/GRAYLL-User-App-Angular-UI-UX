@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { faChartLine, faCircle, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine, faCircle, faWallet, faInfoCircle, faBell } from '@fortawesome/free-solid-svg-icons';
 import { ClipboardService } from 'ngx-clipboard';
 import { SnotifyService } from 'ng-snotify';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { SubSink } from 'subsink';
 import { SettingsService } from '../../settings/settings.service';
 import { Router } from '@angular/router';
+import {CustomModalService} from '../../shared/custom-modal.service';
 
 @Component({
   selector: 'app-wallet-stats',
@@ -18,6 +19,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
 
   faWallet = faWallet;
   faCircle = faCircle;
+  faInfo = faInfoCircle;
+  faBell = faBell;
   faChartLine = faChartLine;
   federationAddress: string;
   stellarAddress: string;
@@ -43,7 +46,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     private clipboardService: ClipboardService,
     private snotifyService: SnotifyService,
     private settingsService: SettingsService,
-    private router: Router
+    private router: Router,
+    private customModalService: CustomModalService,
   ) {
     const buyGRX = JSON.parse(localStorage.getItem('buyGRX'));
     const sellGRX = JSON.parse(localStorage.getItem('sellGRX'));
@@ -137,4 +141,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     }
   }
 
+  openModal(id: string) {
+    console.log("dfdfdf", id)
+    this.customModalService.open(id);
+  }
 }

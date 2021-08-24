@@ -14,6 +14,7 @@ export class NotificationsService {
   private numberOfUnreadGRY3Notifications: number;
   private numberOfUnreadGRZNotifications: number;
   private numberOfUnreadGrayllSystemNotifications: number;
+  private numberOfUnreadGRYNotifications: number;
 
   constructor() {
     this.resetNumberOfAllUnreadNotifications();
@@ -144,6 +145,15 @@ export class NotificationsService {
   set numberOfGRZNotifications(count: number) { this.numberOfUnreadGRZNotifications = count; }
   get numberOfGRZNotifications() { return this.numberOfUnreadGRZNotifications; }
   decreaseNumberOfGRZNotifications() {
+    if (this.numberOfGRZNotifications > 0) {
+      this.numberOfGRZNotifications--;
+    }
+  }
+
+  // GRY
+  set numberOfGRYNotifications(count: number) { this.numberOfUnreadGRYNotifications = count; }
+  get numberOfGRYNotifications() { return this.numberOfUnreadGRYNotifications; }
+  decreaseNumberOfGRYNotifications() {
     if (this.numberOfGRZNotifications > 0) {
       this.numberOfGRZNotifications--;
     }

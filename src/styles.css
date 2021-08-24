@@ -86,6 +86,11 @@ h6 {
   color: #e8cbc0 !important;
 }
 
+.text-pink2 {
+  color: #ffd4f2 !important;
+}
+
+
 .text-yellow {
   color: #CFA256!important;
 }
@@ -96,6 +101,10 @@ h6 {
 
 .text-sky {
   color: #CEDEFE;
+}
+
+.text-palepink {
+  color: #d9c3cb;
 }
 
 .text-green {
@@ -112,6 +121,10 @@ h6 {
 
 .text-blue {
   color: #85efff;
+}
+
+.text-blue2 {
+  color: #00a4d1;
 }
 
 .btn-purple {

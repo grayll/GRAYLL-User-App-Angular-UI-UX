@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {NotificationsService} from '../../../notifications/notifications.service';
-import {faBell, faSearch, faTimes} from '@fortawesome/free-solid-svg-icons';
-import {GRY1NotificationModel} from '../../../notifications/notification.model';
-import {CustomModalService} from '../../../shared/custom-modal.service';
+import { Component, OnInit } from '@angular/core';
+import { NotificationsService } from '../../../notifications/notifications.service';
+import { faBell, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { GRY1NotificationModel } from '../../../notifications/notification.model';
+import { CustomModalService } from '../../../shared/custom-modal.service';
 
 @Component({
   selector: 'app-unread-notifications',
@@ -19,6 +19,7 @@ export class UnreadNotificationsComponent implements OnInit {
   gry2notifications: GRY1NotificationModel[];
   gry3notifications: GRY1NotificationModel[];
   grznotifications: GRY1NotificationModel[];
+  grynotifications: GRY1NotificationModel[];
 
   // Font Awesome Icons
   faSearch = faSearch;
@@ -43,6 +44,7 @@ export class UnreadNotificationsComponent implements OnInit {
     this.customModalService.gry2mobileScrollContainer = elements[1];
     this.customModalService.gry3mobileScrollContainer = elements[2];
     this.customModalService.grzmobileScrollContainer = elements[3];
+    this.customModalService.grymobileScrollContainer = elements[4];
   }
 
   private populateNotifications() {
@@ -174,6 +176,16 @@ export class UnreadNotificationsComponent implements OnInit {
         Date.now()
       )
     ];
+    this.grynotifications = [
+      new GRY1NotificationModel(
+        18,
+        'GRY',
+        '0.11% ROI Increase | 18.81% Total Position ROI',
+        10108181408618385411,
+        false,
+        Date.now()
+      )
+    ];
   }
 
   private populateNumberOfUnreadNotifications() {
@@ -182,11 +194,13 @@ export class UnreadNotificationsComponent implements OnInit {
     const gry2Unread = this.gry2notifications.filter((n) => !n.isRead).length;
     const gry3Unread = this.gry3notifications.filter((n) => !n.isRead).length;
     const grzUnread = this.grznotifications.filter((n) => !n.isRead).length;
-    this.notificationsService.increaseNumberOfAllGrayllSystemNotificationsBy(gry1Unread + gry2Unread + gry3Unread + grzUnread);
+    const gryUnread = this.grynotifications.filter((n) => !n.isRead).length;
+    this.notificationsService.increaseNumberOfAllGrayllSystemNotificationsBy(gry1Unread + gry2Unread + gry3Unread + grzUnread + gryUnread);
     this.notificationsService.numberOfGRY1Notifications = gry1Unread;
     this.notificationsService.numberOfGRY2Notifications = gry2Unread;
     this.notificationsService.numberOfGRY3Notifications = gry3Unread;
     this.notificationsService.numberOfGRZNotifications = grzUnread;
+    this.notificationsService.numberOfGRYNotifications = gryUnread;
   }
 
   markGRY1NotificationAsRead(notification: GRY1NotificationModel) {
@@ -221,6 +235,14 @@ export class UnreadNotificationsComponent implements OnInit {
     }
   }
 
+  markGRYNotificationAsRead(notification: GRY1NotificationModel) {
+    if (!notification.isRead) {
+      notification.isRead = true;
+      this.notificationsService.decreaseNumberOfAllGrayllSystemdNotifications();
+      this.notificationsService.decreaseNumberOfGRYNotifications();
+    }
+  }
+
   closePopup(id: string) {
     switch (id) {
       case 'unread-gry1-notifications':
@@ -231,6 +253,9 @@ export class UnreadNotificationsComponent implements OnInit {
         break;
       case 'unread-gry3-notifications':
         this.gry3notifications = this.gry3notifications.filter((n) => !n.isRead);
+        break;
+      case 'unread-gry-notifications':
+        this.grynotifications = this.grynotifications.filter((n) => !n.isRead);
         break;
       default:
         this.grznotifications = this.grznotifications.filter((n) => !n.isRead);

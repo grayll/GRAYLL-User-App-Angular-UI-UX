@@ -65,6 +65,9 @@ export class CustomModalComponent implements OnInit, OnDestroy {
       case 'unread-gry3-notifications':
         e ? enableBodyScroll(this.modalService.gry3mobileScrollContainer) : disableBodyScroll(this.modalService.gry3mobileScrollContainer);
         break;
+      case 'unread-gry-notifications':
+      e ? enableBodyScroll(this.modalService.grymobileScrollContainer) : disableBodyScroll(this.modalService.grymobileScrollContainer);
+      break;
       default:
         e ? enableBodyScroll(this.modalService.grzmobileScrollContainer) : disableBodyScroll(this.modalService.grzmobileScrollContainer);
         break;

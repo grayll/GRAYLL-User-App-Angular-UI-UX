@@ -7,6 +7,8 @@ export class CustomModalService {
   private gry2NotificationsMobileScrollContainer: Element;
   private gry3NotificationsMobileScrollContainer: Element;
   private grzNotificationsMobileScrollContainer: Element;
+  private gryNotificationsMobileScrollContainer: Element;
+
 
   set gry1mobileScrollContainer(element: Element) { this.gry1NotificationsMobileScrollContainer = element; }
   get gry1mobileScrollContainer() { return this.gry1NotificationsMobileScrollContainer; }
@@ -16,6 +18,8 @@ export class CustomModalService {
   get gry3mobileScrollContainer() { return this.gry3NotificationsMobileScrollContainer; }
   set grzmobileScrollContainer(element: Element) { this.grzNotificationsMobileScrollContainer = element; }
   get grzmobileScrollContainer() { return this.grzNotificationsMobileScrollContainer; }
+  set grymobileScrollContainer(element: Element) { this.gryNotificationsMobileScrollContainer = element; }
+  get grymobileScrollContainer() { return this.gryNotificationsMobileScrollContainer; }
 
   constructor() {}
 
@@ -31,6 +35,7 @@ export class CustomModalService {
 
   open(id: string) {
     // open modal specified by id
+    console.log('this.modals', this.modals);
     const modal: any = this.modals.filter(x => x.id === id)[0];
     modal.open(id);
   }

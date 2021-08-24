@@ -29,5 +29,4 @@ export class WalletComponent implements OnInit, OnDestroy {
     addClass ? body.classList.add('dark-navy-background') : body.classList.remove('dark-navy-background');
   }
 
-
 }
