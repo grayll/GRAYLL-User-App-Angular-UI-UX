@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XlmLoanPopupComponent } from './xlm-loan-popup.component';
+import { XlmLoanPopupComponent } from './near-loan-popup.component';
 
 describe('XlmLoanPopupComponent', () => {
   let component: XlmLoanPopupComponent;

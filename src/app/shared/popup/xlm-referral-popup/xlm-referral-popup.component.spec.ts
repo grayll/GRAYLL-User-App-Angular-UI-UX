@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XlmReferralPopupComponent } from './xlm-referral-popup.component';
+import { XlmReferralPopupComponent } from './near-referral-popup.component';
 
 describe('XlmLoanPopupComponent', () => {
   let component: XlmReferralPopupComponent;

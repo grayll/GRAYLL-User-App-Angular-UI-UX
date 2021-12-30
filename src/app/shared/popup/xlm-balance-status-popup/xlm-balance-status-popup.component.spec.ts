@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XlmBalanceStatusPopupComponent } from './xlm-balance-status-popup.component';
+import { XlmBalanceStatusPopupComponent } from './near-balance-status-popup.component';
 
 describe('XlmBalanceStatusPopupComponent', () => {
   let component: XlmBalanceStatusPopupComponent;

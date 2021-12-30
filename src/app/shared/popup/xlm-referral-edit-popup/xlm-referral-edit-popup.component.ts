@@ -9,15 +9,15 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'app-xlm-edit-popup',
-  templateUrl: './xlm-referral-edit-popup.component.html',
-  styleUrls: ['./xlm-referral-edit-popup.component.scss']
+  selector: 'app-near-edit-popup',
+  templateUrl: './near-referral-edit-popup.component.html',
+  styleUrls: ['./near-referral-edit-popup.component.scss']
 })
 export class XlmReferralEditPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
-  currentXLMBalance: number;
-  XLMLoanValue = 1.5;
+  currentNEARBalance: number;
+  NEARLoanValue = 1.5;
   error: boolean;
   success: boolean;
   didShowErrorOnce: boolean;
@@ -33,7 +33,7 @@ export class XlmReferralEditPopupComponent implements OnInit {
     private sharedService: SharedService
   ) {
     this.user = this.userService.getUser();
-    this.currentXLMBalance = this.user.XLMBalance;
+    this.currentNEARBalance = this.user.NEARBalance;
   }
 
   ngOnInit() {

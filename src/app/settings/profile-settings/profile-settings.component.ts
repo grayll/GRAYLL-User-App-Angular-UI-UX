@@ -13,7 +13,7 @@ import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/fire
 export class ProfileSettingsComponent {
 
   federationAddress: string;
-  stellarAddress: string;
+  nearAddress: string;
 
   faCheck = faCheck;
   faExclamation = faExclamation;
@@ -34,7 +34,7 @@ export class ProfileSettingsComponent {
   ) {
     this.userCollection = afs.collection<any>('user');
     this.federationAddress = 'grayll3*grayll.io';
-    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.nearAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     const userData = JSON.parse(localStorage.getItem('userData'));
     if (userData && Object.keys(userData).length) {
       Object.keys(this.userData).map(prop => {
@@ -50,9 +50,9 @@ export class ProfileSettingsComponent {
     }
   }
 
-  copyStellarAddress() {
-    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
-      this.snotifyService.simple('Stellar address copied.');
+  copyNEARAddress() {
+    if (this.clipboardService.copyFromContent(this.nearAddress)) {
+      this.snotifyService.simple('NEAR address copied.');
     }
   }
 

@@ -9,15 +9,15 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'app-xlm-referrer-popup',
-  templateUrl: './xlm-referrer-remove-popup.component.html',
-  styleUrls: ['./xlm-referrer-remove-popup.component.scss']
+  selector: 'app-near-referrer-popup',
+  templateUrl: './near-referrer-remove-popup.component.html',
+  styleUrls: ['./near-referrer-remove-popup.component.scss']
 })
 export class XlmReferrerRemovePopupComponent implements OnInit {
 
   @ViewChild('content') modal;
-  currentXLMBalance: number;
-  XLMLoanValue = 1.5;
+  currentNEARBalance: number;
+  NEARLoanValue = 1.5;
   error: boolean;
   success: boolean;
   didShowErrorOnce: boolean;
@@ -33,7 +33,7 @@ export class XlmReferrerRemovePopupComponent implements OnInit {
     private sharedService: SharedService
   ) {
     this.user = this.userService.getUser();
-    this.currentXLMBalance = this.user.XLMBalance;
+    this.currentNEARBalance = this.user.NEARBalance;
   }
 
   ngOnInit() {

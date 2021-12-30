@@ -10,15 +10,15 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'app-xlm-referral-resend-popup',
-  templateUrl: './xlm-referral-resend-popup.component.html',
-  styleUrls: ['./xlm-referral-resend-popup.component.scss']
+  selector: 'app-near-referral-resend-popup',
+  templateUrl: './near-referral-resend-popup.component.html',
+  styleUrls: ['./near-referral-resend-popup.component.scss']
 })
 export class XlmReferralResendPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
-  currentXLMBalance: number;
-  XLMLoanValue = 1.5;
+  currentNEARBalance: number;
+  NEARLoanValue = 1.5;
   error: boolean;
   success: boolean;
   didShowErrorOnce: boolean;
@@ -35,7 +35,7 @@ export class XlmReferralResendPopupComponent implements OnInit {
     private router: Router,
   ) {
     this.user = this.userService.getUser();
-    this.currentXLMBalance = this.user.XLMBalance;
+    this.currentNEARBalance = this.user.NEARBalance;
   }
 
   ngOnInit() {
@@ -57,7 +57,7 @@ export class XlmReferralResendPopupComponent implements OnInit {
   goToEdit() {
     this.popupService.close().then(() => {
       setTimeout(() => {
-        this.router.navigate(['/referral/overview', {outlets: {popup: 'xlm-referral-edit'}}]);
+        this.router.navigate(['/referral/overview', {outlets: {popup: 'near-referral-edit'}}]);
       }, 200);
     });
   }

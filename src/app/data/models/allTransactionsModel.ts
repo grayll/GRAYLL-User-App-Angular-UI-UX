@@ -11,6 +11,6 @@ export class AllTransactionsModel {
 		public totalPayments?: string,
 		public remindersSent?: number,
 		public lastReminder?: any,
-		public stellarTransactionId?: string
+		public nearTransactionId?: string
 	) {}
 }

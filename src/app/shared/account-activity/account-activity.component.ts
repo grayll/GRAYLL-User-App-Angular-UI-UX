@@ -123,8 +123,8 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       2,
       '06/08/2019 18:29',
       'sdf3W...JGX4OG',
-      'XLM',
-      'Stellar',
+      'NEAR',
+      'NEAR',
       '-39,333,999,999,999.22222'
     );
 
@@ -137,7 +137,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '06/08/2019 20:01',
       'Debited',
       '-15.7650428',
-      'XLM',
+      'NEAR',
       null
     );
 
@@ -205,7 +205,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '05/08/2019 20:01',
       'Credited',
       '+15.6850428',
-      'XLM',
+      'NEAR',
       'GBMF3W...JGX4OG23'
     );
     this.networkHistories.push(mockup);
@@ -225,8 +225,8 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       1,
       '05/08/2019 18:29',
       'GBMF3W...JGX4OG',
-      'XLM',
-      'Stellar',
+      'NEAR',
+      'NEAR',
       '-29,999,999,999,999.22222'
     );
     this.transfers.push(mockup);
@@ -300,7 +300,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Info'
       ];
       return this.networkHistories.map(el => {
-        let mock = { ...el, info: 'https://stellar.expert/explorer/public' };
+        let mock = { ...el, info: 'https://near.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
@@ -315,7 +315,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Info'
       ];
       return this.transfers.map(el => {
-        let mock = { ...el, info: 'https://stellar.expert/explorer/public' };
+        let mock = { ...el, info: 'https://near.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
@@ -328,10 +328,10 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Issuer',
         'Amount',
         'Filled',
-        'Price (XLM)',
+        'Price (NEAR)',
         'Price (USD)',
         'Total Price (USD)',
-        'Total Price (XLM)'
+        'Total Price (NEAR)'
       ];
       return this.openOrders.map(el => {
         let mock = { ...el };

@@ -122,9 +122,9 @@
       <th class="width-51px">Issuer</th>
       <th class="width-61px">Amount</th>
       <th class="width-51px">Filled</th>
-      <th class="width-73px">Price (XLM)</th>
+      <th class="width-73px">Price (NEAR)</th>
       <th class="width-73px">Price (USD)</th>
-      <th class="width-73px">Total Price (XLM)</th>
+      <th class="width-73px">Total Price (NEAR)</th>
       <th class="width-73px">Total Price (USD)</th>
       <th class="width-61px">Actions</th>
     </tr>
@@ -141,9 +141,9 @@
       <td class="width-51px">{{order.issuer}}</td>
       <td class="width-61px">{{order.amount}}</td>
       <td class="width-51px">{{order.filled}}%</td>
-      <td class="width-73px">{{order.priceXLM}}</td>
+      <td class="width-73px">{{order.priceNEAR}}</td>
       <td class="width-73px">{{order.priceUSD}}</td>
-      <td class="width-73px">{{order.totalPriceXLM}}</td>
+      <td class="width-73px">{{order.totalPriceNEAR}}</td>
       <td class="width-73px">{{order.totalPriceUSD}}</td>
       <td class="width-61px">
         <a href="javascript:void(0)" class="purple-link">
@@ -181,7 +181,7 @@
       <td class="width-51px">{{transfer.issuer}}</td>
       <td class="width-111px">{{transfer.amount}}</td>
       <td class="text-center width-41px">
-        <a href="https://stellar.expert/explorer/public" target="_blank">
+        <a href="https://near.expert/explorer/public" target="_blank">
           <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
         </a>
       </td>
@@ -221,7 +221,7 @@
         <fa-icon (click)="copySuccess(item.account)" [icon]="faCopy"></fa-icon>
       </td>
       <td class="text-center width-41px">
-        <a href="https://stellar.expert/explorer/public" target="_blank">
+        <a href="https://near.expert/explorer/public" target="_blank">
           <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
         </a>
       </td>
@@ -255,9 +255,9 @@
       <th class="width-51px">Issuer</th>
       <th class="width-61px">Amount</th>
       <th class="width-51px">Filled</th>
-      <th class="width-73px">Price (XLM)</th>
+      <th class="width-73px">Price (NEAR)</th>
       <th class="width-73px">Price (USD)</th>
-      <th class="width-73px">Total Price (XLM)</th>
+      <th class="width-73px">Total Price (NEAR)</th>
       <th class="width-73px">Total Price (USD)</th>
       <th class="width-61px"  data-intercom-target="Actions">Actions</th>
     </tr>
@@ -274,9 +274,9 @@
       <td class="width-51px">{{order.issuer}}</td>
       <td class="width-61px">{{order.amount}}</td>
       <td class="width-51px">{{order.filled}}%</td>
-      <td class="width-73px">{{order.priceXLM}}</td>
+      <td class="width-73px">{{order.priceNEAR}}</td>
       <td class="width-73px">{{order.priceUSD}}</td>
-      <td class="width-73px">{{order.totalPriceXLM}}</td>
+      <td class="width-73px">{{order.totalPriceNEAR}}</td>
       <td class="width-73px">{{order.totalPriceUSD}}</td>
       <td class="width-61px">
         <a href="javascript:void(0)" class="gold-link">Details</a>

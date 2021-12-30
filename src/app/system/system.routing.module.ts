@@ -4,8 +4,8 @@ import {NgModule} from '@angular/core';
 import {CancelAlgoPositionsComponent} from '../shared/system-activity/cancel-algo-positions/cancel-algo-positions.component';
 import {OpenAlgoPositionSuccessComponent} from './system-header-boxes/open-algo-position-success/open-algo-position-success.component';
 import {OpenAlgoPositionErrorComponent} from './system-header-boxes/open-algo-position-error/open-algo-position-error.component';
-import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
-import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
+import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -24,7 +24,7 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'xlm-loan',
+    path: 'near-loan',
     component: XlmLoanPopupComponent,
     outlet: 'popup'
   },

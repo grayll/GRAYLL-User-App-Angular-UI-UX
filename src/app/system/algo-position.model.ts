@@ -5,6 +5,6 @@ export class AlgoPositionModel {
     public usdValue?: any,
     public itemAmount?: any,
     public token?: number,
-    public grxAmount?: any
+    public grqAmount?: any
   ) {}
 }

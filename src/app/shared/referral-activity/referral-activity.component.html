@@ -60,8 +60,8 @@
       <th class="width-175px" data-intercom-target="Email">Email</th>
       <th class="width-101px" data-intercom-target="Mobile">Mobile<br><i>(WhatsApp)</i></th>
       <th class="width-91px" data-intercom-target="Fees(USD)">Fees (USD)<br><i>(Received)</i></th>
-      <th (click)="sortByPositionProfit()" class="width-91px" data-intercom-target="Fees(GRX)"> Fees (GRX)<br><i>(Received)</i> </th>
-      <th class="width-111px" data-intercom-target="Stellar">Stellar<br>Transaction ID</th>
+      <th (click)="sortByPositionProfit()" class="width-91px" data-intercom-target="Fees(GRQ)"> Fees (GRQ)<br><i>(Received)</i> </th>
+      <th class="width-111px" data-intercom-target="NEAR">NEAR<br>Transaction ID</th>
       <th class="width-44px text-center" data-intercom-target="Info">Info</th>
       <!-- <th class="width-61px">Actions</th> -->
     </tr>
@@ -83,10 +83,10 @@
       <td class="width-91px">{{position.totalFees}}</td>
       <td class="width-91px">{{position.totalFees}}</td>
       <td class="width-111px">
-      {{position.stellarTransactionId}}
+      {{position.nearTransactionId}}
       </td>
       <td class="width-41px text-center">
-        <a href="https://stellar.expert/explorer/public" target="_blank">
+        <a href="https://near.expert/explorer/public" target="_blank">
           <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
         </a>
       </td>
@@ -109,9 +109,9 @@
       <th (click)="sortByTotalFeesUSD()" class="width-91px" data-intercom-target="Total Fees(USD)">
         Total Fees (USD)<br><i class="mr-1">(Received)</i>
         <fa-icon [icon]="faSortByTotalFeesUSD" style="color: #40278C;"></fa-icon></th>
-      <th (click)="sortByTotalFeesGRX()" class="width-91px" data-intercom-target="Total Fees(GRX)">
-        Total Fees (GRX)<br><i class="mr-1">(Received)</i>
-        <fa-icon [icon]="faSortByTotalFeesGRX" style="color: #40278C;"></fa-icon>
+      <th (click)="sortByTotalFeesGRQ()" class="width-91px" data-intercom-target="Total Fees(GRQ)">
+        Total Fees (GRQ)<br><i class="mr-1">(Received)</i>
+        <fa-icon [icon]="faSortByTotalFeesGRQ" style="color: #40278C;"></fa-icon>
       </th>
       <th (click)="sortByTotalPayments()" class="width-91px" data-intercom-target="Total Payments">
         Total Payments<br><i class="mr-1">(Received)</i>
@@ -138,12 +138,12 @@
       <td class="width-91px">{{position.totalFees}}</td>
       <td class="width-91px">{{position.totalPayments}}</td>
       <td class="width-41px">
-        <a href="javascript:void(0)" class="colored-text" [routerLink]="[{outlets: {popup: 'xlm-referral-edit'}}]">
+        <a href="javascript:void(0)" class="colored-text" [routerLink]="[{outlets: {popup: 'near-referral-edit'}}]">
           Edit
         </a>
       </td>
       <td class="width-61px">
-        <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'xlm-referral-remove'}}]">
+        <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'near-referral-remove'}}]">
           <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
           <span class="ml-1 cancel text-danger">Remove</span>
         </a>
@@ -191,12 +191,12 @@
       <td class="width-91px">{{position.remindersSent}}</td>
       <td class="width-91px">{{position.lastReminder}}</td>
       <td class="width-91px">
-        <a class="colored-text" href="javascript:void(0)" [routerLink]="[{outlets: {popup: 'xlm-referral-resend'}}]">
+        <a class="colored-text" href="javascript:void(0)" [routerLink]="[{outlets: {popup: 'near-referral-resend'}}]">
           Send Reminder
         </a>
       </td>
       <td class="width-61px">
-        <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'xlm-referral-remove'}}]">
+        <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'near-referral-remove'}}]">
           <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
           <span class="ml-1 cancel text-danger">Remove</span>
         </a>

@@ -23,21 +23,21 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   faBell = faBell;
   faChartLine = faChartLine;
   federationAddress: string;
-  stellarAddress: string;
-  totalXLM: number;
-  totalGRX: number;
-  XLMValue: string;
-  GRXValue: string;
+  nearAddress: string;
+  totalNEAR: number;
+  totalGRQ: number;
+  NEARValue: string;
+  GRQValue: string;
   secretKey: string;
   isSecretKeyRevealed: boolean;
-  buyGRX = {
-    XLMValue: '',
-    GRXValue: '',
+  buyGRQ = {
+    NEARValue: '',
+    GRQValue: '',
   };
 
-  sellGRX = {
-    XLMValue: '',
-    GRXValue: '',
+  sellGRQ = {
+    NEARValue: '',
+    GRQValue: '',
   };
 
   private subscriptions = new SubSink();
@@ -49,19 +49,19 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     private router: Router,
     private customModalService: CustomModalService,
   ) {
-    const buyGRX = JSON.parse(localStorage.getItem('buyGRX'));
-    const sellGRX = JSON.parse(localStorage.getItem('sellGRX'));
+    const buyGRQ = JSON.parse(localStorage.getItem('buyGRQ'));
+    const sellGRQ = JSON.parse(localStorage.getItem('sellGRQ'));
     this.federationAddress = 'grayll3*grayll.io';
-    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.nearAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
-    this.totalXLM = 99999999999.99999;
-    this.totalGRX = 99999999999.99999;
-    this.XLMValue = null;
-    this.GRXValue = null;
-    this.buyGRX.XLMValue = buyGRX && buyGRX['XLMValue'] ? buyGRX['XLMValue'] : null;
-    this.sellGRX.XLMValue = sellGRX && sellGRX['XLMValue'] ? sellGRX['XLMValue'] : null;
-    this.buyGRX.GRXValue = buyGRX && buyGRX['GRXValue'] ? buyGRX['GRXValue'] : null;
-    this.sellGRX.GRXValue = sellGRX && sellGRX['GRXValue'] ? sellGRX['GRXValue'] : null;
+    this.totalNEAR = 99999999999.99999;
+    this.totalGRQ = 99999999999.99999;
+    this.NEARValue = null;
+    this.GRQValue = null;
+    this.buyGRQ.NEARValue = buyGRQ && buyGRQ['NEARValue'] ? buyGRQ['NEARValue'] : null;
+    this.sellGRQ.NEARValue = sellGRQ && sellGRQ['NEARValue'] ? sellGRQ['NEARValue'] : null;
+    this.buyGRQ.GRQValue = buyGRQ && buyGRQ['GRQValue'] ? buyGRQ['GRQValue'] : null;
+    this.sellGRQ.GRQValue = sellGRQ && sellGRQ['GRQValue'] ? sellGRQ['GRQValue'] : null;
 
   }
 
@@ -79,9 +79,9 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     }
   }
 
-  copyStellarAddress() {
-    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
-      this.snotifyService.simple('Stellar address copied.');
+  copyNEARAddress() {
+    if (this.clipboardService.copyFromContent(this.nearAddress)) {
+      this.snotifyService.simple('NEAR address copied.');
     }
   }
 
@@ -101,12 +101,12 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
       });
   }
 
-  populateMaxXLM(obj, prop) {
-    this[obj][prop] = this.totalXLM.toString();
+  populateMaxNEAR(obj, prop) {
+    this[obj][prop] = this.totalNEAR.toString();
   }
 
-  populateMaxGRX(obj, prop) {
-    this[obj][prop] = this.totalGRX.toString();
+  populateMaxGRQ(obj, prop) {
+    this[obj][prop] = this.totalGRQ.toString();
   }
 
   goToTop() {
@@ -122,22 +122,22 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   }
 
   onChangeBuy(property) {
-    let localData = localStorage.getItem('buyGRX');
+    let localData = localStorage.getItem('buyGRQ');
     if (localData) {
       let parsedLocalData = JSON.parse(localData);
-      localStorage.setItem('buyGRX', JSON.stringify({ ...parsedLocalData, [property]: this.buyGRX[property] }));
+      localStorage.setItem('buyGRQ', JSON.stringify({ ...parsedLocalData, [property]: this.buyGRQ[property] }));
     } else {
-      localStorage.setItem('buyGRX', JSON.stringify({ [property]: this.buyGRX[property] }));
+      localStorage.setItem('buyGRQ', JSON.stringify({ [property]: this.buyGRQ[property] }));
     }
   }
 
   onChangeSell(property) {
-    let localData = localStorage.getItem('sellGRX');
+    let localData = localStorage.getItem('sellGRQ');
     if (localData) {
       let parsedLocalData = JSON.parse(localData);
-      localStorage.setItem('sellGRX', JSON.stringify({ ...parsedLocalData, [property]: this.sellGRX[property] }));
+      localStorage.setItem('sellGRQ', JSON.stringify({ ...parsedLocalData, [property]: this.sellGRQ[property] }));
     } else {
-      localStorage.setItem('sellGRX', JSON.stringify({ [property]: this.sellGRX[property] }));
+      localStorage.setItem('sellGRQ', JSON.stringify({ [property]: this.sellGRQ[property] }));
     }
   }
 

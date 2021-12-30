@@ -13,7 +13,7 @@ export class DepositPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
   federationAddress: string;
-  stellarAddress: string;
+  nearAddress: string;
 
   constructor(
     private clipboardService: ClipboardService,
@@ -22,7 +22,7 @@ export class DepositPopupComponent implements OnInit {
     private router: Router,
   ) {
     this.federationAddress = 'grayll3*grayll.io';
-    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.nearAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
   }
 
   ngOnInit() {
@@ -35,9 +35,9 @@ export class DepositPopupComponent implements OnInit {
     }
   }
 
-  copyStellarAddress() {
-    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
-      this.snotifyService.simple('Stellar address copied.');
+  copyNEARAddress() {
+    if (this.clipboardService.copyFromContent(this.nearAddress)) {
+      this.snotifyService.simple('NEAR address copied.');
     }
   }
   //goto KYC 

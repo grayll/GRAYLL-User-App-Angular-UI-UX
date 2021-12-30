@@ -1,9 +1,9 @@
 <div class="card border-0">
-  <div class="card-body bg-white text-purple" data-intercom-target="GRAYLL|Stellar Network Account">
+  <div class="card-body bg-white text-purple" data-intercom-target="GRAYLL|NEAR Network Account">
     <div class="row">
       <div class="col">
-        <p class="lead mb-0">GRAYLL | Stellar Network Account</p>
-        <p>Your GRAYLL account holds all your GRX and XLM (Lumens) on the Stellar Network.</p>
+        <p class="lead mb-0">GRAYLL | NEAR Network Account</p>
+        <p>Your GRAYLL account holds all your GRQ and NEAR (Lumens) on the NEAR Network.</p>
 
         <p class="lead mb-0"><strong>Federation</strong> Address (Payment Alias)</p>
         <p>Your federation address is your payment alias so people can send you assets more easily.</p>
@@ -30,7 +30,7 @@
           (aka your federation address).
           <br>
           You can use this alias, including the <strong>*grayll.io</strong>, instead of your public key
-          <strong>(Stellar Network Wallet Address)</strong> to receive GRX and XLM payments on the Stellar Network
+          <strong>(NEAR Network Wallet Address)</strong> to receive GRQ and NEAR payments on the NEAR Network
           to your GRAYLL account wallet.
         </p>
       </div>
@@ -41,18 +41,18 @@
 <div class="row">
   <div class="col-md-6 col-xs-12">
     <div class="card border-0 mb-0 card-with-margin">
-      <div class="card-body bg-white text-purple" data-intercom-target="Stellar Address">
+      <div class="card-body bg-white text-purple" data-intercom-target="NEAR Address">
         <div class="row">
           <div class="col">
-            <p class="lead mb-0"><strong>Stellar Address</strong> (Public Key)</p>
-            <p>The Stellar wallet address is the public key associated with this account.</p>
+            <p class="lead mb-0"><strong>NEAR Address</strong> (Public Key)</p>
+            <p>The NEAR wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="stellarAddress" triggers="click:blur">
-                <input disabled [value]="stellarAddress" type="text" class="form-control form-control-no-border bg-transparent text-purple">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress" triggers="click:blur">
+                <input disabled [value]="nearAddress" type="text" class="form-control form-control-no-border bg-transparent text-purple">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
-                <button (click)="copyStellarAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+                <button (click)="copyNEARAddress()" class="btn btn-block btn-yellow">Copy Address</button>
               </div>
             </div>
           </div>

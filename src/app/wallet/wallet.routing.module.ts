@@ -8,9 +8,9 @@ import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-su
 import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
 import {CancelActiveOrdersPopupComponent} from '../shared/account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
 import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
-import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
-import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
-import {XlmBalanceStatusPopupComponent} from '../shared/popup/xlm-balance-status-popup/xlm-balance-status-popup.component';
+import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import {XlmBalanceStatusPopupComponent} from '../shared/popup/near-balance-status-popup/near-balance-status-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -49,12 +49,12 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'xlm-loan',
+    path: 'near-loan',
     component: XlmLoanPopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'xlm-balance-status',
+    path: 'near-balance-status',
     component: XlmBalanceStatusPopupComponent,
     outlet: 'popup'
   },

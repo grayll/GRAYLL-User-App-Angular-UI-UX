@@ -1,11 +1,11 @@
 <ng-template #content let-modal>
-  <app-popup-header popupHeaderTitle="Withdraw GRX & XLM"></app-popup-header>
+  <app-popup-header popupHeaderTitle="Withdraw GRQ & NEAR"></app-popup-header>
   <div class="modal-body">
     <div class="row">
       <div class="col-md-12">
         <app-error></app-error>
         <p class="text-purple">
-          You can send assets to any Stellar or Federation Address.
+          You can send assets to any NEAR or Federation Address.
         </p>
       </div>
       <div class="col-md-12">
@@ -13,22 +13,22 @@
           <ngb-tab id="wallet">
             <ng-template ngbTabTitle>
               <fa-icon [icon]="faWallet" [fixedWidth]="true"></fa-icon>
-              Stellar Wallet
+              NEAR Wallet
             </ng-template>
             <ng-template ngbTabContent>
               <p class="text-purple mt-3 mb-0">
-                <span class="font-weight-bolder">Send GRX or XLM to the recipient wallet address below.</span>
+                <span class="font-weight-bolder">Send GRQ or NEAR to the recipient wallet address below.</span>
                 <br>
                 Transfers only take a few seconds to confirm.
               </p>
               <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Recipient</p>
               <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                placeholder="Stellar Wallet or Federation Address" [(ngModel)]="recipient"
+                placeholder="NEAR Wallet or Federation Address" [(ngModel)]="recipient"
                 (input)="onChange('recipient')">
 
               <ngb-tabset type="pills">
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRQ</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
@@ -37,14 +37,14 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                        <input type="text" [(ngModel)]="GRQValue" (input)="onChange('GRQValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="GRX Amount">
+                          placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
-                        Max Available GRX: {{totalGRX}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
+                        Max Available GRQ: {{totalGRQ}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -60,23 +60,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="XLM Amount">
+                          placeholder="NEAR Amount">
                       </div>
-                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
-                        Max Available XLM: {{totalXLM}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
+                        Max Available NEAR: {{totalNEAR}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -114,7 +114,7 @@
                   <span class="font-weight-bolder">IMPORTANT
                     <br>
                     Some recipients (Bittrex, Kraken, Binance, Bitfinex, Coinbase and others) may require a transaction
-                    memo message</span> to be provided for correct forwarding of your Stellar Network assets.
+                    memo message</span> to be provided for correct forwarding of your NEAR Network assets.
                   <br>
                   In cases when a memo message is required by the receiving party, failure to include the memo with your
                   transaction may result in your funds being lost forever and GRAYLL won't be able to help.
@@ -165,7 +165,7 @@
               <p class="mt-1 text-purple">Sending to the following address: {{phoneNumber}}*grayll.io</p>
               <ngb-tabset type="pills">
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRQ</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
@@ -174,14 +174,14 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                        <input type="text" [(ngModel)]="GRQValue" (input)="onChange('GRQValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="GRX Amount">
+                          placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
-                        Max Available GRX: {{totalGRX}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
+                        Max Available GRQ: {{totalGRQ}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -197,23 +197,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="XLM Amount">
+                          placeholder="NEAR Amount">
                       </div>
-                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
-                        Max Available XLM: {{totalXLM}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
+                        Max Available NEAR: {{totalNEAR}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -254,7 +254,7 @@
               <p class="mt-1 text-purple">Sending to the following address: {{emailAddress}}*grayll.io</p>
               <ngb-tabset type="pills">
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRX</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">GRQ</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
@@ -263,14 +263,14 @@
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="GRXValue" (input)="onChange('GRXValue')"
+                        <input type="text" [(ngModel)]="GRQValue" (input)="onChange('GRQValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="GRX Amount">
+                          placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRX are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRX()">
-                        Max Available GRX: {{totalGRX}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
+                        Max Available GRQ: {{totalGRQ}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -286,23 +286,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">XLM</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/xlm_logo_white.png" alt="XLM Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="XLMValue" (input)="onChange('XLMValue')"
+                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="XLM Amount">
+                          placeholder="NEAR Amount">
                       </div>
-                      <span class="text-purple">*1.5 XLM are reserved in your wallet by the Stellar Network.</span>
+                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxXLM()">
-                        Max Available XLM: {{totalXLM}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
+                        Max Available NEAR: {{totalNEAR}}
                       </a>
                     </div>
                     <div class="form-group">

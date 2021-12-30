@@ -7,9 +7,9 @@ export class OrderModel {
     public issuer?: string,
     public amount?: string,
     public filled?: string,
-    public priceXLM?: string,
+    public priceNEAR?: string,
     public priceUSD?: string,
     public totalPriceUSD?: string,
-    public totalPriceXLM?: string
+    public totalPriceNEAR?: string
   ) {}
 }

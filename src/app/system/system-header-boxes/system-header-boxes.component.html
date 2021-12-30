@@ -74,7 +74,7 @@
           </div>
           <div class="col-md-12" id="amount-form">
             <div class="form-group mt-3">
-              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRX Amount">
+              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
                 <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
                             <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYLL Logo">
@@ -82,7 +82,7 @@
                 </div>
                 <input type="text" class="fixed-input-height text-light
                     form-control form-control-no-border bg-purple border-0"
-                       placeholder="GRX Amount" [(ngModel)]="GRXValue">
+                       placeholder="GRQ Amount" [(ngModel)]="GRQValue">
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@
                 </button>
               </div>
               <div class="col">
-                <a class="navy-link-purple" href="javascript:void(0)" (click)="populateMaxGRX()">
-                  Max Available USDC: {{totalGRX}}
+                <a class="navy-link-purple" href="javascript:void(0)" (click)="populateMaxGRQ()">
+                  Max Available UST: {{totalGRQ}}
                 </a>
               </div>
             </div>
@@ -115,7 +115,7 @@
                   GRAYLL 1 | GLP1
                   <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
                 </h6>
-                <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.008000</h6>
+                <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.008000</h6>
               </div>
               <div class="col text-right" style="margin-top: -4px;" data-intercom-target="Unread Notifications">
                 <div class="border-navy-hover" style="outline:0!important"
@@ -181,7 +181,7 @@
                   GRAYLL 2 | GETP1
                   <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
                 </h6>
-                <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+                <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
               </div>
               <div class="col text-right text-purple" style="margin-top: -4px;">
                 <div class="border-navy-hover" (click)="openModal('unread-gry2-notifications')"
@@ -250,7 +250,7 @@
                   GRAYLL 3 | 2LYF
                   <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
                 </h6>
-                <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+                <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
               </div>
               <div class="col text-right text-purple" style="margin-top: -4px;">
                 <div class="border-navy-hover" (click)="openModal('unread-gry3-notifications')"
@@ -316,7 +316,7 @@
                   GRAYLL 4 | DX2Y
                   <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
                 </h6>
-                <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+                <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
               </div>
               <div class="col text-right text-purple" style="margin-top: -4px;">
                 <div class="border-navy-hover" (click)="openModal('unread-grz-notifications')"
@@ -465,7 +465,7 @@
                   </div>
                   <input type="text" class="fixed-input-height text-light
                     form-control form-control-no-border bg-purple border-0"
-                         placeholder="GRX Amount" [(ngModel)]="GRXValue">
+                         placeholder="GRQ Amount" [(ngModel)]="GRQValue">
                 </div>
               </div>
             </div>
@@ -477,8 +477,8 @@
                   </button>
                 </div>
                 <div class="col">
-                  <a class="navy-link-white" href="javascript:void(0)" (click)="populateMaxGRX()">
-                    Max Available USDC: {{totalGRX}}
+                  <a class="navy-link-white" href="javascript:void(0)" (click)="populateMaxGRQ()">
+                    Max Available UST: {{totalGRQ}}
                   </a>
                 </div>
               </div>
@@ -497,7 +497,7 @@
                 GRAYLL 1 | GLP1
                 <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
               </h6>
-              <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+              <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
               <div class="mobile-bottom-border" style="outline:0!important"
@@ -563,7 +563,7 @@
                 GRAYLL 2 | GETP1
                 <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
               </h6>
-              <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+              <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
             </div>
             <div class="col text-right text-purple" style="margin-top: -4px;">
               <div class="mobile-bottom-border" (click)="openModal('unread-gry2-notifications')"
@@ -630,7 +630,7 @@
                 GRAYLL 3 | 2LYF
                 <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
               </h6>
-              <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+              <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
             </div>
             <div class="col text-right text-purple" style="margin-top: -4px;">
               <div class="mobile-bottom-border" (click)="openModal('unread-gry3-notifications')"
@@ -696,7 +696,7 @@
                 GRAYLL 4 | DX2Y
                 <fa-icon [icon]="faInfo" class="purple-link cancel"></fa-icon>
               </h6>
-              <h6 class="text-purple font-weight-bolder m-b-0">GRX | $0.08000</h6>
+              <h6 class="text-purple font-weight-bolder m-b-0">GRQ | $0.08000</h6>
             </div>
             <div class="col text-right" style="margin-top: -4px;">
               <div class="mobile-bottom-border" (click)="openModal('unread-grz-notifications')"

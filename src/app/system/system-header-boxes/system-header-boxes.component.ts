@@ -18,8 +18,8 @@ export class SystemHeaderBoxesComponent implements OnInit {
 
   @ViewChild(NgbCarousel) carouselSystem;
 
-  GRXValue: string;
-  totalGRX: number;
+  GRQValue: string;
+  totalGRQ: number;
   selectedTab: any;
   algoPosition: AlgoPositionModel;
   countdownConfig: CountdownConfig = {
@@ -70,16 +70,16 @@ export class SystemHeaderBoxesComponent implements OnInit {
     private customModalService: CustomModalService,
     public notificationsService: NotificationsService
   ) {
-    this.GRXValue = null;
-    this.totalGRX = 99999999999.99998;
+    this.GRQValue = null;
+    this.totalGRQ = 99999999999.99998;
     this.selectedTab = this.algoItems[0];
     this.algoPosition = new AlgoPositionModel(null, this.selectedTab.name, null, null, null, null);
   }
 
   ngOnInit() {}
 
-  populateMaxGRX() {
-    this.GRXValue = this.totalGRX.toString();
+  populateMaxGRQ() {
+    this.GRQValue = this.totalGRQ.toString();
   }
 
   didChangeTab(id: string) {
@@ -102,7 +102,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
   }
 
   private clientValidation(): boolean {
-    if (!this.algoPosition.usdValue && !this.algoPosition.itemAmount && !this.GRXValue) {
+    if (!this.algoPosition.usdValue && !this.algoPosition.itemAmount && !this.GRQValue) {
       this.errorService.handleError(null, 'Please enter a value of ~$10 or more in one of the fields.');
       return false;
     }
@@ -114,12 +114,12 @@ export class SystemHeaderBoxesComponent implements OnInit {
       this.errorService.handleError(null, 'Minimum USD Value is $10.');
       return false;
     }
-    if (this.GRXValue && !this.isValidNumber(this.GRXValue)) {
-      this.errorService.handleError(null, 'Please enter a valid GRX Amount.');
+    if (this.GRQValue && !this.isValidNumber(this.GRQValue)) {
+      this.errorService.handleError(null, 'Please enter a valid GRQ Amount.');
       return false;
     }
-    if (this.GRXValue && +this.GRXValue < 10) {
-      this.errorService.handleError(null, 'Minimum GRX Amount is $10.');
+    if (this.GRQValue && +this.GRQValue < 10) {
+      this.errorService.handleError(null, 'Minimum GRQ Amount is $10.');
       return false;
     }
     if (this.algoPosition.itemAmount && !this.isValidNumber(this.algoPosition.itemAmount)) {
@@ -134,7 +134,7 @@ export class SystemHeaderBoxesComponent implements OnInit {
   }
 
   private populateAlgoModel() {
-    this.algoPosition.grxAmount = +this.GRXValue;
+    this.algoPosition.grqAmount = +this.GRQValue;
     this.algoPosition.itemAmount = +this.algoPosition.itemAmount;
     this.algoPosition.usdValue = +this.algoPosition.usdValue;
     this.algoPosition.token = this.selectedTab.id;

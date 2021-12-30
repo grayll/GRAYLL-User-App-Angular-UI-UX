@@ -1,8 +1,8 @@
 export class WithdrawModel {
   constructor(
     public address?: string,
-    public grxAmount?: number,
-    public xlmAmount?: number,
+    public grqAmount?: number,
+    public nearAmount?: number,
     public memoMessage?: string,
     public phoneNumber?: string,
     public emailAddress?: string

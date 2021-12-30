@@ -6,11 +6,11 @@ export class AlgoPositionModelReferral {
 		public duration?: number,
 		public algorithm?: string,
 		public priceUSD?: number,
-		public priceGRX?: number,
+		public priceGRQ?: number,
 		public positionValueUSD?: string,
 		public positionProfitUSD?: string,
 		public roi?: number,
 		public grayllTransactionId?: string,
-		public stellarTransactionId?: string
+		public nearTransactionId?: string
 	) {}
 }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReferralComponent } from './referral.component';
-import {XlmReferralPopupComponent} from '../shared/popup/xlm-referral-popup/xlm-referral-popup.component';
-import {XlmLoanPopupComponent} from '../shared/popup/xlm-loan-popup/xlm-loan-popup.component';
-import {XlmReferralRemovePopupComponent} from '../shared/popup/xlm-referral-remove-popup/xlm-referral-remove-popup.component';
-import {XlmReferrerRemovePopupComponent} from '../shared/popup/xlm-referrer-remove-popup/xlm-referrer-remove-popup.component';
-import {XlmReferralResendPopupComponent} from '../shared/popup/xlm-referral -resend-popup/xlm-referral-resend-popup.component';
-import {XlmReferralEditPopupComponent} from '../shared/popup/xlm-referral-edit-popup/xlm-referral-edit-popup.component';
+import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {XlmReferralRemovePopupComponent} from '../shared/popup/near-referral-remove-popup/near-referral-remove-popup.component';
+import {XlmReferrerRemovePopupComponent} from '../shared/popup/near-referrer-remove-popup/near-referrer-remove-popup.component';
+import {XlmReferralResendPopupComponent} from '../shared/popup/near-referral -resend-popup/near-referral-resend-popup.component';
+import {XlmReferralEditPopupComponent} from '../shared/popup/near-referral-edit-popup/near-referral-edit-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -15,27 +15,27 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'xlm-loan',
+    path: 'near-loan',
     component: XlmLoanPopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'xlm-referral-remove',
+    path: 'near-referral-remove',
     component: XlmReferralRemovePopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'xlm-referrer-remove',
+    path: 'near-referrer-remove',
     component: XlmReferrerRemovePopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'xlm-referral-resend',
+    path: 'near-referral-resend',
     component: XlmReferralResendPopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'xlm-referral-edit',
+    path: 'near-referral-edit',
     component: XlmReferralEditPopupComponent,
     outlet: 'popup'
   }

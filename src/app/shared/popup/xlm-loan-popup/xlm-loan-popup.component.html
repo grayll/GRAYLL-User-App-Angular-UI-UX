@@ -1,5 +1,5 @@
 <ng-template #content let-modal>
-  <app-popup-header popupHeaderTitle="Pay Off | 1.50 XLM Loan"></app-popup-header>
+  <app-popup-header popupHeaderTitle="Pay Off | 1.50 NEAR Loan"></app-popup-header>
   <div class="modal-body">
 
     <app-error></app-error>
@@ -9,26 +9,26 @@
         <p class="text-purple">Pay off the loan to use all features and access the GRAYLL System.</p>
       </div>
       <div class="col-12">
-        <label for="xlmBalance" class="text-purple">
-          Current XLM Balance
+        <label for="nearBalance" class="text-purple">
+          Current NEAR Balance
         </label>
-        <input disabled id="xlmBalance" type="text" class="form-control purple-input disabled-input" [value]="currentXLMBalance + ' XLM'">
+        <input disabled id="nearBalance" type="text" class="form-control purple-input disabled-input" [value]="currentNEARBalance + ' NEAR'">
       </div>
       <div class="col-12 text-right">
-        <small class="text-purple">1.50 XLM Reserved</small>
+        <small class="text-purple">1.50 NEAR Reserved</small>
       </div>
       <div class="col-12">
         <label for="loanValue" class="text-purple">
-          XLM Loan Value
+          NEAR Loan Value
         </label>
-        <input disabled id="loanValue" type="text" class="form-control purple-input disabled-input" [value]="XLMLoanValue + ' XLM'">
+        <input disabled id="loanValue" type="text" class="form-control purple-input disabled-input" [value]="NEARLoanValue + ' NEAR'">
         <div class="col-12"><small>&nbsp;</small></div>
       </div>
       <div class="col-12">
         <label for="difference" class="text-purple">
-          XLM Balance After Loan Payment
+          NEAR Balance After Loan Payment
         </label>
-        <input disabled id="difference" type="text" class="form-control purple-input disabled-input" [value]="currentXLMBalance - XLMLoanValue + ' XLM'">
+        <input disabled id="difference" type="text" class="form-control purple-input disabled-input" [value]="currentNEARBalance - NEARLoanValue + ' NEAR'">
       </div>
     </div>
 
@@ -45,7 +45,7 @@
       <div class="row mb-1">
         <div class="col-12 text-center">
           <p class="text-purple">
-            Thank you, your 1.50 XLM loan has been repaid successfully.
+            Thank you, your 1.50 NEAR loan has been repaid successfully.
           </p>
         </div>
       </div>
@@ -68,7 +68,7 @@
       <div class="row mb-1">
         <div class="col-12 text-center">
           <p class="text-purple">
-            Something went wrong, please retry the 1.50 XLM load repayment.
+            Something went wrong, please retry the 1.50 NEAR load repayment.
           </p>
         </div>
       </div>
@@ -79,7 +79,7 @@
   <div class="modal-footer justify-content-center">
     <div class="row text-center" style="display: contents!important;">
       <div class="col">
-        <button class="btn btn-purple" *ngIf="!success && !error" (click)="payOffLoan()">Pay Off 1.50 XLM</button>
+        <button class="btn btn-purple" *ngIf="!success && !error" (click)="payOffLoan()">Pay Off 1.50 NEAR</button>
         <button class="btn btn-purple" *ngIf="success" (click)="popupService.close()">Close</button>
         <button class="btn btn-purple" *ngIf="error" (click)="retry()">Retry</button>
       </div>

@@ -12,7 +12,7 @@ import {SubSink} from 'subsink';
 export class WalletSettingsComponent implements OnInit, OnDestroy {
 
   federationAddress: string;
-  stellarAddress: string;
+  nearAddress: string;
   secretKey: string;
   isSecretKeyRevealed: boolean;
 
@@ -24,7 +24,7 @@ export class WalletSettingsComponent implements OnInit, OnDestroy {
     private settingsService: SettingsService
   ) {
     this.federationAddress = 'grayll3*grayll.io';
-    this.stellarAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
+    this.nearAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
   }
 
@@ -42,9 +42,9 @@ export class WalletSettingsComponent implements OnInit, OnDestroy {
     }
   }
 
-  copyStellarAddress() {
-    if (this.clipboardService.copyFromContent(this.stellarAddress)) {
-      this.snotifyService.simple('Stellar address copied.');
+  copyNEARAddress() {
+    if (this.clipboardService.copyFromContent(this.nearAddress)) {
+      this.snotifyService.simple('NEAR address copied.');
     }
   }
 

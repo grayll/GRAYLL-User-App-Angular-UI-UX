@@ -7,15 +7,15 @@ import {UserService} from '../../../authorization/user.service';
 import {SharedService} from '../../shared.service';
 
 @Component({
-  selector: 'app-xlm-loan-popup',
-  templateUrl: './xlm-loan-popup.component.html',
-  styleUrls: ['./xlm-loan-popup.component.scss']
+  selector: 'app-near-loan-popup',
+  templateUrl: './near-loan-popup.component.html',
+  styleUrls: ['./near-loan-popup.component.scss']
 })
 export class XlmLoanPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
-  currentXLMBalance: number;
-  XLMLoanValue = 1.5;
+  currentNEARBalance: number;
+  NEARLoanValue = 1.5;
   error: boolean;
   success: boolean;
   didShowErrorOnce: boolean;
@@ -30,7 +30,7 @@ export class XlmLoanPopupComponent implements OnInit {
     private sharedService: SharedService
   ) {
     this.user = this.userService.getUser();
-    this.currentXLMBalance = this.user.XLMBalance;
+    this.currentNEARBalance = this.user.NEARBalance;
   }
 
   ngOnInit() {
