@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {ActivateAccountPopupComponent} from '../shared/popup/activate-account/activate-account-popup.component';
-import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
-import {XlmBalanceStatusPopupComponent} from '../shared/popup/near-balance-status-popup/near-balance-status-popup.component';
+import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import {NearBalanceStatusPopupComponent} from '../shared/popup/near-balance-status-popup/near-balance-status-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -14,17 +14,17 @@ const popupRoutes: Routes = [
   },
   {
     path: 'near-loan',
-    component: XlmLoanPopupComponent,
+    component: NearLoanPopupComponent,
     outlet: 'popup'
   },
   {
     path: 'near-balance-status',
-    component: XlmBalanceStatusPopupComponent,
+    component: NearBalanceStatusPopupComponent,
     outlet: 'popup'
   },
   {
     path: 'xml-referral',
-    component: XlmReferralPopupComponent,
+    component: NearReferralPopupComponent,
     outlet: 'popup'
   }
 ];

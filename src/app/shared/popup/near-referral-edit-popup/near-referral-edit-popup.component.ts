@@ -5,13 +5,15 @@ import {SettingsService} from '../../../settings/settings.service';
 import {ErrorService} from '../../error/error.service';
 import {UserService} from '../../../authorization/user.service';
 import {SharedService} from '../../shared.service';
+import {faCircle} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
-  selector: 'app-near-loan-popup',
-  templateUrl: './near-loan-popup.component.html',
-  styleUrls: ['./near-loan-popup.component.scss']
+  selector: 'app-near-edit-popup',
+  templateUrl: './near-referral-edit-popup.component.html',
+  styleUrls: ['./near-referral-edit-popup.component.scss']
 })
-export class XlmLoanPopupComponent implements OnInit {
+export class NearReferralEditPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
   currentNEARBalance: number;
@@ -19,6 +21,7 @@ export class XlmLoanPopupComponent implements OnInit {
   error: boolean;
   success: boolean;
   didShowErrorOnce: boolean;
+  faPhone = faCircle;
 
   private user: UserModel;
 

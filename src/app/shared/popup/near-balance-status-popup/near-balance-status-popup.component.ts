@@ -6,7 +6,7 @@ import {PopupService} from '../popup.service';
   templateUrl: './near-balance-status-popup.component.html',
   styleUrls: ['./near-balance-status-popup.component.css']
 })
-export class XlmBalanceStatusPopupComponent implements OnInit {
+export class NearBalanceStatusPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
 

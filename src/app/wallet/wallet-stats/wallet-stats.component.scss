@@ -165,7 +165,8 @@ input {
   height: 24px;
 }
 
-:host #tabset-mobile ::ng-deep .custom-pills ul {
+:host #tabset-mobile ::ng-deep .custom-pills ul,
+::ng-deep .custom-pills ul {
   justify-content: center!important;
 }
 

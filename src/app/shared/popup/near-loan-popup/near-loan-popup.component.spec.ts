@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XlmLoanPopupComponent } from './near-loan-popup.component';
+import { NearLoanPopupComponent } from './near-loan-popup.component';
 
-describe('XlmLoanPopupComponent', () => {
-  let component: XlmLoanPopupComponent;
-  let fixture: ComponentFixture<XlmLoanPopupComponent>;
+describe('NearLoanPopupComponent', () => {
+  let component: NearLoanPopupComponent;
+  let fixture: ComponentFixture<NearLoanPopupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XlmLoanPopupComponent ]
+      declarations: [ NearLoanPopupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XlmLoanPopupComponent);
+    fixture = TestBed.createComponent(NearLoanPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,11 +9,11 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'app-near-edit-popup',
-  templateUrl: './near-referral-edit-popup.component.html',
-  styleUrls: ['./near-referral-edit-popup.component.scss']
+  selector: 'app-near-referrer-popup',
+  templateUrl: './near-referrer-remove-popup.component.html',
+  styleUrls: ['./near-referrer-remove-popup.component.scss']
 })
-export class XlmReferralEditPopupComponent implements OnInit {
+export class NearReferrerRemovePopupComponent implements OnInit {
 
   @ViewChild('content') modal;
   currentNEARBalance: number;

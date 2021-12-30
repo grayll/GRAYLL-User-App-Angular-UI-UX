@@ -20,13 +20,13 @@ import { WalletNotificationItemComponent } from './wallet-notification-item/wall
 import { GeneralNotificationItemComponent } from './general-notification-item/general-notification-item.component';
 import {RevealSecretKeyPopupComponent} from './popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
 import {ActivateAccountPopupComponent} from './popup/activate-account/activate-account-popup.component';
-import {XlmLoanPopupComponent} from './popup/near-loan-popup/near-loan-popup.component';
-import {XlmReferralPopupComponent} from './popup/near-referral-popup/near-referral-popup.component';
-import {XlmReferralRemovePopupComponent} from './popup/near-referral-remove-popup/near-referral-remove-popup.component';
-import {XlmReferrerRemovePopupComponent} from './popup/near-referrer-remove-popup/near-referrer-remove-popup.component';
-import {XlmReferralResendPopupComponent} from './popup/near-referral -resend-popup/near-referral-resend-popup.component';
-import {XlmReferralEditPopupComponent} from './popup/near-referral-edit-popup/near-referral-edit-popup.component';
-import {XlmBalanceStatusPopupComponent} from './popup/near-balance-status-popup/near-balance-status-popup.component';
+import {NearLoanPopupComponent} from './popup/near-loan-popup/near-loan-popup.component';
+import {NearReferralPopupComponent} from './popup/near-referral-popup/near-referral-popup.component';
+import {NearReferralRemovePopupComponent} from './popup/near-referral-remove-popup/near-referral-remove-popup.component';
+import {NearReferrerRemovePopupComponent} from './popup/near-referrer-remove-popup/near-referrer-remove-popup.component';
+import {NearReferralResendPopupComponent} from './popup/near-referral -resend-popup/near-referral-resend-popup.component';
+import {NearReferralEditPopupComponent} from './popup/near-referral-edit-popup/near-referral-edit-popup.component';
+import {NearBalanceStatusPopupComponent} from './popup/near-balance-status-popup/near-balance-status-popup.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { LoaderScreenComponent } from './loader-screen/loader-screen.component';
 import { SwUpdateNotifiyComponent } from './sw-update-notifiy/sw-update-notifiy.component';
@@ -46,17 +46,17 @@ import { ReferralActivityComponent } from './referral-activity/referral-activity
     GeneralNotificationItemComponent,
     RevealSecretKeyPopupComponent,
     ActivateAccountPopupComponent,
-    XlmLoanPopupComponent,
-    XlmReferralPopupComponent,
-    XlmBalanceStatusPopupComponent,
+    NearLoanPopupComponent,
+    NearReferralPopupComponent,
+    NearBalanceStatusPopupComponent,
     LoaderScreenComponent,
     LoaderScreenComponent,
     SwUpdateNotifiyComponent,
     ReferralActivityComponent,
-    XlmReferralRemovePopupComponent,
-    XlmReferrerRemovePopupComponent,
-    XlmReferralResendPopupComponent,
-    XlmReferralEditPopupComponent,
+    NearReferralRemovePopupComponent,
+    NearReferrerRemovePopupComponent,
+    NearReferralResendPopupComponent,
+    NearReferralEditPopupComponent,
   ],
   imports: [
     CommonModule,

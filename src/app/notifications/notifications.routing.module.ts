@@ -1,18 +1,18 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NotificationsComponent} from './notifications.component';
 import {NgModule} from '@angular/core';
-import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
 
 const popupRoutes: Routes = [
   {
     path: 'near-loan',
-    component: XlmLoanPopupComponent,
+    component: NearLoanPopupComponent,
     outlet: 'popup'
   },
   {
     path: 'xml-referral',
-    component: XlmReferralPopupComponent,
+    component: NearReferralPopupComponent,
     outlet: 'popup'
   }
 ];

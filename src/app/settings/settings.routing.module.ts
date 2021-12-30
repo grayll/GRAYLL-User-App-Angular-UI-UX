@@ -18,8 +18,8 @@ import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number
 import {DisableWalletAppNotificationsSettingsComponent} from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
 import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
 import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
-import {XlmLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {XlmReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
+import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
 import {KycPopupComponent} from '../shared/popup/kyc-popup/kyc-popup.component';
 import { KycDocumentUploadInProgressComponent } from '../shared/popup/kyc-document-upload-in-progress/kyc-document-upload-in-progress.component';
 import { KycDocumentUploadSuccessfulComponent } from '../shared/popup/kyc-document-upload-successful/kyc-document-upload-successful.component';
@@ -132,12 +132,12 @@ const popupRoutes: Routes = [
   },
   {
     path: 'near-loan',
-    component: XlmLoanPopupComponent,
+    component: NearLoanPopupComponent,
     outlet: 'popup'
   },
   {
     path: 'xml-referral',
-    component: XlmReferralPopupComponent,
+    component: NearReferralPopupComponent,
     outlet: 'popup'
   },
 ];
