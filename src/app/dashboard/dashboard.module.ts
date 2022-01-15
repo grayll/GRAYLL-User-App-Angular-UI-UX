@@ -14,6 +14,9 @@ import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
 import {PopupModule} from '../shared/popup/popup.module';
 import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
+import {VideoEmbedWindowsComponent} from './video-embed-windows/video-embed-windows.component';
+import {MainBoardComponent} from './main-board/main-board.component';
+import { GgMapModule } from '../shared/gg-map/gg-map.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
     InfoBoxesComponent,
     WalletComponent,
     TradeComponent,
-    HeaderBoxesComponent
+    HeaderBoxesComponent,
+    VideoEmbedWindowsComponent,
+    MainBoardComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,8 @@ import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
     NgbTooltipModule,
     NgbTabsetModule,
     PopupModule,
-    NgxFlagIconCssModule
+    NgxFlagIconCssModule,
+    GgMapModule
   ]
 })
 export class DashboardModule { }

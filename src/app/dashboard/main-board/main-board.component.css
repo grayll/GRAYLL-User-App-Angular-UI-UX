@@ -1,0 +1,11 @@
+:host ::ng-deep .carousel-control-prev-icon {
+  background-image: url('../../../assets/images/left-chevron.png');
+  width: 15px;
+  height: 24px;
+}
+
+:host ::ng-deep .carousel-control-next-icon {
+  background-image: url('../../../assets/images/right-chevron.png');
+  width: 15px;
+  height: 24px;
+}
