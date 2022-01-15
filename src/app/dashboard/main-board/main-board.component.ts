@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-main-board',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainBoardComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(NgbCarousel) carousel: NgbCarousel;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  swipeLeft() {
+    this.carousel.prev();
+  }
+
+  swipeRight() {
+    this.carousel.next();
+  }
 }

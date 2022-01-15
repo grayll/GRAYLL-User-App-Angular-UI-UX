@@ -10,7 +10,7 @@ import {SharedModule} from '../shared/shared.module';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {NgbTabsetModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbTabsetModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import {HeaderBoxesComponent} from './header-boxes/header-boxes.component';
 import {PopupModule} from '../shared/popup/popup.module';
 import {NgxFlagIconCssModule} from 'ngx-flag-icon-css';
@@ -40,7 +40,8 @@ import { GgMapModule } from '../shared/gg-map/gg-map.module';
     NgbTabsetModule,
     PopupModule,
     NgxFlagIconCssModule,
-    GgMapModule
+    GgMapModule,
+    NgbCarouselModule
   ]
 })
 export class DashboardModule { }
