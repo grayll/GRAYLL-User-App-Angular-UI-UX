@@ -3,15 +3,15 @@
     <a class="navbar-brand ml-2" routerLink="/dashboard/overview" alt="DASHBOARD">
       <img src="assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="Logo">
     </a>
-    <button class="btn btn-gold nav-center-button" [routerLink]="[{outlets: {popup: 'xml-referral'}}]" data-intercom-target="Invite Contacts Btn">Invite Contacts</button>
+    <button class="btn btn-gold nav-center-button" [routerLink]="[{outlets: {popup: 'xml-referral'}}]"
+      data-intercom-target="Invite Contacts Btn">Connect Wallet</button>
     <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
-            data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse text-right" id="navbarsDefault">
       <ul class="navbar-nav ml-auto pb-0">
-        <li class="nav-item" data-toggle="tooltip"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed">
+        <li class="nav-item" data-toggle="tooltip" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link" routerLink="/system/overview" alt="DEFI SYSTEM">
             <span class="d-inline d-md-none mr-2">DEFI System</span>
             <fa-icon [icon]="faChartLine" size="lg"></fa-icon>
@@ -20,8 +20,7 @@
             </span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed">
+        <li class="nav-item" data-toggle="tooltip" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link" routerLink="/wallet/overview" alt="WALLET">
             <span class="d-inline d-md-none mr-2">Wallet</span>
             <fa-icon [icon]="faWallet" size="lg"></fa-icon>
@@ -29,14 +28,13 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" routerLink="/data/overview"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a href="javascript:void(0)" class="nav-link" alt="DATA">
             <span class="d-inline d-md-none mr-2">Data</span>
             <fa-icon [icon]="faChartBar" size="lg"></fa-icon>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed">
+        <li class="nav-item" data-toggle="tooltip" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a alt="REFERRAL SYSTEM" class="nav-link" href="javascript:void(0)" routerLink="/referral/overview">
             <span class="d-inline d-md-none mr-2">Referral System</span>
             <fa-icon [icon]="faAt" size="lg"></fa-icon>
@@ -44,7 +42,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" routerLink="/notifications/overview"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed" data-intercom-target="Notifications">
+          (click)="isNavbarCollapsed = !isNavbarCollapsed" data-intercom-target="Notifications">
           <a href="javascript:void(0)" alt="NOTIFICATIONS" class="nav-link">
             <span class="d-inline d-md-none mr-2">Notifications</span>
             <fa-icon [icon]="faBell" size="lg"></fa-icon>
@@ -54,7 +52,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" routerLink="/settings/profile"
-            (click)="isNavbarCollapsed = !isNavbarCollapsed" data-intercom-target="Settings">
+          (click)="isNavbarCollapsed = !isNavbarCollapsed" data-intercom-target="Settings">
           <a href="javascript:void(0)" class="nav-link" alt="SETTINGS">
             <span class="d-inline d-md-none mr-2">Settings</span>
             <fa-icon [icon]="faUser" size="lg"></fa-icon>

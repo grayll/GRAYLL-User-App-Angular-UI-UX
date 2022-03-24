@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "grayll-web",
+    "default": "grayll-dashboard-app",
     "code": "grayll-app-test"
   }
 }
