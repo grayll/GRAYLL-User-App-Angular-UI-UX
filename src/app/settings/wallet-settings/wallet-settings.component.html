@@ -1,16 +1,18 @@
 <div class="card border-0">
-  <div class="card-body bg-white text-purple" data-intercom-target="GRAYLL|NEAR Network Account">
+  <div class="card-body bg-white text-purple" data-intercom-target="GRAYLL|XRP Network Account">
     <div class="row">
       <div class="col">
-        <p class="lead mb-0">GRAYLL | NEAR Network Account</p>
-        <p>Your GRAYLL account holds all your GRQ and NEAR on the NEAR Network.</p>
+        <p class="lead mb-0">GRAYLL | XRP Network Account</p>
+        <p>Your GRAYLL account holds all your GRQ and XRP on the XRP Network.</p>
 
         <p class="lead mb-0"><strong>Federation</strong> Address (Payment Alias)</p>
         <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
         <div class="row">
-          <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-            <input disabled [value]="federationAddress" type="text" class="form-control form-control-no-border bg-transparent text-purple">
+          <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
+            triggers="click:blur">
+            <input disabled [value]="federationAddress" type="text"
+              class="form-control form-control-no-border bg-transparent text-purple">
           </div>
           <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
             <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -19,18 +21,18 @@
 
         <div class="row justify-content-center text-center d-sm-none">
           <div class="col-12 justify-content-center">
-            <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]"
-                    class="btn btn-purple mt-3 mb-2">Edit Federation Address</button>
+            <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]" class="btn btn-purple mt-3 mb-2">Edit
+              Federation Address</button>
           </div>
         </div>
 
         <button [routerLink]="[{outlets: {popup: 'edit-federation-address'}}]"
-                class="btn btn-purple mt-3 mb-2 d-none d-sm-block">Edit Federation Address</button>
+          class="btn btn-purple mt-3 mb-2 d-none d-sm-block">Edit Federation Address</button>
         <p>Changing your GRAYLL alias also changes your network <strong>payment alias</strong>
           (aka your federation address).
           <br>
           You can use this alias, including the <strong>*grayll.io</strong>, instead of your public key
-          <strong>(NEAR Network Wallet Address)</strong> to receive GRQ and NEAR payments on the NEAR Network
+          <strong>(XRP Network Wallet Address)</strong> to receive GRQ and XRP payments on the XRP Network
           to your GRAYLL account wallet.
         </p>
       </div>
@@ -41,18 +43,20 @@
 <div class="row">
   <div class="col-md-6 col-xs-12">
     <div class="card border-0 mb-0 card-with-margin">
-      <div class="card-body bg-white text-purple" data-intercom-target="NEAR Address">
+      <div class="card-body bg-white text-purple" data-intercom-target="XRP Address">
         <div class="row">
           <div class="col">
-            <p class="lead mb-0"><strong>NEAR Address</strong> (Public Key)</p>
-            <p>The NEAR wallet address is the public key associated with this account.</p>
+            <p class="lead mb-0"><strong>XRP Address</strong> (Public Key)</p>
+            <p>The XRP wallet address is the public key associated with this account.</p>
 
             <div class="row">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress" triggers="click:blur">
-                <input disabled [value]="nearAddress" type="text" class="form-control form-control-no-border bg-transparent text-purple">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress"
+                triggers="click:blur">
+                <input disabled [value]="nearAddress" type="text"
+                  class="form-control form-control-no-border bg-transparent text-purple">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
-                <button (click)="copyNEARAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+                <button (click)="copyAddress()" class="btn btn-block btn-yellow">Copy Address</button>
               </div>
             </div>
           </div>
@@ -73,14 +77,16 @@
 
             <div class="row" *ngIf="!isSecretKeyRevealed">
               <button [routerLink]="['/settings/profile', {outlets: {popup: 'reveal-secret-key'}}]"
-                      class="btn btn-block btn-yellow w-auto mx-auto">
+                class="btn btn-block btn-yellow w-auto mx-auto">
                 Reveal Secret Key
               </button>
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
-              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
-                <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-gradient disabled-field">
+              <div class="col-md-7 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
+                triggers="click:blur">
+                <input disabled [value]="secretKey" type="text"
+                  class="form-control form-control-no-border bg-gradient disabled-field">
               </div>
               <div class="col-md-3 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="hideSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>

@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ClipboardService} from 'ngx-clipboard';
-import {SnotifyService} from 'ng-snotify';
-import {SettingsService} from '../settings.service';
-import {SubSink} from 'subsink';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ClipboardService } from 'ngx-clipboard';
+import { SnotifyService } from 'ng-snotify';
+import { SettingsService } from '../settings.service';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-wallet-settings',
@@ -42,9 +42,9 @@ export class WalletSettingsComponent implements OnInit, OnDestroy {
     }
   }
 
-  copyNEARAddress() {
+  copyAddress() {
     if (this.clipboardService.copyFromContent(this.nearAddress)) {
-      this.snotifyService.simple('NEAR address copied.');
+      this.snotifyService.simple('XRP address copied.');
     }
   }
 
@@ -54,10 +54,10 @@ export class WalletSettingsComponent implements OnInit, OnDestroy {
 
   observeRevealSecretKey() {
     this.subscriptions.sink = this.settingsService.observeConfirmAuthority()
-    .subscribe((confirm) => {
-      // Not a secure solution. Please make a request to backend to get the code
-      this.isSecretKeyRevealed = confirm;
-    });
+      .subscribe((confirm) => {
+        // Not a secure solution. Please make a request to backend to get the code
+        this.isSecretKeyRevealed = confirm;
+      });
   }
 
 }

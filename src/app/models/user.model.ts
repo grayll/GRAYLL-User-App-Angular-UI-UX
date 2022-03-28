@@ -4,6 +4,6 @@ export class UserModel {
     public is2FAEnabled?: boolean,
     public isAccountActivated?: boolean,
     public isLoadPaid?: boolean,
-    public NEARBalance?: number
-  ) {}
+    public Balance?: number
+  ) { }
 }

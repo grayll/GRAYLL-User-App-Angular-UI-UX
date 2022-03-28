@@ -1,12 +1,12 @@
-import {RouterModule, Routes} from '@angular/router';
-import {DataComponent} from './data.component';
-import {NgModule} from '@angular/core';
-import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DataComponent } from './data.component';
+import { NgModule } from '@angular/core';
+import { NearLoanPopupComponent } from '../shared/popup/xpr-loan-popup/xpr-loan-popup.component';
+import { NearReferralPopupComponent } from '../shared/popup/xpr-referral-popup/xpr-referral-popup.component';
 
 const popupRoutes: Routes = [
   {
-    path: 'near-loan',
+    path: 'xpr-loan',
     component: NearLoanPopupComponent,
     outlet: 'popup'
   },
@@ -60,4 +60,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(routes)]
 })
-export class DataRoutingModule {}
+export class DataRoutingModule { }

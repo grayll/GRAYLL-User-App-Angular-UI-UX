@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "grayll-dashboard-app",
+    "default": "grayll-xrpl",
     "code": "grayll-app-test"
   }
 }

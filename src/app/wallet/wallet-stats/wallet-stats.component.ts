@@ -6,7 +6,7 @@ import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { SubSink } from 'subsink';
 import { SettingsService } from '../../settings/settings.service';
 import { Router } from '@angular/router';
-import {CustomModalService} from '../../shared/custom-modal.service';
+import { CustomModalService } from '../../shared/custom-modal.service';
 
 @Component({
   selector: 'app-wallet-stats',
@@ -24,19 +24,19 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
   faChartLine = faChartLine;
   federationAddress: string;
   nearAddress: string;
-  totalNEAR: number;
+  totalXRP: number;
   totalGRQ: number;
-  NEARValue: string;
+  XRPValue: string;
   GRQValue: string;
   secretKey: string;
   isSecretKeyRevealed: boolean;
   buyGRQ = {
-    NEARValue: '',
+    XRPValue: '',
     GRQValue: '',
   };
 
   sellGRQ = {
-    NEARValue: '',
+    XRPValue: '',
     GRQValue: '',
   };
 
@@ -54,12 +54,12 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     this.federationAddress = 'grayll3*grayll.io';
     this.nearAddress = 'DKJNSFUIHLJ238OHUIDLFJN23023OHUIFSDKJNS032P3DSKJAFNLSD';
     this.secretKey = 'GBMF3WYPDWQFOXVL2CO6NQPGQZJWLLKSGVTGGV7QPKCZCIQ3PZJGX4OG';
-    this.totalNEAR = 99999999999.99999;
+    this.totalXRP = 99999999999.99999;
     this.totalGRQ = 99999999999.99999;
-    this.NEARValue = null;
+    this.XRPValue = null;
     this.GRQValue = null;
-    this.buyGRQ.NEARValue = buyGRQ && buyGRQ['NEARValue'] ? buyGRQ['NEARValue'] : null;
-    this.sellGRQ.NEARValue = sellGRQ && sellGRQ['NEARValue'] ? sellGRQ['NEARValue'] : null;
+    this.buyGRQ.XRPValue = buyGRQ && buyGRQ['XRPValue'] ? buyGRQ['XRPValue'] : null;
+    this.sellGRQ.XRPValue = sellGRQ && sellGRQ['XRPValue'] ? sellGRQ['XRPValue'] : null;
     this.buyGRQ.GRQValue = buyGRQ && buyGRQ['GRQValue'] ? buyGRQ['GRQValue'] : null;
     this.sellGRQ.GRQValue = sellGRQ && sellGRQ['GRQValue'] ? sellGRQ['GRQValue'] : null;
 
@@ -79,9 +79,9 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
     }
   }
 
-  copyNEARAddress() {
+  copyXRPAddress() {
     if (this.clipboardService.copyFromContent(this.nearAddress)) {
-      this.snotifyService.simple('NEAR address copied.');
+      this.snotifyService.simple(' address copied.');
     }
   }
 
@@ -101,8 +101,8 @@ export class WalletStatsComponent implements OnInit, OnDestroy {
       });
   }
 
-  populateMaxNEAR(obj, prop) {
-    this[obj][prop] = this.totalNEAR.toString();
+  populateMaxXRP(obj, prop) {
+    this[obj][prop] = this.totalXRP.toString();
   }
 
   populateMaxGRQ(obj, prop) {

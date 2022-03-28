@@ -15,9 +15,9 @@ export class WithdrawPopupComponent implements OnInit {
 
   @ViewChild('content') modal;
   withdrawModel: WithdrawModel;
-  totalNEAR: number;
+  total: number;
   totalGRQ: number;
-  NEARValue: string;
+  Value: string;
   GRQValue: string;
   memoMessage: string;
   recipient: string;
@@ -54,9 +54,9 @@ export class WithdrawPopupComponent implements OnInit {
     private errorService: ErrorService
   ) {
     const withdrawData = JSON.parse(localStorage.getItem('withdrawData'));
-    this.totalNEAR = 99999999999.99999;
+    this.total = 99999999999.99999;
     this.totalGRQ = 99999999999.99999;
-    this.NEARValue = withdrawData && withdrawData['NEARValue'] ? withdrawData['NEARValue'] : null;
+    this.Value = withdrawData && withdrawData['Value'] ? withdrawData['Value'] : null;
     this.memoMessage = withdrawData && withdrawData['memoMessage'] ? withdrawData['memoMessage'] : null;
     this.GRQValue = withdrawData && withdrawData['GRQValue'] ? withdrawData['GRQValue'] : null;
     this.recipient = withdrawData && withdrawData['recipient'] ? withdrawData['recipient'] : null;
@@ -83,9 +83,9 @@ export class WithdrawPopupComponent implements OnInit {
     this.onChange(this.GRQValue);
   }
 
-  populateMaxNEAR() {
-    this.NEARValue = this.totalNEAR.toString();
-    this.onChange(this.NEARValue);
+  populateMax() {
+    this.Value = this.total.toString();
+    this.onChange(this.Value);
   }
 
   next() {
@@ -102,7 +102,7 @@ export class WithdrawPopupComponent implements OnInit {
       this.withdrawModel.grqAmount = +this.GRQValue;
       this.withdrawModel.memoMessage = this.memoMessage;
       this.withdrawModel.phoneNumber = this.phoneNumber;
-      this.withdrawModel.nearAmount = +this.NEARValue;
+      this.withdrawModel.nearAmount = +this.Value;
       this.popupService.close()
         .then(() => {
           setTimeout(() => {
@@ -123,7 +123,7 @@ export class WithdrawPopupComponent implements OnInit {
 
   clientValidation(): boolean {
     if (!this.recipient && this.selectedTabId === 'wallet') {
-      this.errorService.handleError(null, 'Please enter a valid NEAR Wallet or Federation Address.');
+      this.errorService.handleError(null, 'Please enter a valid  Wallet or Federation Address.');
       return false;
     }
     if (this.selectedTabId === 'phone' && !this.phoneNumber || (this.phoneNumber && !this.isValidPhoneNumber(this.phoneNumber))) {
@@ -134,7 +134,7 @@ export class WithdrawPopupComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter an email address.');
       return false;
     }
-    if ((!this.GRQValue && !this.NEARValue) || (this.GRQValue && !this.isValidNumber(this.GRQValue))) {
+    if ((!this.GRQValue && !this.Value) || (this.GRQValue && !this.isValidNumber(this.GRQValue))) {
       this.errorService.handleError(null, 'Please enter a valid amount.');
       return false;
     }
@@ -142,12 +142,12 @@ export class WithdrawPopupComponent implements OnInit {
       this.errorService.handleError(null, 'Please enter a memo message.');
       return false;
     }
-    if ((!this.NEARValue && !this.GRQValue) || (this.NEARValue && !this.isValidNumber(this.NEARValue))) {
+    if ((!this.Value && !this.GRQValue) || (this.Value && !this.isValidNumber(this.Value))) {
       this.errorService.handleError(null, 'Please enter a valid amount.');
       return false;
     }
-    if (this.NEARValue && this.GRQValue) {
-      this.errorService.handleError(null, 'Please enter only GRQ or only NEAR value.');
+    if (this.Value && this.GRQValue) {
+      this.errorService.handleError(null, 'Please enter only GRQ or only  value.');
       return false;
     }
     return true;

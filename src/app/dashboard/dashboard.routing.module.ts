@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {DashboardComponent} from './dashboard.component';
-import {ActivateAccountPopupComponent} from '../shared/popup/activate-account/activate-account-popup.component';
-import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
-import {NearBalanceStatusPopupComponent} from '../shared/popup/near-balance-status-popup/near-balance-status-popup.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard.component';
+import { ActivateAccountPopupComponent } from '../shared/popup/activate-account/activate-account-popup.component';
+import { NearLoanPopupComponent } from '../shared/popup/xpr-loan-popup/xpr-loan-popup.component';
+import { NearReferralPopupComponent } from '../shared/popup/xpr-referral-popup/xpr-referral-popup.component';
+import { NearBalanceStatusPopupComponent } from '../shared/popup/xpr-balance-status-popup/xpr-balance-status-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -13,12 +13,12 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'near-loan',
+    path: 'xpr-loan',
     component: NearLoanPopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'near-balance-status',
+    path: 'xpr-balance-status',
     component: NearBalanceStatusPopupComponent,
     outlet: 'popup'
   },

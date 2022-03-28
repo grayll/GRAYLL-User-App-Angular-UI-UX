@@ -14,8 +14,9 @@
             <span class="text-purple font-16">Wallet Balance</span>
             <h5 class="text-purple font-weight-bolder mb-0">$100,000,000,000.00</h5>
             <small>
-              <a href="javascript:void(0)" class="purple-link" [routerLink]="[{outlets: {popup: 'near-balance-status'}}]">
-                1.50 NEAR Reserved ($0.11381)
+              <a href="javascript:void(0)" class="purple-link"
+                [routerLink]="[{outlets: {popup: 'xpr-balance-status'}}]">
+                1.50 XRP Reserved ($0.11381)
               </a>
             </small>
           </div>
@@ -36,7 +37,7 @@
             <i class="text-sky font-16">
               <fa-icon [icon]="faCircle"></fa-icon>
             </i>
-            <span class="font-16"> 75% NEAR</span>
+            <span class="font-16"> 75% XRP</span>
             <br>
             <h5 class="mb-0 p-font">
               $1,000,000,000.00
@@ -52,7 +53,7 @@
             <i class="text-pink2 font-14 ml-3">
               <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
             </i>
-            
+
             <br>
             <h5 class="p-font">
               $1,000,000,000.00
@@ -69,13 +70,15 @@
             </h5>
           </div>
         </div>
-   
+
         <div class="row">
           <div class="col-6">
-            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple" (click)="goToTop()" data-intercom-target="Deposit Btn">Deposit</button>
+            <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple" (click)="goToTop()"
+              data-intercom-target="Deposit Btn">Deposit</button>
           </div>
           <div class="col-6 text-right">
-            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple" (click)="goToTop()" data-intercom-target="Withdraw Btn">Withdraw</button>
+            <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple" (click)="goToTop()"
+              data-intercom-target="Withdraw Btn">Withdraw</button>
           </div>
         </div>
 
@@ -130,9 +133,10 @@
               <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                  <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-purple"
-                    style="border-left: 1px solid white">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
+                  triggers="click:blur">
+                  <input disabled [value]="federationAddress" type="text"
+                    class="form-control bg-transparent text-purple" style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -141,17 +145,18 @@
             </div>
 
             <br>
-            <div data-intercom-target="NEAR Address">
-              <p class="lead mb-0">NEAR Address (Public Key)</p>
-              <p>The NEAR wallet address is the public key associated with this account.</p>
+            <div data-intercom-target="XRP Address">
+              <p class="lead mb-0">XRP Address (Public Key)</p>
+              <p>The XRP wallet address is the public key associated with this account.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress" triggers="click:blur">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress"
+                  triggers="click:blur">
                   <input disabled [value]="nearAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <button (click)="copyNEARAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+                  <button (click)="copyXRPAddress()" class="btn btn-block btn-yellow">Copy Address</button>
                 </div>
               </div>
             </div>
@@ -169,8 +174,11 @@
             </div>
 
             <div class="row" *ngIf="isSecretKeyRevealed">
-              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
-                <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-transparent text-light" style="border-left: 1px solid white">
+              <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
+                triggers="click:blur">
+                <input disabled [value]="secretKey" type="text"
+                  class="form-control form-control-no-border bg-transparent text-light"
+                  style="border-left: 1px solid white">
               </div>
               <div class="col-md-6 col-sm-12 mt-xs-4 mt-xs-4">
                 <button (click)="hideSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
@@ -193,403 +201,459 @@
             <p class="lead mb-0">Trade</p>
           </div>
           <div class="col text-right text-purple" style="margin-top: -4px;">
-              <div (click)="openModal('unread-gry-notifications')"
-                   style="outline:0!important">
-                <a href="javascript:void(0)" class="navy-link mt-1">
-                  <fa-icon [icon]="faBell" size="lg"></fa-icon>
-                  <span class="badge bg-yellow text-light badge-number">
-                    3
-                  </span>
-                </a>
-              </div>
+            <div (click)="openModal('unread-gry-notifications')" style="outline:0!important">
+              <a href="javascript:void(0)" class="navy-link mt-1">
+                <fa-icon [icon]="faBell" size="lg"></fa-icon>
+                <span class="badge bg-yellow text-light badge-number">
+                  3
+                </span>
+              </a>
             </div>
+          </div>
         </div>
-       
+
         <ngb-tabset type="pills" class="custom-pills">
-          <ngb-tab title="GRQ | NEAR">
+          <ngb-tab title="GRQ | XRP">
             <ng-template ngbTabContent>
-                <ngb-tabset type="pills" class="custom-pills">
-                    <ngb-tab title="Buy">
-                      <ng-template ngbTabContent>
-                        <form class="mt-2">
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ Amount"
-                                name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                            </div>
+              <ngb-tabset type="pills" class="custom-pills">
+                <ngb-tab title="Buy">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group float-right mb-0">
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                            (input)="onChangeBuy('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/USD Price">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ/USD Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp" alt="XRP Logo">
+                            </span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                </span>
-                              </div>
-                              <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                placeholder="NEAR Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                            </div>
+                          <input [value]="XRPValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                            (input)="onChangeBuy('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                              <div class="input-group-prepend">
-                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy
+                            GRQ</button>
+                        </div>
+                        <div class="col" data-intercom-target="Max Available XML">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                            Max Available XRP: {{totalXRP}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Sell">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group row">
-                            <div class="col">
-                              <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy GRQ</button>
-                            </div>
-                            <div class="col" data-intercom-target="Max Available XML">
-                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                Max Available NEAR: {{totalNEAR}}
-                              </a>
-                            </div>
+                          <input [value]="GRQValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                            (input)="onChangeSell('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                        </form>
-                      </ng-template>
-                    </ngb-tab>
-                    <ngb-tab title="Sell">
-                      <ng-template ngbTabContent>
-                        <form class="mt-2">
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ/USD Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp" alt="XRP Logo">
+                            </span>
                           </div>
-                          <div class="form-group float-right mb-0">
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                            (input)="onChangeSell('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/USD Price">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR Value"
-                                name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col">
-                              <button type="button" class="text-light btn btn-purple">Sell GRQ</button>
-                            </div>
-                            <div class="col">
-                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                Max Available GRQ: {{totalGRQ}}
-                              </a>
-                            </div>
-                          </div>
-                        </form>
-                      </ng-template>
-                    </ngb-tab>
-                  </ngb-tabset>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple">Sell GRQ</button>
+                        </div>
+                        <div class="col">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                            Max Available GRQ: {{totalGRQ}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+              </ngb-tabset>
             </ng-template>
           </ngb-tab>
-          <ngb-tab title="NEAR | UST">
-              <ng-template ngbTabContent>
-                  <ngb-tabset type="pills" class="custom-pills">
-                      <ngb-tab title="Buy">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="UST Amount"
-                                  name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                              </div>
-                            </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR/UST Price">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                  </span>
-                                </div>
-                                <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="NEAR Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy UST</button>
-                              </div>
-                              <div class="col" data-intercom-target="Max Available XML">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                  Max Available NEAR: {{totalNEAR}}
-                                </a>
-                              </div>
-                            </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                      <ngb-tab title="Sell">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="UST Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                              </div>
-                            </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR/UST Price">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR Value"
-                                  name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple">Sell UST</button>
-                              </div>
-                              <div class="col">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                  Max Available UST: {{totalGRQ}}
-                                </a>
-                              </div>
-                            </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                    </ngb-tabset>
-              </ng-template>
+          <ngb-tab title="XRP | UST">
+            <ng-template ngbTabContent>
+              <ngb-tabset type="pills" class="custom-pills">
+                <ngb-tab title="Buy">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="UST Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                            (input)="onChangeBuy('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP/UST Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp" alt="XRP Logo">
+                            </span>
+                          </div>
+                          <input [value]="XRPValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                            (input)="onChangeBuy('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy
+                            UST</button>
+                        </div>
+                        <div class="col" data-intercom-target="Max Available XML">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                            Max Available XRP: {{totalXRP}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Sell">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input [value]="GRQValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="UST Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                            (input)="onChangeSell('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP/UST Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp" alt="XRP Logo">
+                            </span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="XRP Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                            (input)="onChangeSell('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                          </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple">Sell UST</button>
+                        </div>
+                        <div class="col">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                            Max Available UST: {{totalGRQ}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+              </ngb-tabset>
+            </ng-template>
           </ngb-tab>
           <ngb-tab>
             <ng-template ngbTabTitle>
               <span class="position-relative">
-                  GRQ | GRY
-                  <fa-icon [icon]="faInfo" class="purple-yellow information-icon font-14 pl-1"></fa-icon>
+                GRQ | GRY
+                <fa-icon [icon]="faInfo" class="purple-yellow information-icon font-14 pl-1"></fa-icon>
               </span>
             </ng-template>
             <ng-template ngbTabContent>
-                <ngb-tabset type="pills" class="custom-pills">
-                    <ngb-tab title="Buy">
-                      <ng-template ngbTabContent>
-                        <form class="mt-2">
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRY Amount"
-                                name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                            </div>
+              <ngb-tabset type="pills" class="custom-pills">
+                <ngb-tab title="Buy">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group float-right mb-0">
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRY Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                            (input)="onChangeBuy('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/GRY Price">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ/GRY Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                placeholder="GRQ Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                            </div>
+                          <input [value]="XRPValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                            (input)="onChangeBuy('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                              <div class="input-group-prepend">
-                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy
+                            GRY</button>
+                        </div>
+                        <div class="col" data-intercom-target="Max Available XML">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                            Max Available GRQ: {{totalXRP}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Sell">
+                  <ng-template ngbTabContent>
+                    <form class="mt-2">
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group row">
-                            <div class="col">
-                              <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy GRY</button>
-                            </div>
-                            <div class="col" data-intercom-target="Max Available XML">
-                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                Max Available GRQ: {{totalNEAR}}
-                              </a>
-                            </div>
+                          <input [value]="GRQValue" type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRY Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                            (input)="onChangeSell('GRQValue')">
+                        </div>
+                      </div>
+                      <div class="form-group float-right mb-0">
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                        <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                        </form>
-                      </ng-template>
-                    </ngb-tab>
-                    <ngb-tab title="Sell">
-                      <ng-template ngbTabContent>
-                        <form class="mt-2">
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                placeholder="GRY Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                            </div>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ/GRY Price">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-purple">
+                              <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                            </span>
                           </div>
-                          <div class="form-group float-right mb-0">
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                            <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="GRQ Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                            (input)="onChangeSell('XRPValue')">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-lg fixed-input-height">
+                          <div class="input-group-prepend">
+                            <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                           </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/GRY Price">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text bg-purple">
-                                  <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                </span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ Value"
-                                name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group input-group-lg fixed-input-height">
-                              <div class="input-group-prepend">
-                                <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                              </div>
-                              <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col">
-                              <button type="button" class="text-light btn btn-purple">Sell GRY</button>
-                            </div>
-                            <div class="col">
-                              <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                Max Available GRY: {{totalGRQ}}
-                              </a>
-                            </div>
-                          </div>
-                        </form>
-                      </ng-template>
-                    </ngb-tab>
-                  </ngb-tabset>
+                          <input type="text"
+                            class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                            placeholder="USD Value">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col">
+                          <button type="button" class="text-light btn btn-purple">Sell GRY</button>
+                        </div>
+                        <div class="col">
+                          <a class="purple-link" href="javascript:void(0)"
+                            (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                            Max Available GRY: {{totalGRQ}}
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </ng-template>
+                </ngb-tab>
+              </ngb-tabset>
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
-       
+
       </div>
     </div>
   </div>
@@ -627,7 +691,7 @@
               <i class="text-sky font-16">
                 <fa-icon [icon]="faCircle"></fa-icon>
               </i>
-              <span class="font-16"> 75% NEAR</span>
+              <span class="font-16"> 75% XRP</span>
               <br>
               <h5 class="mb-0 p-font">
                 $1,000,000,000.00
@@ -643,7 +707,7 @@
               <i class="text-pink2 font-14 ml-3">
                 <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
               </i>
-              
+
               <br>
               <h5 class="p-font">
                 $1,000,000,000.00
@@ -663,10 +727,12 @@
 
           <div class="row mb-5 mt-3">
             <div class="col-6">
-              <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple" (click)="goToTop()">Deposit</button>
+              <button [routerLink]="[{outlets: {popup: 'deposit'}}]" class="btn btn-purple"
+                (click)="goToTop()">Deposit</button>
             </div>
             <div class="col-6 text-right">
-              <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple" (click)="goToTop()">Withdraw</button>
+              <button [routerLink]="[{outlets: {popup: 'withdraw'}}]" class="btn btn-purple"
+                (click)="goToTop()">Withdraw</button>
             </div>
           </div>
 
@@ -718,9 +784,10 @@
               <p>Your federation address is your payment alias so people can send you assets more easily.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress" triggers="click:blur">
-                  <input disabled [value]="federationAddress" type="text" class="form-control bg-transparent text-purple"
-                    style="border-left: 1px solid white">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="federationAddress"
+                  triggers="click:blur">
+                  <input disabled [value]="federationAddress" type="text"
+                    class="form-control bg-transparent text-purple" style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <button (click)="copyFederationAddress()" class="btn btn-block btn-yellow">Copy Address</button>
@@ -729,16 +796,17 @@
 
               <br>
 
-              <p class="lead mb-0">NEAR Address (Public Key)</p>
-              <p>The NEAR wallet address is the public key associated with this account.</p>
+              <p class="lead mb-0">XRP Address (Public Key)</p>
+              <p>The XRP wallet address is the public key associated with this account.</p>
 
               <div class="row">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress" triggers="click:blur">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="nearAddress"
+                  triggers="click:blur">
                   <input disabled [value]="nearAddress" type="text" class="form-control bg-transparent text-purple"
                     style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <button (click)="copyNEARAddress()" class="btn btn-block btn-yellow">Copy Address</button>
+                  <button (click)="copyXRPAddress()" class="btn btn-block btn-yellow">Copy Address</button>
                 </div>
               </div>
 
@@ -753,8 +821,11 @@
               </div>
 
               <div class="row" *ngIf="isSecretKeyRevealed">
-                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
-                  <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-transparent text-purple" style="border-left: 1px solid white">
+                <div class="col-md-6 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
+                  triggers="click:blur">
+                  <input disabled [value]="secretKey" type="text"
+                    class="form-control form-control-no-border bg-transparent text-purple"
+                    style="border-left: 1px solid white">
                 </div>
                 <div class="col-md-6 col-sm-12 mt-xs-4 mt-xs-4">
                   <button (click)="hideSecretKey()" class="btn btn-block btn-yellow">Hide Secret Key</button>
@@ -777,381 +848,445 @@
             </div>
           </div>
           <ngb-tabset type="pills" class="custom-pills">
-            <ngb-tab title="GRQ | NEAR">
+            <ngb-tab title="GRQ | XRP">
               <ng-template ngbTabContent>
-                  <ngb-tabset type="pills" class="custom-pills">
-                      <ngb-tab title="Buy">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ Amount"
-                                  name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                              </div>
+                <ngb-tabset type="pills" class="custom-pills">
+                  <ngb-tab title="Buy">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                              (input)="onChangeBuy('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height"
+                            data-intercom-target="GRQ/USD Price">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/USD Price">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ/USD Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp"
+                                  alt="XRP Logo">
+                              </span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                  </span>
-                                </div>
-                                <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="NEAR Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                              </div>
+                            <input [value]="XRPValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                              (input)="onChangeBuy('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple"
+                              data-intercom-target="Buy GRQ Btn">Buy GRQ</button>
+                          </div>
+                          <div class="col" data-intercom-target="Max Available XML">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                              Max Available XRP: {{totalXRP}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Sell">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy GRQ</button>
-                              </div>
-                              <div class="col" data-intercom-target="Max Available XML">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                  Max Available NEAR: {{totalNEAR}}
-                                </a>
-                              </div>
+                            <input [value]="GRQValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                              (input)="onChangeSell('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                      <ngb-tab title="Sell">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="GRQ Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ/USD Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp"
+                                  alt="XRP Logo">
+                              </span>
                             </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                              (input)="onChangeSell('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/USD Price">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR Value"
-                                  name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple">Sell GRQ</button>
-                              </div>
-                              <div class="col">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                  Max Available GRQ: {{totalGRQ}}
-                                </a>
-                              </div>
-                            </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                    </ngb-tabset>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple">Sell GRQ</button>
+                          </div>
+                          <div class="col">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                              Max Available GRQ: {{totalGRQ}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
               </ng-template>
             </ngb-tab>
-            <ngb-tab title="NEAR | UST">
-                <ng-template ngbTabContent>
-                    <ngb-tabset type="pills" class="custom-pills">
-                        <ngb-tab title="Buy">
-                          <ng-template ngbTabContent>
-                            <form class="mt-2">
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="UST Amount"
-                                    name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                                </div>
-                              </div>
-                              <div class="form-group float-right mb-0">
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR/UST Price">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text bg-purple">
-                                      <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                    </span>
-                                  </div>
-                                  <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                    placeholder="NEAR Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <div class="col">
-                                  <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy UST</button>
-                                </div>
-                                <div class="col" data-intercom-target="Max Available XML">
-                                  <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                    Max Available NEAR: {{totalNEAR}}
-                                  </a>
-                                </div>
-                              </div>
-                            </form>
-                          </ng-template>
-                        </ngb-tab>
-                        <ngb-tab title="Sell">
-                          <ng-template ngbTabContent>
-                            <form class="mt-2">
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                    placeholder="UST Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                                </div>
-                              </div>
-                              <div class="form-group float-right mb-0">
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                                <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR/UST Price">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text bg-purple">
-                                      <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
-                                    </span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="NEAR Value"
-                                    name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="input-group input-group-lg fixed-input-height">
-                                  <div class="input-group-prepend">
-                                    <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                  </div>
-                                  <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <div class="col">
-                                  <button type="button" class="text-light btn btn-purple">Sell UST</button>
-                                </div>
-                                <div class="col">
-                                  <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                    Max Available UST: {{totalGRQ}}
-                                  </a>
-                                </div>
-                              </div>
-                            </form>
-                          </ng-template>
-                        </ngb-tab>
-                      </ngb-tabset>
-                </ng-template>
-              </ngb-tab>
-            <ngb-tab title="GRQ | GRY" class="position-relative">
-                <fa-icon [icon]="faInfo" class="purple-link cancel information-icon"></fa-icon>
+            <ngb-tab title="XRP | UST">
               <ng-template ngbTabContent>
-                  <ngb-tabset type="pills" class="custom-pills">
-                      <ngb-tab title="Buy">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRY Amount"
-                                  name="GRQValue" [(ngModel)]="buyGRQ.GRQValue" (input)="onChangeBuy('GRQValue')">
-                              </div>
+                <ngb-tabset type="pills" class="custom-pills">
+                  <ngb-tab title="Buy">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="UST Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                              (input)="onChangeBuy('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height"
+                            data-intercom-target="GRQ/USD Price">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ/USD Price">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/GRY Price">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP/UST Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp"
+                                  alt="XRP Logo">
+                              </span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input [value]="NEARValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="GRQ Value" name="NEARValue" [(ngModel)]="buyGRQ.NEARValue" (input)="onChangeBuy('NEARValue')">
-                              </div>
+                            <input [value]="XRPValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                              (input)="onChangeBuy('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple"
+                              data-intercom-target="Buy GRQ Btn">Buy UST</button>
+                          </div>
+                          <div class="col" data-intercom-target="Max Available XML">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                              Max Available XRP: {{totalXRP}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Sell">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple" data-intercom-target="Buy GRQ Btn">Buy GRY</button>
-                              </div>
-                              <div class="col" data-intercom-target="Max Available XML">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxNEAR('buyGRQ','NEARValue')">
-                                  Max Available GRQ: {{totalNEAR}}
-                                </a>
-                              </div>
+                            <input [value]="GRQValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="UST Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                              (input)="onChangeSell('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                      <ngb-tab title="Sell">
-                        <ng-template ngbTabContent>
-                          <form class="mt-2">
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input [value]="GRQValue" type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                                  placeholder="GRY Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue" (input)="onChangeSell('GRQValue')">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP/UST Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/848px-XRP_Logo.svg.webp"
+                                  alt="XRP Logo">
+                              </span>
                             </div>
-                            <div class="form-group float-right mb-0">
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
-                              <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="XRP Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                              (input)="onChangeSell('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ/GRY Price">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple">Sell UST</button>
+                          </div>
+                          <div class="col">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                              Max Available UST: {{totalGRQ}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="GRQ | GRY" class="position-relative">
+              <fa-icon [icon]="faInfo" class="purple-link cancel information-icon"></fa-icon>
+              <ng-template ngbTabContent>
+                <ngb-tabset type="pills" class="custom-pills">
+                  <ngb-tab title="Buy">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="GRQ Amount">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text bg-purple">
-                                    <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
-                                  </span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="GRQ Value"
-                                  name="NEARValue" [(ngModel)]="sellGRQ.NEARValue" (input)="onChangeSell('NEARValue')">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRY Amount" name="GRQValue" [(ngModel)]="buyGRQ.GRQValue"
+                              (input)="onChangeBuy('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height"
+                            data-intercom-target="GRQ/USD Price">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group">
-                              <div class="input-group input-group-lg fixed-input-height">
-                                <div class="input-group-prepend">
-                                  <span class="text-light input-group-text bg-purple dollar-padding">$</span>
-                                </div>
-                                <input type="text" class="fixed-input-height text-light form-control form-control-no-border bg-purple" placeholder="USD Value">
-                              </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ/GRY Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="XML Value">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
                             </div>
-                            <div class="form-group row">
-                              <div class="col">
-                                <button type="button" class="text-light btn btn-purple">Sell GRY</button>
-                              </div>
-                              <div class="col">
-                                <a class="purple-link" href="javascript:void(0)" (click)="populateMaxGRQ('sellGRQ','GRQValue')">
-                                  Max Available GRY: {{totalGRQ}}
-                                </a>
-                              </div>
+                            <input [value]="XRPValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ Value" name="XRPValue" [(ngModel)]="buyGRQ.XRPValue"
+                              (input)="onChangeBuy('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height" data-intercom-target="USD Value">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
                             </div>
-                          </form>
-                        </ng-template>
-                      </ngb-tab>
-                    </ngb-tabset>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple"
+                              data-intercom-target="Buy GRQ Btn">Buy GRY</button>
+                          </div>
+                          <div class="col" data-intercom-target="Max Available XML">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxXRP('buyGRQ','XRPValue')">
+                              Max Available GRQ: {{totalXRP}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="Sell">
+                    <ng-template ngbTabContent>
+                      <form class="mt-2">
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
+                            </div>
+                            <input [value]="GRQValue" type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRY Amount" name="GRQValue" [(ngModel)]="sellGRQ.GRQValue"
+                              (input)="onChangeSell('GRQValue')">
+                          </div>
+                        </div>
+                        <div class="form-group float-right mb-0">
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Ask</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Bid</a>
+                          <a class="mr-1 purple-link" href="javascript:void(0)">Last</a>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
+                            </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ/GRY Price">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text bg-purple">
+                                <img class="small-grayll-icon" src="assets/images/logo.png" alt="GRAYYL Logo">
+                              </span>
+                            </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="GRQ Value" name="XRPValue" [(ngModel)]="sellGRQ.XRPValue"
+                              (input)="onChangeSell('XRPValue')">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-lg fixed-input-height">
+                            <div class="input-group-prepend">
+                              <span class="text-light input-group-text bg-purple dollar-padding">$</span>
+                            </div>
+                            <input type="text"
+                              class="fixed-input-height text-light form-control form-control-no-border bg-purple"
+                              placeholder="USD Value">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col">
+                            <button type="button" class="text-light btn btn-purple">Sell GRY</button>
+                          </div>
+                          <div class="col">
+                            <a class="purple-link" href="javascript:void(0)"
+                              (click)="populateMaxGRQ('sellGRQ','GRQValue')">
+                              Max Available GRY: {{totalGRQ}}
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
               </ng-template>
             </ngb-tab>
           </ngb-tabset>

@@ -1,26 +1,26 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {SettingsComponent} from './settings.component';
-import {GoogleAuthenticatorComponent} from './security/two-FA-enable/google-authenticator/google-authenticator.component';
-import {ScanQrCodeTwoFaComponent} from './security/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
-import {SaveBackupKeyTwoFaComponent} from './security/two-FA-enable/save-backup-key-two-fa/save-backup-key-two-fa.component';
-import {EnableTwoFaLastStepComponent} from './security/two-FA-enable/enable-two-fa-last-step/enable-two-fa-last-step.component';
-import {DisableTwoFaComponent} from './security/two-FA-enable/disable-two-fa/disable-two-fa.component';
-import {DisableMultisignatureComponent} from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
-import {EnableMultisignatureComponent} from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
-import {DisableWalletNotificationsSettingsComponent} from './notifications-settings/disable-wallet-email-notifications-settings/disable-wallet-notifications-settings.component';
-import {DisableAlgoNotificationsSettingsComponent} from './notifications-settings/disable-algo-email-notifications-settings/disable-algo-notifications-settings.component';
-import {EditFederationAddressComponent} from './edit-federation-address/edit-federation-address.component';
-import {ChangePasswordComponent} from './profile-settings/change-password/change-password.component';
-import {ChangeEmailAddressComponent} from './profile-settings/change-email-address/change-email-address.component';
-import {ChangePhoneNumberComponent} from './profile-settings/change-phone-number/change-phone-number.component';
-import {VerifyPhoneNumberComponent} from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
-import {DisableWalletAppNotificationsSettingsComponent} from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
-import {DisableAlgoAppNotificationsSettingsComponent} from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
-import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
-import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
-import {KycPopupComponent} from '../shared/popup/kyc-popup/kyc-popup.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { SettingsComponent } from './settings.component';
+import { GoogleAuthenticatorComponent } from './security/two-FA-enable/google-authenticator/google-authenticator.component';
+import { ScanQrCodeTwoFaComponent } from './security/two-FA-enable/scan-qr-code-two-fa/scan-qr-code-two-fa.component';
+import { SaveBackupKeyTwoFaComponent } from './security/two-FA-enable/save-backup-key-two-fa/save-backup-key-two-fa.component';
+import { EnableTwoFaLastStepComponent } from './security/two-FA-enable/enable-two-fa-last-step/enable-two-fa-last-step.component';
+import { DisableTwoFaComponent } from './security/two-FA-enable/disable-two-fa/disable-two-fa.component';
+import { DisableMultisignatureComponent } from './security/multisignature-transactions/disable-multisignature/disable-multisignature.component';
+import { EnableMultisignatureComponent } from './security/multisignature-transactions/enable-multisignature/enable-multisignature.component';
+import { DisableWalletNotificationsSettingsComponent } from './notifications-settings/disable-wallet-email-notifications-settings/disable-wallet-notifications-settings.component';
+import { DisableAlgoNotificationsSettingsComponent } from './notifications-settings/disable-algo-email-notifications-settings/disable-algo-notifications-settings.component';
+import { EditFederationAddressComponent } from './edit-federation-address/edit-federation-address.component';
+import { ChangePasswordComponent } from './profile-settings/change-password/change-password.component';
+import { ChangeEmailAddressComponent } from './profile-settings/change-email-address/change-email-address.component';
+import { ChangePhoneNumberComponent } from './profile-settings/change-phone-number/change-phone-number.component';
+import { VerifyPhoneNumberComponent } from './profile-settings/change-phone-number/verify-phone-number/verify-phone-number.component';
+import { DisableWalletAppNotificationsSettingsComponent } from './notifications-settings/disable-wallet-app-notifications-settings/disable-wallet-app-notifications-settings.component';
+import { DisableAlgoAppNotificationsSettingsComponent } from './notifications-settings/disable-algo-app-notifications-settings/disable-algo-app-notifications-settings.component';
+import { RevealSecretKeyPopupComponent } from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
+import { NearLoanPopupComponent } from '../shared/popup/xpr-loan-popup/xpr-loan-popup.component';
+import { NearReferralPopupComponent } from '../shared/popup/xpr-referral-popup/xpr-referral-popup.component';
+import { KycPopupComponent } from '../shared/popup/kyc-popup/kyc-popup.component';
 import { KycDocumentUploadInProgressComponent } from '../shared/popup/kyc-document-upload-in-progress/kyc-document-upload-in-progress.component';
 import { KycDocumentUploadSuccessfulComponent } from '../shared/popup/kyc-document-upload-successful/kyc-document-upload-successful.component';
 import { KycDocumentUploadUnsuccessfulComponent } from '../shared/popup/kyc-document-upload-unsuccessful/kyc-document-upload-unsuccessful.component';
@@ -131,7 +131,7 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'near-loan',
+    path: 'xpr-loan',
     component: NearLoanPopupComponent,
     outlet: 'popup'
   },
@@ -156,4 +156,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(routes)]
 })
-export class SettingsRoutingModule {}
+export class SettingsRoutingModule { }

@@ -10,9 +10,9 @@
         <div class="alert justify-content-between alert-warning d-lg-none loan-unpaid-mobile" role="alert">
           <div style="display: inline;">
             <fa-icon [icon]="faWarning" class="text-purple" [fixedWidth]="true"></fa-icon>
-            Please click the button "Pay Off Loan" to return the 1.50 NEAR loan to GRAYLL.
+            Invite your contacts & earn referral revenue from their profits.
           </div>
-          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'near-loan'}}]">Pay Off Loan</button>
+          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xpr-loan'}}]">Invite Contacts</button>
         </div>
 
         <h4 class="text-light pb-1 page-title">
@@ -23,9 +23,9 @@
         <div class="alert alert-warning loan-unpaid justify-content-between d-none d-lg-flex" role="alert">
           <div style="display: inline;">
             <fa-icon [icon]="faWarning" class="text-purple" [fixedWidth]="true"></fa-icon>
-            Please click the button "Pay Off Loan" to return the 1.50 NEAR loan to GRAYLL.
+            Invite your contacts & earn referral revenue from their profits.
           </div>
-          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'near-loan'}}]">Pay Off Loan</button>
+          <button class="btn btn-purple" [routerLink]="[{outlets: {popup: 'xpr-loan'}}]">Invite Contacts</button>
         </div>
       </div>
 
@@ -44,7 +44,8 @@
       <app-main-chart></app-main-chart>
 
       <!-- Bottom table -->
-      <app-activity [showCompletedOrdersLink]="true" [activeTabId]="activeTabId" data-intercom-target="Activity"></app-activity>
+      <app-activity [showCompletedOrdersLink]="true" [activeTabId]="activeTabId" data-intercom-target="Activity">
+      </app-activity>
     </div>
   </div>
 </div>

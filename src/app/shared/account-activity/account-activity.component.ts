@@ -85,7 +85,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         }
       });
 
-      this.addDataInFirebase(); 
+    this.addDataInFirebase();
 
     this.openOrders$ = this.accountActivityService.orders.subscribe(res => {
       this.openOrders = [...res];
@@ -115,36 +115,36 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '0.1450'
     );
 
-    for( var i=0; i<=10; i++){
+    for (var i = 0; i <= 10; i++) {
       this.accountActivityService.addOrder({ ...mockup });
     }
-   
+
     mockup = new TransfersModel(
       2,
       '06/08/2019 18:29',
       'sdf3W...JGX4OG',
-      'NEAR',
-      'NEAR',
+      'XRP',
+      'XRP',
       '-39,333,999,999,999.22222'
     );
 
-    for( var i=0; i<=10; i++){
+    for (var i = 0; i <= 10; i++) {
       this.accountActivityService.addTransfer({ ...mockup });
     }
-  
+
     mockup = new NetworkHistoryModel(
       '0109281408618385411',
       '06/08/2019 20:01',
       'Debited',
       '-15.7650428',
-      'NEAR',
+      'XRP',
       null
     );
 
-    for( var i=0; i<=10; i++){
+    for (var i = 0; i <= 10; i++) {
       this.accountActivityService.addNetworkHistory({ ...mockup });
     }
-  
+
   }
 
   private populateOpenOrders() {
@@ -205,7 +205,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       '05/08/2019 20:01',
       'Credited',
       '+15.6850428',
-      'NEAR',
+      'XRP',
       'GBMF3W...JGX4OG23'
     );
     this.networkHistories.push(mockup);
@@ -225,8 +225,8 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
       1,
       '05/08/2019 18:29',
       'GBMF3W...JGX4OG',
-      'NEAR',
-      'NEAR',
+      'XRP',
+      'XRP',
       '-29,999,999,999,999.22222'
     );
     this.transfers.push(mockup);
@@ -300,7 +300,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Info'
       ];
       return this.networkHistories.map(el => {
-        let mock = { ...el, info: 'https://near.expert/explorer/public' };
+        let mock = { ...el, info: 'https://xpr.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
@@ -315,7 +315,7 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Info'
       ];
       return this.transfers.map(el => {
-        let mock = { ...el, info: 'https://near.expert/explorer/public' };
+        let mock = { ...el, info: 'https://xpr.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
@@ -328,10 +328,10 @@ export class AccountActivityComponent implements OnInit, OnDestroy {
         'Issuer',
         'Amount',
         'Filled',
-        'Price (NEAR)',
+        'Price (XRP)',
         'Price (USD)',
         'Total Price (USD)',
-        'Total Price (NEAR)'
+        'Total Price (XRP)'
       ];
       return this.openOrders.map(el => {
         let mock = { ...el };

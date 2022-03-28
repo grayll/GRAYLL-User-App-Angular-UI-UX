@@ -1,22 +1,21 @@
 <ng-template #content let-modal>
-  <app-popup-header
-    [hideCloseButton]="hideCloseButton"
-    [onCloseRedirectTo]="onCloseRedirectTo"
-    popupHeaderTitle="Account Activation | 1.50 NEAR Loan">
+  <app-popup-header [hideCloseButton]="hideCloseButton" [onCloseRedirectTo]="onCloseRedirectTo"
+    popupHeaderTitle="Account Activation | 1.50 XRP Loan">
   </app-popup-header>
   <div class="modal-body">
     <app-error></app-error>
     <div class="row mb-1" *ngIf="!success && !error && firstPopup">
       <div class="col-12 text-center">
         <p class="text-purple">
-          All active NEAR Network Accounts must maintain a minimum balance of NEAR, which will be reserved by the NEAR Network.
+          All active XRP Network Accounts must maintain a minimum balance of XRP, which will be reserved by the XRP
+          Network.
         </p>
         <p class="text-purple">
-          To provide you with an integrated and efficient service, GRAYLL will lend you 1.50 NEAR
-          to create your active NEAR Network account for GRAYLL.
+          To provide you with an integrated and efficient service, GRAYLL will lend you 1.50 XRP
+          to create your active XRP Network account for GRAYLL.
         </p>
         <p class="text-purple font-weight-bolder">
-          You will need to return the 1.50 NEAR loan within 60 days by depositing NEAR to your GRAYLL App account.
+          You will need to return the 1.50 XRP loan within 60 days by depositing XRP to your GRAYLL App account.
         </p>
         <p class="text-purple">
           Certain features or functions may not be available until the loan has been settled.
@@ -24,7 +23,7 @@
           timely notifications to remind you of the loan status.
         </p>
         <input type="text" class="form-control mx-auto w-75 purple-input" [(ngModel)]="password"
-               placeholder="Re-Enter Your Sign Up Password">
+          placeholder="Re-Enter Your Sign Up Password">
       </div>
     </div>
 
@@ -47,12 +46,14 @@
       <div class="row mb-1">
         <div class="col-12 text-center">
           <p class="text-purple">
-            Please save your Secret Key and Seed to recover your account.<br> You should never share your Secret Key or Seed. <br>
+            Please save your Secret Key and Seed to recover your account.<br> You should never share your Secret Key or
+            Seed. <br>
             Anyone that has this information, has access to your account and assets.
           </p>
           <div class="row mb-3">
             <div class="col-md-8 col-sm-12 text-center" placement="bottom" [ngbTooltip]="seed" triggers="click:blur">
-              <input disabled [value]="seed" type="text" class="form-control form-control-no-border bg-gradient disabled-field">
+              <input disabled [value]="seed" type="text"
+                class="form-control form-control-no-border bg-gradient disabled-field">
             </div>
             <div class="col-md-4 col-sm-12 mt-xs-4 mt-xs-4">
               <button (click)="copySeed()" class="btn float-right btn-yellow btn-block">Copy Seed</button>
@@ -64,8 +65,10 @@
             </button>
           </div>
           <div class="row mb-3" *ngIf="isSecretKeyRevealed">
-            <div class="col-md-8 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey" triggers="click:blur">
-              <input disabled [value]="secretKey" type="text" class="form-control form-control-no-border bg-gradient disabled-field">
+            <div class="col-md-8 col-sm-12 text-center" placement="bottom" [ngbTooltip]="secretKey"
+              triggers="click:blur">
+              <input disabled [value]="secretKey" type="text"
+                class="form-control form-control-no-border bg-gradient disabled-field">
             </div>
             <div class="col-md-4 col-sm-12 mt-xs-4 mt-xs-4">
               <button (click)="copySecretKey()" class="btn float-right btn-yellow btn-block">Copy Key</button>
@@ -99,10 +102,10 @@
     </ng-container>
 
     <ng-container *ngIf="displayFinalLayOffLoanPopup && !firstPopup">
-      <p class="lead text-purple text-center">Pay Off 1.50 NEAR Loan</p>
+      <p class="lead text-purple text-center">Pay Off 1.50 XRP Loan</p>
       <p class="text-purple text-center">
-        Please deposit a minimum of 2.00 NEAR to your GRAYLL Account wallet to pay off the
-        1.50 NEAR loan and have 0.50 NEAR for the minimal cost of transfers on the NEAR Network.
+        Please deposit a minimum of 2.00 XRP to your GRAYLL Account wallet to pay off the
+        1.50 XRP loan and have 0.50 XRP for the minimal cost of transfers on the XRP Network.
       </p>
       <p class="text-purple text-center">
         Once you have paid off the loan, you will have full access to the GRAYLL Algorithmic System and other
@@ -118,7 +121,7 @@
         <button class="btn btn-purple" *ngIf="!success && !error && firstPopup" (click)="activate()">Activate</button>
         <button class="btn btn-purple" *ngIf="error" (click)="retry()">Retry</button>
         <button class="btn btn-purple" *ngIf="success" (click)="displayLoan()">Next</button>
-        <button class="btn btn-purple" *ngIf="canGoToDeposit" (click)="goToDeposit()">Pay Off Loan</button>
+        <button class="btn btn-purple" *ngIf="canGoToDeposit" (click)="goToDeposit()">Invite Contacts</button>
       </div>
     </div>
   </div>

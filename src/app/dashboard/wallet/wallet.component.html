@@ -15,15 +15,19 @@
         <div class="row">
           <div class="bottom-border-navy-animated col-12">
             <div class="w-auto c-cost c-cost-wallet">
-              <div class="d-inline-block align-middle text-yellow" routerLink="/wallet/overview" style="outline: none!important">
+              <div class="d-inline-block align-middle text-yellow" routerLink="/wallet/overview"
+                style="outline: none!important">
                 <fa-icon [icon]="faWallet" size="3x" fixedWidth></fa-icon>
               </div>
               <div class="d-inline-block text-white align-middle wallet-box">
-                <span routerLink="/wallet/overview" style="outline: none!important" class="text-purple font-16">Wallet Balance</span>
-                <h5 routerLink="/wallet/overview" style="outline: none!important" class="text-purple font-weight-bolder mb-0">$435,320.68</h5>
+                <span routerLink="/wallet/overview" style="outline: none!important" class="text-purple font-16">Wallet
+                  Balance</span>
+                <h5 routerLink="/wallet/overview" style="outline: none!important"
+                  class="text-purple font-weight-bolder mb-0">$435,320.68</h5>
                 <small>
-                  <a href="javascript:void(0)" class="navy-link" [routerLink]="[{outlets: {popup: 'near-balance-status'}}]">
-                    1.50 NEAR Reserved ($0.11381)
+                  <a href="javascript:void(0)" class="navy-link"
+                    [routerLink]="[{outlets: {popup: 'XRP-balance-status'}}]">
+                    1.50 XRP Reserved ($0.11381)
                   </a>
                 </small>
               </div>
@@ -43,7 +47,7 @@
                 <i class="text-sky font-16 mr-1">
                   <fa-icon [icon]="faCircle"></fa-icon>
                 </i>
-                <span class="font-16">50% NEAR</span>
+                <span class="font-16">50% XRP</span>
                 <br>
                 <p class="m-b-0 font-weight-bolder p-font">
                   $1,000,000,000.00
@@ -86,10 +90,12 @@
             </div>
           </div>
           <div class="col-6 mt-2">
-            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'deposit'}}]" type="button" class="text-light btn btn-purple mt-2">Deposit</button>
+            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'deposit'}}]" type="button"
+              class="text-light btn btn-purple mt-2">Deposit</button>
           </div>
           <div class="col-6 mt-2 text-right">
-            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'withdraw'}}]" type="button" class="text-light btn btn-purple mt-2">Withdraw</button>
+            <button [routerLink]="['/wallet/overview', {outlets: {popup: 'withdraw'}}]" type="button"
+              class="text-light btn btn-purple mt-2">Withdraw</button>
           </div>
         </div>
       </div>

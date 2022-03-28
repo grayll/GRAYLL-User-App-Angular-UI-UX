@@ -1,11 +1,11 @@
 <ng-template #content let-modal>
-  <app-popup-header popupHeaderTitle="Withdraw GRQ & NEAR"></app-popup-header>
+  <app-popup-header popupHeaderTitle="Withdraw GRQ & "></app-popup-header>
   <div class="modal-body">
     <div class="row">
       <div class="col-md-12">
         <app-error></app-error>
         <p class="text-purple">
-          You can send assets to any NEAR or Federation Address.
+          You can send assets to any  or Federation Address.
         </p>
       </div>
       <div class="col-md-12">
@@ -13,17 +13,17 @@
           <ngb-tab id="wallet">
             <ng-template ngbTabTitle>
               <fa-icon [icon]="faWallet" [fixedWidth]="true"></fa-icon>
-              NEAR Wallet
+               Wallet
             </ng-template>
             <ng-template ngbTabContent>
               <p class="text-purple mt-3 mb-0">
-                <span class="font-weight-bolder">Send GRQ or NEAR to the recipient wallet address below.</span>
+                <span class="font-weight-bolder">Send GRQ or  to the recipient wallet address below.</span>
                 <br>
                 Transfers only take a few seconds to confirm.
               </p>
               <p class="font-16 text-purple mt-2 mb-0 font-weight-bolder">Recipient</p>
               <input type="text" class="form-control form-control-no-border bg-gradient text-light" style="height: 46px"
-                placeholder="NEAR Wallet or Federation Address" [(ngModel)]="recipient"
+                placeholder=" Wallet or Federation Address" [(ngModel)]="recipient"
                 (input)="onChange('recipient')">
 
               <ngb-tabset type="pills">
@@ -41,7 +41,7 @@
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
                           placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the  Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
                         Max Available GRQ: {{totalGRQ}}
@@ -60,23 +60,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder"></span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt=" Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
+                        <input type="text" [(ngModel)]="Value" (input)="onChange('Value')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="NEAR Amount">
+                          placeholder=" Amount">
                       </div>
-                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*1.5  are reserved in your wallet by the  Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
-                        Max Available NEAR: {{totalNEAR}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMax()">
+                        Max Available : {{total}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -114,7 +114,7 @@
                   <span class="font-weight-bolder">IMPORTANT
                     <br>
                     Some recipients (Bittrex, Kraken, Binance, Bitfinex, Coinbase and others) may require a transaction
-                    memo message</span> to be provided for correct forwarding of your NEAR Network assets.
+                    memo message</span> to be provided for correct forwarding of your  Network assets.
                   <br>
                   In cases when a memo message is required by the receiving party, failure to include the memo with your
                   transaction may result in your funds being lost forever and GRAYLL won't be able to help.
@@ -178,7 +178,7 @@
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
                           placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the  Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
                         Max Available GRQ: {{totalGRQ}}
@@ -197,23 +197,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder"></span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt=" Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
+                        <input type="text" [(ngModel)]="Value" (input)="onChange('Value')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="NEAR Amount">
+                          placeholder=" Amount">
                       </div>
-                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*1.5  are reserved in your wallet by the  Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
-                        Max Available NEAR: {{totalNEAR}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMax()">
+                        Max Available : {{total}}
                       </a>
                     </div>
                     <div class="form-group">
@@ -267,7 +267,7 @@
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
                           placeholder="GRQ Amount">
                       </div>
-                      <span class="text-purple">*0 GRQ are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*0 GRQ are reserved in your wallet by the  Network.</span>
                       <br>
                       <a href="javascript:void(0)" class="purple-link" (click)="populateMaxGRQ()">
                         Max Available GRQ: {{totalGRQ}}
@@ -286,23 +286,23 @@
                   </ng-template>
                 </ngb-tab>
                 <ngb-tab>
-                  <ng-template ngbTabTitle><span class="font-weight-bolder">NEAR</span></ng-template>
+                  <ng-template ngbTabTitle><span class="font-weight-bolder"></span></ng-template>
                   <ng-template ngbTabContent>
                     <div class="form-group mb-0">
                       <div class="input-group input-group-lg fixed-input-height">
                         <div class="input-group-prepend">
                           <span class="input-group-text bg-purple">
-                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt="NEAR Logo">
+                            <img class="small-grayll-icon" src="assets/images/near_logo_white.png" alt=" Logo">
                           </span>
                         </div>
-                        <input type="text" [(ngModel)]="NEARValue" (input)="onChange('NEARValue')"
+                        <input type="text" [(ngModel)]="Value" (input)="onChange('Value')"
                           class="fixed-input-height text-light form-control form-control-no-border bg-purple"
-                          placeholder="NEAR Amount">
+                          placeholder=" Amount">
                       </div>
-                      <span class="text-purple">*1.5 NEAR are reserved in your wallet by the NEAR Network.</span>
+                      <span class="text-purple">*1.5  are reserved in your wallet by the  Network.</span>
                       <br>
-                      <a href="javascript:void(0)" class="purple-link" (click)="populateMaxNEAR()">
-                        Max Available NEAR: {{totalNEAR}}
+                      <a href="javascript:void(0)" class="purple-link" (click)="populateMax()">
+                        Max Available : {{total}}
                       </a>
                     </div>
                     <div class="form-group">

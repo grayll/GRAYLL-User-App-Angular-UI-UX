@@ -4,8 +4,8 @@
       <span class="lead align-middle">Activity</span>
     </div>
     <div class="col-xs-12 col-md-5">
-      <ngb-tabset type="pills" class="custom-pills" justify="center"
-                  (tabChange)="onTabChange($event.nextId)" [activeId]="activeTabId">
+      <ngb-tabset type="pills" class="custom-pills" justify="center" (tabChange)="onTabChange($event.nextId)"
+        [activeId]="activeTabId">
         <ng-container *ngFor="let tab of activityTabs">
           <ngb-tab [id]="tab.id" [title]="tab.name"></ngb-tab>
         </ng-container>
@@ -13,7 +13,7 @@
     </div>
     <div class="col text-center">
       <hr class="mt-0 d-sm-none">
-      <a class="gold-link" (click)="DownloadPdf()"  data-intercom-target="Download Activity History">
+      <a class="gold-link" (click)="DownloadPdf()" data-intercom-target="Download Activity History">
         <fa-icon [icon]="faDownload" [fixedWidth]="true"></fa-icon>
         Download Activity History
       </a>
@@ -24,9 +24,10 @@
 
   <div class="row justify-content-center align-items-center my-1 p-2" *ngIf="selectedTab.id === 'allOrders'">
     <div class="col-md-2 col-xs">
-      <span class="align-middle font-weight-bolder font-14"  data-intercom-target="Open Orders">Open Orders (1)</span>
+      <span class="align-middle font-weight-bolder font-14" data-intercom-target="Open Orders">Open Orders (1)</span>
     </div>
-    <div class="col" [routerLink]="['/wallet/overview', {outlets: {popup: 'cancel-active-orders'}}]" style="outline: none;"  data-intercom-target="Cancel All Active Orders">
+    <div class="col" [routerLink]="['/wallet/overview', {outlets: {popup: 'cancel-active-orders'}}]"
+      style="outline: none;" data-intercom-target="Cancel All Active Orders">
       <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
       <span class="ml-1 cancel text-danger">Cancel All Active Orders</span>
     </div>
@@ -34,8 +35,8 @@
       <div class="row">
         <div class="col search">
           <div class="input-group">
-            <input class="form-control bg-transparent py-2 border border-right-0 text-purple"
-                   type="search" style="border-color: #40278C !important" [formControl]="searchControl">
+            <input class="form-control bg-transparent py-2 border border-right-0 text-purple" type="search"
+              style="border-color: #40278C !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
                 <fa-icon style="color: #40278C " [icon]="faSearch"></fa-icon>
@@ -66,7 +67,7 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-purple"
-                   type="search" style="border-color: #40278C !important" [formControl]="searchControl">
+              type="search" style="border-color: #40278C !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
                 <fa-icon style="color: #40278C " [icon]="faSearch"></fa-icon>
@@ -97,7 +98,7 @@
         <div class="col search">
           <div class="input-group">
             <input class="form-control form-control-no-border bg-transparent py-2 border border-right-0 text-purple"
-                   type="search" style="border-color: #40278C !important" [formControl]="searchControl">
+              type="search" style="border-color: #40278C !important" [formControl]="searchControl">
             <span class="input-group-append">
               <div class="input-group-text bg-transparent">
                 <fa-icon style="color: #40278C " [icon]="faSearch"></fa-icon>
@@ -115,43 +116,45 @@
 <div class="table-responsive bg-white text-purple pull-top" *ngIf="selectedTab.id === 'allOrders'">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-purple">
-      <th class="width-91px">Date</th>
-      <th class="width-41px">Type</th>
-      <th class="width-41px">Asset</th>
-      <th class="width-51px">Issuer</th>
-      <th class="width-61px">Amount</th>
-      <th class="width-51px">Filled</th>
-      <th class="width-73px">Price (NEAR)</th>
-      <th class="width-73px">Price (USD)</th>
-      <th class="width-73px">Total Price (NEAR)</th>
-      <th class="width-73px">Total Price (USD)</th>
-      <th class="width-61px">Actions</th>
-    </tr>
+      <tr class="font-weight-bolder font-10 text-purple">
+        <th class="width-91px">Date</th>
+        <th class="width-41px">Type</th>
+        <th class="width-41px">Asset</th>
+        <th class="width-51px">Issuer</th>
+        <th class="width-61px">Amount</th>
+        <th class="width-51px">Filled</th>
+        <th class="width-73px">Price (XRP)</th>
+        <th class="width-73px">Price (USD)</th>
+        <th class="width-73px">Total Price (XRP)</th>
+        <th class="width-73px">Total Price (USD)</th>
+        <th class="width-61px">Actions</th>
+      </tr>
     </thead>
 
-    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollOpenOrders()" [scrollWindow]="false">
-    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-    </div>
-    <tr *ngFor="let order of searchControl.value?searchResult:openOrders">
-      <td class="width-91px">{{order.date}}</td>
-      <td class="width-41px">{{order.type}}</td>
-      <td class="width-41px">{{order.asset}}</td>
-      <td class="width-51px">{{order.issuer}}</td>
-      <td class="width-61px">{{order.amount}}</td>
-      <td class="width-51px">{{order.filled}}%</td>
-      <td class="width-73px">{{order.priceNEAR}}</td>
-      <td class="width-73px">{{order.priceUSD}}</td>
-      <td class="width-73px">{{order.totalPriceNEAR}}</td>
-      <td class="width-73px">{{order.totalPriceUSD}}</td>
-      <td class="width-61px">
-        <a href="javascript:void(0)" class="purple-link">
-          <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
-          <span class="ml-1 cancel text-danger">Cancel</span>
-        </a>
-      </td>
-    </tr>
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50"
+      (scrolled)="onScrollOpenOrders()" [scrollWindow]="false">
+      <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+        <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png"
+          alt="Scroll right for more">
+      </div>
+      <tr *ngFor="let order of searchControl.value?searchResult:openOrders">
+        <td class="width-91px">{{order.date}}</td>
+        <td class="width-41px">{{order.type}}</td>
+        <td class="width-41px">{{order.asset}}</td>
+        <td class="width-51px">{{order.issuer}}</td>
+        <td class="width-61px">{{order.amount}}</td>
+        <td class="width-51px">{{order.filled}}%</td>
+        <td class="width-73px">{{order.price}}</td>
+        <td class="width-73px">{{order.priceUSD}}</td>
+        <td class="width-73px">{{order.totalPrice}}</td>
+        <td class="width-73px">{{order.totalPriceUSD}}</td>
+        <td class="width-61px">
+          <a href="javascript:void(0)" class="purple-link">
+            <fa-icon [icon]="faClose" class="text-danger cancel"></fa-icon>
+            <span class="ml-1 cancel text-danger">Cancel</span>
+          </a>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -160,32 +163,34 @@
 <div class="table-responsive bg-white text-purple pull-top" *ngIf="selectedTab.id === 'transfers'">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-purple">
-      <th class="width-91px">Date</th>
-      <th class="width-91px">Counterparty</th>
-      <th class="width-41px">Asset</th>
-      <th class="width-51px">Issuer</th>
-      <th class="width-111px">Amount</th>
-      <th class="text-center width-41px">Info</th>
-    </tr>
+      <tr class="font-weight-bolder font-10 text-purple">
+        <th class="width-91px">Date</th>
+        <th class="width-91px">Counterparty</th>
+        <th class="width-41px">Asset</th>
+        <th class="width-51px">Issuer</th>
+        <th class="width-111px">Amount</th>
+        <th class="text-center width-41px">Info</th>
+      </tr>
     </thead>
 
-    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollTransfers()" [scrollWindow]="false">
-    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-    </div>
-    <tr *ngFor="let transfer of searchControl.value?searchResult:transfers">
-      <td class="width-91px">{{transfer.date}}</td>
-      <td class="purple-link width-91px">{{transfer.counterparty}}</td>
-      <td class="width-41px">{{transfer.asset}}</td>
-      <td class="width-51px">{{transfer.issuer}}</td>
-      <td class="width-111px">{{transfer.amount}}</td>
-      <td class="text-center width-41px">
-        <a href="https://near.expert/explorer/public" target="_blank">
-          <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
-        </a>
-      </td>
-    </tr>
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50"
+      (scrolled)="onScrollTransfers()" [scrollWindow]="false">
+      <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+        <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png"
+          alt="Scroll right for more">
+      </div>
+      <tr *ngFor="let transfer of searchControl.value?searchResult:transfers">
+        <td class="width-91px">{{transfer.date}}</td>
+        <td class="purple-link width-91px">{{transfer.counterparty}}</td>
+        <td class="width-41px">{{transfer.asset}}</td>
+        <td class="width-51px">{{transfer.issuer}}</td>
+        <td class="width-111px">{{transfer.amount}}</td>
+        <td class="text-center width-41px">
+          <a href="https://xpr.expert/explorer/public" target="_blank">
+            <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
+          </a>
+        </td>
+      </tr>
 
     </tbody>
   </table>
@@ -195,51 +200,53 @@
 <div class="table-responsive bg-white text-purple pull-top" *ngIf="selectedTab.id === 'networkHistory'">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder font-10 text-purple">
-      <th class="width-91px">Date</th>
-      <th class="width-91px">Operation</th>
-      <th class="width-111px">ID</th>
-      <th class="width-91px">Amount</th>
-      <th class="width-41px">Asset</th>
-      <th class="width-111px">Account</th>
-      <th class="text-center width-41px">Info</th>
-    </tr>
+      <tr class="font-weight-bolder font-10 text-purple">
+        <th class="width-91px">Date</th>
+        <th class="width-91px">Operation</th>
+        <th class="width-111px">ID</th>
+        <th class="width-91px">Amount</th>
+        <th class="width-41px">Asset</th>
+        <th class="width-111px">Account</th>
+        <th class="text-center width-41px">Info</th>
+      </tr>
     </thead>
 
-    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollNetworkHistory()" [scrollWindow]="false">
-    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-    </div>
-    <tr *ngFor="let item of searchControl.value?searchResult:networkHistories">
-      <td class="width-91px">{{item.date}}</td>
-      <td class="width-91px">{{item.operation}}</td>
-      <td class="width-111px">{{item.id}}</td>
-      <td class="width-91px">{{item.amount}}</td>
-      <td class="width-41px">{{item.asset}}</td>
-      <td class="width-111px">
-        {{item.account}}
-        <fa-icon (click)="copySuccess(item.account)" [icon]="faCopy"></fa-icon>
-      </td>
-      <td class="text-center width-41px">
-        <a href="https://near.expert/explorer/public" target="_blank">
-          <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
-        </a>
-      </td>
-    </tr>
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50"
+      (scrolled)="onScrollNetworkHistory()" [scrollWindow]="false">
+      <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+        <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png"
+          alt="Scroll right for more">
+      </div>
+      <tr *ngFor="let item of searchControl.value?searchResult:networkHistories">
+        <td class="width-91px">{{item.date}}</td>
+        <td class="width-91px">{{item.operation}}</td>
+        <td class="width-111px">{{item.id}}</td>
+        <td class="width-91px">{{item.amount}}</td>
+        <td class="width-41px">{{item.asset}}</td>
+        <td class="width-111px">
+          {{item.account}}
+          <fa-icon (click)="copySuccess(item.account)" [icon]="faCopy"></fa-icon>
+        </td>
+        <td class="text-center width-41px">
+          <a href="https://xpr.expert/explorer/public" target="_blank">
+            <fa-icon [icon]="faInfo" class="gold-link cancel"></fa-icon>
+          </a>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 <div class="row m-0 justify-content-center align-items-center p-2 pt-4 bg-white text-purple"
-     *ngIf="selectedTab.id === 'allOrders'" id="completedOrdersContainer">
+  *ngIf="selectedTab.id === 'allOrders'" id="completedOrdersContainer">
   <hr class="m-0 py-2 w-100 mx-0 px-0" style="border-color: #fff;">
-  <div class="col-md-2 col-xs pl-0"  data-intercom-target="Completed Orders">
+  <div class="col-md-2 col-xs pl-0" data-intercom-target="Completed Orders">
     <span class="align-middle font-14 font-weight-bolder">Completed Orders (10)</span><br>
     <span class="text-purple font-10 font-weight-bolder">Most Recent Completed Orders</span>
   </div>
   <div class="col">
     <a href="javascript:void(0)" class="gold-link font-14" *ngIf="showAllCompletedOrders"
-       routerLink="/data/overview/wallet-activity/all-orders/completed-orders">
+      routerLink="/data/overview/wallet-activity/all-orders/completed-orders">
       All Completed Orders
     </a>
   </div>
@@ -248,40 +255,42 @@
 <div class="table-responsive bg-white text-purple" *ngIf="selectedTab.id === 'allOrders'">
   <table class="table mb-0">
     <thead>
-    <tr class="font-weight-bolder text-purple font-10">
-      <th class="width-91px">Date</th>
-      <th class="width-41px">Type</th>
-      <th class="width-41px">Asset</th>
-      <th class="width-51px">Issuer</th>
-      <th class="width-61px">Amount</th>
-      <th class="width-51px">Filled</th>
-      <th class="width-73px">Price (NEAR)</th>
-      <th class="width-73px">Price (USD)</th>
-      <th class="width-73px">Total Price (NEAR)</th>
-      <th class="width-73px">Total Price (USD)</th>
-      <th class="width-61px"  data-intercom-target="Actions">Actions</th>
-    </tr>
+      <tr class="font-weight-bolder text-purple font-10">
+        <th class="width-91px">Date</th>
+        <th class="width-41px">Type</th>
+        <th class="width-41px">Asset</th>
+        <th class="width-51px">Issuer</th>
+        <th class="width-61px">Amount</th>
+        <th class="width-51px">Filled</th>
+        <th class="width-73px">Price (XRP)</th>
+        <th class="width-73px">Price (USD)</th>
+        <th class="width-73px">Total Price (XRP)</th>
+        <th class="width-73px">Total Price (USD)</th>
+        <th class="width-61px" data-intercom-target="Actions">Actions</th>
+      </tr>
     </thead>
 
-    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50" (scrolled)="onScrollCompletedOrders()" [scrollWindow]="false">
-    <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
-      <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png" alt="Scroll right for more">
-    </div>
-    <tr *ngFor="let order of completedOrders">
-      <td class="width-91px">{{order.date}}</td>
-      <td class="width-41px">{{order.type}}</td>
-      <td class="width-41px">{{order.asset}}</td>
-      <td class="width-51px">{{order.issuer}}</td>
-      <td class="width-61px">{{order.amount}}</td>
-      <td class="width-51px">{{order.filled}}%</td>
-      <td class="width-73px">{{order.priceNEAR}}</td>
-      <td class="width-73px">{{order.priceUSD}}</td>
-      <td class="width-73px">{{order.totalPriceNEAR}}</td>
-      <td class="width-73px">{{order.totalPriceUSD}}</td>
-      <td class="width-61px">
-        <a href="javascript:void(0)" class="gold-link">Details</a>
-      </td>
-    </tr>
+    <tbody class="font-8 text-purple" infiniteScroll [infiniteScrollDistance]=".1" [infiniteScrollThrottle]="50"
+      (scrolled)="onScrollCompletedOrders()" [scrollWindow]="false">
+      <div class="right-arrow-mobile-scroll-indicator-div d-sm-none">
+        <img class="right-arrow-mobile-scroll-indicator-img" src="assets/images/right-chevron.png"
+          alt="Scroll right for more">
+      </div>
+      <tr *ngFor="let order of completedOrders">
+        <td class="width-91px">{{order.date}}</td>
+        <td class="width-41px">{{order.type}}</td>
+        <td class="width-41px">{{order.asset}}</td>
+        <td class="width-51px">{{order.issuer}}</td>
+        <td class="width-61px">{{order.amount}}</td>
+        <td class="width-51px">{{order.filled}}%</td>
+        <td class="width-73px">{{order.price}}</td>
+        <td class="width-73px">{{order.priceUSD}}</td>
+        <td class="width-73px">{{order.totalPrice}}</td>
+        <td class="width-73px">{{order.totalPriceUSD}}</td>
+        <td class="width-61px">
+          <a href="javascript:void(0)" class="gold-link">Details</a>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>

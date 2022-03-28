@@ -1,16 +1,16 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {WalletComponent} from './wallet.component';
-import {DepositPopupComponent} from './wallet-stats/deposit-popup/deposit-popup.component';
-import {WithdrawPopupComponent} from './wallet-stats/withdraw/withdraw-popup/withdraw-popup.component';
-import {ReviewWithdrawPopupComponent} from './wallet-stats/withdraw/review-withdraw-popup/review-withdraw-popup.component';
-import {WithdrawSuccessPopupComponent} from './wallet-stats/withdraw/withdraw-success-popup/withdraw-success-popup.component';
-import {WithdrawErrorPopupComponent} from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
-import {CancelActiveOrdersPopupComponent} from '../shared/account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
-import {RevealSecretKeyPopupComponent} from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
-import {NearLoanPopupComponent} from '../shared/popup/near-loan-popup/near-loan-popup.component';
-import {NearReferralPopupComponent} from '../shared/popup/near-referral-popup/near-referral-popup.component';
-import {NearBalanceStatusPopupComponent} from '../shared/popup/near-balance-status-popup/near-balance-status-popup.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { WalletComponent } from './wallet.component';
+import { DepositPopupComponent } from './wallet-stats/deposit-popup/deposit-popup.component';
+import { WithdrawPopupComponent } from './wallet-stats/withdraw/withdraw-popup/withdraw-popup.component';
+import { ReviewWithdrawPopupComponent } from './wallet-stats/withdraw/review-withdraw-popup/review-withdraw-popup.component';
+import { WithdrawSuccessPopupComponent } from './wallet-stats/withdraw/withdraw-success-popup/withdraw-success-popup.component';
+import { WithdrawErrorPopupComponent } from './wallet-stats/withdraw/withdraw-error-popup/withdraw-error-popup.component';
+import { CancelActiveOrdersPopupComponent } from '../shared/account-activity/cancel-active-orders-popup/cancel-active-orders-popup.component';
+import { RevealSecretKeyPopupComponent } from '../shared/popup/reveal-secret-key-popup/reveal-secret-key-popup.component';
+import { NearLoanPopupComponent } from '../shared/popup/xpr-loan-popup/xpr-loan-popup.component';
+import { NearReferralPopupComponent } from '../shared/popup/xpr-referral-popup/xpr-referral-popup.component';
+import { NearBalanceStatusPopupComponent } from '../shared/popup/xpr-balance-status-popup/xpr-balance-status-popup.component';
 
 const popupRoutes: Routes = [
   {
@@ -49,12 +49,12 @@ const popupRoutes: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'near-loan',
+    path: 'xpr-loan',
     component: NearLoanPopupComponent,
     outlet: 'popup'
   },
   {
-    path: 'near-balance-status',
+    path: 'xpr-balance-status',
     component: NearBalanceStatusPopupComponent,
     outlet: 'popup'
   },

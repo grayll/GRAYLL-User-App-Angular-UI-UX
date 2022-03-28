@@ -93,7 +93,7 @@ export class ActivityComponent implements OnInit, OnChanges {
     'Position Profit (USD)',
     'ROI',
     'GRAYLL Transaction ID',
-    'NEAR Transaction ID',
+    ' Transaction ID',
     'Info'
   ]
 
@@ -262,21 +262,21 @@ export class ActivityComponent implements OnInit, OnChanges {
   getCurrentTabData() {
     if (this.selectedTab.id === 'closedAlgoPositions') {
       return this.closeAlgoPositions.map(el => {
-        let mock = { ...el, info: 'https://near.expert/explorer/public' };
+        let mock = { ...el, info: 'https://xpr.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
     }
     else if (this.selectedTab.id === 'openAlgoPositions') {
       return this.openAlgoPositions.map(el => {
-        let mock = { ...el, info: 'https://near.expert/explorer/public' };
+        let mock = { ...el, info: 'https://xpr.expert/explorer/public' };
         delete mock.id;
         return mock;
       });
     }
     else {
       return [...this.openAlgoPositions, ...this.closeAlgoPositions].map(el => {
-        let mock = { ...el, info: 'https://near.expert/explorer/public' };
+        let mock = { ...el, info: 'https://xpr.expert/explorer/public' };
         delete mock.id;
         return mock;
       });

@@ -50,9 +50,9 @@ export class ProfileSettingsComponent {
     }
   }
 
-  copyNEARAddress() {
+  copyXRPAddress() {
     if (this.clipboardService.copyFromContent(this.nearAddress)) {
-      this.snotifyService.simple('NEAR address copied.');
+      this.snotifyService.simple('XRP address copied.');
     }
   }
 
