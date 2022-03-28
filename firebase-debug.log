@@ -1,0 +1,16 @@
+[debug] [2022-03-25T12:03:37.384Z] ----------------------------------------------------------------------
+[debug] [2022-03-25T12:03:37.386Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\muhammad.azam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-03-25T12:03:37.387Z] CLI Version:   8.20.0
+[debug] [2022-03-25T12:03:37.387Z] Platform:      win32
+[debug] [2022-03-25T12:03:37.387Z] Node Version:  v12.22.11
+[debug] [2022-03-25T12:03:37.388Z] Time:          Fri Mar 25 2022 17:03:37 GMT+0500 (Pakistan Standard Time)
+[debug] [2022-03-25T12:03:37.388Z] ----------------------------------------------------------------------
+[debug] [2022-03-25T12:03:37.388Z] 
+[debug] [2022-03-25T12:03:37.396Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-25T12:03:37.396Z] > authorizing via signed-in user
+[debug] [2022-03-25T12:03:37.397Z] [iam] checking project grayll-xrpl for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-03-25T12:03:37.400Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/grayll-xrpl:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-03-25T12:03:39.647Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 25 Mar 2022 12:03:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1222","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-03-25T12:03:39.652Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/grayll-xrpl/serviceAccounts/grayll-xrpl@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
